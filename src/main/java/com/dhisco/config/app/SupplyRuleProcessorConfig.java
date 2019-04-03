@@ -46,8 +46,4 @@ import javax.annotation.PreDestroy;
 		super.cleanup();
 	}
 
-	public String getStartServCommand(){
-		return startServCommand.replace("portVal",port).replace("applicationIdVal",applicationId);
-	}
-
 }

@@ -50,9 +50,4 @@ import java.util.Map;
 	public Map<String, String> executeSSHCommands(List<String> commands) {
 		return remoteConnector.executeSSHCommands(host, commands);
 	}
-
-	public String getStartServCommand(){
-		return startServCommand.replace("portVal",port);
-	}
-
 }
