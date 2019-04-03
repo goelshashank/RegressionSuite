@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -27,8 +26,6 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 @Log4j2 @Getter @Setter @ToString(includeFieldNames = true) public abstract class BaseConfig extends BasePojo
 		implements InitializingBean {
 
-	private final static Integer TIMEOUT=2;
-
 	@Autowired public RemoteConnector remoteConnector;
 	@Autowired public ConfigurableApplicationContext applicationContext;
 
@@ -36,20 +33,21 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 		applicationContext.registerShutdownHook();
 	}
 
-	/** This method is called first after bean construction.
-	 *
+	/**
+	 * This method is called first after bean construction.
 	 */
 	public void init() {
 	}
 
-	/** This method  is called before bean destruction.
-	 *
+	/**
+	 * This method  is called before bean destruction.
 	 */
 	public void cleanup() {
 		remoteConnector.destroySession(getHost());
 	}
 
-	/** This method will be called after {@link BaseConfig#init()}.
+	/**
+	 * This method will be called after {@link BaseConfig#init()}.
 	 *
 	 * @throws Exception
 	 */
@@ -58,7 +56,7 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 	}
 
 	public Map<String, String> executeSSHCommands(List<String> commands) {
-		return remoteConnector.executeSSHCommands(getHost(),commands);
+		return remoteConnector.executeSSHCommands(getHost(), commands);
 	}
 
 	public String getHost() {
@@ -69,7 +67,9 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 		return null;
 	}
 
-	public String getStartServCommand() {return null;}
+	public String getStartServCommand() {
+		return null;
+	}
 
 	public void stopProcess() {
 		if (isEmpty(getPort())) {
@@ -83,49 +83,51 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 				log.debug("process is down , {}  ", this.getClass());
 				break;
 			} else {*/
-				String processid = getProcessID();
-				if(isNotEmpty(processid))
-				//executeSSHCommands(Arrays.asList("kill -9 " + processid));
-					executeSSHCommands(Arrays.asList("sudo pkill java"));
-		/*	try {
-				TimeUnit.SECONDS.sleep(TIMEOUT);
-			} catch (InterruptedException e) {
-				log.error(e.getMessage(), e);
-			}*/
+		String processid = getProcessID();
+		if (isNotEmpty(processid))
+			executeSSHCommands(Arrays.asList("kill -9 " + processid));
+			//executeSSHCommands(Arrays.asList("sudo pkill java"));
+			sleep(5);
 		/*	i++;
 		}*/
 	}
 
 	private String getProcessID() {
-		Map outBuffer=executeSSHCommands(Arrays.asList("netstat -nlp|grep "+ getPort()));
-		if(isEmpty(outBuffer)) return  null;
-		String str1=outBuffer.values().toArray()[0].toString();
-		String [] str2Arr=str1.split(" ")[str1.split(" ").length-1].split("/");
+		Map outBuffer = executeSSHCommands(Arrays.asList("netstat -nlp|grep " + getPort()));
+		if (isEmpty(outBuffer))
+			return null;
+		String str1 = outBuffer.values().toArray()[0].toString();
+		String[] str2Arr = str1.split(" ")[str1.split(" ").length - 1].split("/");
 		return str2Arr[0];
 	}
 
 	public void startProcess() {
 		stopProcess(); //stop previous processes
-		int i = 0;
-	//	while (i < 3) {
+		sleep(5);
+	/*	int i = 0;
+		while (i < 3) {
 
-		/*	if (!isProcessDown()) {
+			if (!isProcessDown()) {
 				log.debug("process is already started , {} ", this.getClass());
 				break;
 			} else*/
-				executeSSHCommands(Arrays.asList(getStartServCommand()));
-			try {
-				TimeUnit.SECONDS.sleep(TIMEOUT);
-			} catch (InterruptedException e) {
-				log.error(e.getMessage(), e);
-			}
+		executeSSHCommands(Arrays.asList(getStartServCommand()));
+		sleep(5);
 		/*	i++;
 		}*/
 	}
 
+	private void sleep(int seconds) {
+		try {
+			TimeUnit.SECONDS.sleep(seconds);
+		} catch (InterruptedException e) {
+			log.error(e.getMessage(), e);
+		}
+	}
+
 	public boolean isProcessDown() {
 
-		String processID=getProcessID();
+		String processID = getProcessID();
 		if (isEmpty(processID)) {
 			return true;
 		}

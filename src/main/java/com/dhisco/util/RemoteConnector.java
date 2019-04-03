@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.ConnectException;
@@ -19,6 +20,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
@@ -121,12 +124,25 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 				 err=channel.getErrStream();
 				channel.connect();
 
-				String msg = null;
-				while ((msg = in.readLine()) != null ) {
-					log.debug(msg);
-					if (isNotEmpty(msg))
-						outBuffer.put(command, msg);
-				}
+
+				/*getMessageFromChannel(outBuffer, command, in);*/
+				Timer timer = new Timer();
+				timer.schedule(new TimerTask() {
+
+					@Override
+					public void run() {
+						String msg = null;
+						try {
+							while ((msg = in.readLine()) != null) {
+								log.debug(msg);
+								if (isNotEmpty(msg))
+									outBuffer.put(command, msg);
+							}
+						}catch (Exception e){
+							log.error(e.getMessage(),e);}
+					}
+				}, 0, 5*1000);
+
 			} catch (Exception e) {
 				log.debug(e.getMessage(), e);
 			} finally {
@@ -141,4 +157,29 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 
 		return outBuffer;
 	}
+
+	/*private void getMessageFromChannel(Map<String, String> outBuffer, String command, BufferedReader in)
+			throws IOException {
+
+		Timer timer = new Timer();
+		timer.schedule( task, 15*1000 );
+
+		System.out.println( "Input a string within 10 seconds: " );
+		while ((msg = in.readLine()) != null && timer.()) {
+			log.debug(msg);
+			if (isNotEmpty(msg))
+				outBuffer.put(command, msg);
+		}
+	}
+
+	TimerTask task = new TimerTask()
+	{
+		public void run()
+		{
+
+		}
+	};*/
+
 }
+
+

@@ -44,14 +44,13 @@ import static java.util.Arrays.asList;
 	}
 
 	//@Test(dataProviderClass = DataProvider1.class, dataProvider = "testArgs")
-	@Test public void tess() throws InterruptedException, IOException {
+	@Test public void tess() throws Exception {
 
 		ConfigurationServiceConfig configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
 		sleep(10);
-		//SupplyRuleProcessorConfig supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
-
+		SupplyRuleProcessorConfig supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
+		sleep(10);
 		ChannelMessageProcessorConfig channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
-
 		sleep(2);
 		System.out.println("end test");
 	}
