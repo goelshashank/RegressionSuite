@@ -35,10 +35,10 @@ import javax.annotation.PreDestroy;
 	@PostConstruct public void init() {
 		super.init();
 		remoteConnector.addSession(host);
+		startProcess();
 	}
 
 	@Override public void afterPropertiesSet() throws Exception {
-		startProcess();
 	}
 
 	@PreDestroy public void cleanup() {

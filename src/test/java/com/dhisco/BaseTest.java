@@ -2,6 +2,11 @@ package com.dhisco;
 
 import com.dhisco.config.BaseConfig;
 import com.dhisco.config.ManageConfigurations;
+import com.dhisco.config.app.ChannelMessageProcessorConfig;
+import com.dhisco.config.app.ConfigurationServiceConfig;
+import com.dhisco.config.app.SupplyRuleProcessorConfig;
+import com.dhisco.config.db.DbConfig;
+import com.dhisco.config.db.KafkaConfig;
 import com.dhisco.util.RemoteConnector;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +27,13 @@ import java.util.concurrent.TimeUnit;
 	@Autowired public ManageConfigurations manageConfigurations;
 	@Autowired public RemoteConnector remoteConnector;
 
-	public void setUp() {
+	public DbConfig dbConfig;
+	public KafkaConfig kafkaConfig;
+	public ChannelMessageProcessorConfig channelMessageProcessorConfig;
+	public SupplyRuleProcessorConfig supplyRuleProcessorConfig;
+	public ConfigurationServiceConfig configurationServiceConfig;
+
+	public void setUp() throws Exception{
 	}
 
 	public void tearDown() {

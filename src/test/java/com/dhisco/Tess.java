@@ -1,11 +1,17 @@
 package com.dhisco;
 
+import com.dhisco.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.config.app.ConfigurationServiceConfig;
+import com.dhisco.config.app.SupplyRuleProcessorConfig;
+import com.dhisco.config.db.DbConfig;
+import com.dhisco.config.db.KafkaConfig;
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -18,8 +24,19 @@ import static java.util.Arrays.asList;
  */
 @Log4j2 public class Tess extends BaseTest {
 
-	@Override @BeforeMethod public void setUp() {
+
+
+	@BeforeClass public void setupCl() {
+
+	}
+
+
+	@Override @BeforeMethod public void setUp() throws Exception{
 		super.setUp();
+		dbConfig = loadBean(DbConfig.class);
+		kafkaConfig = loadBean(KafkaConfig.class);
+		dbConfig.executeScript("C:\\Users\\shashank.goel\\IdeaProjects\\P2DRegressionSuite\\src\\test\\resources"
+				+ "\\scripts\\devdump2.sql");
 	}
 
 	@Override @AfterMethod public void tearDown() {
@@ -27,11 +44,15 @@ import static java.util.Arrays.asList;
 	}
 
 	//@Test(dataProviderClass = DataProvider1.class, dataProvider = "testArgs")
-	@Test public void tess() throws InterruptedException{
-		ConfigurationServiceConfig configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
-		Map map = configurationServiceConfig.executeSSHCommands(asList("pwd"));
+	@Test public void tess() throws InterruptedException, IOException {
 
-		sleep(15);
+		ConfigurationServiceConfig configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
+		sleep(10);
+		//SupplyRuleProcessorConfig supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
+
+		ChannelMessageProcessorConfig channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
+
+		sleep(2);
 		System.out.println("end test");
 	}
 

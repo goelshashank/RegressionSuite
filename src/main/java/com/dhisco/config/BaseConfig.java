@@ -17,6 +17,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static com.dhisco.util.CommonUtils.isEmpty;
+import static com.dhisco.util.CommonUtils.isNotEmpty;
 
 /**
  * @author Shashank Goel
@@ -25,6 +26,8 @@ import static com.dhisco.util.CommonUtils.isEmpty;
  */
 @Log4j2 @Getter @Setter @ToString(includeFieldNames = true) public abstract class BaseConfig extends BasePojo
 		implements InitializingBean {
+
+	private final static Integer TIMEOUT=2;
 
 	@Autowired public RemoteConnector remoteConnector;
 	@Autowired public ConfigurableApplicationContext applicationContext;
@@ -55,7 +58,7 @@ import static com.dhisco.util.CommonUtils.isEmpty;
 	}
 
 	public Map<String, String> executeSSHCommands(List<String> commands) {
-		return null;
+		return remoteConnector.executeSSHCommands(getHost(),commands);
 	}
 
 	public String getHost() {
@@ -66,60 +69,64 @@ import static com.dhisco.util.CommonUtils.isEmpty;
 		return null;
 	}
 
-	public String getStartServCommand() {
-		return null;
-	}
+	public String getStartServCommand() {return null;}
 
 	public void stopProcess() {
 		if (isEmpty(getPort())) {
 			log.debug("port is null, {}", this.getClass());
 			return;
 		}
-
-		if (isProcessDown()) {
-			log.debug("process is down , {} ", this.getClass());
-			return;
-		}
-
-		int i = 0;
+/*		int i = 0;
 		while (i < 3) {
 
 			if (isProcessDown()) {
 				log.debug("process is down , {}  ", this.getClass());
 				break;
-			} else
-				executeSSHCommands(Arrays.asList("kill -9 " + getPort()));
-			try {
-				TimeUnit.SECONDS.sleep(15);
+			} else {*/
+				String processid = getProcessID();
+				if(isNotEmpty(processid))
+				//executeSSHCommands(Arrays.asList("kill -9 " + processid));
+					executeSSHCommands(Arrays.asList("sudo pkill java"));
+		/*	try {
+				TimeUnit.SECONDS.sleep(TIMEOUT);
 			} catch (InterruptedException e) {
 				log.error(e.getMessage(), e);
-			}
-		}
+			}*/
+		/*	i++;
+		}*/
+	}
+
+	private String getProcessID() {
+		Map outBuffer=executeSSHCommands(Arrays.asList("netstat -nlp|grep "+ getPort()));
+		if(isEmpty(outBuffer)) return  null;
+		String str1=outBuffer.values().toArray()[0].toString();
+		String [] str2Arr=str1.split(" ")[str1.split(" ").length-1].split("/");
+		return str2Arr[0];
 	}
 
 	public void startProcess() {
+		stopProcess(); //stop previous processes
 		int i = 0;
-		while (i < 3) {
+	//	while (i < 3) {
 
-			if (!isProcessDown()) {
-				log.debug("process is not down , {} ", this.getClass());
+		/*	if (!isProcessDown()) {
+				log.debug("process is already started , {} ", this.getClass());
 				break;
-			} else
+			} else*/
 				executeSSHCommands(Arrays.asList(getStartServCommand()));
 			try {
-				TimeUnit.SECONDS.sleep(15);
+				TimeUnit.SECONDS.sleep(TIMEOUT);
 			} catch (InterruptedException e) {
 				log.error(e.getMessage(), e);
 			}
-		}
-
+		/*	i++;
+		}*/
 	}
 
 	public boolean isProcessDown() {
 
-		Map<String, String> msg = executeSSHCommands(Arrays.asList("lsof -i :" + getPort()));
-
-		if (isEmpty(msg)) {
+		String processID=getProcessID();
+		if (isEmpty(processID)) {
 			return true;
 		}
 		return false;

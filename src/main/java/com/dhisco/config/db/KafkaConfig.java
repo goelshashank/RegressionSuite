@@ -63,12 +63,13 @@ import static java.util.Arrays.asList;
 	@Override public void afterPropertiesSet() throws Exception {
 		super.afterPropertiesSet();
 		producer = new KafkaProducer(props);
-		AdminClient admin = AdminClient.create(props);
+		admin = AdminClient.create(props);
 		topics = Sets.newConcurrentHashSet();
 	}
 
 	@PostConstruct @Override public void init() {
 		super.init();
+		props=new Properties();
 		props.put(StreamsConfig.APPLICATION_ID_CONFIG, applicationId);
 		props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
 		props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");

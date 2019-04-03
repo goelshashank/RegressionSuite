@@ -14,8 +14,11 @@ import org.springframework.context.annotation.PropertySource;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+
+import static java.util.Arrays.asList;
 
 /**
  * @author Shashank Goel
@@ -46,8 +49,4 @@ import java.util.Map;
 		super.cleanup();
 	}
 
-	@Override
-	public Map<String, String> executeSSHCommands(List<String> commands) {
-		return remoteConnector.executeSSHCommands(host, commands);
-	}
 }

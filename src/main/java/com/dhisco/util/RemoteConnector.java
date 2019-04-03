@@ -4,13 +4,15 @@ import com.dhisco.config.ApplicationConfig;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
+import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.ConnectException;
 import java.util.HashMap;
@@ -18,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 import static com.dhisco.util.CommonUtils.isEmpty;
 import static com.dhisco.util.CommonUtils.isNotEmpty;
@@ -27,32 +30,33 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
  * @version 1.0
  * @since 29-03-2019
  */
-@Component @Log4j2
-public class RemoteConnector {
+@Component @Log4j2 @Getter public class RemoteConnector {
+
+	@Autowired ApplicationContext applicationContext;
 
 	private static final Integer RETRY_COUNT = 2;
 	@Autowired ApplicationConfig applicationConfig;
 	//todo: make it not available to any other class except configuration
-	private Map<String, Session> map;
+	private Map<String, Session> sessionMap;
 
-	public void enablePortForwarding(int localPort,String host, int remotePort){
+	public void enablePortForwarding(int localPort, String host, int remotePort) {
 		try {
-			int assinged_port = map.get(host).setPortForwardingL(localPort, host, remotePort);
+			int assinged_port = sessionMap.get(host).setPortForwardingL(localPort, host, remotePort);
 			log.debug("localhost:" + assinged_port + " -> " + host + ":" + remotePort);
 			log.debug("Port Forwarded");
-		}catch (Exception e){
-			log.error(e.getMessage(),e);
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
 		}
 	}
 
 	public void addSession(String host) {
 
-		if (isNotEmpty(map.get(host)) && map.get(host).isConnected()) {
+		if (isNotEmpty(sessionMap.get(host)) && sessionMap.get(host).isConnected()) {
 			return;
 		}
 
 		synchronized (host) {
-			if (isNotEmpty(map.get(host)) && map.get(host).isConnected()) {
+			if (isNotEmpty(sessionMap.get(host)) && sessionMap.get(host).isConnected()) {
 				return;
 			}
 
@@ -78,7 +82,7 @@ public class RemoteConnector {
 						break;
 					retry++;
 				}
-				map.put(host, session);
+				sessionMap.put(host, session);
 			} catch (Exception e) {
 				log.error(e.getMessage(), e);
 				if (isNotEmpty(session) && session.isConnected())
@@ -88,45 +92,51 @@ public class RemoteConnector {
 	}
 
 	public void destroySession(String host) {
-		if (isEmpty(map.get(host)) || !map.get(host).isConnected()) return;
+		if (isEmpty(host) || isEmpty(sessionMap) || isEmpty(sessionMap.get(host)) || !sessionMap.get(host).isConnected())
+			return;
 
-		map.get(host).disconnect();
+		sessionMap.get(host).disconnect();
 	}
 
 	@PostConstruct public void init() {
-		map = new ConcurrentHashMap<>();
+		sessionMap = new ConcurrentHashMap<>();
 	}
 
 	public Map<String, String> executeSSHCommands(String host, List<String> commands) {
 		Map<String, String> outBuffer = new HashMap<>();
-		Session session = map.get(host);
+		Session session = sessionMap.get(host);
 
 		if (isEmpty(session) || !session.isConnected()) {
 			log.debug("session is not there for host: " + host);
-			//System.exit(0);
+			return null;
 		}
 
 		for (String command : commands) {
 			ChannelExec channel = null;
+			InputStream err=null;
 			try {
 				channel = (ChannelExec) session.openChannel("exec");
 				BufferedReader in = new BufferedReader(new InputStreamReader(channel.getInputStream()));
 				channel.setCommand(command);
+				 err=channel.getErrStream();
 				channel.connect();
 
 				String msg = null;
-				while ((msg = in.readLine()) != null) {
+				while ((msg = in.readLine()) != null ) {
 					log.debug(msg);
 					if (isNotEmpty(msg))
 						outBuffer.put(command, msg);
 				}
-
-				channel.disconnect();
 			} catch (Exception e) {
 				log.debug(e.getMessage(), e);
+			} finally {
 				if (isNotEmpty(channel) && channel.isConnected())
 					channel.disconnect();
 			}
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(err));
+			String errMessage = bufferedReader.lines().collect(Collectors.joining());
+			log.debug("channel exit status- {} with error message {}",channel.getExitStatus(),errMessage);
+
 		}
 
 		return outBuffer;
