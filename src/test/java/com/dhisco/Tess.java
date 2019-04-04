@@ -35,7 +35,7 @@ import static java.util.Arrays.asList;
 		super.setUp();
 		log.debug("%%%%%%%%%%% Loading DB %%%%%%%%%%%%%%%");
 		dbConfig = loadBean(DbConfig.class);
-		dbConfig.executeScript(TEST_RESOURES_ABSOLUTE_PATH +"scripts\\test2.sql");
+		//dbConfig.executeScript(TEST_RESOURES_ABSOLUTE_PATH +"scripts\\test2.sql");
 
 		kafkaConfig = loadBean(KafkaConfig.class);
 		String[] list={"VS_Brand_2_test","M4_Brand_topic_test","RoyalArabians_test","BookingDotCom2_test"};
@@ -52,12 +52,14 @@ import static java.util.Arrays.asList;
 	@Test public void tess() throws Exception {
 
 		ConfigurationServiceConfig configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
-		sleep(10);
-		SupplyRuleProcessorConfig supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
-		ChannelMessageProcessorConfig channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
-		sleep(2);
+		sleep(20);
 
 		kafkaConfig.publishData("VS_Brand_2_test",asList((TEST_RESOURES_ABSOLUTE_PATH +"data\\ari3.json")));
+
+		SupplyRuleProcessorConfig supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
+
+		ChannelMessageProcessorConfig channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
+		sleep(20);
 		log.debug("%%%%%%%%%%% end test %%%%%%%%%%%");
 	}
 

@@ -57,12 +57,12 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 
 	@Override public void afterPropertiesSet() {
 		remoteConnector.enablePortForwarding(Integer.valueOf(mariadbLocalPort), mariadbHost, Integer.valueOf(mariadbPort));
-		executeCommand("drop database if exists "+getMariaTestDb());
-		executeCommand("create database if not exists "+getMariaTestDb());
+		//executeCommand("drop database if exists "+getMariaTestDb());
+		//executeCommand("create database if not exists "+getMariaTestDb());
 	}
 
 	@PreDestroy public void cleanup() {
-		executeCommand("drop database if exists "+getMariaTestDb());
+		//executeCommand("drop database if exists "+getMariaTestDb());
 		try {
 			if (isNotEmpty(mariadbConnection) && !mariadbConnection.isClosed()) {
 				synchronized (this) {
