@@ -11,10 +11,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
 import static java.util.Arrays.asList;
 
 /**
@@ -24,19 +20,21 @@ import static java.util.Arrays.asList;
  */
 @Log4j2 public class Tess extends BaseTest {
 
+	private static final String TEST_RESOURES_ABSOLUTE_PATH ="C:\\Users\\shashank.goel\\IdeaProjects\\P2DRegressionSuite\\src\\test"
+			+ "\\resources\\";
 
 
 	@BeforeClass public void setupCl() {
 
 	}
 
-
 	@Override @BeforeMethod public void setUp() throws Exception{
 		super.setUp();
 		dbConfig = loadBean(DbConfig.class);
+		dbConfig.executeScript(TEST_RESOURES_ABSOLUTE_PATH +"scripts\\test1.sql");
+
 		kafkaConfig = loadBean(KafkaConfig.class);
-		dbConfig.executeScript("C:\\Users\\shashank.goel\\IdeaProjects\\P2DRegressionSuite\\src\\test\\resources"
-				+ "\\scripts\\devdump2.sql");
+		asList("VS_Brand_1_test","M4_Brand_topic_test","RoyalArabians_test","BookingDotCom2_test").forEach(t->kafkaConfig.createTopic(t));
 	}
 
 	@Override @AfterMethod public void tearDown() {
@@ -52,6 +50,8 @@ import static java.util.Arrays.asList;
 		sleep(10);
 		ChannelMessageProcessorConfig channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 		sleep(2);
+
+		kafkaConfig.publishData("VS_Brand_1_test",asList((TEST_RESOURES_ABSOLUTE_PATH +"data\\ari2.json")));
 		System.out.println("end test");
 	}
 

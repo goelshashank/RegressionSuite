@@ -31,6 +31,7 @@ import org.springframework.context.annotation.PropertySource;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.io.File;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
@@ -69,7 +70,7 @@ import static java.util.Arrays.asList;
 
 	@PostConstruct @Override public void init() {
 		super.init();
-		props=new Properties();
+		props = new Properties();
 		props.put(StreamsConfig.APPLICATION_ID_CONFIG, applicationId);
 		props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
 		props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
@@ -104,8 +105,8 @@ import static java.util.Arrays.asList;
 		super.cleanup();
 	}
 
-	public void publishData(String topicName, KafkaProducer producer, File[] listOfFiles) {
-		kafkaProducerMain.publishData(topicName,producer,listOfFiles);
+	public void publishData(String topicName, List<String> listOfFiles) {
+		kafkaProducerMain.publishData(topicName, producer, listOfFiles);
 	}
 
 	void deleteTopic(String topicName) {

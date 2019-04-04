@@ -12,13 +12,16 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Log4j2 @Lazy
 @Component public class KafkaProducerMain {
 
-	public void publishData(String topicName, KafkaProducer producer,File[] listOfFiles) {
+	public void publishData(String topicName, KafkaProducer producer, List<String> filePaths) {
 
-		for (File otafile : listOfFiles) {
+		for (String filePath : filePaths) {
+			File otafile=new File(filePath);
 			FileInputStream fis = null;
 			try {
 				fis = new FileInputStream(otafile);

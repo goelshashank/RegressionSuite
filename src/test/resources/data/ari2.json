@@ -1,0 +1,81 @@
+{
+  "OTA_HotelAvailNotifRQ": {
+    "MessageContentCode": "3",
+    "TimeStamp": "2018-12-24T15:36:08",
+    "Version": 1,
+    "AvailStatusMessages": {
+      "BrandCode": "VS",
+      "HotelCode": "3646",
+      "AvailStatusMessage": [
+        {
+          "RestrictionStatuses": {
+            "RestrictionStatus": [
+              {
+                "Restriction": "Master",
+                "Status": "Close"
+              }
+            ]
+          },
+          "StatusApplicationControl": {
+            "Start": "2019-08-21",
+            "End": "2019-08-21",
+            "RatePlanCode": "RDI",
+            "InvTypeCode": "C1K"
+          },
+          "UniqueID": {
+            "ID": "1",
+            "Type": "18"
+          }
+        }
+      ]
+    }
+  },
+  "OTA_HotelRatePlanNotifRQ": {
+    "MessageContentCode": "8",
+    "TimeStamp": "2018-12-24T15:36:08",
+    "Version": 1,
+    "POS": {
+      "Source": {
+        "requestorID": {
+          "ID": "123",
+          "Type": "22"
+        }
+      }
+    },
+    "RatePlans": {
+      "BrandCode": "VS",
+      "HotelCode": "3646",
+      "RatePlan": [
+        {
+          "Start": "2019-08-21",
+          "End": "2019-08-21",
+          "RatePlanCode": "RDI",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "Start": "2019-08-21",
+                "End": "2019-08-21",
+                "InvTypeCode": "C1K",
+                "MaxLOS": "1",
+                "MinLOS": "1",
+                "RateTimeUnit": "FullDuration",
+                "AdditionalGuestAmounts": [],
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 239.2,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
