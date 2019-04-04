@@ -1,3 +1,4 @@
+use pushcoretest;
 
 DROP TABLE IF EXISTS `brand`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -10,7 +11,7 @@ CREATE TABLE `brand` (
   `is_shadowed` int(11) DEFAULT 0,
   `topic` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -19,7 +20,14 @@ CREATE TABLE `brand` (
 
 LOCK TABLES `brand` WRITE;
 /*!40000 ALTER TABLE `brand` DISABLE KEYS */;
-INSERT INTO `brand` VALUES (1,'2019-01-15 00:00:00','2019-01-15 00:00:00','VS',0,'VS_Brand_1'),(2,'2019-01-15 00:00:00','2019-01-15 00:00:00','M4',0,'M4_Brand_topic');
+INSERT INTO `brand` VALUES
+ (1,'2019-01-15 00:00:00','2019-01-15 00:00:00','VS',0,'VS_Brand_2'),(2,'2019-01-15
+00:00:00','2019-01-15 00:00:00','M4',0,'M4_Brand_topic_test'),
+(5,'2019-04-02 10:44:22','2019-04-02 10:44:22','VS_DR',0,'VS_Brand_2_test'),
+(6,'2019-04-02 10:44:22','2019-04-02 10:44:22','VS_LBR',0,'VS_Brand_2_test'),(7,'2019-04-02 10:44:22',
+'2019-04-02 10:44:22','ZZ_DR',0,'ZZ_Brand_2'),
+(8,'2019-04-02 10:44:22','2019-04-02 10:44:22','ZZ_LBR',0,'ZZ_Brand_2'),
+(3,'2019-04-03 00:00:00','2019-04-03 00:00:00','ZZ',0,'ZZ_Brand_2');
 /*!40000 ALTER TABLE `brand` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,7 +114,9 @@ CREATE TABLE `channel` (
 
 LOCK TABLES `channel` WRITE;
 /*!40000 ALTER TABLE `channel` DISABLE KEYS */;
-INSERT INTO `channel` VALUES (1,'2019-01-15 00:00:00','2019-01-15 00:00:00',100,15,4,'RoyalArabians',1,'RoyalArabians','9z',1,0),(2,'2019-01-15 00:00:00','2019-01-15 00:00:00',100,20,1,'Booking.com',0,'BookingDotCom2','8z',1,1);
+INSERT INTO `channel` VALUES
+(1,'2019-01-15 00:00:00','2019-01-15 00:00:00',100,15,4,'RoyalArabians',1,'RoyalArabians_test','9z',1,0),
+(2,'2019-01-15 00:00:00','2019-01-15 00:00:00',100,20,1,'Booking.com',0,'BookingDotCom2_test','01',1,1);
 /*!40000 ALTER TABLE `channel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -232,7 +242,7 @@ CREATE TABLE `hotel_property` (
   `is_shadowed` int(11) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `FK8kl956y0l0wrm4ceekif1ob2b` (`brand_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -241,7 +251,7 @@ CREATE TABLE `hotel_property` (
 
 LOCK TABLES `hotel_property` WRITE;
 /*!40000 ALTER TABLE `hotel_property` DISABLE KEYS */;
-INSERT INTO `hotel_property` VALUES (1,'2019-01-15 00:00:00','2019-01-15 00:00:00','3646',1,0),(2,'2019-01-15 00:00:00','2019-01-15 00:00:00','1300',2,0);
+INSERT INTO `hotel_property` VALUES (1,'2019-01-15 00:00:00','2019-01-15 00:00:00','3646',1,0),(2,'2019-01-15 00:00:00','2019-01-15 00:00:00','1300',2,0),(3,'2019-04-02 10:47:13','2019-04-02 10:47:13','3646',5,0),(4,'2019-04-02 10:47:13','2019-04-02 10:47:13','3646',6,0),(5,'2019-04-02 10:47:13','2019-04-02 10:47:13','9435',7,0),(6,'2019-04-02 10:47:13','2019-04-02 10:47:13','9435',8,0),(7,'2019-04-02 10:47:13','2019-04-02 10:47:13','6438',7,0),(8,'2019-04-02 10:47:13','2019-04-02 10:47:13','6438',8,0);
 /*!40000 ALTER TABLE `hotel_property` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -264,7 +274,7 @@ CREATE TABLE `hotel_property_channel_mapping` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UKrl6ydt9q93jhkv1p46cxer84f` (`hotel_property_id`,`channel_id`),
   KEY `FKek6vn4iq4faps8d04xeq59ddv` (`channel_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -273,7 +283,7 @@ CREATE TABLE `hotel_property_channel_mapping` (
 
 LOCK TABLES `hotel_property_channel_mapping` WRITE;
 /*!40000 ALTER TABLE `hotel_property_channel_mapping` DISABLE KEYS */;
-INSERT INTO `hotel_property_channel_mapping` VALUES (1,'2019-01-15 00:00:00','2019-01-15 00:00:00','3326096',2,1,0,NULL),(2,'2019-01-15 00:00:00','2019-01-15 00:00:00','3326095',2,2,0,NULL);
+INSERT INTO `hotel_property_channel_mapping` VALUES (1,'2019-01-15 00:00:00','2019-01-15 00:00:00','3326096',2,1,0,NULL),(2,'2019-01-15 00:00:00','2019-01-15 00:00:00','3326095',2,2,0,NULL),(3,'2019-04-03 17:25:24','2019-04-03 17:25:24','3326095',2,3,0,NULL),(4,'2019-04-03 17:25:24','2019-04-03 17:25:24','3326096',2,4,0,NULL);
 /*!40000 ALTER TABLE `hotel_property_channel_mapping` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -294,7 +304,7 @@ CREATE TABLE `hotel_property_subscription` (
   PRIMARY KEY (`id`),
   KEY `FKsuhxy2ibrwegstyyiga3g4t2j` (`channel_id`),
   KEY `FKm2ftn5md6ml400mftbxa7kblp` (`hotel_property_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -303,7 +313,7 @@ CREATE TABLE `hotel_property_subscription` (
 
 LOCK TABLES `hotel_property_subscription` WRITE;
 /*!40000 ALTER TABLE `hotel_property_subscription` DISABLE KEYS */;
-INSERT INTO `hotel_property_subscription` VALUES (1,'2019-02-20 13:07:12','\0','2019-02-20 13:07:12',1,1),(4,'2019-03-12 05:41:55','\0','2019-03-12 05:41:55',2,1),(5,'2019-03-12 05:41:55','\0','2019-03-12 05:41:55',2,2);
+INSERT INTO `hotel_property_subscription` VALUES (1,'2019-02-20 13:07:12','\0','2019-02-20 13:07:12',1,1),(4,'2019-03-12 05:41:55','\0','2019-03-12 05:41:55',2,1),(5,'2019-03-12 05:41:55','\0','2019-03-12 05:41:55',2,2),(6,'2019-04-02 10:50:12','\0','2019-04-02 10:50:12',2,3),(7,'2019-04-02 10:50:12','\0','2019-04-02 10:50:12',2,4),(8,'2019-04-02 10:50:12','\0','2019-04-02 10:50:12',2,5),(9,'2019-04-02 10:50:12','\0','2019-04-02 10:50:12',2,6),(10,'2019-04-02 10:50:12','\0','2019-04-02 10:50:12',2,7),(11,'2019-04-02 10:50:12','\0','2019-04-02 10:50:12',2,8);
 /*!40000 ALTER TABLE `hotel_property_subscription` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -323,7 +333,7 @@ CREATE TABLE `inventory_code` (
   `is_shadowed` int(11) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `FKq5h3pcviuyh4y9nfe6u4curnc` (`hotel_property_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -332,7 +342,7 @@ CREATE TABLE `inventory_code` (
 
 LOCK TABLES `inventory_code` WRITE;
 /*!40000 ALTER TABLE `inventory_code` DISABLE KEYS */;
-INSERT INTO `inventory_code` VALUES (1,'2019-01-15 00:00:00','2019-01-15 00:00:00','N2D',1,0),(2,'2019-01-15 00:00:00','2019-01-15 00:00:00','B2T',2,0),(3,'2019-01-15 00:00:00','2019-01-15 00:00:00','B1D',2,0),(4,'2019-01-15 00:00:00','2019-01-15 00:00:00','D2T',2,0),(5,'2019-01-15 00:00:00','2019-01-15 00:00:00','N1K',1,0),(6,'2019-01-15 00:00:00','2019-01-15 00:00:00','A1K',1,0),(7,'2019-01-15 00:00:00','2019-01-15 00:00:00','A1K',2,0),(8,'2019-01-15 00:00:00','2019-01-15 00:00:00','C1K',1,0),(9,'2019-01-15 00:00:00','2019-01-15 00:00:00','S1K',1,0),(10,'2019-01-15 00:00:00','2019-01-15 00:00:00','S1K',2,0);
+INSERT INTO `inventory_code` VALUES (1,'2019-01-15 00:00:00','2019-01-15 00:00:00','N2D',1,0),(2,'2019-01-15 00:00:00','2019-01-15 00:00:00','B2T',2,0),(3,'2019-01-15 00:00:00','2019-01-15 00:00:00','B1D',2,0),(4,'2019-01-15 00:00:00','2019-01-15 00:00:00','D2T',2,0),(5,'2019-01-15 00:00:00','2019-01-15 00:00:00','N1K',1,0),(6,'2019-01-15 00:00:00','2019-01-15 00:00:00','A1K',1,0),(7,'2019-01-15 00:00:00','2019-01-15 00:00:00','A1K',2,0),(8,'2019-01-15 00:00:00','2019-01-15 00:00:00','C1K',3,0),(9,'2019-01-15 00:00:00','2019-01-15 00:00:00','S1K',1,0),(10,'2019-01-15 00:00:00','2019-01-15 00:00:00','S1K',2,0),(11,'2019-04-03 16:52:21','2019-04-03 16:52:21','A1K',3,0),(12,'2019-04-03 16:52:21','2019-04-03 16:52:21','A1K',4,0);
 /*!40000 ALTER TABLE `inventory_code` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -355,7 +365,7 @@ CREATE TABLE `inventory_code_channel_mapping` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK4bcmw46bgi3a43aqcar1cj4ua` (`inventory_code_id`,`channel_id`),
   KEY `FK8n0q548kd77uafiv2g2j9y9u2` (`channel_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -364,7 +374,7 @@ CREATE TABLE `inventory_code_channel_mapping` (
 
 LOCK TABLES `inventory_code_channel_mapping` WRITE;
 /*!40000 ALTER TABLE `inventory_code_channel_mapping` DISABLE KEYS */;
-INSERT INTO `inventory_code_channel_mapping` VALUES (7,'2019-01-15 00:00:00','2019-01-15 00:00:00','332609603','Double Room(332609003)',2,8,0),(10,'2019-01-15 00:00:00','2019-01-15 00:00:00','332609503','Standard Room(332609502)',2,3,0);
+INSERT INTO `inventory_code_channel_mapping` VALUES (7,'2019-01-15 00:00:00','2019-01-15 00:00:00','332609603','Double Room(332609003)',2,8,0),(10,'2019-01-15 00:00:00','2019-01-15 00:00:00','332609503','Standard Room(332609502)',2,3,0),(11,'2019-04-03 17:01:02','2019-04-03 17:01:02','332609503','Double Room(332609003)',2,11,0),(12,'2019-04-03 17:01:02','2019-04-03 17:01:02','332609603','Double Room(332609003)',2,12,0);
 /*!40000 ALTER TABLE `inventory_code_channel_mapping` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -435,7 +445,7 @@ CREATE TABLE `max_occ_for_rtc` (
 
 LOCK TABLES `max_occ_for_rtc` WRITE;
 /*!40000 ALTER TABLE `max_occ_for_rtc` DISABLE KEYS */;
-INSERT INTO `max_occ_for_rtc` VALUES ('M4','S1K',1),('M4','C1K',1),('M4','A1K',1),('M4','N1K',1),('M4','N2D',1),('VS','C1K',1),('VS','S1K',1),('VS','A1K',1),('VS','N1K',1),('VS','N2D',1);
+INSERT INTO `max_occ_for_rtc` VALUES ('ZZ','BLC',1),('ZZ','DXK',1),('ZZ','VST',1),('ZZ','2BD',1),('ZZ','VWS',1),('ZZ','AZK',1),('ZZ','AKS',1),('ZZ','1VK',1),('ZZ','TRV',1),('ZZ','SPS',1),('ZZ','TRR',1),('ZZ','TVW',1),('ZZ','A0A',1),('ZZ','LFK',1),('ZZ','A09',1),('ZZ','LLK',1),('ZZ','A08',1),('ZZ','A07',1),('ZZ','A05',1),('ZZ','SPA',1),('ZZ','KNG',1),('ZZ','A03',1),('ZZ','2BT',1),('ZZ','SAS',1),('ZZ','A02',1),('ZZ','2DT',1),('ZZ','A01',1),('ZZ','2DS',1),('ZZ','1DT',1),('ZZ','TER',1),('VS','C1K',1),('VS','S1K',1),('VS','A1K',1),('VS','N1K',1),('VS','N2D',1),('M4','C1K',1),('M4','S1K',1),('M4','A1K',1),('M4','N1K',1),('M4','N2D',1);
 /*!40000 ALTER TABLE `max_occ_for_rtc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -463,7 +473,7 @@ CREATE TABLE `nrc` (
 
 LOCK TABLES `nrc` WRITE;
 /*!40000 ALTER TABLE `nrc` DISABLE KEYS */;
-INSERT INTO `nrc` VALUES ('R2ARI','DA5','8z',NULL,'REQUESTED_ONLY','N'),('R2ARI','DER','8z',NULL,'REQUESTED_ONLY','N'),('R2ARI','DLU','8z',NULL,'REQUESTED_ONLY','N'),('R2ARI','PEG','8z',NULL,'REQUESTED_ONLY','N'),('R2ARI','PEG','01',NULL,'REQUESTED_ONLY','N'),('R2ARI','DA5','01',NULL,'REQUESTED_ONLY','N'),('R2ARI','DLU','01',NULL,'REQUESTED_ONLY','N'),('R2ARI','DER','01',NULL,'REQUESTED_ONLY','N');
+INSERT INTO `nrc` VALUES ('R2ARI','PEG','01',NULL,'REQUESTED_OR_PUBLIC','N'),('R2ARI','DA5','01',NULL,'REQUESTED_OR_PUBLIC','N'),('R2ARI','DLU','01',NULL,'REQUESTED_OR_PUBLIC','N'),('R2ARI','DER','01',NULL,'REQUESTED_OR_PUBLIC','N');
 /*!40000 ALTER TABLE `nrc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -516,7 +526,7 @@ CREATE TABLE `product` (
   UNIQUE KEY `UKtm5dc9oa4ii37akv4p6yf9y2w` (`hotel_property_id`,`rate_plan_id`,`inventory_code_id`),
   KEY `FK2k15cx0e767qayhm88bdx0uvd` (`inventory_code_id`),
   KEY `FKmhgb5hbpxn8naoewgdy5npv7p` (`rate_plan_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -525,7 +535,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,2,0),(2,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,4,0),(3,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,11,0),(4,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,3,3,0),(5,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,9,0),(6,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,7,10,0),(7,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,11,0),(8,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,9,0),(9,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,16,0),(10,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,17,0),(11,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,7,19,0),(12,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,3,10,0),(13,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,6,2,0),(14,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,6,3,0),(15,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,7,8,0),(16,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,8,14,0),(17,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,7,3,0),(18,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,3,8,0),(19,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,7,1,0),(20,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,8,12,0),(21,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,2,0),(22,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,2,15,0),(23,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,3,1,0),(24,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,1,18,0),(25,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,4,0),(26,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,10,19,0),(27,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,8,18,0),(28,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,6,18,0),(29,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,14,0),(30,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,12,0),(31,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,7,0),(32,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,4,19,0),(33,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,6,0),(34,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,2,13,0),(35,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,12,0),(36,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,7,0),(37,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,14,0),(38,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,16,0),(39,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,18,0),(40,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,2,5,0),(41,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,17,0),(42,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,18,0),(43,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,3,19,0),(44,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,20,0),(45,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,20,0),(46,'2019-03-19 12:59:13','2019-03-19 12:59:13',1,8,23,0);
+INSERT INTO `product` VALUES (1,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,2,0),(2,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,4,0),(3,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,11,0),(4,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,3,3,0),(5,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,9,0),(6,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,7,10,0),(7,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,11,0),(8,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,9,0),(9,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,16,0),(10,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,17,0),(11,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,7,19,0),(12,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,3,10,0),(13,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,6,2,0),(14,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,6,3,0),(15,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,7,8,0),(16,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,8,14,0),(17,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,7,3,0),(18,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,3,8,0),(19,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,7,1,0),(20,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,8,12,0),(21,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,2,0),(22,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,2,15,0),(23,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,3,1,0),(24,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,1,18,0),(25,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,4,0),(26,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,10,19,0),(27,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,8,18,0),(28,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,6,18,0),(29,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,14,0),(30,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,12,0),(31,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,7,0),(32,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,4,19,0),(33,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,6,0),(34,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,2,13,0),(35,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,12,0),(36,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,7,0),(37,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,14,0),(38,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,16,0),(39,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,18,0),(40,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,2,5,0),(41,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,17,0),(42,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,18,0),(43,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,3,19,0),(44,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,5,20,0),(45,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,9,20,0),(46,'2019-03-19 12:59:13','2019-03-19 12:59:13',1,8,23,0),(47,'2019-04-03 17:42:37','2019-04-03 17:42:37',4,12,24,0),(48,'2019-04-04 05:55:53','2019-04-04 05:55:53',3,11,23,0);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -577,7 +587,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES ('M4','1300','1BO','N1K','DA5'),('M4','1300','1BO','S1K','DA5'),('M4','1300','3DM','A1K','PEG'),('M4','1300','3DM','N1K','PEG'),('M4','1300','3DM','S1K','PEG'),('M4','1300','BVW','A1K','DLU'),('M4','1300','BVW','C1K','DLU'),('M4','1300','BVW','N1K','DLU'),('M4','1300','BVW','N2D','DLU'),('M4','1300','BVW','S1K','DLU'),('M4','1300','D8R','N1K','DER'),('M4','1300','D8R','S1K','DER'),('VS','3646','1BO','N1K','DA5'),('VS','3646','1BO','S1K','DA5'),('VS','3646','3DM','A1K','PEG'),('VS','3646','3DM','N1K','PEG'),('VS','3646','3DM','S1K','PEG'),('VS','3646','BVW','A1K','DLU'),('VS','3646','BVW','C1K','DLU'),('VS','3646','BVW','N1K','DLU'),('VS','3646','BVW','N2D','DLU'),('VS','3646','BVW','S1K','DLU'),('VS','3646','D8R','N1K','DER'),('VS','3646','D8R','S1K','DER');
+INSERT INTO `products` VALUES ('M4','1300','1BO','N1K','DA5'),('M4','1300','1BO','S1K','DA5'),('M4','1300','3DM','A1K','PEG'),('M4','1300','3DM','N1K','PEG'),('M4','1300','3DM','S1K','PEG'),('M4','1300','BVW','A1K','DLU'),('M4','1300','BVW','C1K','DLU'),('M4','1300','BVW','N1K','DLU'),('M4','1300','BVW','N2D','DLU'),('M4','1300','BVW','S1K','DLU'),('M4','1300','D8R','N1K','DER'),('M4','1300','D8R','S1K','DER'),('VS','3646','1BO','N1K','DA5'),('VS','3646','1BO','S1K','DA5'),('VS','3646','3DM','A1K','PEG'),('VS','3646','3DM','N1K','PEG'),('VS','3646','3DM','S1K','PEG'),('VS','3646','BVW','A1K','DLU'),('VS','3646','BVW','C1K','DLU'),('VS','3646','BVW','N1K','DLU'),('VS','3646','BVW','N2D','DLU'),('VS','3646','BVW','S1K','DLU'),('VS','3646','D8R','N1K','DER'),('VS','3646','D8R','S1K','DER'),('ZZ','6438','A07','A01',NULL),('ZZ','6438','A07','A02',NULL),('ZZ','6438','A07','A03',NULL),('ZZ','6438','A07','A05',NULL),('ZZ','6438','A07','A07',NULL),('ZZ','6438','A07','A08',NULL),('ZZ','6438','A07','A09',NULL),('ZZ','6438','A07','A0A',NULL),('ZZ','6438','A5J','A01',NULL),('ZZ','6438','A5J','A02',NULL),('ZZ','6438','A5J','A03',NULL),('ZZ','6438','A5J','A05',NULL),('ZZ','6438','A5J','A07',NULL),('ZZ','6438','A5J','A08',NULL),('ZZ','6438','A5J','A09',NULL),('ZZ','6438','A5J','A0A',NULL),('ZZ','9435','ADPR','1DT',NULL),('ZZ','9435','ADPR','1VK',NULL),('ZZ','9435','ADPR','2DS',NULL),('ZZ','9435','ADPR','2DT',NULL),('ZZ','9435','ADPR','AKS',NULL),('ZZ','9435','ADPR','AZK',NULL),('ZZ','9435','ADPR','BLC',NULL),('ZZ','9435','ADPR','DXK',NULL),('ZZ','9435','ADPR','KNG',NULL),('ZZ','9435','ADPR','LFK',NULL),('ZZ','9435','ADPR','SPS',NULL),('ZZ','9435','ADPR','TRR',NULL),('ZZ','9435','ADPR','TVW',NULL),('ZZ','9435','ADPR','VST',NULL),('ZZ','9435','FRX4','2DS',NULL),('ZZ','9435','FRX4','2DT',NULL),('ZZ','9435','FRX4','TRR',NULL),('ZZ','9435','FRX4','TVW',NULL),('ZZ','9435','FRX4','VWS',NULL),('ZZ','9435','N10V','DXK',NULL),('ZZ','9435','PAWA','1DT',NULL),('ZZ','9435','PAWA','1VK',NULL),('ZZ','9435','PAWA','AKS',NULL),('ZZ','9435','PAWA','AZK',NULL),('ZZ','9435','PAWA','BLC',NULL),('ZZ','9435','PAWA','DXK',NULL),('ZZ','9435','PAWA','KNG',NULL),('ZZ','9435','PAWA','LLK',NULL),('ZZ','9435','PAWA','SAS',NULL),('ZZ','9435','PAWA','TRR',NULL),('ZZ','9435','PAWA','TVW',NULL),('ZZ','9435','PAWA','VST',NULL),('ZZ','9435','RACK','1DT',NULL),('ZZ','9435','RACK','1VK',NULL),('ZZ','9435','RACK','2DS',NULL),('ZZ','9435','RACK','2DT',NULL),('ZZ','9435','RACK','AKS',NULL),('ZZ','9435','RACK','AZK',NULL),('ZZ','9435','RACK','BLC',NULL),('ZZ','9435','RACK','KNG',NULL),('ZZ','9435','RACK','LLK',NULL),('ZZ','9435','RACK','SAS',NULL),('ZZ','9435','RACK','TRR',NULL),('ZZ','9435','RACK','TVW',NULL),('ZZ','9435','RACK','VST',NULL),('ZZ','9435','STXP','2BD',NULL),('ZZ','9435','STXP','2BT',NULL),('ZZ','9435','STXP','AZK',NULL),('ZZ','9435','STXP','BLC',NULL),('ZZ','9435','STXP','LFK',NULL),('ZZ','9435','STXP','SPA',NULL),('ZZ','9435','STXP','TER',NULL),('ZZ','9435','STXP','TRV',NULL),('ZZ','9435','STXP','VST',NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -600,7 +610,7 @@ CREATE TABLE `property_channel_credential_mapping` (
   KEY `FKdlxs74smee79bocv0uux54b9y` (`channel_id`),
   KEY `FK6k05occ713w3v6pdf0knt8ayp` (`channel_credential_id`),
   KEY `FKk72io5essa8io7y8oncr5p7y3` (`hotel_property_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -609,7 +619,7 @@ CREATE TABLE `property_channel_credential_mapping` (
 
 LOCK TABLES `property_channel_credential_mapping` WRITE;
 /*!40000 ALTER TABLE `property_channel_credential_mapping` DISABLE KEYS */;
-INSERT INTO `property_channel_credential_mapping` VALUES (1,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,1,1,0),(2,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,1,2,0),(3,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,2,1,0),(4,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,2,2,0),(5,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,2,1,0),(6,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,2,2,0);
+INSERT INTO `property_channel_credential_mapping` VALUES (1,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,1,1,0),(2,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,1,2,0),(3,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,2,1,0),(4,'2019-01-15 00:00:00','2019-01-15 00:00:00',1,2,2,0),(5,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,2,1,0),(6,'2019-01-15 00:00:00','2019-01-15 00:00:00',2,2,2,0),(7,'2019-04-03 17:30:36','2019-04-03 17:30:36',2,2,3,0),(8,'2019-04-03 17:30:36','2019-04-03 17:30:36',2,2,4,0);
 /*!40000 ALTER TABLE `property_channel_credential_mapping` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -652,7 +662,7 @@ CREATE TABLE `rate_plan` (
   `is_shadowed` int(11) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `FKiddw1pq54j6942s53naqg31uo` (`hotel_property_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -661,7 +671,7 @@ CREATE TABLE `rate_plan` (
 
 LOCK TABLES `rate_plan` WRITE;
 /*!40000 ALTER TABLE `rate_plan` DISABLE KEYS */;
-INSERT INTO `rate_plan` VALUES (1,'2019-01-15 00:00:00','2019-01-15 00:00:00','PVG',2,0),(2,'2019-01-15 00:00:00','2019-01-15 00:00:00','RA1',1,0),(3,'2019-01-15 00:00:00','2019-01-15 00:00:00','RA1',2,0),(4,'2019-01-15 00:00:00','2019-01-15 00:00:00','RA3',1,0),(5,'2019-01-15 00:00:00','2019-01-15 00:00:00','RA3',2,0),(6,'2019-01-15 00:00:00','2019-01-15 00:00:00','0VO',1,0),(7,'2019-01-15 00:00:00','2019-01-15 00:00:00','1KD',1,0),(8,'2019-01-15 00:00:00','2019-01-15 00:00:00','1KD',2,0),(9,'2019-01-15 00:00:00','2019-01-15 00:00:00','MNL',1,0),(10,'2019-01-15 00:00:00','2019-01-15 00:00:00','MNL',2,0),(11,'2019-01-15 00:00:00','2019-01-15 00:00:00','PKE',1,0),(12,'2019-01-15 00:00:00','2019-01-15 00:00:00','3KD',1,0),(13,'2019-01-15 00:00:00','2019-01-15 00:00:00','3KD',2,0),(14,'2019-01-15 00:00:00','2019-01-15 00:00:00','K03',1,0),(15,'2019-01-15 00:00:00','2019-01-15 00:00:00','K03',2,0),(16,'2019-01-15 00:00:00','2019-01-15 00:00:00','R4T',1,0),(17,'2019-01-15 00:00:00','2019-01-15 00:00:00','O16',1,0),(18,'2019-01-15 00:00:00','2019-01-15 00:00:00','RDI',1,0),(19,'2019-01-15 00:00:00','2019-01-15 00:00:00','RDI',2,0),(20,'2019-01-15 00:00:00','2019-01-15 00:00:00','1BK',1,0),(21,'2019-03-19 11:25:18','2019-03-19 11:25:18','D8R',1,0),(23,'2019-03-19 12:39:46','2019-03-19 12:39:46','BVW',1,0);
+INSERT INTO `rate_plan` VALUES (1,'2019-01-15 00:00:00','2019-01-15 00:00:00','PVG',2,0),(2,'2019-01-15 00:00:00','2019-01-15 00:00:00','RA1',1,0),(3,'2019-01-15 00:00:00','2019-01-15 00:00:00','RA1',2,0),(4,'2019-01-15 00:00:00','2019-01-15 00:00:00','RA3',1,0),(5,'2019-01-15 00:00:00','2019-01-15 00:00:00','RA3',2,0),(6,'2019-01-15 00:00:00','2019-01-15 00:00:00','0VO',1,0),(7,'2019-01-15 00:00:00','2019-01-15 00:00:00','1KD',1,0),(8,'2019-01-15 00:00:00','2019-01-15 00:00:00','1KD',2,0),(9,'2019-01-15 00:00:00','2019-01-15 00:00:00','MNL',1,0),(10,'2019-01-15 00:00:00','2019-01-15 00:00:00','MNL',2,0),(11,'2019-01-15 00:00:00','2019-01-15 00:00:00','PKE',1,0),(12,'2019-01-15 00:00:00','2019-01-15 00:00:00','3KD',1,0),(13,'2019-01-15 00:00:00','2019-01-15 00:00:00','3KD',2,0),(14,'2019-01-15 00:00:00','2019-01-15 00:00:00','K03',1,0),(15,'2019-01-15 00:00:00','2019-01-15 00:00:00','K03',2,0),(16,'2019-01-15 00:00:00','2019-01-15 00:00:00','R4T',1,0),(17,'2019-01-15 00:00:00','2019-01-15 00:00:00','O16',1,0),(18,'2019-01-15 00:00:00','2019-01-15 00:00:00','RDI',1,0),(19,'2019-01-15 00:00:00','2019-01-15 00:00:00','RDI',2,0),(20,'2019-01-15 00:00:00','2019-01-15 00:00:00','1BK',1,0),(21,'2019-03-19 11:25:18','2019-03-19 11:25:18','D8R',1,0),(23,'2019-03-19 12:39:46','2019-03-19 12:39:46','BVW',3,0),(24,'2019-04-03 16:49:29','2019-04-03 16:49:29','BVW',4,0);
 /*!40000 ALTER TABLE `rate_plan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -684,7 +694,7 @@ CREATE TABLE `rate_plan_channel_mapping` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UKqbfdp792jr5aiqts58kx3x2oe` (`rate_plan_id`,`channel_id`),
   KEY `FK5mshgjthageffse2q6tr4xkr` (`channel_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -693,7 +703,7 @@ CREATE TABLE `rate_plan_channel_mapping` (
 
 LOCK TABLES `rate_plan_channel_mapping` WRITE;
 /*!40000 ALTER TABLE `rate_plan_channel_mapping` DISABLE KEYS */;
-INSERT INTO `rate_plan_channel_mapping` VALUES (4,'2019-01-15 00:00:00','2019-01-15 00:00:00','11300248','Standard ratepan',2,18,0),(5,'2019-01-15 00:00:00','2019-01-15 00:00:00','11300247','Standard rateplan',2,19,0),(6,'2019-03-19 11:43:55','2019-03-19 11:43:55','11300248','Basic rateplan',2,21,0),(7,'2019-03-19 12:40:34','2019-03-19 12:40:34','11300248','Test rateplan',2,23,0);
+INSERT INTO `rate_plan_channel_mapping` VALUES (4,'2019-01-15 00:00:00','2019-01-15 00:00:00','11300248','Standard ratepan',2,18,0),(5,'2019-01-15 00:00:00','2019-01-15 00:00:00','11300247','Standard rateplan',2,19,0),(6,'2019-03-19 11:43:55','2019-03-19 11:43:55','11300248','Basic rateplan',2,21,0),(7,'2019-03-19 12:40:34','2019-03-19 12:40:34','11300247','Test rateplan',2,23,0),(8,'2019-04-03 16:58:20','2019-04-03 16:58:20','11300248','Test rateplan2',2,24,0);
 /*!40000 ALTER TABLE `rate_plan_channel_mapping` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -717,7 +727,7 @@ CREATE TABLE `renderedtoari` (
 
 LOCK TABLES `renderedtoari` WRITE;
 /*!40000 ALTER TABLE `renderedtoari` DISABLE KEYS */;
-INSERT INTO `renderedtoari` VALUES ('ari.interpreter.book.endpoint','http://localhost:8080/interpret/OTA_HotelBookingRuleNotifRQ'),('ari.interpreter.inventory.endpoint','http://localhost:8080/interpret/OTA_HotelInvCountNotifRQ'),('ari.interpreter.rate.endpoint','http://localhost:8080/interpret/OTA_HotelRateAmountNotifRQ'),('kafka.application.id','rendered-to-ari'),('kafka.client.id','rendered-to-ari-client'),('kafka.number.of.stream.threads','100'),('log4j.appender.file','org.apache.log4j.DailyRollingFileAppender'),('log4j.appender.file.Append','true'),('log4j.appender.file.File','./rendered2ari.log'),('log4j.appender.file.layout','org.apache.log4j.PatternLayout'),('log4j.appender.file.layout.conversionPattern','%d{yyyy-MM-dd HH:mm:ss.SSS} [%c] [%p] [%t] %m%n'),('log4j.appender.stdout','org.apache.log4j.ConsoleAppender'),('log4j.appender.stdout.layout','org.apache.log4j.PatternLayout'),('log4j.appender.stdout.Target','System.out'),('log4j.rootLogger','INFO, stdout, file'),('push.interval','60'),('rendered.persistence.cassandra.keyspace','rendered2ari'),('rendered.shop.topic','rendered-shop-topic'),('test.adapter.name','test-adapter');
+INSERT INTO `renderedtoari` VALUES ('ari.interpreter.book.endpoint','http://localhost:8080/interpret/OTA_HotelBookingRuleNotifRQ'),('ari.interpreter.inventory.endpoint','http://localhost:8080/interpret/OTA_HotelInvCountNotifRQ'),('ari.interpreter.rate.endpoint','http://localhost:8080/interpret/OTA_HotelRateAmountNotifRQ'),('kafka.application.id','rendered-to-ari'),('kafka.client.id','rendered-to-ari-client'),('kafka.number.of.stream.threads','100'),('log4j.appender.file','org.apache.log4j.DailyRollingFileAppender'),('log4j.appender.file.Append','true'),('log4j.appender.file.File','./rendered2ari.log'),('log4j.appender.file.layout','org.apache.log4j.PatternLayout'),('log4j.appender.file.layout.conversionPattern','%d{yyyy-MM-dd HH:mm:ss.SSS} [%c] [%p] [%t] %m%n'),('log4j.appender.stdout','org.apache.log4j.ConsoleAppender'),('log4j.appender.stdout.layout','org.apache.log4j.PatternLayout'),('log4j.appender.stdout.Target','System.out'),('log4j.rootLogger','INFO, stdout, file'),('push.interval','30'),('rendered.admin.topic','rendered-admin-topic'),('rendered.persistence.cassandra.keyspace','rendered2ari'),('rendered.shop.topic','rendered-shop-topic'),('test.adapter.name','test-adapter');
 /*!40000 ALTER TABLE `renderedtoari` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1000,4 +1010,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-31 12:09:14
+-- Dump completed on 2019-04-04  6:52:58

@@ -109,7 +109,7 @@ import static java.util.Arrays.asList;
 		kafkaProducerMain.publishData(topicName, producer, listOfFiles);
 	}
 
-	void deleteTopic(String topicName) {
+	public void deleteTopic(String topicName) {
 		DeleteTopicsResult delete = admin.deleteTopics(asList(topicName));
 		logTopicCRUDData(delete);
 	}

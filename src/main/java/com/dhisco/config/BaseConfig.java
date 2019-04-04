@@ -72,23 +72,25 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 	}
 
 	public void stopProcess() {
-		if (isEmpty(getPort())) {
+
+		/*if (isEmpty(getPort())) {
 			log.debug("port is null, {}", this.getClass());
 			return;
 		}
-/*		int i = 0;
+
+*//*		int i = 0;
 		while (i < 3) {
 
 			if (isProcessDown()) {
 				log.debug("process is down , {}  ", this.getClass());
 				break;
-			} else {*/
+			} else {*//*
 		String processid = getProcessID();
 		if (isNotEmpty(processid))
 			executeSSHCommands(Arrays.asList("kill -9 " + processid));
 			//executeSSHCommands(Arrays.asList("sudo pkill java"));
 			sleep(5);
-		/*	i++;
+		*//*	i++;
 		}*/
 	}
 
@@ -102,8 +104,8 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 	}
 
 	public void startProcess() {
-		stopProcess(); //stop previous processes
-		sleep(5);
+		//stopProcess(); //stop previous processes
+		//sleep(5);
 	/*	int i = 0;
 		while (i < 3) {
 

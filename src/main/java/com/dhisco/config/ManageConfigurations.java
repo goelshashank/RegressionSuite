@@ -1,5 +1,6 @@
 package com.dhisco.config;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
@@ -20,6 +21,7 @@ import java.util.List;
  * @version 1.0
  * @since 28-03-2019
  */
+@Log4j2
 @Configuration @EnableConfigurationProperties @PropertySource("application"
 		+ ".properties") @ComponentScan("com.dhisco") public class ManageConfigurations implements
 		ServletContextListener {
@@ -30,14 +32,14 @@ import java.util.List;
 	public void contextInitialized(
 			ServletContextEvent sce) {
 		// Context Initialised
-		System.out.println("adfsdfd");
+		log.debug("adfsdfd");
 	}
 
 	@Override
 	public void contextDestroyed(
 			ServletContextEvent sce) {
 		// Here - what you want to do that context shutdown
-		System.out.println("sssssss");
+		log.debug("sssssss");
 	}
 
 	public <T> T loadBean(Class<T> type){

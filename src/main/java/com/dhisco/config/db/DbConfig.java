@@ -46,6 +46,7 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 	private String mariadbUrl;
 	private String mariadbDriverName;
 	private String mariaTestDb;
+	private String mariadbLocalPort;
 
 	private Connection mariadbConnection;
 
@@ -55,7 +56,7 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 	}
 
 	@Override public void afterPropertiesSet() {
-		remoteConnector.enablePortForwarding(Integer.valueOf(mariadbPort), mariadbHost, Integer.valueOf(mariadbPort));
+		remoteConnector.enablePortForwarding(Integer.valueOf(mariadbLocalPort), mariadbHost, Integer.valueOf(mariadbPort));
 		executeCommand("drop database if exists "+getMariaTestDb());
 		executeCommand("create database if not exists "+getMariaTestDb());
 	}

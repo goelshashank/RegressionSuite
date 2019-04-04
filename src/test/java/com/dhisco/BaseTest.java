@@ -37,7 +37,7 @@ import java.util.concurrent.TimeUnit;
 	}
 
 	public void tearDown() {
-		System.out.println("tearing down test");
+		log.debug("tearing down test");
 	}
 
 	public <T> T loadBean(Class<T> type){

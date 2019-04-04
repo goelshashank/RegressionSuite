@@ -164,7 +164,7 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 		Timer timer = new Timer();
 		timer.schedule( task, 15*1000 );
 
-		System.out.println( "Input a string within 10 seconds: " );
+		log.debug( "Input a string within 10 seconds: " );
 		while ((msg = in.readLine()) != null && timer.()) {
 			log.debug(msg);
 			if (isNotEmpty(msg))
