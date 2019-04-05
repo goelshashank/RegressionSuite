@@ -1,5 +1,6 @@
 package com.dhisco.config.app;
 
+import com.dhisco.P2DRSException;
 import com.dhisco.config.BaseConfig;
 import com.dhisco.util.RemoteConnector;
 import com.google.common.base.Objects;
@@ -35,14 +36,22 @@ import javax.annotation.PreDestroy;
 	@PostConstruct public void init() {
 		super.init();
 		remoteConnector.addSession(host);
-		startProcess();
+		try {
+			startProcess();
+		}catch (P2DRSException e){
+			log.error(e.getMessage(),e);
+		}
 	}
 
 	@Override public void afterPropertiesSet() throws Exception {
 	}
 
 	@PreDestroy public void cleanup() {
-		stopProcess();
+		try {
+			stopProcess();
+		}catch (P2DRSException e){
+			log.error(e.getMessage(),e);
+		}
 		super.cleanup();
 	}
 

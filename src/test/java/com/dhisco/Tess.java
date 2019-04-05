@@ -52,12 +52,10 @@ import static java.util.Arrays.asList;
 	@Test public void tess() throws Exception {
 
 		ConfigurationServiceConfig configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
-		sleep(20);
-
+		sleep(10);
 		kafkaConfig.publishData("VS_Brand_2_test",asList((TEST_RESOURES_ABSOLUTE_PATH +"data\\ari3.json")));
 
 		SupplyRuleProcessorConfig supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
-
 		ChannelMessageProcessorConfig channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 		sleep(20);
 		log.debug("%%%%%%%%%%% end test %%%%%%%%%%%");

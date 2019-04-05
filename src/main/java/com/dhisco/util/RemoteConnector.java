@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.ConnectException;
@@ -95,7 +94,8 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 	}
 
 	public void destroySession(String host) {
-		if (isEmpty(host) || isEmpty(sessionMap) || isEmpty(sessionMap.get(host)) || !sessionMap.get(host).isConnected())
+		if (isEmpty(host) || isEmpty(sessionMap) || isEmpty(sessionMap.get(host)) || !sessionMap.get(host)
+				.isConnected())
 			return;
 
 		sessionMap.get(host).disconnect();
@@ -116,33 +116,33 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 
 		for (String command : commands) {
 			ChannelExec channel = null;
-			InputStream err=null;
+			InputStream err = null;
 			try {
 				channel = (ChannelExec) session.openChannel("exec");
 				BufferedReader in = new BufferedReader(new InputStreamReader(channel.getInputStream()));
 				channel.setCommand(command);
-				 err=channel.getErrStream();
+				err = channel.getErrStream();
 				channel.connect();
 
-
-				/*getMessageFromChannel(outBuffer, command, in);*/
 				Timer timer = new Timer();
 				timer.schedule(new TimerTask() {
 
-					@Override
-					public void run() {
+					@Override public void run() {
+						int i = 0;
 						String msg = null;
 						try {
 							while ((msg = in.readLine()) != null) {
 								log.debug(msg);
 								if (isNotEmpty(msg))
 									outBuffer.put(command, msg);
-							}
-						}catch (Exception e){
-							log.error(e.getMessage(),e);}
-					}
-				}, 0, 5*1000);
 
+								i++;
+							}
+						} catch (Exception e) {
+							log.error(e.getMessage(), e);
+						}
+					}
+				}, 0, 500);
 			} catch (Exception e) {
 				log.debug(e.getMessage(), e);
 			} finally {
@@ -151,34 +151,13 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 			}
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(err));
 			String errMessage = bufferedReader.lines().collect(Collectors.joining());
-			log.debug("channel exit status- {} with error message {}",channel.getExitStatus(),errMessage);
+			log.debug("channel exit status- {} ,  message- {} , command- {} ", channel.getExitStatus(), errMessage,
+					command);
 
 		}
 
 		return outBuffer;
 	}
-
-	/*private void getMessageFromChannel(Map<String, String> outBuffer, String command, BufferedReader in)
-			throws IOException {
-
-		Timer timer = new Timer();
-		timer.schedule( task, 15*1000 );
-
-		log.debug( "Input a string within 10 seconds: " );
-		while ((msg = in.readLine()) != null && timer.()) {
-			log.debug(msg);
-			if (isNotEmpty(msg))
-				outBuffer.put(command, msg);
-		}
-	}
-
-	TimerTask task = new TimerTask()
-	{
-		public void run()
-		{
-
-		}
-	};*/
 
 }
 

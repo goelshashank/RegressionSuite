@@ -1,6 +1,7 @@
 package com.dhisco.config;
 
 import com.dhisco.BasePojo;
+import com.dhisco.P2DRSException;
 import com.dhisco.util.RemoteConnector;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +26,10 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
  */
 @Log4j2 @Getter @Setter @ToString(includeFieldNames = true) public abstract class BaseConfig extends BasePojo
 		implements InitializingBean {
+
+	private final String className = this.getClass().getSimpleName().substring(0,
+			this.getClass().getSimpleName().indexOf("$")<=0?this.getClass().getSimpleName().length():
+					this.getClass().getSimpleName().indexOf("$"));
 
 	@Autowired public RemoteConnector remoteConnector;
 	@Autowired public ConfigurableApplicationContext applicationContext;
@@ -71,55 +76,62 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 		return null;
 	}
 
-	public void stopProcess() {
-
-		/*if (isEmpty(getPort())) {
-			log.debug("port is null, {}", this.getClass());
+	public void stopProcess() throws P2DRSException {
+		/*String methodName = className + "." + "stopProcess ";
+		log.debug(methodName);
+		if (isEmpty(getPort())) {
+			log.debug(methodName + "port is null, {}");
 			return;
 		}
 
-*//*		int i = 0;
-		while (i < 3) {
-
+		int i = 0;
+		String processid=null;
+		while (i < 5) {
 			if (isProcessDown()) {
-				log.debug("process is down , {}  ", this.getClass());
-				break;
-			} else {*//*
-		String processid = getProcessID();
-		if (isNotEmpty(processid))
-			executeSSHCommands(Arrays.asList("kill -9 " + processid));
-			//executeSSHCommands(Arrays.asList("sudo pkill java"));
-			sleep(5);
-		*//*	i++;
-		}*/
+				log.debug(methodName + "process is down , {}");
+				return;
+			} else {
+				processid = getProcessID();
+				if (isNotEmpty(processid)) {
+					log.debug(methodName + "killing process with pid , {}", processid);
+					executeSSHCommands(Arrays.asList("kill -9 " + processid));
+				}
+				sleep(2);
+				i++;
+			}
+		}
+
+		throw new P2DRSException(methodName + "process can not be stopped with pid "+ processid);*/
+
+		executeSSHCommands(Arrays.asList("kill -9  $(pgrep -f 8081)"));
 	}
 
-	private String getProcessID() {
-		Map outBuffer = executeSSHCommands(Arrays.asList("netstat -nlp|grep " + getPort()));
-		if (isEmpty(outBuffer))
-			return null;
-		String str1 = outBuffer.values().toArray()[0].toString();
-		String[] str2Arr = str1.split(" ")[str1.split(" ").length - 1].split("/");
-		return str2Arr[0];
-	}
-
-	public void startProcess() {
-		//stopProcess(); //stop previous processes
-		//sleep(5);
-	/*	int i = 0;
+	public void startProcess() throws P2DRSException{
+	/*	String methodName = className + "." + "startProcess ";
+		try {
+			stopProcess();
+		} catch (P2DRSException e) {
+			log.error(methodName+e.getMessage(), e);
+			return;
+		}
+		int i = 0;
 		while (i < 3) {
-
 			if (!isProcessDown()) {
-				log.debug("process is already started , {} ", this.getClass());
-				break;
-			} else*/
+				log.debug(methodName+"process is already started ");
+				return;
+			} else
+				executeSSHCommands(Arrays.asList(getStartServCommand()));
+			sleep(5);
+			i++;
+		}
+
+		throw new P2DRSException(methodName + "process can not be started");*/
+		stopProcess();
 		executeSSHCommands(Arrays.asList(getStartServCommand()));
-		sleep(5);
-		/*	i++;
-		}*/
 	}
 
 	private void sleep(int seconds) {
+		log.debug(className+" "+"sleeping for seconds {}", seconds);
 		try {
 			TimeUnit.SECONDS.sleep(seconds);
 		} catch (InterruptedException e) {
@@ -128,12 +140,24 @@ import static com.dhisco.util.CommonUtils.isNotEmpty;
 	}
 
 	public boolean isProcessDown() {
-
+		String methodName = className + "." + "isProcessDown ";
 		String processID = getProcessID();
 		if (isEmpty(processID)) {
+			log.debug(methodName + " process is down with pid {}", processID);
 			return true;
 		}
+		log.debug(methodName + " process is not down with pid {}", processID);
 		return false;
+	}
+
+	private String getProcessID() {
+		String methodName = className + "." + "getProcessID ";
+		Map outBuffer = executeSSHCommands(Arrays.asList("pgrep -f " + getPort()));
+		if (isEmpty(outBuffer))
+			return null;
+
+		log.debug(methodName + "process id  {}", outBuffer.values().toArray()[0].toString());
+		return outBuffer.values().toArray()[0].toString();
 	}
 
 }

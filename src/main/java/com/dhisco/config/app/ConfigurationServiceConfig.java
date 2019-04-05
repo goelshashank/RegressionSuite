@@ -1,5 +1,6 @@
 package com.dhisco.config.app;
 
+import com.dhisco.P2DRSException;
 import com.dhisco.config.BaseConfig;
 import com.google.common.base.MoreObjects;
 import lombok.Data;
@@ -41,11 +42,19 @@ import static java.util.Arrays.asList;
 	}
 
 	@Override public void afterPropertiesSet() throws Exception {
-		startProcess();
+		try {
+			startProcess();
+		}catch (P2DRSException e){
+			log.error(e.getMessage(),e);
+		}
 	}
 
 	@PreDestroy public void cleanup() {
-		stopProcess();
+		try {
+			stopProcess();
+		}catch (P2DRSException e){
+			log.error(e.getMessage(),e);
+		}
 		super.cleanup();
 	}
 

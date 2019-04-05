@@ -21,11 +21,12 @@ import java.util.List;
 
 	@PostMapping(value = "/capture-rez-gain") public void republishData(@RequestBody String rezGainInput) {
 
-		String fileName="";
-		File resourcesDirectory = new File("src/test/resources/out");
+		String fileName="out1";
+		File filePath = new File("C:\\Users\\shashank.goel\\IdeaProjects\\P2DRegressionSuite\\src\\test"
+				+ "\\resources\\out\\"+fileName);
 		try {
 
-			BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
 			writer.write(rezGainInput);
 
 			writer.close();
