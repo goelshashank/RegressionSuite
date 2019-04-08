@@ -30,6 +30,8 @@ import static java.util.Arrays.asList;
 
 	@BeforeClass public void setupCl() {
 
+		log.info("dasfasf");
+		log.debug("dasfasf");
 	}
 
 	@Override @BeforeMethod public void setUp() throws Exception{

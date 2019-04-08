@@ -122,11 +122,47 @@
                     <preparationGoals>clean install</preparationGoals>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
-            </plugin>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.dhisco.RunTest</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>-->
+               <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-assembly-plugin</artifactId>
+                  <configuration>
+                      <descriptorRefs>
+                          <descriptorRef>jar-with-dependencies</descriptorRef>
+                      </descriptorRefs>
+                      <archive>
+                          <manifest>
+                              <mainClass>com.dhisco.RunTest</mainClass>
+                          </manifest>
+                      </archive>
+                  </configuration>
+                  <executions>
+                      <execution>
+                          <id>dependencies</id>
+                          <phase>package</phase>
+                          <goals>
+                              <goal>single</goal>
+                          </goals>
+                      </execution>
+                  </executions>
+              </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -135,17 +171,17 @@
                     <additionalJOption>-Xdoclint:none</additionalJOption>
                 </configuration>
             </plugin>
-            <plugin>
+           <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <!--   <configuration>
+                &lt;!&ndash;   <configuration>
                        <suiteXmlFiles>
                            &lt;!&ndash; Suite file injection parameter from command line &ndash;&gt;
                            <suiteXmlFile>test.xml</suiteXmlFile>
                        </suiteXmlFiles>
-                   </configuration>-->
+                   </configuration>&ndash;&gt;
 
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok-maven-plugin</artifactId>
