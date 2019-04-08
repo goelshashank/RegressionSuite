@@ -80,4 +80,8 @@ import java.util.concurrent.TimeUnit;
 		log.debug("sleeping for {} seconds",seconds);
 		TimeUnit.SECONDS.sleep(seconds);
 	}
+
+	public String getResource(String relativePath){
+		return  this.getClass().getClassLoader().getResource(relativePath).getPath();
+	}
 }
