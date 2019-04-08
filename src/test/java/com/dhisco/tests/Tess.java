@@ -22,8 +22,8 @@ import static java.util.Arrays.asList;
 @Log4j2
  public class Tess extends BaseTest {
 
-	private static final String TEST_RESOURES_ABSOLUTE_PATH ="C:\\Users\\shashank.goel\\IdeaProjects\\P2DRegressionSuite\\src\\test"
-			+ "\\resources\\";
+	private static final String TEST_RESOURES_ABSOLUTE_PATH ="C:\\Users\\shashank.goel\\IdeaProjects\\"
+			+ "P2DRegressionSuite\\src\\test\\resources\\";
 
 
 	@BeforeClass public void setupCl() {
@@ -34,9 +34,11 @@ import static java.util.Arrays.asList;
 
 		super.setUp();
 		log.debug("%%%%%%%%%%% Loading DB %%%%%%%%%%%%%%%");
-		//dbConfig = loadBean(DbConfig.class);
-		//dbConfig.executeCommand("drop database if exists "+dbConfig.getMariaTestDb());
-		//dbConfig.executeScript(TEST_RESOURES_ABSOLUTE_PATH +"scripts\\test2.sql");
+		dbConfig = loadBean(DbConfig.class);
+		dbConfig.executeCommand("drop database if exists "+dbConfig.getMariaTestDb());
+		dbConfig.executeCommand("create database if not exists "+dbConfig.getMariaTestDb());
+		dbConfig.executeScript(TEST_RESOURES_ABSOLUTE_PATH +"scripts\\test2.sql");
+		//sleep(400);
 		kafkaConfig = loadBean(KafkaConfig.class);
 		String[] list={"VS_Brand_2_test","M4_Brand_topic_test","RoyalArabians_test","BookingDotCom2_test"};
 		asList(list).forEach(t->kafkaConfig.deleteTopic(t));
@@ -57,7 +59,7 @@ import static java.util.Arrays.asList;
 
 		SupplyRuleProcessorConfig supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
 		ChannelMessageProcessorConfig channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
-		sleep(40);
+		sleep(60);
 		log.debug("%%%%%%%%%%% end test %%%%%%%%%%%");
 	}
 

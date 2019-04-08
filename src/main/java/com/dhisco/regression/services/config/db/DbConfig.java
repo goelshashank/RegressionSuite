@@ -57,7 +57,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 	@Override public void afterPropertiesSet() {
 		remoteConnector.enablePortForwarding(Integer.valueOf(mariadbLocalPort), mariadbHost, Integer.valueOf(mariadbPort));
 		//executeCommand("drop database if exists "+getMariaTestDb());
-		executeCommand("create database if not exists "+getMariaTestDb());
+		//executeCommand("create database if not exists "+getMariaTestDb());
 	}
 
 	@PreDestroy public void cleanup() {

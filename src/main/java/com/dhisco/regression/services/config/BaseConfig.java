@@ -103,7 +103,13 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 
 		throw new P2DRSException(methodName + "process can not be stopped with pid "+ processid);*/
 
-		executeSSHCommands(Arrays.asList("kill -9  $(pgrep -f 8081)"));
+		int i=0;
+		while (i<2) {
+			executeSSHCommands(Arrays.asList("kill -9  $(pgrep -f 8081)"));
+			sleep(1);
+			i++;
+		}
+
 	}
 
 	public void startProcess() throws P2DRSException{
