@@ -1,12 +1,12 @@
 <suite name="My test suite">
     <listeners>
-        <listener class-name="com.dhisco.reports.CustomisedListener"/>
+        <listener class-name="com.dhisco.regression.services.reports.CustomisedListener"/>
     </listeners>
     <test name="numbersXML">
         <parameter name="value" value="1"/>
         <parameter name="isEven" value="false"/>
         <classes>
-            <class name="com.dhisco.Tess"/>
+            <class name="com.dhisco.tests.Tess"/>
         </classes>
     </test>
 </suite>

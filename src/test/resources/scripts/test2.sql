@@ -199,7 +199,7 @@ CREATE TABLE `generic_config` (
 LOCK TABLES `generic_config` WRITE;
 /*!40000 ALTER TABLE `generic_config` DISABLE KEYS */;
 INSERT INTO `generic_config` VALUES
- (1,'2019-01-15 00:00:00','2019-01-15 00:00:00',200,'https://10.215.253.109:8081/pctest/capture-rez-gain',1,0);
+ (1,'2019-01-15 00:00:00','2019-01-15 00:00:00',200,'http://10.215.253.109:8080/pctest/capture-rez-gain',1,0);
 /*!40000 ALTER TABLE `generic_config` ENABLE KEYS */;
 UNLOCK TABLES;
 
