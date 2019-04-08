@@ -21,7 +21,7 @@ import java.io.FileWriter;
 	@PostMapping(value = "/capture-rez-gain") public void captureRezGain(@RequestBody String rezGainInput) {
 
 		String fileName="out1.json";
-		File filePath = new File(System.getProperty("user.home") + File.separator+"apps/test/regression/out/"+fileName);
+		File filePath = new File("/apps/test/regression/out/"+fileName);
 		try {
 
 			BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
