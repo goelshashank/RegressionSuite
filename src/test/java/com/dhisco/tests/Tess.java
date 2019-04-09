@@ -25,10 +25,6 @@ import static java.util.Arrays.asList;
 @Log4j2
  public class Tess extends BaseTest {
 
-
-	private static final String TEST_RESOURES_ABSOLUTE_PATH ="C:\\Users\\shashank.goel\\IdeaProjects\\"
-			+ "P2DRegressionSuite\\src\\test\\resources\\";
-
 	@Value("#{T(Integer).parseInt('${sleep.time}')}")
 	private Integer sleepTime;
 
