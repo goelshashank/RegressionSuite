@@ -31,7 +31,7 @@ import static java.util.Arrays.asList;
 	@BeforeClass public void setupCl() {
 
 		log.info("dasfasf");
-		log.debug("dasfasf");
+		log.debug("dasfaaaaaaaaaaaasf");
 	}
 
 	@Override @BeforeMethod public void setUp() throws Exception{
@@ -64,7 +64,7 @@ import static java.util.Arrays.asList;
 
 		SupplyRuleProcessorConfig supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
 		ChannelMessageProcessorConfig channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
-		sleep(60);
+		sleep(80);
 		log.debug("%%%%%%%%%%% end test %%%%%%%%%%%");
 	}
 

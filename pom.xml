@@ -40,7 +40,6 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
@@ -306,11 +305,11 @@
         </plugins>
     </build>
 
-    <pluginRepositories>
+  <!--  <pluginRepositories>
         <pluginRepository>
             <id>onejar-maven-plugin.googlecode.com</id>
             <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
         </pluginRepository>
-    </pluginRepositories>
+    </pluginRepositories>-->
 
 </project>

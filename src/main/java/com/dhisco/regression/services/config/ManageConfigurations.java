@@ -1,5 +1,6 @@
 package com.dhisco.regression.services.config;
 
+import com.dhisco.regression.core.LogTime;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
@@ -49,6 +50,7 @@ import javax.servlet.ServletContextListener;
 		log.debug("sssssss");
 	}
 
+	@LogTime
 	public <T> T loadBean(Class<T> type) {
 		return applicationContext.getBean(type);
 	}

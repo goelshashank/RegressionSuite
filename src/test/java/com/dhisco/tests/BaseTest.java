@@ -1,5 +1,6 @@
 package com.dhisco.tests;
 
+import com.dhisco.regression.core.LogTime;
 import com.dhisco.regression.services.config.BaseConfig;
 import com.dhisco.regression.services.config.ManageConfigurations;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
@@ -51,6 +52,7 @@ import java.util.concurrent.TimeUnit;
 	public void tearDown() {
 		log.debug("tearing down test");
 	}
+
 
 
 	public <T> T loadBean(Class<T> type) {
