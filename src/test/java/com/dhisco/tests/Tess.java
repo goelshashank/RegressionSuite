@@ -7,6 +7,7 @@ import com.dhisco.regression.services.config.db.DbConfig;
 import com.dhisco.regression.services.config.db.KafkaConfig;
 import lombok.extern.log4j.Log4j2;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -24,9 +25,12 @@ import static java.util.Arrays.asList;
 @Log4j2
  public class Tess extends BaseTest {
 
+
 	private static final String TEST_RESOURES_ABSOLUTE_PATH ="C:\\Users\\shashank.goel\\IdeaProjects\\"
 			+ "P2DRegressionSuite\\src\\test\\resources\\";
 
+	@Value("#{T(Integer).parseInt('${sleep.time}')}")
+	private Integer sleepTime;
 
 	@BeforeClass public void setupCl() {
 
@@ -64,7 +68,7 @@ import static java.util.Arrays.asList;
 
 		SupplyRuleProcessorConfig supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
 		ChannelMessageProcessorConfig channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
-		sleep(80);
+		sleep(sleepTime);
 		log.debug("%%%%%%%%%%% end test %%%%%%%%%%%");
 	}
 
