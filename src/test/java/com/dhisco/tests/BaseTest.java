@@ -19,6 +19,7 @@ import org.springframework.test.context.support.DirtiesContextTestExecutionListe
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.web.ServletTestExecutionListener;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -81,7 +82,7 @@ import java.util.concurrent.TimeUnit;
 		TimeUnit.SECONDS.sleep(seconds);
 	}
 
-	public String getResource(String relativePath){
-		return  this.getClass().getClassLoader().getResource(relativePath).getPath();
+	public InputStream getResource(String relativePath){
+		return  getClass().getResourceAsStream(relativePath);
 	}
 }

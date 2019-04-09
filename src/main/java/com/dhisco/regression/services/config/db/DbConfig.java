@@ -17,6 +17,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -100,18 +101,19 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 
 	}
 
-	public void executeScript(String file) throws IOException {
+	public void executeScript(InputStream inputStream) throws IOException {
 		InputStreamReader reader = null;
 
 		try {
 			loadMariaDBConnection();
 
 			ScriptRunner runner = new ScriptRunner(mariadbConnection, false, false);
-			reader = new InputStreamReader(new FileInputStream(file));
+			reader = new InputStreamReader(inputStream);
 			runner.runScript(reader);
-			log.debug("SQL file executed successfully, {}"+file);
+			log.debug("SQL inputStream executed successfully, {}"+inputStream);
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);
+			inputStream.close();
 		} finally {
 			if (isNotEmpty(reader))
 				reader.close();

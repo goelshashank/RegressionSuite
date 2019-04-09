@@ -1,6 +1,7 @@
 package com.dhisco.regression.services.generators;
 
 import lombok.extern.log4j.Log4j2;
+import org.apache.commons.io.IOUtils;
 import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -12,22 +13,21 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 @Log4j2 @Lazy
 @Component public class KafkaProducerMain {
 
-	public void publishData(String topicName, KafkaProducer producer, List<String> filePaths) {
+	public void publishData(String topicName, KafkaProducer producer, List<InputStream> inputStreamList) {
 
-		for (String filePath : filePaths) {
-			File otafile=new File(filePath);
-			FileInputStream fis = null;
+		for (InputStream inputStream : inputStreamList) {
 			try {
-				fis = new FileInputStream(otafile);
-				byte[] data = new byte[(int) otafile.length()];
-
+				//fis = new FileInputStream(otafile);
 				try {
-					fis.read(data);
+					byte[] data=IOUtils.toByteArray(inputStream);
+					//byte[] data = new byte[(int) otafile.length()];
+					//fis.read(data);
 					String str = new String(data, "UTF-8");
 			
 				ProducerRecord<String, String> record;
@@ -45,15 +45,16 @@ import java.util.List;
 						}
 					});
 				} catch (IOException e) {
-					log.debug("OTA file path {}",otafile.getAbsolutePath());
+				//	log.debug("OTA file path {}",otafile.getAbsolutePath());
 					log.error(e.getMessage(),e);
 				}
 
-			} catch (FileNotFoundException e) {
+			} /*catch (FileNotFoundException e) {
 				log.error(e.getMessage(),e);
-			} finally {
+			}*/ finally {
 				try {
-					fis.close();
+					inputStream.close();
+					//fis.close();
 				} catch (IOException e) {
 					log.error(e.getMessage(),e);
 				}

@@ -30,6 +30,7 @@ import org.springframework.context.annotation.PropertySource;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -104,8 +105,8 @@ import static java.util.Arrays.asList;
 		super.cleanup();
 	}
 
-	public void publishData(String topicName, List<String> listOfFiles) {
-		kafkaProducerMain.publishData(topicName, producer, listOfFiles);
+	public void publishData(String topicName, List<InputStream> inputStreamList) {
+		kafkaProducerMain.publishData(topicName, producer, inputStreamList);
 	}
 
 	public void deleteTopic(String topicName) {
