@@ -136,7 +136,7 @@
                <!-- <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.dhisco.RunTest</mainClass>
+                            <mainClass>com.dhisco.regression.services.config.ManageConfigurations</mainClass>
                         </manifest>
                     </archive>
                 </configuration>-->

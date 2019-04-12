@@ -25,9 +25,6 @@ import static java.util.Arrays.asList;
 @Log4j2
  public class Tess extends BaseTest {
 
-	@Value("#{T(Integer).parseInt('${sleep.time}')}")
-	private Integer sleepTime;
-
 	@BeforeClass public void setupCl() {
 
 		log.info("dasfasf");
@@ -65,6 +62,9 @@ import static java.util.Arrays.asList;
 		SupplyRuleProcessorConfig supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
 		ChannelMessageProcessorConfig channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 		sleep(sleepTime);
+
+		channelMessageProcessorConfig.copyRemoteToLocal("/apps/test/regression/out","C:\\Users\\shashank"
+				+ ".goel\\IdeaProjects\\P2DRegressionSuite\\src\\test\\resources\\out","out1.json");
 		log.debug("%%%%%%%%%%% end test %%%%%%%%%%%");
 
 

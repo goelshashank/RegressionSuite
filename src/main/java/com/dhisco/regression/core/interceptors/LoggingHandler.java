@@ -56,7 +56,7 @@ public class LoggingHandler {
 		} catch (Throwable e){
 			log.debug(e.getMessage(),e);
 		}
-		log.info(
+		log.debug(
 				"#{}({}) in {}s",point.getSignature().getDeclaringType().getSimpleName(),
 				MethodSignature.class.cast(point.getSignature()).getMethod().getName(),
 				(System.currentTimeMillis() - start)/1000

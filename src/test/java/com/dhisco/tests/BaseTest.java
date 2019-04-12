@@ -12,6 +12,7 @@ import com.dhisco.regression.core.exceptions.P2DRSException;
 import com.dhisco.regression.services.RemoteConnector;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.TestPropertySource;
@@ -36,6 +37,10 @@ import java.util.concurrent.TimeUnit;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT,classes = ManageConfigurations.class)
 @Log4j2 public abstract class BaseTest
 		extends AbstractTestNGSpringContextTests {
+
+
+	@Value("#{T(Integer).parseInt('${sleep.time}')}")
+	public Integer sleepTime;
 
 	@Autowired public ManageConfigurations manageConfigurations;
 	@Autowired public RemoteConnector remoteConnector;

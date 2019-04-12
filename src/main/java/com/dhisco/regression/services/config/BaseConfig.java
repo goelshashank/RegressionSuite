@@ -64,6 +64,11 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 		return remoteConnector.executeSSHCommands(getHost(), commands);
 	}
 
+
+	public void copyRemoteToLocal(String from, String to, String fileName) {
+		remoteConnector.copyRemoteToLocal(getHost(),from,to, fileName);
+	}
+
 	public String getHost() {
 		return null;
 	}
