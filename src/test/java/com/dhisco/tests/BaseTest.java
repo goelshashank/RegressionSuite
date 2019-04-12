@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 @TestExecutionListeners(inheritListeners = false, listeners = {
 		DependencyInjectionTestExecutionListener.class,
 		DirtiesContextTestExecutionListener.class, ServletTestExecutionListener.class})
-@TestPropertySource(properties = {"server.port=8082"})
+@TestPropertySource(properties = {"server.port=8085"})
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT,classes = ManageConfigurations.class)
 @Log4j2 public abstract class BaseTest
 		extends AbstractTestNGSpringContextTests {

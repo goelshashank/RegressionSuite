@@ -38,10 +38,10 @@ import static java.util.Arrays.asList;
 
 		super.setUp();
 		log.debug("%%%%%%%%%%% Loading DB %%%%%%%%%%%%%%%");
-	/*	dbConfig = loadBean(DbConfig.class);
+		dbConfig = loadBean(DbConfig.class);
 		dbConfig.executeCommand("drop database if exists "+dbConfig.getMariaTestDb());
 		dbConfig.executeCommand("create database if not exists "+dbConfig.getMariaTestDb());
-		dbConfig.executeScript(getResource("/scripts/test2.sql"));*/
+		dbConfig.executeScript(getResource("/scripts/test2.sql"));
 		//sleep(400);
 		kafkaConfig = loadBean(KafkaConfig.class);
 		String[] list={"VS_Brand_2_test","M4_Brand_topic_test","RoyalArabians_test","BookingDotCom2_test"};
@@ -66,6 +66,9 @@ import static java.util.Arrays.asList;
 		ChannelMessageProcessorConfig channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 		sleep(sleepTime);
 		log.debug("%%%%%%%%%%% end test %%%%%%%%%%%");
+
+
+
 	}
 
 
