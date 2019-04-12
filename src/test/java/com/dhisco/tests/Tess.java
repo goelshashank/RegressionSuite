@@ -7,6 +7,10 @@ import com.dhisco.regression.services.config.db.DbConfig;
 import com.dhisco.regression.services.config.db.KafkaConfig;
 import lombok.extern.log4j.Log4j2;
 
+import org.skyscreamer.jsonassert.JSONAssert;
+import org.skyscreamer.jsonassert.JSONCompare;
+import org.skyscreamer.jsonassert.JSONCompareMode;
+import org.skyscreamer.jsonassert.JSONCompareResult;
 import org.springframework.beans.factory.annotation.Value;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -32,6 +36,15 @@ import static java.util.Arrays.asList;
 	}
 
 	@Override @BeforeMethod public void setUp() throws Exception{
+
+
+
+		JSONCompareResult result =
+				JSONCompare.compareJSON(getResourceAsString("/out/out1.json"), getResourceAsString("/benchmark/out1"
+								+ ".json"),
+						JSONCompareMode.STRICT);
+		JSONAssert.assertEquals(getResourceAsString("/out/out1.json"), getResourceAsString("/benchmark/out1"
+				+ ".json"),	JSONCompareMode.STRICT);
 
 		super.setUp();
 		log.debug("%%%%%%%%%%% Loading DB %%%%%%%%%%%%%%%");
@@ -66,7 +79,6 @@ import static java.util.Arrays.asList;
 		channelMessageProcessorConfig.copyRemoteToLocal("/apps/test/regression/out","C:\\Users\\shashank"
 				+ ".goel\\IdeaProjects\\P2DRegressionSuite\\src\\test\\resources\\out","out1.json");
 		log.debug("%%%%%%%%%%% end test %%%%%%%%%%%");
-
 
 
 	}

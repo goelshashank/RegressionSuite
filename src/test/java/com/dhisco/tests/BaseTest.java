@@ -11,6 +11,7 @@ import com.dhisco.regression.services.config.db.KafkaConfig;
 import com.dhisco.regression.core.exceptions.P2DRSException;
 import com.dhisco.regression.services.RemoteConnector;
 import lombok.extern.log4j.Log4j2;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,7 +22,9 @@ import org.springframework.test.context.support.DirtiesContextTestExecutionListe
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.web.ServletTestExecutionListener;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -91,5 +94,9 @@ import java.util.concurrent.TimeUnit;
 
 	public InputStream getResource(String relativePath){
 		return  getClass().getResourceAsStream(relativePath);
+	}
+
+	public String getResourceAsString(String relativePath) throws IOException {
+		return IOUtils.toString(getClass().getResourceAsStream(relativePath), StandardCharsets.UTF_8);
 	}
 }
