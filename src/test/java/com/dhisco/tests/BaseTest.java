@@ -1,5 +1,7 @@
 package com.dhisco.tests;
 
+import com.dhisco.regression.core.exceptions.P2DRSException;
+import com.dhisco.regression.services.RemoteConnector;
 import com.dhisco.regression.services.config.BaseConfig;
 import com.dhisco.regression.services.config.ManageConfigurations;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
@@ -7,14 +9,16 @@ import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
 import com.dhisco.regression.services.config.app.SupplyRuleProcessorConfig;
 import com.dhisco.regression.services.config.db.DbConfig;
 import com.dhisco.regression.services.config.db.KafkaConfig;
-import com.dhisco.regression.core.exceptions.P2DRSException;
-import com.dhisco.regression.services.RemoteConnector;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.IOUtils;
+import org.json.JSONException;
+import org.skyscreamer.jsonassert.JSONAssert;
+import org.skyscreamer.jsonassert.JSONCompare;
+import org.skyscreamer.jsonassert.JSONCompareMode;
+import org.skyscreamer.jsonassert.JSONCompareResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
@@ -98,5 +102,17 @@ import java.util.concurrent.TimeUnit;
 
 	public String getResourceAsString(String relativePath) throws IOException {
 		return IOUtils.toString(getClass().getResourceAsStream(relativePath), StandardCharsets.UTF_8);
+	}
+
+
+	public void assertJson(String fPath1,String fPAth2, JSONCompareMode jsonCompareMode) throws IOException,
+			JSONException{
+		 JSONAssert.assertEquals(getResourceAsString(fPath1), getResourceAsString(fPAth2),	JSONCompareMode.STRICT);
+	}
+
+	public JSONCompareResult compareJSON(String fPath1,String fPAth2, JSONCompareMode jsonCompareMode) throws IOException,
+			JSONException {
+		return JSONCompare.compareJSON(getResourceAsString(fPath1), getResourceAsString(fPAth2),
+				JSONCompareMode.STRICT);
 	}
 }
