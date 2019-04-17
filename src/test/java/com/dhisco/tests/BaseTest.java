@@ -107,12 +107,12 @@ import java.util.concurrent.TimeUnit;
 
 	public void assertJson(String fPath1,String fPAth2, JSONCompareMode jsonCompareMode) throws IOException,
 			JSONException{
-		 JSONAssert.assertEquals(getResourceAsString(fPath1), getResourceAsString(fPAth2),	JSONCompareMode.STRICT);
+		 JSONAssert.assertEquals(getResourceAsString(fPath1), getResourceAsString(fPAth2),jsonCompareMode);
 	}
 
 	public JSONCompareResult compareJSON(String fPath1,String fPAth2, JSONCompareMode jsonCompareMode) throws IOException,
 			JSONException {
 		return JSONCompare.compareJSON(getResourceAsString(fPath1), getResourceAsString(fPAth2),
-				JSONCompareMode.STRICT);
+				jsonCompareMode);
 	}
 }

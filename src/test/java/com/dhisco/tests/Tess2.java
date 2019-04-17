@@ -14,13 +14,11 @@ public class Tess2 extends BaseTest{
 
 	@Test
 	public void test1() throws Exception{
-
 		Assert.assertEquals(1,1);
 	}
 
 	@Test
 	public void test2() throws Exception{
-
 		Assert.assertEquals(1,2);
 	}
 
