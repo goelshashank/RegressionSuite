@@ -24,7 +24,7 @@ import javax.servlet.ServletContextListener;
  */
 @Log4j2
 @EnableAspectJAutoProxy
-@SpringBootApplication(exclude = CassandraDataAutoConfiguration.class) @EnableConfigurationProperties @PropertySource("application"
+@SpringBootApplication(exclude = CassandraDataAutoConfiguration.class) @EnableConfigurationProperties @PropertySource("server"
 		+ ".properties") @ComponentScan("com.dhisco") public class ManageConfigurations extends
 		SpringBootServletInitializer implements
 		ServletContextListener, ExceptionInterceptor{

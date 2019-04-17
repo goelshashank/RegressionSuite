@@ -1,6 +1,5 @@
 package com.dhisco.tests;
 
-import com.dhisco.regression.core.LogTime;
 import com.dhisco.regression.services.config.BaseConfig;
 import com.dhisco.regression.services.config.ManageConfigurations;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
@@ -15,8 +14,9 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.test.context.TestExecutionListeners;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
@@ -36,7 +36,6 @@ import java.util.concurrent.TimeUnit;
 @TestExecutionListeners(inheritListeners = false, listeners = {
 		DependencyInjectionTestExecutionListener.class,
 		DirtiesContextTestExecutionListener.class, ServletTestExecutionListener.class})
-@TestPropertySource(properties = {"server.port=8085"})
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT,classes = ManageConfigurations.class)
 @Log4j2 public abstract class BaseTest
 		extends AbstractTestNGSpringContextTests {
@@ -47,6 +46,7 @@ import java.util.concurrent.TimeUnit;
 
 	@Autowired public ManageConfigurations manageConfigurations;
 	@Autowired public RemoteConnector remoteConnector;
+	@Autowired public Environment env;
 
 	public DbConfig dbConfig;
 	public KafkaConfig kafkaConfig;
