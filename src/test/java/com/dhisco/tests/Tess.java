@@ -71,12 +71,12 @@ import static java.util.Arrays.asList;
 				+ ".goel\\IdeaProjects\\P2DRegressionSuite\\src\\test\\resources\\out","out1.json");
 		*/log.debug("%%%%%%%%%%% end test %%%%%%%%%%%");
 
-	/*	JSONCompareResult result =
+		JSONCompareResult result =
 				JSONCompare.compareJSON(getResourceAsString("/out/out1.json"), getResourceAsString("/benchmark/out1"
 								+ ".json"),
 						JSONCompareMode.STRICT);
 		JSONAssert.assertEquals(getResourceAsString("/out/out1.json"), getResourceAsString("/benchmark/out1"
-				+ ".json"),	JSONCompareMode.STRICT);*/
+				+ ".json"),	JSONCompareMode.STRICT);
 
 
 	}
