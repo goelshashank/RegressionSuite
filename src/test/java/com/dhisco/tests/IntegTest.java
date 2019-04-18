@@ -3,21 +3,17 @@ package com.dhisco.tests;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
 import com.dhisco.regression.services.config.app.SupplyRuleProcessorConfig;
-import com.dhisco.regression.services.config.db.DbConfig;
 import com.dhisco.regression.services.config.db.KafkaConfig;
 import lombok.extern.log4j.Log4j2;
-
-import org.skyscreamer.jsonassert.JSONAssert;
-import org.skyscreamer.jsonassert.JSONCompare;
 import org.skyscreamer.jsonassert.JSONCompareMode;
-import org.skyscreamer.jsonassert.JSONCompareResult;
-import org.springframework.beans.factory.annotation.Value;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import java.io.File;
 
 import static java.util.Arrays.asList;
 
@@ -27,17 +23,29 @@ import static java.util.Arrays.asList;
  * @since 27-03-2019
  */
 @Log4j2
- public class Tess extends BaseTest {
+ public class IntegTest extends BaseTest {
 
-	@BeforeClass public void setupCl() {
-
-		log.info("dasfasf");
-		log.debug("dasfaaaaaaaaaaaasf");
+	@BeforeTest
+	@Override
+	@Parameters({ "OS", "browser" })
+	public void setup(String OS, String browser) {
+		super.setup(OS,browser);
 	}
 
-	@Override @BeforeMethod public void setUp() throws Exception{
+	@AfterTest
+	@Override
+	public void tearDown() {
+		super.tearDown();
+	}
 
-		super.setUp();
+	@AfterMethod
+	@Override public void afterMethod(ITestResult result) {
+		super.afterMethod(result);
+	}
+
+	@Override @BeforeMethod public void beforeMethod() throws Exception{
+
+		super.beforeMethod();
 		log.debug("%%%%%%%%%%% Loading DB %%%%%%%%%%%%%%%");
 	/*	dbConfig = loadBean(DbConfig.class);
 		dbConfig.executeCommand("drop database if exists "+dbConfig.getMariaTestDb());
@@ -51,12 +59,9 @@ import static java.util.Arrays.asList;
 		asList(list).forEach(t->kafkaConfig.createTopic(t));
 	}
 
-	@Override @AfterMethod public void tearDown() {
-		super.tearDown();
-	}
-
 	//@Test(dataProviderClass = DataProvider1.class, dataProvider = "testArgs")
-	@Test public void tess() throws Exception {
+	@Test public void integTest() throws Exception {
+		test = extent.createTest("Integration Test", "Integration Test");
 
 		kafkaConfig.publishData("VS_Brand_2_test",asList(getResource("/data/ari3.json")));
 
@@ -67,9 +72,12 @@ import static java.util.Arrays.asList;
 		ChannelMessageProcessorConfig channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 		sleep(sleepTime);
 
-		/*channelMessageProcessorConfig.copyRemoteToLocal("/apps/test/regression/out","C:\\Users\\shashank"
-				+ ".goel\\IdeaProjects\\P2DRegressionSuite\\src\\test\\resources\\out","out1.json");
-		*/log.debug("%%%%%%%%%%% end test %%%%%%%%%%%");
+		channelMessageProcessorConfig.copyRemoteToLocal("/apps/test/regression/out","C:\\Users\\shashank"
+				+ ".goel\\IdeaProjects\\P2DRegressionSuite\\src\\test\\resources\\out","out2.json");
+
+		assertJson("/benchmark/out1.json","/out/out2.json", JSONCompareMode.STRICT);
+
+		log.debug("%%%%%%%%%%% end test %%%%%%%%%%%");
 
 	}
 
