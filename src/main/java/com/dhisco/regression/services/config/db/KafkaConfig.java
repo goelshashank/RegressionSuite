@@ -118,7 +118,7 @@ import static java.util.Arrays.asList;
 		for (Map.Entry<String, KafkaFuture<Void>> entry : result.values().entrySet()) {
 			try {
 				entry.getValue().get();
-				log.debug("topic {} deleted", entry.getKey());
+				log.info("topic {} deleted", entry.getKey());
 			} catch (InterruptedException | ExecutionException e) {
 				if (Throwables.getRootCause(e) instanceof InvalidTopicException) {
 					log.error("topic {} invalid", entry.getKey());
@@ -131,7 +131,7 @@ import static java.util.Arrays.asList;
 		for (Map.Entry<String, KafkaFuture<Void>> entry : result.values().entrySet()) {
 			try {
 				entry.getValue().get();
-				log.debug("topic {} created" + entry.getKey());
+				log.info("topic {} created" + entry.getKey());
 			} catch (InterruptedException | ExecutionException e) {
 				if (Throwables.getRootCause(e) instanceof TopicExistsException) {
 					log.error("topic {} existed" + entry.getKey());

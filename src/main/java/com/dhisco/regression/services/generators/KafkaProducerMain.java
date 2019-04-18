@@ -48,7 +48,7 @@ import java.util.List;
 			}
 		}
 
-		log.debug("Producer closed");
+		log.info("Producer closed");
 
 		producer.close();
 	}

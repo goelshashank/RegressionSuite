@@ -51,8 +51,8 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 	public void enablePortForwarding(int localPort, String host, int remotePort) {
 		try {
 			int assinged_port = sessionMap.get(host).setPortForwardingL(localPort, host, remotePort);
-			log.debug("localhost:" + assinged_port + " -> " + host + ":" + remotePort);
-			log.debug("Port Forwarded");
+			log.info("localhost:" + assinged_port + " -> " + host + ":" + remotePort);
+			log.info("Port Forwarded");
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);
 		}
@@ -117,7 +117,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 		Session session = sessionMap.get(host);
 
 		if (isEmpty(session) || !session.isConnected()) {
-			log.debug("session is not there for host: " + host);
+			log.info("session is not there for host: " + host);
 			return null;
 		}
 
@@ -139,7 +139,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 						String msg = null;
 						try {
 							while ((msg = in.readLine()) != null) {
-								log.debug(msg);
+								log.info(msg);
 								if (isNotEmpty(msg))
 									outBuffer.put(command, msg);
 
@@ -151,14 +151,14 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 					}
 				}, 0, 500);
 			} catch (Exception e) {
-				log.debug(e.getMessage(), e);
+				log.info(e.getMessage(), e);
 			} finally {
 				if (isNotEmpty(channel) && channel.isConnected())
 					channel.disconnect();
 			}
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(err));
 			String errMessage = bufferedReader.lines().collect(Collectors.joining());
-			log.debug("channel exit status- {} ,  message- {} , command- {} ", channel.getExitStatus(), errMessage,
+			log.info("channel exit status- {} ,  message- {} , command- {} ", channel.getExitStatus(), errMessage,
 					command);
 
 		}
@@ -224,7 +224,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 					}
 				}
 
-				log.debug("file-size=" + filesize + ", file=" + file);
+				log.info("file-size=" + filesize + ", file=" + file);
 
 				// send '\0'
 				buf[0] = 0;
@@ -245,6 +245,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 						break;
 					}
 					fos.write(buf, 0, foo);
+					fos.flush();
 					filesize -= foo;
 					if (filesize == 0L)
 						break;
@@ -258,19 +259,21 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 				buf[0] = 0;
 				out.write(buf, 0, 1);
 				out.flush();
+				log.info("Content has been flushed");
 
 				try {
 					if (fos != null)
 						fos.close();
+
+					if(isNotEmpty(out)) out.close();
 				} catch (Exception ex) {
-					log.debug(ex);
+					log.info(ex);
 				}
 			}
 
 			channel.disconnect();
-			session.disconnect();
 		} catch (Exception e) {
-			log.debug(e.getMessage(), e);
+			log.info(e.getMessage(), e);
 		}
 	}
 
@@ -350,13 +353,12 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 				if (fis != null)
 					fis.close();
 			} catch (Exception ex) {
-				log.debug(ex);
+				log.info(ex);
 			}
 
 			channel.disconnect();
-			session.disconnect();
 		} catch (Exception e) {
-			log.debug(e.getMessage(), e);
+			log.info(e.getMessage(), e);
 		}
 	}
 
@@ -380,10 +382,10 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 				sb.append((char) c);
 			} while (c != '\n');
 			if (b == 1) { // error
-				log.debug(sb.toString());
+				log.info(sb.toString());
 			}
 			if (b == 2) { // fatal error
-				log.debug(sb.toString());
+				log.info(sb.toString());
 			}
 		}
 		return b;

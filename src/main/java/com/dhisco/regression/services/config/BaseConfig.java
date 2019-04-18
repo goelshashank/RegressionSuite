@@ -83,9 +83,9 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 
 	public void stopProcess() throws P2DRSException {
 		/*String methodName = className + "." + "stopProcess ";
-		log.debug(methodName);
+		log.info(methodName);
 		if (isEmpty(getPort())) {
-			log.debug(methodName + "port is null, {}");
+			log.info(methodName + "port is null, {}");
 			return;
 		}
 
@@ -93,12 +93,12 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 		String processid=null;
 		while (i < 5) {
 			if (isProcessDown()) {
-				log.debug(methodName + "process is down , {}");
+				log.info(methodName + "process is down , {}");
 				return;
 			} else {
 				processid = getProcessID();
 				if (isNotEmpty(processid)) {
-					log.debug(methodName + "killing process with pid , {}", processid);
+					log.info(methodName + "killing process with pid , {}", processid);
 					executeSSHCommands(Arrays.asList("kill -9 " + processid));
 				}
 				sleep(2);
@@ -118,6 +118,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 	}
 
 	public void startProcess() throws P2DRSException{
+		log.info("Starting Process: {}",className);
 	/*	String methodName = className + "." + "startProcess ";
 		try {
 			stopProcess();
@@ -128,7 +129,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 		int i = 0;
 		while (i < 3) {
 			if (!isProcessDown()) {
-				log.debug(methodName+"process is already started ");
+				log.info(methodName+"process is already started ");
 				return;
 			} else
 				executeSSHCommands(Arrays.asList(getStartServCommand()));
@@ -142,7 +143,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 	}
 
 	private void sleep(int seconds) {
-		log.debug(className+" "+"sleeping for seconds {}", seconds);
+		log.info(className+" "+"sleeping for seconds {}", seconds);
 		try {
 			TimeUnit.SECONDS.sleep(seconds);
 		} catch (InterruptedException e) {
@@ -154,10 +155,10 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 		String methodName = className + "." + "isProcessDown ";
 		String processID = getProcessID();
 		if (isEmpty(processID)) {
-			log.debug(methodName + " process is down with pid {}", processID);
+			log.info(methodName + " process is down with pid {}", processID);
 			return true;
 		}
-		log.debug(methodName + " process is not down with pid {}", processID);
+		log.info(methodName + " process is not down with pid {}", processID);
 		return false;
 	}
 
@@ -167,7 +168,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 		if (isEmpty(outBuffer))
 			return null;
 
-		log.debug(methodName + "process id  {}", outBuffer.values().toArray()[0].toString());
+		log.info(methodName + "process id  {}", outBuffer.values().toArray()[0].toString());
 		return outBuffer.values().toArray()[0].toString();
 	}
 

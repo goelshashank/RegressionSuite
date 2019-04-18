@@ -21,14 +21,14 @@ import java.io.FileWriter;
 
 	@PostMapping(value = "/capture-rez-gain") public void captureRezGain(@RequestBody String rezGainInput) {
 
-		System.out.println("inside captureRezGain");
+		log.info("inside captureRezGain");
 		String fileName="out4.json";
 		File filePath = new File("/apps/test/regression/out/"+fileName);
 		try {
 
 			BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
 			writer.write(rezGainInput);
-			log.debug("File saved from controler");
+			log.info("File saved from controler");
 			writer.flush();
 
 			writer.close();

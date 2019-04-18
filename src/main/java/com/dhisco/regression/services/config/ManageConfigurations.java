@@ -40,14 +40,14 @@ import javax.servlet.ServletContextListener;
 	public void contextInitialized(
 			ServletContextEvent sce) {
 		// Context Initialised
-		log.debug("adfsdfd");
+		log.info("adfsdfd");
 	}
 
 	@Override
 	public void contextDestroyed(
 			ServletContextEvent sce) {
 		// Here - what you want to do that context shutdown
-		log.debug("sssssss");
+		log.info("sssssss");
 	}
 
 	@LogTime

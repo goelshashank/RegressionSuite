@@ -39,7 +39,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+import javax.mail.*;
+import javax.activation.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 
 /**
  * @author Shashank Goel
@@ -67,12 +74,13 @@ import java.util.concurrent.TimeUnit;
 	public ExtentReports extent;
 	public ExtentTest test;
 
-	public void setup(String OS, String browser) {
+	public void beforeTest(String OS, String browser) {
 		initReporting(OS, browser);
 	}
 
 	private void initReporting(String OS, String browser) {
-		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/testReport.html");
+		htmlReporter = new ExtentHtmlReporter(System.getenv("SystemDrive")+"/apps/test/regression/test-output"
+				+ "/testReport.html");
 
 		//initialize ExtentReports and attach the HtmlReporter
 		extent = new ExtentReports();
@@ -92,8 +100,12 @@ import java.util.concurrent.TimeUnit;
 		htmlReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
 	}
 
-	public void tearDown() {
+	public void afterTest() {
 		extent.flush();
+
+		//send mail
+		sendMail(System.getenv("SystemDrive")+"/apps/test/regression/test-output"
+				+ "/testReport.html");
 	}
 
 	public void beforeMethod() throws Exception {
@@ -110,7 +122,7 @@ import java.util.concurrent.TimeUnit;
 			test.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " SKIPPED ", ExtentColor.ORANGE));
 			test.skip(result.getThrowable());
 		}
-		log.debug("tearing down test");
+		log.info("tearing down test");
 	}
 
 	public <T> T loadBean(Class<T> type) {
@@ -138,7 +150,7 @@ import java.util.concurrent.TimeUnit;
 	}
 
 	public void sleep(int seconds) throws InterruptedException {
-		log.debug("sleeping for {} seconds", seconds);
+		log.info("sleeping for {} seconds", seconds);
 		TimeUnit.SECONDS.sleep(seconds);
 	}
 
@@ -158,6 +170,58 @@ import java.util.concurrent.TimeUnit;
 	public JSONCompareResult compareJSON(String fPath1, String fPAth2, JSONCompareMode jsonCompareMode)
 			throws IOException, JSONException {
 		return JSONCompare.compareJSON(getResourceAsString(fPath1), getResourceAsString(fPAth2), jsonCompareMode);
+	}
+
+
+	public   void sendMail(String filePath){
+
+		final String username = "shashank.goel@rategain.com";
+		final String password = "@Syndicate1234";
+
+		Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		//props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", "smtp.ad.dhisco.com");
+		props.put("mail.smtp.port", "25");
+
+		Session session = Session.getInstance(props,
+				new javax.mail.Authenticator() {
+					protected PasswordAuthentication getPasswordAuthentication() {
+						return new PasswordAuthentication(username, password);
+					}
+				});
+
+		try {
+
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress( "shashank.goel@rategain.com"));
+			message.setRecipients(Message.RecipientType.TO,
+					InternetAddress.parse( "shashank.goel@rategain.com"));
+			message.setSubject("P2DRegressionSuite Report");
+			message.setText("P2DRegressionSuite Test Report");
+
+			MimeBodyPart messageBodyPart = new MimeBodyPart();
+
+			Multipart multipart = new MimeMultipart();
+
+			messageBodyPart = new MimeBodyPart();
+			String fileName = "testReport.html";
+			DataSource source = new FileDataSource(filePath);
+			messageBodyPart.setDataHandler(new DataHandler(source));
+			messageBodyPart.setFileName(fileName);
+			multipart.addBodyPart(messageBodyPart);
+
+			message.setContent(multipart);
+
+			System.out.println("Sending");
+
+			Transport.send(message);
+
+			System.out.println("Done");
+
+		} catch (Exception e) {
+			log.info(e.getMessage(),e);
+		}
 	}
 
 }

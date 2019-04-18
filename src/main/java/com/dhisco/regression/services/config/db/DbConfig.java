@@ -83,11 +83,11 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 		try {
 			loadMariaDBConnection();
 
-			log.debug("Executing command , {}"+command);
+			log.info("Executing command , {}"+command);
 			stmt = mariadbConnection.createStatement();
 
 			stmt.executeUpdate(command);
-			log.debug("Command executed successfully , {}"+command);
+			log.info("Command executed successfully , {}"+command);
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);
 		} finally {
@@ -110,7 +110,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 			ScriptRunner runner = new ScriptRunner(mariadbConnection, false, false);
 			reader = new InputStreamReader(inputStream);
 			runner.runScript(reader);
-			log.debug("SQL inputStream executed successfully, {}"+inputStream);
+			log.info("SQL inputStream executed successfully, {}"+inputStream);
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);
 			inputStream.close();
@@ -129,7 +129,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 				Class.forName(mariadbDriverName).newInstance();
 				if (isEmpty(mariadbConnection) || mariadbConnection.isClosed())
 					mariadbConnection = DriverManager.getConnection(getMariadbUrl(), mariadbUsername, mariadbPassword);
-					log.debug("Database connection established");
+					log.info("Database connection established");
 			}
 	}
 }

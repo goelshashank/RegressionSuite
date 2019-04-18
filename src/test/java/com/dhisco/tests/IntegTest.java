@@ -9,7 +9,6 @@ import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -28,14 +27,14 @@ import static java.util.Arrays.asList;
 	@BeforeTest
 	@Override
 	@Parameters({ "OS", "browser" })
-	public void setup(String OS, String browser) {
-		super.setup(OS,browser);
+	public void beforeTest(String OS, String browser) {
+		super.beforeTest(OS,browser);
 	}
 
 	@AfterTest
 	@Override
-	public void tearDown() {
-		super.tearDown();
+	public void afterTest() {
+		super.afterTest();
 	}
 
 	@AfterMethod
@@ -46,12 +45,12 @@ import static java.util.Arrays.asList;
 	@Override @BeforeMethod public void beforeMethod() throws Exception{
 
 		super.beforeMethod();
-		log.debug("%%%%%%%%%%% Loading DB %%%%%%%%%%%%%%%");
+		log.info("%%%%%%%%%%% Loading DB %%%%%%%%%%%%%%%");
+
 	/*	dbConfig = loadBean(DbConfig.class);
 		dbConfig.executeCommand("drop database if exists "+dbConfig.getMariaTestDb());
 		dbConfig.executeCommand("create database if not exists "+dbConfig.getMariaTestDb());
-		dbConfig.executeScript(getResource("/scripts/test2.sql"));*/
-		//sleep(400);
+		dbConfig.executeScript(getResource("/scripts/test.sql"));*/
 		kafkaConfig = loadBean(KafkaConfig.class);
 		String[] list={"VS_Brand_2_test","M4_Brand_topic_test","RoyalArabians_test","BookingDotCom2_test"};
 		asList(list).forEach(t->kafkaConfig.deleteTopic(t));
@@ -63,7 +62,7 @@ import static java.util.Arrays.asList;
 	@Test public void integTest() throws Exception {
 		test = extent.createTest("Integration Test", "Integration Test");
 
-		kafkaConfig.publishData("VS_Brand_2_test",asList(getResource("/data/ari3.json")));
+		kafkaConfig.publishData("VS_Brand_2_test",asList(getResource("/data/ari.json")));
 
 		ConfigurationServiceConfig configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
 		sleep(10);
@@ -75,9 +74,11 @@ import static java.util.Arrays.asList;
 		channelMessageProcessorConfig.copyRemoteToLocal("/apps/test/regression/out","C:\\Users\\shashank"
 				+ ".goel\\IdeaProjects\\P2DRegressionSuite\\src\\test\\resources\\out","out2.json");
 
+		sleep(10);
+		log.info("just above assert");
 		assertJson("/benchmark/out1.json","/out/out2.json", JSONCompareMode.STRICT);
 
-		log.debug("%%%%%%%%%%% end test %%%%%%%%%%%");
+		log.info("%%%%%%%%%%% end test %%%%%%%%%%%");
 
 	}
 
