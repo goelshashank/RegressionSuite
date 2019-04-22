@@ -4,7 +4,6 @@ import com.dhisco.regression.services.config.ApplicationConfig;
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
-import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
@@ -40,8 +39,6 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
  * @since 29-03-2019
  */
 @Component @Log4j2 @Getter public class RemoteConnector {
-
-	@Autowired ApplicationContext applicationContext;
 
 	private static final Integer RETRY_COUNT = 2;
 	@Autowired ApplicationConfig applicationConfig;
@@ -166,10 +163,10 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 		return outBuffer;
 	}
 
-	public  void copyRemoteToLocal(String host, String from, String to, String fileName) {
+	public void copyRemoteToLocal(String host, String from, String to, String fileName) {
 
 		try {
-			Session session=sessionMap.get(host);
+			Session session = sessionMap.get(host);
 			from = from + "/" + fileName;
 			String prefix = null;
 
@@ -262,10 +259,18 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 				log.info("Content has been flushed");
 
 				try {
-					if (fos != null)
-						fos.close();
 
-					if(isNotEmpty(out)) out.close();
+					if (isNotEmpty(out)) {
+						out.flush();
+						out.close();
+					}
+
+					if (fos != null) {
+						fos.flush();
+						fos.close();
+					}
+
+					log.info("copy remote to local end");
 				} catch (Exception ex) {
 					log.info(ex);
 				}
@@ -277,8 +282,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 		}
 	}
 
-	public  void copyLocalToRemote(Session session, String from, String to, String fileName)
-			 {
+	public void copyLocalToRemote(Session session, String from, String to, String fileName) {
 		try {
 			boolean ptimestamp = true;
 			from = from + File.separator + fileName;
@@ -336,20 +340,25 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 				int len = fis.read(buf, 0, buf.length);
 				if (len <= 0)
 					break;
-				out.write(buf, 0, len); //out.flush();
+				out.write(buf, 0, len);
+				out.flush();
 			}
 
 			// send '\0'
 			buf[0] = 0;
 			out.write(buf, 0, 1);
-			out.flush();
 
 			if (checkAck(in) != 0) {
 				System.exit(0);
 			}
-			out.close();
+			//out.close();
 
 			try {
+				if (isNotEmpty(out)) {
+					out.flush();
+					out.close();
+				}
+
 				if (fis != null)
 					fis.close();
 			} catch (Exception ex) {
@@ -362,8 +371,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 		}
 	}
 
-
-	public  int checkAck(InputStream in) throws IOException {
+	public int checkAck(InputStream in) throws IOException {
 		int b = in.read();
 		// b may be 0 for success,
 		//          1 for error,

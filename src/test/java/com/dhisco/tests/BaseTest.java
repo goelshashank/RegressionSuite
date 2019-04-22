@@ -104,6 +104,7 @@ import javax.mail.internet.MimeMultipart;
 		extent.flush();
 
 		//send mail
+
 		sendMail(System.getenv("SystemDrive")+"/apps/test/regression/test-output"
 				+ "/testReport.html");
 	}
@@ -213,13 +214,14 @@ import javax.mail.internet.MimeMultipart;
 
 			message.setContent(multipart);
 
-			System.out.println("Sending");
+			log.info("Sending Mail");
 
 			Transport.send(message);
 
-			System.out.println("Done");
+			log.info("Sent Mail");
 
 		} catch (Exception e) {
+			log.info("could not send mail");
 			log.info(e.getMessage(),e);
 		}
 	}
