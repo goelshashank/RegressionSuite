@@ -10,7 +10,7 @@ import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.dhisco.regression.core.exceptions.P2DRSException;
 import com.dhisco.regression.services.RemoteConnector;
-import com.dhisco.regression.services.config.BaseConfig;
+import com.dhisco.regression.services.config.base.BaseConfig;
 import com.dhisco.regression.services.config.ManageConfigurations;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;

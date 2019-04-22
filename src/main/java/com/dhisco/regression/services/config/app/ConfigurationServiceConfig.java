@@ -1,7 +1,7 @@
 package com.dhisco.regression.services.config.app;
 
 import com.dhisco.regression.core.exceptions.P2DRSException;
-import com.dhisco.regression.services.config.BaseConfig;
+import com.dhisco.regression.services.config.base.BaseConfig;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

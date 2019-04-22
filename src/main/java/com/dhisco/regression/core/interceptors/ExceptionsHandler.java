@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class ExceptionsHandler {
-	@AfterThrowing(pointcut = "target(com.dhisco.regression.services.config.ExceptionInterceptor)" , throwing ="exception")
+	@AfterThrowing(pointcut = "target(com.dhisco.regression.services.config.base.ExceptionInterceptor)" , throwing ="exception")
 	public void handleException(JoinPoint joinPoint, P2DRSException exception) {
 		Logger log= LogManager.getLogger(joinPoint.getSignature().getDeclaringType());
 		log.error("An exception has been thrown in {}.{}",

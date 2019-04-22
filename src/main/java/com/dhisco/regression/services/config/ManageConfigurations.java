@@ -1,6 +1,8 @@
 package com.dhisco.regression.services.config;
 
 import com.dhisco.regression.core.LogTime;
+import com.dhisco.regression.services.config.base.BaseConfig;
+import com.dhisco.regression.services.config.base.ExceptionInterceptor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
@@ -27,7 +29,7 @@ import javax.servlet.ServletContextListener;
 @SpringBootApplication(exclude = CassandraDataAutoConfiguration.class) @EnableConfigurationProperties @PropertySource("server"
 		+ ".properties") @ComponentScan("com.dhisco") public class ManageConfigurations extends
 		SpringBootServletInitializer implements
-		ServletContextListener, ExceptionInterceptor{
+		ServletContextListener, ExceptionInterceptor {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ManageConfigurations.class, args);

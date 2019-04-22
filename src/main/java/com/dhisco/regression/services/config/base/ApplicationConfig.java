@@ -1,4 +1,4 @@
-package com.dhisco.regression.services.config;
+package com.dhisco.regression.services.config.base;
 
 import lombok.Getter;
 import lombok.Setter;

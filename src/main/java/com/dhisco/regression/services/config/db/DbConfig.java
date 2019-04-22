@@ -1,6 +1,6 @@
 package com.dhisco.regression.services.config.db;
 
-import com.dhisco.regression.services.config.BaseConfig;
+import com.dhisco.regression.services.config.base.BaseConfig;
 import com.dhisco.regression.services.RemoteConnector;
 import com.ibatis.common.jdbc.ScriptRunner;
 import lombok.Getter;
@@ -15,7 +15,6 @@ import org.springframework.context.annotation.PropertySource;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;

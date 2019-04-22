@@ -1,6 +1,6 @@
 package com.dhisco.regression.services;
 
-import com.dhisco.regression.services.config.ApplicationConfig;
+import com.dhisco.regression.services.config.base.ApplicationConfig;
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
@@ -8,7 +8,6 @@ import com.jcraft.jsch.Session;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;

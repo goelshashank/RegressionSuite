@@ -1,6 +1,6 @@
 package com.dhisco.regression.services.config.db;
 
-import com.dhisco.regression.services.config.BaseConfig;
+import com.dhisco.regression.services.config.base.BaseConfig;
 import com.dhisco.regression.services.generators.KafkaProducerMain;
 import com.google.common.base.Throwables;
 import com.google.common.collect.Sets;

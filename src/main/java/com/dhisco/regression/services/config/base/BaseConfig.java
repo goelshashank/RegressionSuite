@@ -1,4 +1,4 @@
-package com.dhisco.regression.services.config;
+package com.dhisco.regression.services.config.base;
 
 import com.dhisco.regression.core.BasePojo;
 import com.dhisco.regression.core.exceptions.P2DRSException;
