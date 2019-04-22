@@ -1,7 +1,7 @@
 package com.dhisco.regression.services.config.db;
 
 import com.dhisco.regression.services.config.base.BaseConfig;
-import com.dhisco.regression.services.RemoteConnector;
+import com.dhisco.regression.services.config.base.RemoteConnector;
 import com.ibatis.common.jdbc.ScriptRunner;
 import lombok.Getter;
 import lombok.Setter;

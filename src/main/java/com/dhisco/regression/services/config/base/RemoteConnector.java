@@ -1,4 +1,4 @@
-package com.dhisco.regression.services;
+package com.dhisco.regression.services.config.base;
 
 import com.dhisco.regression.services.config.base.ApplicationConfig;
 import com.jcraft.jsch.Channel;
