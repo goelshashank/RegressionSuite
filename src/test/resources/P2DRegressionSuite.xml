@@ -1,7 +1,5 @@
 <suite name="P2D Regression Suite">
- <!--   <listeners>
-        <listener class-name="com.dhisco.regression.services.reports.CustomisedListener"/>
-    </listeners>-->
+
     <parameter name="OS" value="Windows"/>
     <parameter name="browser" value="Chrome"/>
 

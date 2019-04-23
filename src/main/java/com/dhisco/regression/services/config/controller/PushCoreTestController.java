@@ -22,7 +22,7 @@ import java.io.FileWriter;
 	@PostMapping(value = "/capture-rez-gain") public void captureRezGain(@RequestBody String rezGainInput) {
 
 		log.info("inside captureRezGain");
-		String fileName="outFromController.json";
+		String fileName="out1.json";
 		File filePath = new File("/apps/test/regression/out/"+fileName);
 		try {
 

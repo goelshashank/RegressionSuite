@@ -5,6 +5,7 @@ import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
 import com.dhisco.regression.services.config.app.SupplyRuleProcessorConfig;
 import com.dhisco.regression.services.config.db.KafkaConfig;
 import lombok.extern.log4j.Log4j2;
+import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -43,48 +44,6 @@ import static java.util.Arrays.asList;
 		super.beforeMethod();
 		log.info("%%%%%%%%%%% Loading DB %%%%%%%%%%%%%%%");
 
-		/*
-		try{
-	String url="http://valptddevsre01a.asp.dhisco.com:8080/pctest/capture-rez-gain";
-			String jsonString="    {\n" + "        \"id\": 1,\n" + "        \"createdAt\": 1547510400000,\n"
-					+ "        \"updatedAt\": 1547510400000,\n" + "        \"name\": \"RoyalArabians\",\n"
-					+ "        \"topic\": \"RoyalArabians_test\",\n" + "        \"sgaCode\": \"9z\",\n"
-					+ "        \"consumerCount\": 4,\n" + "        \"channelConcurrency\": 100,\n"
-					+ "        \"channelHotelConcurrency\": 15,\n" + "        \"appInstances\": 1,\n"
-					+ "        \"publicRatesAllowed\": false,\n" + "        \"shadowed\": true\n" + "    }\n";
-
-			org.apache.http.impl.nio.client.CloseableHttpAsyncClient httpClient=
-					HttpAsyncClients.custom().setMaxConnPerRoute(2).setMaxConnTotal(2).build();
-			httpClient.start();
-
-			HttpPost request = new HttpPost(url);
-			request.addHeader("content-type", "application/json");
-			StringEntity entity = new StringEntity(jsonString);
-			request.setEntity(entity);
-
-			httpClient.execute(request, new FutureCallback<HttpResponse>() {
-
-				@Override public void cancelled() {
-
-				}
-
-				@Override public void completed(HttpResponse httpResponse) {
-					log.debug("adfdsa");
-				}
-
-				@Override public void failed(Exception e) {
-
-				}
-			});
-
-		}catch (Exception e){
-			log.error(e.getMessage(),e);
-		}
-
-
-*/
-
-
 		/*dbConfig = loadBean(DbConfig.class);
 		dbConfig.executeCommand("drop database if exists "+dbConfig.getMariaTestDb());
 		dbConfig.executeCommand("create database if not exists "+dbConfig.getMariaTestDb());
@@ -108,19 +67,12 @@ import static java.util.Arrays.asList;
 		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
 		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 
-		sleep(sleepTime);
+		sleep(30);
 
-	/*	channelMessageProcessorConfig.copyRemoteToLocal("/apps/test/regression/out","C:\\Users\\shashank"
-				+ ".goel\\IdeaProjects\\P2DRegressionSuite\\src\\test\\resources\\out","out1.json");
-*/
-/*
-		sleep(10);
 		log.info("just above assert");
-		assertJson("/benchmark/out1.json","/out/out2.json", JSONCompareMode.STRICT);
-*/
+		assertJson("/apps/test/regression/benchmark/out1.json","/apps/test/regression/out/out1.json", JSONCompareMode.STRICT);
 
 		log.info("%%%%%%%%%%% end test %%%%%%%%%%%");
-
 	}
 
 }

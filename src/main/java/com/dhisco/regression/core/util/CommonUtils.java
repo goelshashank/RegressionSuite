@@ -5,10 +5,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectOutputStream;
@@ -81,6 +83,12 @@ import java.util.Scanner;
 
 	public static int getSizeInKB(Serializable someObject) throws Exception {
 		return getSizeInBytes(someObject) / 1000;
+	}
+
+
+	public static String getResourceAsStrAbsPath(String absPath) throws IOException {
+		InputStream is = new FileInputStream(absPath);
+		return IOUtils.toString(is, "UTF-8");
 	}
 
 }

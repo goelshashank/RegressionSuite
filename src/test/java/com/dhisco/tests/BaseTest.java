@@ -9,6 +9,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.dhisco.regression.core.exceptions.P2DRSException;
+import com.dhisco.regression.core.util.CommonUtils;
 import com.dhisco.regression.services.config.base.RemoteConnector;
 import com.dhisco.regression.services.config.base.BaseConfig;
 import com.dhisco.regression.services.config.ManageConfigurations;
@@ -35,6 +36,8 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.web.ServletTestExecutionListener;
 import org.testng.ITestResult;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -79,7 +82,7 @@ import javax.mail.internet.MimeMultipart;
 	}
 
 	private void initReporting(String OS, String browser) {
-		htmlReporter = new ExtentHtmlReporter(System.getenv("SystemDrive")+"/apps/test/regression/test-output"
+		htmlReporter = new ExtentHtmlReporter("/apps/test/regression/test-output"
 				+ "/testReport.html");
 
 		//initialize ExtentReports and attach the HtmlReporter
@@ -159,18 +162,22 @@ import javax.mail.internet.MimeMultipart;
 		return getClass().getResourceAsStream(relativePath);
 	}
 
-	public String getResourceAsString(String relativePath) throws IOException {
+	public String getResourceAsStrRelPath(String relativePath) throws IOException {
 		return IOUtils.toString(getClass().getResourceAsStream(relativePath), StandardCharsets.UTF_8);
 	}
 
-	public void assertJson(String fPath1, String fPAth2, JSONCompareMode jsonCompareMode)
+	public void assertJson(String fPath1, String fPath2, JSONCompareMode jsonCompareMode)
 			throws IOException, JSONException {
-		JSONAssert.assertEquals(getResourceAsString(fPath1), getResourceAsString(fPAth2), jsonCompareMode);
+			InputStream is1 = new FileInputStream(fPath1);
+			InputStream is2 = new FileInputStream(fPath2);
+		JSONAssert.assertEquals(IOUtils.toString(is1, "UTF-8"),IOUtils.toString(is2, "UTF-8"), jsonCompareMode);
 	}
 
-	public JSONCompareResult compareJSON(String fPath1, String fPAth2, JSONCompareMode jsonCompareMode)
+	public JSONCompareResult compareJSON(String input, String output, JSONCompareMode jsonCompareMode)
 			throws IOException, JSONException {
-		return JSONCompare.compareJSON(getResourceAsString(fPath1), getResourceAsString(fPAth2), jsonCompareMode);
+		return 	JSONCompare.compareJSON(CommonUtils.getResourceAsStrAbsPath(input),
+				CommonUtils.getResourceAsStrAbsPath(output),
+				jsonCompareMode);
 	}
 
 

@@ -4,6 +4,7 @@ import com.dhisco.regression.services.config.base.ApplicationConfig;
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
@@ -121,12 +122,11 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 			ChannelExec channel = null;
 			InputStream err = null;
 			try {
-				channel = (ChannelExec) session.openChannel("exec");
+			/*	channel = (ChannelExec) session.openChannel("exec");
 				BufferedReader in = new BufferedReader(new InputStreamReader(channel.getInputStream()));
 				channel.setCommand(command);
 				err = channel.getErrStream();
-				//channel.setPty(true);
-				channel.connect();
+				channel.connect();*/
 
 			/*	Timer timer = new Timer();
 				timer.schedule(new TimerTask() {
@@ -147,21 +147,48 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 						}
 					}
 				}, 0, 500);*/
+
+			executeCommand(host,command);
 			} catch (Exception e) {
-				log.info(e.getMessage(), e);
+				//log.error(e.getMessage(), e);
 			} finally {
 				if (isNotEmpty(channel) && channel.isConnected())
 					channel.disconnect();
 			}
-			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(err));
+			/*BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(err));
 			String errMessage = bufferedReader.lines().collect(Collectors.joining());
 			log.info("channel exit status- {} ,  message- {} , command- {} ", channel.getExitStatus(), errMessage,
-					command);
+					command);*/
 
 		}
 
 		return outBuffer;
 	}
+
+	private void executeCommand(String host,String command) throws JSchException, IOException {
+		// Extract the JRE
+		log.debug("Running command " + command);
+		ChannelExec channel = (ChannelExec) sessionMap.get(host).openChannel("exec");
+		channel.setCommand(command);
+		channel.connect();
+		int sleepCount = 0;
+		// Sleep for up to 10 seconds while we wait for the command to execute, checking every 100 milliseconds
+		do {
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				log.warn("Interrupted exception while waiting for command " + command + " to finish", e);
+			}
+		} while (!channel.isClosed() && sleepCount++ < 100);
+
+		int res = channel.getExitStatus();
+		if (res != 0) {
+			log.error("Error with command  {} and channel exit {}", command,res);
+			throw new IOException("error in executing command "+ res);
+		}
+		channel.disconnect();
+	}
+
 
 	public void copyRemoteToLocal(String host, String from, String to, String fileName) {
 
