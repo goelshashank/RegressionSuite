@@ -99,9 +99,9 @@ import static java.util.Arrays.asList;
 	}
 
 	@PreDestroy @Override public void cleanup() {
-		topics.stream().forEach(t -> {
+	/*	topics.stream().forEach(t -> {
 			deleteTopic(t);
-		});
+		});*/
 		super.cleanup();
 	}
 

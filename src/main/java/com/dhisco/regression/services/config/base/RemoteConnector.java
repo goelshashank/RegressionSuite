@@ -125,9 +125,10 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 				BufferedReader in = new BufferedReader(new InputStreamReader(channel.getInputStream()));
 				channel.setCommand(command);
 				err = channel.getErrStream();
+				//channel.setPty(true);
 				channel.connect();
 
-				Timer timer = new Timer();
+			/*	Timer timer = new Timer();
 				timer.schedule(new TimerTask() {
 
 					@Override public void run() {
@@ -145,7 +146,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 							log.error(e.getMessage(), e);
 						}
 					}
-				}, 0, 500);
+				}, 0, 500);*/
 			} catch (Exception e) {
 				log.info(e.getMessage(), e);
 			} finally {

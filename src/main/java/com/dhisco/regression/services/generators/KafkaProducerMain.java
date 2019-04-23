@@ -29,7 +29,7 @@ import java.util.List;
 				producer.send(record, new Callback() {
 					@Override public void onCompletion(RecordMetadata recordMetadata, Exception e) {
 						if (e == null)
-							log.info(recordMetadata.toString() + ", " + "Partition: " + recordMetadata.partition()
+							log.info("Published Data to Kafka- "+recordMetadata.toString() + ", " + "Partition: " + recordMetadata.partition()
 									+ "Offset: " + recordMetadata.offset());
 						else
 							log.error("Error while producing" + e);
