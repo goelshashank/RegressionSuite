@@ -105,8 +105,8 @@ import javax.mail.internet.MimeMultipart;
 
 		//send mail
 
-		sendMail(System.getenv("SystemDrive")+"/apps/test/regression/test-output"
-				+ "/testReport.html");
+	/*	sendMail(System.getenv("SystemDrive")+"/apps/test/regression/test-output"
+				+ "/testReport.html");*/
 	}
 
 	public void beforeMethod() throws Exception {
@@ -177,7 +177,7 @@ import javax.mail.internet.MimeMultipart;
 	public   void sendMail(String filePath){
 
 		final String username = "shashank.goel@rategain.com";
-		final String password = "@Syndicate1234";
+		final String password = "####"; //provide password
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
