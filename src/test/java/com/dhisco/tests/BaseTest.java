@@ -134,13 +134,21 @@ import javax.mail.internet.MimeMultipart;
 
 	public void startProcesses(List<BaseConfig> processes) {
 		processes.stream().forEach(t -> {
+			try {
 				t.startProcess();
+			} catch (P2DRSException e) {
+				log.error(e.getMessage(), e);
+			}
 		});
 	}
 
 	public void stopProcesses(List<BaseConfig> processes) {
 		processes.stream().forEach(t -> {
+			try {
 				t.stopProcess();
+			} catch (P2DRSException e) {
+				log.error(e.getMessage(), e);
+			}
 		});
 	}
 

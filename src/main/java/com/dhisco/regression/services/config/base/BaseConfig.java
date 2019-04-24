@@ -1,6 +1,7 @@
 package com.dhisco.regression.services.config.base;
 
 import com.dhisco.regression.core.BasePojo;
+import com.dhisco.regression.core.exceptions.P2DRSException;
 import com.dhisco.regression.core.interceptors.ExceptionInterceptor;
 import lombok.Getter;
 import lombok.Setter;
@@ -79,7 +80,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
 		return null;
 	}
 
-	public void stopProcess() {
+	public void stopProcess() throws P2DRSException {
 		int i = 0;
 		while (i < 1) {
 			executeSSHCommands(
@@ -90,7 +91,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
 
 	}
 
-	public void startProcess() {
+	public void startProcess() throws P2DRSException{
 		log.info("Starting Process: {}", className);
 		stopProcess();  //to stop old stale processes
 		executeSSHCommands(Arrays.asList(getStartServCommand()));

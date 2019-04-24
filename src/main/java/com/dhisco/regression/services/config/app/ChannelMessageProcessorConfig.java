@@ -1,5 +1,6 @@
 package com.dhisco.regression.services.config.app;
 
+import com.dhisco.regression.core.exceptions.P2DRSException;
 import com.dhisco.regression.services.config.base.BaseConfig;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +19,9 @@ import javax.annotation.PreDestroy;
  * @version 1.0
  * @since 28-03-2019
  */
-@Lazy @Getter @Setter @ToString(includeFieldNames = true) @Log4j2 @Configuration @PropertySource("channel-message-processor.properties") @ConfigurationProperties(prefix = "cmp") public class ChannelMessageProcessorConfig
+@Lazy
+@Getter @Setter @ToString(includeFieldNames=true)  @Log4j2
+@Configuration @PropertySource("channel-message-processor.properties") @ConfigurationProperties(prefix = "cmp")  public class ChannelMessageProcessorConfig
 		extends BaseConfig {
 
 	private String host;
@@ -32,12 +35,21 @@ import javax.annotation.PreDestroy;
 	}
 
 	@Override public void afterPropertiesSet() throws Exception {
-		startProcess();
+		try {
+			startProcess();
+		}catch (P2DRSException e){
+			log.error(e.getMessage(),e);
+		}
 	}
 
 	@PreDestroy public void cleanup() {
-		stopProcess();
+		try {
+			stopProcess();
+		}catch (P2DRSException e){
+			log.error(e.getMessage(),e);
+		}
 		super.cleanup();
 	}
+
 
 }
