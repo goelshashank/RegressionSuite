@@ -2,6 +2,7 @@ package com.dhisco.regression.services.config.base;
 
 import com.dhisco.regression.core.BasePojo;
 import com.dhisco.regression.core.exceptions.P2DRSException;
+import com.dhisco.regression.core.interceptors.ExceptionInterceptor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -24,7 +25,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
  * @since 28-03-2019
  */
 @Log4j2 @Getter @Setter @ToString(includeFieldNames = true) public abstract class BaseConfig extends BasePojo
-		implements InitializingBean,ExceptionInterceptor {
+		implements InitializingBean, ExceptionInterceptor {
 
 	private final String className = this.getClass().getSimpleName().substring(0,
 			this.getClass().getSimpleName().indexOf("$")<=0?this.getClass().getSimpleName().length():
@@ -81,32 +82,6 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 	}
 
 	public void stopProcess() throws P2DRSException {
-		/*String methodName = className + "." + "stopProcess ";
-		log.info(methodName);
-		if (isEmpty(getPort())) {
-			log.info(methodName + "port is null, {}");
-			return;
-		}
-
-		int i = 0;
-		String processid=null;
-		while (i < 5) {
-			if (isProcessDown()) {
-				log.info(methodName + "process is down , {}");
-				return;
-			} else {
-				processid = getProcessID();
-				if (isNotEmpty(processid)) {
-					log.info(methodName + "killing process with pid , {}", processid);
-					executeSSHCommands(Arrays.asList("kill -9 " + processid));
-				}
-				sleep(2);
-				i++;
-			}
-		}
-
-		throw new P2DRSException(methodName + "process can not be stopped with pid "+ processid);*/
-
 		int i=0;
 		while (i<1) {
 			executeSSHCommands(Arrays.asList("kill -9  $(pgrep -f "+getPort()+") || kill -9  $(pgrep -f "+getPort()+")"));
@@ -118,26 +93,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 
 	public void startProcess() throws P2DRSException{
 		log.info("Starting Process: {}",className);
-	/*	String methodName = className + "." + "startProcess ";
-		try {
-			stopProcess();
-		} catch (P2DRSException e) {
-			log.error(methodName+e.getMessage(), e);
-			return;
-		}
-		int i = 0;
-		while (i < 3) {
-			if (!isProcessDown()) {
-				log.info(methodName+"process is already started ");
-				return;
-			} else
-				executeSSHCommands(Arrays.asList(getStartServCommand()));
-			sleep(5);
-			i++;
-		}
-
-		throw new P2DRSException(methodName + "process can not be started");*/
-		stopProcess();
+		stopProcess();  //to stop old stale processes
 		executeSSHCommands(Arrays.asList(getStartServCommand()));
 	}
 

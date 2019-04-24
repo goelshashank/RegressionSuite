@@ -1,4 +1,4 @@
-package com.dhisco.regression.core.interceptors;
+package com.dhisco.regression.core.interceptors.handlers;
 
 import lombok.extern.log4j.Log4j2;
 import org.aspectj.lang.JoinPoint;

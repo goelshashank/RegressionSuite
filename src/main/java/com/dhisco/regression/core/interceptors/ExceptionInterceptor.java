@@ -1,4 +1,4 @@
-package com.dhisco.regression.services.config.base;
+package com.dhisco.regression.core.interceptors;
 
 /**
  * @author Shashank Goel

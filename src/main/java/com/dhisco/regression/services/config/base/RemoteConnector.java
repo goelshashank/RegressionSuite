@@ -1,6 +1,6 @@
 package com.dhisco.regression.services.config.base;
 
-import com.dhisco.regression.services.config.base.ApplicationConfig;
+import com.dhisco.regression.core.exceptions.P2DRSException;
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
@@ -12,23 +12,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.ConnectException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.stream.Collectors;
 
 import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
 import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
@@ -122,73 +117,42 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 			ChannelExec channel = null;
 			InputStream err = null;
 			try {
-			/*	channel = (ChannelExec) session.openChannel("exec");
-				BufferedReader in = new BufferedReader(new InputStreamReader(channel.getInputStream()));
-				channel.setCommand(command);
-				err = channel.getErrStream();
-				channel.connect();*/
-
-			/*	Timer timer = new Timer();
-				timer.schedule(new TimerTask() {
-
-					@Override public void run() {
-						int i = 0;
-						String msg = null;
-						try {
-							while ((msg = in.readLine()) != null) {
-								log.info(msg);
-								if (isNotEmpty(msg))
-									outBuffer.put(command, msg);
-
-								i++;
-							}
-						} catch (Exception e) {
-							log.error(e.getMessage(), e);
-						}
-					}
-				}, 0, 500);*/
-
-			executeCommand(host,command);
+				executeCommand(host, command);
 			} catch (Exception e) {
 				//log.error(e.getMessage(), e);
 			} finally {
 				if (isNotEmpty(channel) && channel.isConnected())
 					channel.disconnect();
 			}
-			/*BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(err));
-			String errMessage = bufferedReader.lines().collect(Collectors.joining());
-			log.info("channel exit status- {} ,  message- {} , command- {} ", channel.getExitStatus(), errMessage,
-					command);*/
 
 		}
 
 		return outBuffer;
 	}
 
-	private void executeCommand(String host,String command) throws JSchException, IOException {
-		// Extract the JRE
-		log.debug("Running command " + command);
+	private void executeCommand(String host, String command) throws JSchException, IOException {
+		log.debug("Running command- {}",command);
 		ChannelExec channel = (ChannelExec) sessionMap.get(host).openChannel("exec");
 		channel.setCommand(command);
 		channel.connect();
 		int sleepCount = 0;
-		// Sleep for up to 10 seconds while we wait for the command to execute, checking every 100 milliseconds
+		// Sleep for up to 5 seconds while we wait for the command to execute, checking every 100 milliseconds
 		do {
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
-				log.warn("Interrupted exception while waiting for command " + command + " to finish", e);
+				log.warn("Interrupted exception while waiting for command {} to finish {}",command, e);
 			}
-		} while (!channel.isClosed() && sleepCount++ < 100);
+		} while (!channel.isClosed() && sleepCount++ < 50);
 
 		int res = channel.getExitStatus();
 		if (res != 0) {
-			log.error("Error with command  {} and channel exit {}", command,res);
-			throw new IOException("error in executing command "+ res);
+			log.error("Error: Channel is not closed yet for command- {} and exit status- {}", command, res);
+			throw new IOException("error in executing command " + res);
 		}
 		channel.disconnect();
+		log.debug("Channel is closed for command- {} and exit status- {}", command, res);
 	}
-
 
 	public void copyRemoteToLocal(String host, String from, String to, String fileName) {
 
@@ -276,7 +240,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 				}
 
 				if (checkAck(in) != 0) {
-					System.exit(0);
+					throw new P2DRSException("Exception in copy from Remote to  Local");
 				}
 
 				// send '\0'
@@ -305,7 +269,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 
 			channel.disconnect();
 		} catch (Exception e) {
-			log.info(e.getMessage(), e);
+			log.error(e.getMessage(), e);
 		}
 	}
 
@@ -326,7 +290,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 			channel.connect();
 
 			if (checkAck(in) != 0) {
-				System.exit(0);
+				throw new P2DRSException("Exception in copy from Local To Remote");
 			}
 
 			File _lfile = new File(from);
@@ -339,7 +303,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 				out.write(command.getBytes());
 				out.flush();
 				if (checkAck(in) != 0) {
-					System.exit(0);
+					throw new P2DRSException("Exception in copy from Local To Remote");
 				}
 			}
 
@@ -357,7 +321,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 			out.flush();
 
 			if (checkAck(in) != 0) {
-				System.exit(0);
+				throw new P2DRSException("Exception in copy from Local To Remote");
 			}
 
 			// send a content of lfile
@@ -376,7 +340,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 			out.write(buf, 0, 1);
 
 			if (checkAck(in) != 0) {
-				System.exit(0);
+				throw new P2DRSException("Exception in copy from Local To Remote");
 			}
 			//out.close();
 
@@ -394,7 +358,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 
 			channel.disconnect();
 		} catch (Exception e) {
-			log.info(e.getMessage(), e);
+			log.error(e.getMessage(), e);
 		}
 	}
 
