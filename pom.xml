@@ -163,7 +163,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.dhisco.regression.services.config.ManageConfigurations</mainClass>
+                    <mainClass>com.dhisco.regression.services.ManageConfigurations</mainClass>
                     <finalName>${project.artifactId}-${project.version}-shaded</finalName>
 
                 </configuration>
@@ -202,7 +202,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.dhisco.regression.services.config.ManageConfigurations</mainClass>
+                                    <mainClass>com.dhisco.regression.services.ManageConfigurations</mainClass>
                                 </transformer>
 
                             </transformers>
@@ -219,7 +219,7 @@
                        <finalName>${project.artifactId}-${project.version}-shaded</finalName>
                        <archive>
                            <manifest>
-                               <mainClass>com.dhisco.regression.services.config.ManageConfigurations</mainClass>
+                               <mainClass>com.dhisco.regression.services.ManageConfigurations</mainClass>
                            </manifest>
                        </archive>
                        <descriptorRefs>

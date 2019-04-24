@@ -1,7 +1,6 @@
 package com.dhisco.regression.services.config.base;
 
 import com.dhisco.regression.core.BasePojo;
-import com.dhisco.regression.core.exceptions.P2DRSException;
 import com.dhisco.regression.core.interceptors.ExceptionInterceptor;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +16,6 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
-import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 
 /**
  * @author Shashank Goel
@@ -28,7 +26,8 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 		implements InitializingBean, ExceptionInterceptor {
 
 	private final String className = this.getClass().getSimpleName().substring(0,
-			this.getClass().getSimpleName().indexOf("$")<=0?this.getClass().getSimpleName().length():
+			this.getClass().getSimpleName().indexOf("$") <= 0 ?
+					this.getClass().getSimpleName().length() :
 					this.getClass().getSimpleName().indexOf("$"));
 
 	@Autowired public RemoteConnector remoteConnector;
@@ -64,9 +63,8 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 		return remoteConnector.executeSSHCommands(getHost(), commands);
 	}
 
-
 	public void copyRemoteToLocal(String from, String to, String fileName) {
-		remoteConnector.copyRemoteToLocal(getHost(),from,to, fileName);
+		remoteConnector.copyRemoteToLocal(getHost(), from, to, fileName);
 	}
 
 	public String getHost() {
@@ -81,24 +79,25 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 		return null;
 	}
 
-	public void stopProcess() throws P2DRSException {
-		int i=0;
-		while (i<1) {
-			executeSSHCommands(Arrays.asList("kill -9  $(pgrep -f "+getPort()+") || kill -9  $(pgrep -f "+getPort()+")"));
+	public void stopProcess() {
+		int i = 0;
+		while (i < 1) {
+			executeSSHCommands(
+					Arrays.asList("kill -9  $(pgrep -f " + getPort() + ") || kill -9  $(pgrep -f " + getPort() + ")"));
 			sleep(1);
 			i++;
 		}
 
 	}
 
-	public void startProcess() throws P2DRSException{
-		log.info("Starting Process: {}",className);
+	public void startProcess() {
+		log.info("Starting Process: {}", className);
 		stopProcess();  //to stop old stale processes
 		executeSSHCommands(Arrays.asList(getStartServCommand()));
 	}
 
 	private void sleep(int seconds) {
-		log.info(className+" "+"sleeping for seconds {}", seconds);
+		log.info(className + " " + "sleeping for seconds {}", seconds);
 		try {
 			TimeUnit.SECONDS.sleep(seconds);
 		} catch (InterruptedException e) {

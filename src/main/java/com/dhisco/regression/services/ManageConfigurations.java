@@ -1,4 +1,4 @@
-package com.dhisco.regression.services.config;
+package com.dhisco.regression.services;
 
 import com.dhisco.regression.core.LogTime;
 import com.dhisco.regression.services.config.base.BaseConfig;
@@ -42,7 +42,7 @@ import javax.servlet.ServletContextListener;
 	public void contextInitialized(
 			ServletContextEvent sce) {
 		// Context Initialised
-		log.info("adfsdfd");
+		log.info("context initialised");
 	}
 
 	@Override

@@ -12,7 +12,7 @@ import com.dhisco.regression.core.exceptions.P2DRSException;
 import com.dhisco.regression.core.util.CommonUtils;
 import com.dhisco.regression.services.config.base.RemoteConnector;
 import com.dhisco.regression.services.config.base.BaseConfig;
-import com.dhisco.regression.services.config.ManageConfigurations;
+import com.dhisco.regression.services.ManageConfigurations;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
 import com.dhisco.regression.services.config.app.SupplyRuleProcessorConfig;
@@ -36,7 +36,6 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.web.ServletTestExecutionListener;
 import org.testng.ITestResult;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -135,21 +134,13 @@ import javax.mail.internet.MimeMultipart;
 
 	public void startProcesses(List<BaseConfig> processes) {
 		processes.stream().forEach(t -> {
-			try {
 				t.startProcess();
-			} catch (P2DRSException e) {
-				log.error(e.getMessage(), e);
-			}
 		});
 	}
 
 	public void stopProcesses(List<BaseConfig> processes) {
 		processes.stream().forEach(t -> {
-			try {
 				t.stopProcess();
-			} catch (P2DRSException e) {
-				log.error(e.getMessage(), e);
-			}
 		});
 	}
 
