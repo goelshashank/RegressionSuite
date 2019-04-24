@@ -6,14 +6,16 @@
     <parameter name="outPath" value="/apps/test/regression/out"/>
     <parameter name="benchmarkPath" value="/apps/test/regression/benchmark"/>
     <parameter name="inputScriptsPath" value="/apps/test/regression/scripts"/>
+    <parameter name="dataPath" value="/apps/test/regression/data"/>
     <parameter name="sendMail" value="true"/>
 
     <test name="P2DIntegrationTest">
         <parameter name="reportName" value="IntegTestReport.html"/>
         <parameter name="loadDB" value="false"/>
         <parameter name="scriptFileName" value="test.sql"/>
+        <parameter name="dataFileName" value="ari.json"/>
         <classes>
-            <class name="com.dhisco.regression.tests.IntegTest"/>
+            <class name="com.dhisco.regression.tests.test1.IntegTest"/>
         </classes>
     </test>
 

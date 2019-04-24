@@ -1,6 +1,8 @@
 package com.dhisco.regression.services.controller;
 
 import com.dhisco.regression.core.util.CommonUtils;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -29,8 +31,9 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 
 		log.info(" .......   Capturing Rez Gain Input  .........");
 
-		String fileName = "out1.json";
-		File filePath = new File(env.getProperty("out.path") + SLASH_FW + fileName);
+		JsonElement root = new JsonParser().parse(rezGainInput);
+		String fileName = root.getAsJsonObject().get("SessionID").getAsString()+".json";
+		File filePath = new File(env.getProperty("test.out.path") + SLASH_FW + fileName);
 		BufferedWriter writer = null;
 		try {
 			writer = new BufferedWriter(new FileWriter(filePath));

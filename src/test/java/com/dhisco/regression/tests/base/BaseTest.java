@@ -1,4 +1,4 @@
-package com.dhisco.regression.tests;
+package com.dhisco.regression.tests.base;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -8,12 +8,14 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.dhisco.ptd.dj.PushCoreJson;
 import com.dhisco.regression.core.LogTime;
 import com.dhisco.regression.core.exceptions.P2DRSException;
 import com.dhisco.regression.core.util.CommonUtils;
 import com.dhisco.regression.services.ManageConfigurations;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
+import com.dhisco.regression.services.config.app.ServerConfig;
 import com.dhisco.regression.services.config.app.SupplyRuleProcessorConfig;
 import com.dhisco.regression.services.config.base.BaseConfig;
 import com.dhisco.regression.services.config.base.RemoteConnector;
@@ -28,6 +30,7 @@ import org.skyscreamer.jsonassert.JSONCompare;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.skyscreamer.jsonassert.JSONCompareResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
@@ -58,6 +61,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
+import static java.util.Arrays.asList;
 
 /**
  * @author Shashank Goel
@@ -87,6 +91,7 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 	public ChannelMessageProcessorConfig channelMessageProcessorConfig;
 	public SupplyRuleProcessorConfig supplyRuleProcessorConfig;
 	public ConfigurationServiceConfig configurationServiceConfig;
+	public ServerConfig serverConfig;
 
 	public ExtentHtmlReporter htmlReporter;
 	public ExtentReports extent;
@@ -96,6 +101,7 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 			String reportName, String inputScriptsPath, Boolean sendMail) {
 
 		this.outPath = outPath;
+		System.setProperty("test.out.path",outPath);
 		this.benchmarkPath = benchmarkPath;
 		this.inputScriptsPath = inputScriptsPath;
 		this.sendMail = sendMail;
@@ -187,7 +193,7 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 		TimeUnit.SECONDS.sleep(seconds);
 	}
 
-	public InputStream getResource(String relativePath) {
+	public InputStream getResourceRelPath(String relativePath) {
 		return getClass().getResourceAsStream(relativePath);
 	}
 
@@ -261,7 +267,24 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 		dbConfig.executeCommand("drop database if exists " + dbConfig.getMariaTestDb());
 		dbConfig.executeCommand("create database if not exists " + dbConfig.getMariaTestDb());
 		dbConfig.executeScript(CommonUtils.getResourceStreamFromAbsPath(inputScriptsPath + SLASH_FW + fileName));
+		//todo: execute command to explicity update url test db
 		log.info("--------------- Loaded Maria DB ------------------ ");
 	}
+
+
+	public String getCompareFileName(String dataFile) throws IOException {
+		PushCoreJson pushCoreJson = CommonUtils.getObjFromResourceJsonAbsPath(dataFile, PushCoreJson.class);
+		String toCompareFileName = (CommonUtils.isNotEmpty(pushCoreJson.getOtaHotelRatePlanNotifRQ())?
+				pushCoreJson.getOtaHotelRatePlanNotifRQ().getEchoToken():
+				pushCoreJson.getOtaHotelAvailNotifRQ().getEchoToken() ) +".json";
+
+		return toCompareFileName ;
+	}
+
+	public void outDataCleanUp() {
+		serverConfig=loadBean(ServerConfig.class);
+		serverConfig.executeSSHCommands(asList("rm -r "+getOutPath()+"/*"));
+	}
+
 
 }

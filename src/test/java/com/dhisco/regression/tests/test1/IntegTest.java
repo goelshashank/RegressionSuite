@@ -1,9 +1,14 @@
-package com.dhisco.regression.tests;
+package com.dhisco.regression.tests.test1;
 
+import com.dhisco.ptd.dj.PushCoreJson;
+import com.dhisco.regression.core.util.CommonUtils;
+import com.dhisco.regression.dataproviders.TestDataInput;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
+import com.dhisco.regression.services.config.app.ServerConfig;
 import com.dhisco.regression.services.config.app.SupplyRuleProcessorConfig;
 import com.dhisco.regression.services.config.db.KafkaConfig;
+import com.dhisco.regression.tests.base.BaseTest;
 import lombok.extern.log4j.Log4j2;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.testng.ITestResult;
@@ -13,6 +18,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 import static java.util.Arrays.asList;
@@ -32,16 +39,6 @@ import static java.util.Arrays.asList;
 		super.beforeTest(OS, browser, reportPath, outPath, benchmarkPath, reportName, inputScriptsPath, sendMail);
 	}
 
-	@AfterTest @Override public void afterTest() {
-		super.afterTest();
-	}
-
-	@AfterMethod @Override public void afterMethod(ITestResult result) {
-
-		asList(list).forEach(t -> kafkaConfig.deleteTopic(t));
-		super.afterMethod(result);
-	}
-
 	@BeforeMethod @Parameters({ "loadDB", "scriptFileName" }) public void beforeMethod(Boolean loadDB,
 			String scriptFileName) throws Exception {
 		super.beforeMethod();
@@ -54,14 +51,18 @@ import static java.util.Arrays.asList;
 		asList(list).forEach(t -> kafkaConfig.deleteTopic(t));
 		sleep(5, "Waiting for cleanup of Kafka topics");
 		asList(list).forEach(t -> kafkaConfig.createTopic(t));
+
+		outDataCleanUp();
 	}
 
-	//@Test(dataProviderClass = DataProvider1.class, dataProvider = "testArgs")
-	@Test public void integTest() throws Exception {
+	@Test(dataProviderClass = DataProvider1.class, dataProvider = "testArgs") public void integTest(
+			TestDataInput testDataInput) throws Exception {
+
 		log.info("%%%%%%%%%%% start test %%%%%%%%%%%");
 		test = extent.createTest("Integration Test", "Integration Test");
 
-		kafkaConfig.publishData("VS_Brand_2_test", asList(getResource("/data/ari.json")));
+		kafkaConfig.publishData("VS_Brand_2_test",
+				asList(CommonUtils.getResourceStreamFromAbsPath(testDataInput.getDataFile())));
 
 		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
 		sleep(10, "Waiting for configuration service to load up");
@@ -71,9 +72,23 @@ import static java.util.Arrays.asList;
 
 		sleep(sleepTime, "Waiting for the pipeline to process the messages");
 
-		assertJson(getBenchmarkPath() + SLASH_FW + "out1.json", getOutPath() + SLASH_FW + "out1.json", JSONCompareMode.STRICT);
+		String compareFileName=getCompareFileName(testDataInput.getDataFile());
+
+		assertJson(getBenchmarkPath() + SLASH_FW + compareFileName,
+				getOutPath() + SLASH_FW + compareFileName, JSONCompareMode.STRICT);
 
 		log.info("%%%%%%%%%%% end test %%%%%%%%%%%");
+	}
+
+
+	@AfterTest @Override public void afterTest() {
+		super.afterTest();
+	}
+
+	@AfterMethod @Override public void afterMethod(ITestResult result) {
+
+		asList(list).forEach(t -> kafkaConfig.deleteTopic(t));
+		super.afterMethod(result);
 	}
 
 }

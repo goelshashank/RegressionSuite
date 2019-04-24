@@ -42,6 +42,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
 	 * This method is called first after bean construction.
 	 */
 	public void init() {
+		remoteConnector.addSession(getHost());
 	}
 
 	/**

@@ -17,38 +17,25 @@ import javax.annotation.PreDestroy;
 /**
  * @author Shashank Goel
  * @version 1.0
- * @since 28-03-2019
- */
-@Lazy
+ * @since 24-04-2019
+ */@Lazy
 @Getter @Setter @ToString(includeFieldNames=true)  @Log4j2
-@Configuration @PropertySource("channel-message-processor.properties") @ConfigurationProperties(prefix = "cmp")  public class ChannelMessageProcessorConfig
-		extends BaseConfig {
+@Configuration @PropertySource("server.properties") @ConfigurationProperties(prefix = "server")
+public class ServerConfig extends BaseConfig {
 
 	private String host;
 	private String port;
-	private String startServCommand;
-	private String applicationId;
 
 	@PostConstruct public void init() {
 		super.init();
 	}
 
 	@Override public void afterPropertiesSet() throws Exception {
-		try {
-			startProcess();
-		}catch (P2DRSException e){
-			log.error(e.getMessage(),e);
-		}
 	}
+
 
 	@PreDestroy public void cleanup() {
-		try {
-			stopProcess();
-		}catch (P2DRSException e){
-			log.error(e.getMessage(),e);
-		}
 		super.cleanup();
 	}
-
 
 }

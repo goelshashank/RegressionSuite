@@ -31,7 +31,6 @@ import javax.annotation.PreDestroy;
 
 	@PostConstruct public void init() {
 		super.init();
-		remoteConnector.addSession(host);
 	}
 
 	@Override public void afterPropertiesSet() throws Exception {

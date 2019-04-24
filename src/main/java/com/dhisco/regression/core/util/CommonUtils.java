@@ -59,14 +59,21 @@ import java.util.Scanner;
 		return MapUtils.isNotEmpty(obj);
 	}
 
-	public static <T> T getObjFromResourceJson(String fileName, Class<T> tClass) throws IOException {
-		String result = getStringFromFileResource(fileName);
+	public static <T> T getObjFromResourceJsonAbsPath(String absPath, Class<T> tClass) throws IOException {
+		String result = getResourceAsStrFromAbsPath(absPath);
 		ObjectMapper mapper = new ObjectMapper();
 		JsonNode jsonnode = mapper.readTree(result);
 		return mapper.treeToValue(jsonnode, tClass);
 	}
 
-	public static String getStringFromFileResource(String fileName) throws IOException {
+	public static <T> T getObjFromResourceJsonRelPath(String fileName, Class<T> tClass) throws IOException {
+		String result = getStringFromFileResourceRelPath(fileName);
+		ObjectMapper mapper = new ObjectMapper();
+		JsonNode jsonnode = mapper.readTree(result);
+		return mapper.treeToValue(jsonnode, tClass);
+	}
+
+	public static String getStringFromFileResourceRelPath(String fileName) throws IOException {
 		ClassPathResource resource = new ClassPathResource(fileName);
 		InputStream inputStream = resource.getInputStream();
 		Scanner s = (new Scanner(inputStream)).useDelimiter("\\A");
@@ -85,7 +92,6 @@ import java.util.Scanner;
 		return getSizeInBytes(someObject) / 1000;
 	}
 
-
 	public static String getResourceAsStrFromAbsPath(String absPath) throws IOException {
 		return IOUtils.toString(getResourceStreamFromAbsPath(absPath), "UTF-8");
 	}
@@ -93,7 +99,6 @@ import java.util.Scanner;
 	public static InputStream getResourceStreamFromAbsPath(String absPath) throws IOException {
 		return new FileInputStream(absPath);
 	}
-
 
 }
 

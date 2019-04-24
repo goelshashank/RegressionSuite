@@ -52,7 +52,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 
 	public void addSession(String host) {
 
-		if (isNotEmpty(sessionMap.get(host)) && sessionMap.get(host).isConnected()) {
+		if (isEmpty(host)  || ( isNotEmpty(sessionMap.get(host)) && sessionMap.get(host).isConnected())) {
 			return;
 		}
 

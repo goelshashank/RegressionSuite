@@ -31,15 +31,14 @@ import javax.annotation.PreDestroy;
 
 	@PostConstruct public void init() {
 		super.init();
-		remoteConnector.addSession(host);
+	}
+
+	@Override public void afterPropertiesSet() throws Exception {
 		try {
 			startProcess();
 		}catch (P2DRSException e){
 			log.error(e.getMessage(),e);
 		}
-	}
-
-	@Override public void afterPropertiesSet() throws Exception {
 	}
 
 	@PreDestroy public void cleanup() {
