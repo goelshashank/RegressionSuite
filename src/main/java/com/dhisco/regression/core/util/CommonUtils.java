@@ -86,10 +86,14 @@ import java.util.Scanner;
 	}
 
 
-	public static String getResourceAsStrAbsPath(String absPath) throws IOException {
-		InputStream is = new FileInputStream(absPath);
-		return IOUtils.toString(is, "UTF-8");
+	public static String getResourceAsStrFromAbsPath(String absPath) throws IOException {
+		return IOUtils.toString(getResourceStreamFromAbsPath(absPath), "UTF-8");
 	}
+
+	public static InputStream getResourceStreamFromAbsPath(String absPath) throws IOException {
+		return new FileInputStream(absPath);
+	}
+
 
 }
 

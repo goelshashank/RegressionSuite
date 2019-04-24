@@ -41,14 +41,12 @@ import javax.servlet.ServletContextListener;
 	@Override
 	public void contextInitialized(
 			ServletContextEvent sce) {
-		// Context Initialised
 		log.info("context initialised");
 	}
 
 	@Override
 	public void contextDestroyed(
 			ServletContextEvent sce) {
-		// Here - what you want to do that context shutdown
 		log.info("context shutdown");
 	}
 

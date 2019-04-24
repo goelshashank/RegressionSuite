@@ -1,4 +1,4 @@
-package com.dhisco.tests;
+package com.dhisco.regression.tests;
 
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
@@ -26,8 +26,10 @@ import static java.util.Arrays.asList;
 
 	String[] list = { "VS_Brand_2_test", "M4_Brand_topic_test", "RoyalArabians_test", "BookingDotCom2_test" };
 
-	@BeforeTest @Override @Parameters({ "OS", "browser" }) public void beforeTest(String OS, String browser) {
-		super.beforeTest(OS, browser);
+	@BeforeTest @Parameters({ "OS", "browser", "reportPath", "outPath", "benchmarkPath", "reportName",
+			"inputScriptsPath", "sendMail" }) public void beforeTest(String OS, String browser, String reportPath,
+			String outPath, String benchmarkPath, String reportName, String inputScriptsPath, Boolean sendMail) {
+		super.beforeTest(OS, browser, reportPath, outPath, benchmarkPath, reportName, inputScriptsPath, sendMail);
 	}
 
 	@AfterTest @Override public void afterTest() {
@@ -40,18 +42,17 @@ import static java.util.Arrays.asList;
 		super.afterMethod(result);
 	}
 
-	@Override @BeforeMethod public void beforeMethod() throws Exception {
-
+	@BeforeMethod @Parameters({ "loadDB", "scriptFileName" }) public void beforeMethod(Boolean loadDB,
+			String scriptFileName) throws Exception {
 		super.beforeMethod();
-		/*			log.info("--------------- Loading DB ------------------");
-		dbConfig = loadBean(DbConfig.class);
-		dbConfig.executeCommand("drop database if exists "+dbConfig.getMariaTestDb());
-		dbConfig.executeCommand("create database if not exists "+dbConfig.getMariaTestDb());
-		dbConfig.executeScript(getResource("/scripts/test.sql"));*/
+
+		if (loadDB) {
+			loadMariaDB(scriptFileName);
+		}
 
 		kafkaConfig = loadBean(KafkaConfig.class);
 		asList(list).forEach(t -> kafkaConfig.deleteTopic(t));
-		sleep(5);
+		sleep(5, "Waiting for cleanup of Kafka topics");
 		asList(list).forEach(t -> kafkaConfig.createTopic(t));
 	}
 
@@ -63,15 +64,14 @@ import static java.util.Arrays.asList;
 		kafkaConfig.publishData("VS_Brand_2_test", asList(getResource("/data/ari.json")));
 
 		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
-		sleep(10);
+		sleep(10, "Waiting for configuration service to load up");
 
 		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
 		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 
-		sleep(30);
+		sleep(sleepTime, "Waiting for the pipeline to process the messages");
 
-		log.info("just above assert");
-		assertJson(benchmarkPath+SLASH_FW+"out1.json",outPath+SLASH_FW+"out1.json", JSONCompareMode.STRICT);
+		assertJson(getBenchmarkPath() + SLASH_FW + "out1.json", getOutPath() + SLASH_FW + "out1.json", JSONCompareMode.STRICT);
 
 		log.info("%%%%%%%%%%% end test %%%%%%%%%%%");
 	}

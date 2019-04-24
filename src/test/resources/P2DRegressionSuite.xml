@@ -2,10 +2,20 @@
 
     <parameter name="OS" value="Windows"/>
     <parameter name="browser" value="Chrome"/>
+    <parameter name="reportPath" value="/apps/test/regression/report"/>
+    <parameter name="outPath" value="/apps/test/regression/out"/>
+    <parameter name="benchmarkPath" value="/apps/test/regression/benchmark"/>
+    <parameter name="inputScriptsPath" value="/apps/test/regression/scripts"/>
+    <parameter name="sendMail" value="true"/>
 
     <test name="P2DIntegrationTest">
+        <parameter name="reportName" value="IntegTestReport.html"/>
+        <parameter name="loadDB" value="false"/>
+        <parameter name="scriptFileName" value="test.sql"/>
         <classes>
-            <class name="com.dhisco.tests.IntegTest"/>
+            <class name="com.dhisco.regression.tests.IntegTest"/>
         </classes>
     </test>
+
+
 </suite>

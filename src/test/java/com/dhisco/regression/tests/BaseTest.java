@@ -1,4 +1,4 @@
-package com.dhisco.tests;
+package com.dhisco.regression.tests;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -8,6 +8,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.dhisco.regression.core.LogTime;
 import com.dhisco.regression.core.exceptions.P2DRSException;
 import com.dhisco.regression.core.util.CommonUtils;
 import com.dhisco.regression.services.ManageConfigurations;
@@ -16,8 +17,9 @@ import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
 import com.dhisco.regression.services.config.app.SupplyRuleProcessorConfig;
 import com.dhisco.regression.services.config.base.BaseConfig;
 import com.dhisco.regression.services.config.base.RemoteConnector;
-import com.dhisco.regression.services.config.db.DbConfig;
+import com.dhisco.regression.services.config.db.DBConfig;
 import com.dhisco.regression.services.config.db.KafkaConfig;
+import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONException;
@@ -64,20 +66,23 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
  */
 @TestExecutionListeners(inheritListeners = false, listeners = { DependencyInjectionTestExecutionListener.class,
 		DirtiesContextTestExecutionListener.class,
-		ServletTestExecutionListener.class }) @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, classes = ManageConfigurations.class) @Log4j2 public abstract class BaseTest
+		ServletTestExecutionListener.class }) @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, classes = ManageConfigurations.class) @Log4j2 @Getter public abstract class BaseTest
 		extends AbstractTestNGSpringContextTests {
-
-
-	@Value("#{T(Integer).parseInt('${sleep.time}')}") public Integer sleepTime;
-	@Value("${report.path}") public String reportPath;
-	@Value("${benchmark.path}") public String benchmarkPath;
-	@Value("${out.path}") public String outPath;
 
 	@Autowired public ManageConfigurations manageConfigurations;
 	@Autowired public RemoteConnector remoteConnector;
 	@Autowired public Environment env;
 
-	public DbConfig dbConfig;
+	@Value("#{T(Integer).parseInt('${sleep.time}')}") public Integer sleepTime;
+	private String benchmarkPath;
+	private String outPath;
+	private String inputScriptsPath;
+	private Boolean sendMail;
+	private String reportName;
+	private  String reportPath;
+
+
+	public DBConfig dbConfig;
 	public KafkaConfig kafkaConfig;
 	public ChannelMessageProcessorConfig channelMessageProcessorConfig;
 	public SupplyRuleProcessorConfig supplyRuleProcessorConfig;
@@ -87,12 +92,24 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 	public ExtentReports extent;
 	public ExtentTest test;
 
-	public void beforeTest(String OS, String browser) {
+	public void beforeTest(String OS, String browser, String reportPath, String outPath, String benchmarkPath,
+			String reportName, String inputScriptsPath, Boolean sendMail) {
+
+		this.outPath = outPath;
+		this.benchmarkPath = benchmarkPath;
+		this.inputScriptsPath = inputScriptsPath;
+		this.sendMail = sendMail;
+		this.reportName = reportName;
+		this.reportPath=reportPath;
+		log.info("Test parameters incorporated");
+
 		initReporting(OS, browser);
 	}
 
 	private void initReporting(String OS, String browser) {
-		htmlReporter = new ExtentHtmlReporter(reportPath + SLASH_FW + "testReport.html");
+		log.info("Initializing reporting");
+
+		htmlReporter = new ExtentHtmlReporter(reportName);
 
 		//initialize ExtentReports and attach the HtmlReporter
 		extent = new ExtentReports();
@@ -110,19 +127,21 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
 		htmlReporter.config().setTheme(Theme.STANDARD);
 		htmlReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
+
+		log.info("Reporting initialized");
 	}
 
 	public void afterTest() {
 		extent.flush();
 
-		//send mail
-
-	/*	sendMail(System.getenv("SystemDrive")+"/apps/test/regression/test-output"
-				+ "/testReport.html");*/
+		if (sendMail)
+			sendMail( reportName);
+		else
+			log.info("Mailing not enabled");
 	}
 
 	public void beforeMethod() throws Exception {
-		log.debug("BaseTest: Before method");
+		log.debug("Before method");
 	}
 
 	public void afterMethod(ITestResult result) {
@@ -163,8 +182,8 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 		});
 	}
 
-	public void sleep(int seconds) throws InterruptedException {
-		log.info("sleeping for {} seconds", seconds);
+	public void sleep(int seconds, String message) throws InterruptedException {
+		log.info("... {} and sleeping for {} seconds ....", message, seconds);
 		TimeUnit.SECONDS.sleep(seconds);
 	}
 
@@ -177,14 +196,15 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 	}
 
 	public void assertJson(String in, String out, JSONCompareMode jsonCompareMode) throws IOException, JSONException {
-		JSONAssert.assertEquals(CommonUtils.getResourceAsStrAbsPath(in), CommonUtils.getResourceAsStrAbsPath(out),
-				jsonCompareMode);
+		JSONAssert
+				.assertEquals(CommonUtils.getResourceAsStrFromAbsPath(in), CommonUtils.getResourceAsStrFromAbsPath(out),
+						jsonCompareMode);
 	}
 
 	public JSONCompareResult compareJSON(String in, String out, JSONCompareMode jsonCompareMode)
 			throws IOException, JSONException {
 		return JSONCompare
-				.compareJSON(CommonUtils.getResourceAsStrAbsPath(in), CommonUtils.getResourceAsStrAbsPath(out),
+				.compareJSON(CommonUtils.getResourceAsStrFromAbsPath(in), CommonUtils.getResourceAsStrFromAbsPath(out),
 						jsonCompareMode);
 	}
 
@@ -213,15 +233,11 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 			message.setSubject("P2DRegressionSuite Report");
 			message.setText("P2DRegressionSuite Test Report");
 
-			MimeBodyPart messageBodyPart = new MimeBodyPart();
-
 			Multipart multipart = new MimeMultipart();
-
-			messageBodyPart = new MimeBodyPart();
-			String fileName = "testReport.html";
+			MimeBodyPart	messageBodyPart = new MimeBodyPart();
 			DataSource source = new FileDataSource(filePath);
 			messageBodyPart.setDataHandler(new DataHandler(source));
-			messageBodyPart.setFileName(fileName);
+			messageBodyPart.setFileName(reportName);
 			multipart.addBodyPart(messageBodyPart);
 
 			message.setContent(multipart);
@@ -233,9 +249,19 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 			log.info("Sent Mail");
 
 		} catch (Exception e) {
-			log.info("could not send mail");
+			log.info("Mail not sent");
 			log.info(e.getMessage(), e);
 		}
+	}
+
+	@LogTime public void loadMariaDB(String fileName) throws IOException {
+		log.info("--------------- Loading Maria DB ------------------");
+		log.info("Input script file - {}", fileName);
+		dbConfig = loadBean(DBConfig.class);
+		dbConfig.executeCommand("drop database if exists " + dbConfig.getMariaTestDb());
+		dbConfig.executeCommand("create database if not exists " + dbConfig.getMariaTestDb());
+		dbConfig.executeScript(CommonUtils.getResourceStreamFromAbsPath(inputScriptsPath + SLASH_FW + fileName));
+		log.info("--------------- Loaded Maria DB ------------------ ");
 	}
 
 }

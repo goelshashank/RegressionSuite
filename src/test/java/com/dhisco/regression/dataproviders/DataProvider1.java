@@ -1,4 +1,4 @@
-package com.dhisco.tests.dataproviders;
+package com.dhisco.regression.dataproviders;
 
 import org.testng.annotations.DataProvider;
 

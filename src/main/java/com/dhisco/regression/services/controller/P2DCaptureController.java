@@ -21,22 +21,24 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
  * @version 1.0
  * @since 01-04-2019
  */
-@Log4j2 @RestController @RequestMapping("/pctest") public class P2DCaptureController {
+@Log4j2 @RestController @RequestMapping("/p2d-test") public class P2DCaptureController {
 
 	@Autowired Environment env;
 
-	@PostMapping(value = "/capture-rez-gain") public void captureRezGain(@RequestBody String rezGainInput) {
+	@PostMapping(value = "/capture-rez-gain-input") public void captureRezGainInput(@RequestBody String rezGainInput) {
 
-		log.info("Inside captureRezGain");
+		log.info(" .......   Capturing Rez Gain Input  .........");
+
 		String fileName = "out1.json";
 		File filePath = new File(env.getProperty("out.path") + SLASH_FW + fileName);
 		BufferedWriter writer = null;
 		try {
 			writer = new BufferedWriter(new FileWriter(filePath));
 			writer.write(rezGainInput);
-			log.info("File saved from controller");
+			log.info(".......   Captured Rez Gain Input......... rezGainInput: {}", rezGainInput);
 			writer.flush();
 		} catch (Exception e) {
+			log.error(".......  Failed, to capture Rez Gain Input.........  rezGainInput: {}", rezGainInput);
 			log.error(e.getMessage(), e);
 		} finally {
 			try {
@@ -51,7 +53,7 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 
 	}
 
-	@GetMapping(value = "/testURL") public String captureRezGain() {
-		return "Test URL output";
+	@GetMapping(value = "/testURL") public String testURL() {
+		return "Test URL is working";
 	}
 }

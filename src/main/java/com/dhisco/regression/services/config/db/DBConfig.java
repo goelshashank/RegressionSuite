@@ -32,7 +32,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
  * @version 1.0
  * @since 28-03-2019
  */
-@Lazy @Log4j2 @Getter @Setter @ToString(includeFieldNames = true) @Configuration @PropertySource("db.properties") @ConfigurationProperties(prefix = "db") public class DbConfig
+@Lazy @Log4j2 @Getter @Setter @ToString(includeFieldNames = true) @Configuration @PropertySource("db.properties") @ConfigurationProperties(prefix = "db") public class DBConfig
 		extends BaseConfig {
 
 	@Autowired RemoteConnector remoteConnector;
