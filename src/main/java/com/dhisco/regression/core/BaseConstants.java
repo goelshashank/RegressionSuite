@@ -7,4 +7,6 @@ package com.dhisco.regression.core;
  */
 public interface BaseConstants {
 
+	public final static String SLASH_FW = "/";
+
 }

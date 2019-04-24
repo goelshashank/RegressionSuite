@@ -14,6 +14,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 import static java.util.Arrays.asList;
 
 /**
@@ -42,9 +43,8 @@ import static java.util.Arrays.asList;
 	@Override @BeforeMethod public void beforeMethod() throws Exception {
 
 		super.beforeMethod();
-		log.info("%%%%%%%%%%% Loading DB %%%%%%%%%%%%%%%");
-
-		/*dbConfig = loadBean(DbConfig.class);
+		/*			log.info("--------------- Loading DB ------------------");
+		dbConfig = loadBean(DbConfig.class);
 		dbConfig.executeCommand("drop database if exists "+dbConfig.getMariaTestDb());
 		dbConfig.executeCommand("create database if not exists "+dbConfig.getMariaTestDb());
 		dbConfig.executeScript(getResource("/scripts/test.sql"));*/
@@ -57,6 +57,7 @@ import static java.util.Arrays.asList;
 
 	//@Test(dataProviderClass = DataProvider1.class, dataProvider = "testArgs")
 	@Test public void integTest() throws Exception {
+		log.info("%%%%%%%%%%% start test %%%%%%%%%%%");
 		test = extent.createTest("Integration Test", "Integration Test");
 
 		kafkaConfig.publishData("VS_Brand_2_test", asList(getResource("/data/ari.json")));
@@ -70,7 +71,7 @@ import static java.util.Arrays.asList;
 		sleep(30);
 
 		log.info("just above assert");
-		assertJson("/apps/test/regression/benchmark/out1.json","/apps/test/regression/out/out1.json", JSONCompareMode.STRICT);
+		assertJson(benchmarkPath+SLASH_FW+"out1.json",outPath+SLASH_FW+"out1.json", JSONCompareMode.STRICT);
 
 		log.info("%%%%%%%%%%% end test %%%%%%%%%%%");
 	}

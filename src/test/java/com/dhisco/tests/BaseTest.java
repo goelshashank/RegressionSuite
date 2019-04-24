@@ -10,12 +10,12 @@ import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.dhisco.regression.core.exceptions.P2DRSException;
 import com.dhisco.regression.core.util.CommonUtils;
-import com.dhisco.regression.services.config.base.RemoteConnector;
-import com.dhisco.regression.services.config.base.BaseConfig;
 import com.dhisco.regression.services.ManageConfigurations;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
 import com.dhisco.regression.services.config.app.SupplyRuleProcessorConfig;
+import com.dhisco.regression.services.config.base.BaseConfig;
+import com.dhisco.regression.services.config.base.RemoteConnector;
 import com.dhisco.regression.services.config.db.DbConfig;
 import com.dhisco.regression.services.config.db.KafkaConfig;
 import lombok.extern.log4j.Log4j2;
@@ -36,19 +36,26 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.web.ServletTestExecutionListener;
 import org.testng.ITestResult;
 
-import java.io.FileInputStream;
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
+import javax.mail.Message;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-import javax.mail.*;
-import javax.activation.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
+
+import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 
 /**
  * @author Shashank Goel
@@ -60,7 +67,11 @@ import javax.mail.internet.MimeMultipart;
 		ServletTestExecutionListener.class }) @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, classes = ManageConfigurations.class) @Log4j2 public abstract class BaseTest
 		extends AbstractTestNGSpringContextTests {
 
+
 	@Value("#{T(Integer).parseInt('${sleep.time}')}") public Integer sleepTime;
+	@Value("${report.path}") public String reportPath;
+	@Value("${benchmark.path}") public String benchmarkPath;
+	@Value("${out.path}") public String outPath;
 
 	@Autowired public ManageConfigurations manageConfigurations;
 	@Autowired public RemoteConnector remoteConnector;
@@ -81,8 +92,7 @@ import javax.mail.internet.MimeMultipart;
 	}
 
 	private void initReporting(String OS, String browser) {
-		htmlReporter = new ExtentHtmlReporter("/apps/test/regression/test-output"
-				+ "/testReport.html");
+		htmlReporter = new ExtentHtmlReporter(reportPath + SLASH_FW + "testReport.html");
 
 		//initialize ExtentReports and attach the HtmlReporter
 		extent = new ExtentReports();
@@ -112,6 +122,7 @@ import javax.mail.internet.MimeMultipart;
 	}
 
 	public void beforeMethod() throws Exception {
+		log.debug("BaseTest: Before method");
 	}
 
 	public void afterMethod(ITestResult result) {
@@ -165,22 +176,19 @@ import javax.mail.internet.MimeMultipart;
 		return IOUtils.toString(getClass().getResourceAsStream(relativePath), StandardCharsets.UTF_8);
 	}
 
-	public void assertJson(String fPath1, String fPath2, JSONCompareMode jsonCompareMode)
-			throws IOException, JSONException {
-			InputStream is1 = new FileInputStream(fPath1);
-			InputStream is2 = new FileInputStream(fPath2);
-		JSONAssert.assertEquals(IOUtils.toString(is1, "UTF-8"),IOUtils.toString(is2, "UTF-8"), jsonCompareMode);
-	}
-
-	public JSONCompareResult compareJSON(String input, String output, JSONCompareMode jsonCompareMode)
-			throws IOException, JSONException {
-		return 	JSONCompare.compareJSON(CommonUtils.getResourceAsStrAbsPath(input),
-				CommonUtils.getResourceAsStrAbsPath(output),
+	public void assertJson(String in, String out, JSONCompareMode jsonCompareMode) throws IOException, JSONException {
+		JSONAssert.assertEquals(CommonUtils.getResourceAsStrAbsPath(in), CommonUtils.getResourceAsStrAbsPath(out),
 				jsonCompareMode);
 	}
 
+	public JSONCompareResult compareJSON(String in, String out, JSONCompareMode jsonCompareMode)
+			throws IOException, JSONException {
+		return JSONCompare
+				.compareJSON(CommonUtils.getResourceAsStrAbsPath(in), CommonUtils.getResourceAsStrAbsPath(out),
+						jsonCompareMode);
+	}
 
-	public   void sendMail(String filePath){
+	public void sendMail(String filePath) {
 
 		final String username = "shashank.goel@rategain.com";
 		final String password = "####"; //provide password
@@ -191,19 +199,17 @@ import javax.mail.internet.MimeMultipart;
 		props.put("mail.smtp.host", "smtp.ad.dhisco.com");
 		props.put("mail.smtp.port", "25");
 
-		Session session = Session.getInstance(props,
-				new javax.mail.Authenticator() {
-					protected PasswordAuthentication getPasswordAuthentication() {
-						return new PasswordAuthentication(username, password);
-					}
-				});
+		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		});
 
 		try {
 
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress( "shashank.goel@rategain.com"));
-			message.setRecipients(Message.RecipientType.TO,
-					InternetAddress.parse( "shashank.goel@rategain.com"));
+			message.setFrom(new InternetAddress("shashank.goel@rategain.com"));
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("shashank.goel@rategain.com"));
 			message.setSubject("P2DRegressionSuite Report");
 			message.setText("P2DRegressionSuite Test Report");
 
@@ -228,7 +234,7 @@ import javax.mail.internet.MimeMultipart;
 
 		} catch (Exception e) {
 			log.info("could not send mail");
-			log.info(e.getMessage(),e);
+			log.info(e.getMessage(), e);
 		}
 	}
 
