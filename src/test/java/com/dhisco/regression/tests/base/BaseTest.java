@@ -12,6 +12,7 @@ import com.dhisco.ptd.dj.PushCoreJson;
 import com.dhisco.regression.core.LogTime;
 import com.dhisco.regression.core.exceptions.P2DRSException;
 import com.dhisco.regression.core.util.CommonUtils;
+import com.dhisco.regression.dataproviders.BaseInput;
 import com.dhisco.regression.services.ManageConfigurations;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
@@ -30,7 +31,6 @@ import org.skyscreamer.jsonassert.JSONCompare;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.skyscreamer.jsonassert.JSONCompareResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
@@ -39,6 +39,7 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.web.ServletTestExecutionListener;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 
 import javax.activation.DataHandler;
@@ -57,6 +58,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -84,7 +86,7 @@ import static java.util.Arrays.asList;
 	private Boolean sendMail;
 	private String reportName;
 	private  String reportPath;
-
+	private String reportFilePath;
 
 	public DBConfig dbConfig;
 	public KafkaConfig kafkaConfig;
@@ -96,26 +98,44 @@ import static java.util.Arrays.asList;
 	public ExtentHtmlReporter htmlReporter;
 	public ExtentReports extent;
 	public ExtentTest test;
+	public String suiteName;
+	public String testName;
 
-	public void beforeTest(String OS, String browser, String reportPath, String outPath, String benchmarkPath,
-			String reportName, String inputScriptsPath, Boolean sendMail) {
+	public ITestContext iTestContext;
 
-		this.outPath = outPath;
+	public String getSuiteParam(String str){
+		Map<String,String> map=iTestContext.getCurrentXmlTest().getAllParameters();
+		return map.get(str);
+	}
+
+	public void beforeTest(ITestContext iTestContext) throws IOException {
+		this.iTestContext=iTestContext;
+
+		suiteName=iTestContext.getName();
+
+		this.outPath = getSuiteParam("outPath");
 		System.setProperty("test.out.path",outPath);
-		this.benchmarkPath = benchmarkPath;
-		this.inputScriptsPath = inputScriptsPath;
-		this.sendMail = sendMail;
-		this.reportName = reportName;
-		this.reportPath=reportPath;
-		log.info("Test parameters incorporated");
 
-		initReporting(OS, browser);
+		this.benchmarkPath = getSuiteParam("benchmarkPath");
+		this.inputScriptsPath = getSuiteParam("outPath");
+		this.sendMail = Boolean.valueOf(getSuiteParam("sendMail"));
+		this.reportName = getSuiteParam("reportName");
+		this.reportName="a.html";
+		this.reportPath= getSuiteParam("reportPath");
+		this.reportFilePath=this.reportPath+SLASH_FW+this.reportName;
+		log.info("Loaded all test parameters");
+
+		if (Boolean.valueOf(getSuiteParam("loadDB"))) {
+			loadMariaDB(getSuiteParam("scriptFileName"));
+		}
+
+		initReporting(getSuiteParam("OS"), getSuiteParam("browser"));
 	}
 
 	private void initReporting(String OS, String browser) {
 		log.info("Initializing reporting");
 
-		htmlReporter = new ExtentHtmlReporter(reportName);
+		htmlReporter = new ExtentHtmlReporter(reportFilePath);
 
 		//initialize ExtentReports and attach the HtmlReporter
 		extent = new ExtentReports();
@@ -137,32 +157,15 @@ import static java.util.Arrays.asList;
 		log.info("Reporting initialized");
 	}
 
-	public void afterTest() {
-		extent.flush();
-
-		if (sendMail)
-			sendMail( reportName);
-		else
-			log.info("Mailing not enabled");
-	}
-
 	public void beforeMethod() throws Exception {
 		log.debug("Before method");
+
+	/*	this.testName=baseInput.getTestName();
+		this.baseInput.getLoadDB();*/
+
 	}
 
-	public void afterMethod(ITestResult result) {
 
-		if (result.getStatus() == ITestResult.FAILURE) {
-			test.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " FAILED ", ExtentColor.RED));
-			test.fail(result.getThrowable());
-		} else if (result.getStatus() == ITestResult.SUCCESS) {
-			test.log(Status.PASS, MarkupHelper.createLabel(result.getName() + " PASSED ", ExtentColor.GREEN));
-		} else {
-			test.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " SKIPPED ", ExtentColor.ORANGE));
-			test.skip(result.getThrowable());
-		}
-		log.info("tearing down test");
-	}
 
 	public <T> T loadBean(Class<T> type) {
 		return manageConfigurations.loadBean(type);
@@ -264,8 +267,8 @@ import static java.util.Arrays.asList;
 		log.info("--------------- Loading Maria DB ------------------");
 		log.info("Input script file - {}", fileName);
 		dbConfig = loadBean(DBConfig.class);
-		dbConfig.executeCommand("drop database if exists " + dbConfig.getMariaTestDb());
-		dbConfig.executeCommand("create database if not exists " + dbConfig.getMariaTestDb());
+		/*dbConfig.executeCommand("drop database if exists " + dbConfig.getMariaTestDb());
+		dbConfig.executeCommand("create database if not exists " + dbConfig.getMariaTestDb());*/
 		dbConfig.executeScript(CommonUtils.getResourceStreamFromAbsPath(inputScriptsPath + SLASH_FW + fileName));
 		//todo: execute command to explicity update url test db
 		log.info("--------------- Loaded Maria DB ------------------ ");
@@ -286,5 +289,32 @@ import static java.util.Arrays.asList;
 		serverConfig.executeSSHCommands(asList("rm -r "+getOutPath()+"/*"));
 	}
 
+
+	public void destroyConfig(BaseConfig baseConfig){
+		manageConfigurations.destroyConfig(baseConfig);
+	}
+
+	public void afterMethod(ITestResult result) {
+
+		if (result.getStatus() == ITestResult.FAILURE) {
+			test.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " FAILED ", ExtentColor.RED));
+			test.fail(result.getThrowable());
+		} else if (result.getStatus() == ITestResult.SUCCESS) {
+			test.log(Status.PASS, MarkupHelper.createLabel(result.getName() + " PASSED ", ExtentColor.GREEN));
+		} else {
+			test.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " SKIPPED ", ExtentColor.ORANGE));
+			test.skip(result.getThrowable());
+		}
+		log.info("tearing down test");
+	}
+
+	public void afterTest() {
+		extent.flush();
+
+		if (sendMail)
+			sendMail( reportFilePath);
+		else
+			log.info("Mailing not enabled");
+	}
 
 }

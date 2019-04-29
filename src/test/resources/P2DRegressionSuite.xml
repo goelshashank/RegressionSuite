@@ -1,21 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
 <suite name="P2D Regression Suite">
 
     <parameter name="OS" value="Windows"/>
     <parameter name="browser" value="Chrome"/>
-    <parameter name="reportPath" value="/apps/test/regression/report"/>
-    <parameter name="outPath" value="/apps/test/regression/out"/>
-    <parameter name="benchmarkPath" value="/apps/test/regression/benchmark"/>
+
     <parameter name="inputScriptsPath" value="/apps/test/regression/scripts"/>
     <parameter name="dataPath" value="/apps/test/regression/data"/>
+
+    <parameter name="benchmarkPath" value="/apps/test/regression/benchmark"/>
+    <parameter name="outPath" value="/apps/test/regression/out"/>
+
+    <parameter name="reportPath" value="/apps/test/regression/report"/>
     <parameter name="sendMail" value="true"/>
 
-    <test name="P2DIntegrationTest">
-        <parameter name="reportName" value="IntegTestReport.html"/>
-        <parameter name="loadDB" value="false"/>
-        <parameter name="scriptFileName" value="test.sql"/>
-        <parameter name="dataFileName" value="ari.json"/>
+
+    <test name="P2DIntegrationTest" parallel="false">
+
         <classes>
-            <class name="com.dhisco.regression.tests.test1.IntegTest"/>
+            <class name="com.dhisco.regression.tests.integTest.IntegTest">
+                <parameter name="loadDB" value="false"/>
+                <parameter name="testName" value="integTest"/>
+            </class>
+            <class name="com.dhisco.regression.tests.integTest2.IntegTest2">
+                <parameter name="loadDB" value="false"/>
+                <parameter name="testName" value="integTest"/>
+            </class>
         </classes>
     </test>
 

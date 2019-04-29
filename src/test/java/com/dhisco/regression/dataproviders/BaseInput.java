@@ -1,10 +1,10 @@
-package com.dhisco.regression.dataproviders.base;
+package com.dhisco.regression.dataproviders;
 
 import com.dhisco.regression.core.BasePojo;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -13,7 +13,10 @@ import java.util.Properties;
  * @since 24-04-2019
  */
 @Getter @Setter
-public abstract class BaseInput extends BasePojo {
+public class BaseInput extends BasePojo {
 
 	private String dataFile;
+	private String loadDB;
+	private String testName;
+
 }
