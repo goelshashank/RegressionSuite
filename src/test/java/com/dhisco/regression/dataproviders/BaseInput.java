@@ -4,6 +4,7 @@ import com.dhisco.regression.core.BasePojo;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
@@ -15,8 +16,9 @@ import java.util.Properties;
 @Getter @Setter
 public class BaseInput extends BasePojo {
 
-	private String dataFile;
-	private String loadDB;
-	private String testName;
+	private List<String> dataFiles;
+	private String scriptFile;
+
+	private Boolean loadDB;
 
 }

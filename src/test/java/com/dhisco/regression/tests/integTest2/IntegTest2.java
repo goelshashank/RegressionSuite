@@ -37,6 +37,7 @@ import static java.util.Arrays.asList;
 
 	@BeforeTest  @Override public void beforeTest(ITestContext iTestContext) throws IOException {
 		super.beforeTest(iTestContext);
+
 	}
 
 	@BeforeMethod  public void beforeMethod(Object[] dp) throws Exception {
@@ -57,37 +58,9 @@ import static java.util.Arrays.asList;
 	@Test(dataProviderClass = IntegDP2.class, dataProvider = "baseDP") public void integTest(
 			BaseInput baseInput) throws Exception {
 
+
 		log.info("%%%%%%%%%%% start test %%%%%%%%%%%");
 		test = extent.createTest("Integration Test1", "Integration Test");
-/*
-
-		kafkaConfig.publishData("VS_Brand_2_test",
-				asList(CommonUtils.getResourceStreamFromAbsPath(baseInput.getDataFile())));
-
-		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
-		sleep(10, "Waiting for configuration service to load up");
-
-		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
-		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
-
-		sleep(sleepTime, "Waiting for the pipeline to process the messages");
-
-		String compareFileName=getCompareFileName(baseInput.getDataFile());
-
-		assertJson(getBenchmarkPath() + SLASH_FW + compareFileName,
-				getOutPath() + SLASH_FW + compareFileName, JSONCompareMode.STRICT);
-*/
-
-		log.info("%%%%%%%%%%% end test %%%%%%%%%%%");
-	}
-
-
-
-	@Test(dataProviderClass = IntegDP2.class, dataProvider = "baseDP") public void integTest2(
-			BaseInput baseInput) throws Exception {
-
-		log.info("%%%%%%%%%%% start test %%%%%%%%%%%");
-		test = extent.createTest("Integration Test2", "Integration Test");
 /*
 
 		kafkaConfig.publishData("VS_Brand_2_test",

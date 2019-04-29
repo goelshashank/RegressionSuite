@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="P2D Regression Suite">
+<suite name="P2D Regression Suite" parallel="false">
 
     <parameter name="OS" value="Windows"/>
     <parameter name="browser" value="Chrome"/>
@@ -19,10 +19,6 @@
 
         <classes>
             <class name="com.dhisco.regression.tests.integTest.IntegTest">
-                <parameter name="loadDB" value="false"/>
-                <parameter name="testName" value="integTest"/>
-            </class>
-            <class name="com.dhisco.regression.tests.integTest2.IntegTest2">
                 <parameter name="loadDB" value="false"/>
                 <parameter name="testName" value="integTest"/>
             </class>
