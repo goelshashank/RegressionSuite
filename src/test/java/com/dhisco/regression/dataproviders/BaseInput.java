@@ -16,9 +16,7 @@ import java.util.Properties;
 @Getter @Setter
 public class BaseInput extends BasePojo {
 
-	private List<String> dataFiles;
-	private String scriptFile;
-
 	private Boolean loadDB;
+	private String testName;
 
 }

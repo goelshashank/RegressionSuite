@@ -50,7 +50,7 @@ import static java.util.Arrays.asList;
 
 	@BeforeMethod public void beforeMethod(Object[] o) throws Exception {
 		super.beforeMethod();
-		BaseInput baseInput = (BaseInput) o[0];
+		IntegInput baseInput = (IntegInput) o[0];
 
 		if (baseInput.getLoadDB()) {
 			loadMariaDB(baseInput.getScriptFile());
@@ -68,7 +68,7 @@ import static java.util.Arrays.asList;
 		outDataCleanUp();
 	}
 
-	@Test(dataProviderClass = IntegDP.class, dataProvider = "baseDP") public void integTest(BaseInput baseInput)
+	@Test(dataProviderClass = IntegDP.class, dataProvider = "baseDP") public void integTest(IntegInput baseInput)
 			throws Exception {
 		test = extent.createTest("Integration Test1", "Integration Test1");
 

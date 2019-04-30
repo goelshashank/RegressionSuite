@@ -1,6 +1,9 @@
 package com.dhisco.regression.services.config.db;
 
+import com.dhisco.ptd.dj.PushCoreJson;
+import com.dhisco.ptd.dj.util.PushCoreJsonWithChannel;
 import com.dhisco.regression.services.config.base.BaseConfig;
+import com.dhisco.regression.services.generators.CustomKafkaConsumer;
 import com.dhisco.regression.services.generators.KafkaProducerMain;
 import com.google.common.base.Throwables;
 import com.google.common.collect.Sets;
@@ -13,12 +16,14 @@ import org.apache.kafka.clients.admin.CreateTopicsResult;
 import org.apache.kafka.clients.admin.DeleteTopicsResult;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.KafkaFuture;
 import org.apache.kafka.common.errors.InvalidTopicException;
 import org.apache.kafka.common.errors.TopicExistsException;
 import org.apache.kafka.common.serialization.Serdes;
+import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.processor.WallclockTimestampExtractor;
@@ -48,6 +53,7 @@ import static java.util.Arrays.asList;
 		extends BaseConfig {
 
 	@Autowired KafkaProducerMain kafkaProducerMain;
+	@Autowired CustomKafkaConsumer customKafkaConsumer;
 
 	private String stateDir;
 	private String bootstrapServers;
@@ -57,13 +63,17 @@ import static java.util.Arrays.asList;
 	private String replicationFactor;
 
 	private Properties props;
+	private Properties consumerProps;
+
 	private KafkaProducer<String, String> producer;
+	private KafkaConsumer<String, String> consumer;
 	private AdminClient admin;
 	private Set<String> topics;
 
 	@Override public void afterPropertiesSet() throws Exception {
 		super.afterPropertiesSet();
 		producer = new KafkaProducer(props);
+		consumer = new KafkaConsumer(consumerProps);
 		admin = AdminClient.create(props);
 		topics = Sets.newConcurrentHashSet();
 	}
@@ -81,6 +91,15 @@ import static java.util.Arrays.asList;
 		props.put(StreamsConfig.STATE_DIR_CONFIG, stateDir);
 		props.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 		props.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+
+		consumerProps = new Properties();
+		consumerProps.put( ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,bootstrapServers);
+		consumerProps.put( ConsumerConfig.GROUP_ID_CONFIG, "customConsumerProp");
+		consumerProps.put( ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
+				StringDeserializer.class.getName());
+		consumerProps.put( ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
+				StringDeserializer.class.getName());
+
 	}
 
 	public void createTopic(String topicName) {
@@ -98,15 +117,33 @@ import static java.util.Arrays.asList;
 
 	}
 
+	public void readTopic(String topicName) {
+		synchronized (topics) {
+			if (topics.contains(topicName))
+				return;
+			CreateTopicsResult result = admin.createTopics(
+					asList(new NewTopic(topicName, Integer.valueOf(numPartitions), Short.valueOf(replicationFactor))));
+			logTopicCRUDData(result);
+			topics.add(topicName);
+		}
+
+	}
+
 	@PreDestroy @Override public void cleanup() {
 	/*	topics.stream().forEach(t -> {
 			deleteTopic(t);
 		});*/
+
+		producer.close();
 		super.cleanup();
 	}
 
 	public void publishData(String topicName, List<InputStream> inputStreamList) {
 		kafkaProducerMain.publishData(topicName, producer, inputStreamList);
+	}
+
+	public Map<String, List<PushCoreJsonWithChannel>> consumeData(Set<String> iTopics, int timeout ){
+		return customKafkaConsumer.fetchData( iTopics, consumer, timeout );
 	}
 
 	public void deleteTopic(String topicName) {

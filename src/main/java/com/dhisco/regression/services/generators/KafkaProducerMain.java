@@ -47,10 +47,6 @@ import java.util.List;
 				}
 			}
 		}
-
-		log.info("Producer closed");
-
-		producer.close();
 	}
 }
 
