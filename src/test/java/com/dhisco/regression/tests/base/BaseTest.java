@@ -157,9 +157,7 @@ import static java.util.Arrays.asList;
 
 	public void beforeClass(ITestContext iTestContext) throws Exception{
 
-		Map<String,String> classParamsMap=((TestRunner) iTestContext).getTest().getXmlClasses().get(0).getAllParameters();
-		this.testClassName=classParamsMap.get("testName");;
-
+		this.testClassName=getClassParam("testName");
 		this.reportName = testClassName+".html";
 		this.reportFilePath=this.reportPath+SLASH_FW+this.reportName;
 

@@ -44,7 +44,7 @@ import static java.util.Arrays.asList;
 		super.beforeTest(iTestContext);
 	}
 
-	@BeforeClass  public void beforeClass(ITestContext iTestContext) {
+	@BeforeClass  public void beforeClass(ITestContext iTestContext) throws Exception{
 		super.beforeClass(iTestContext);
 	}
 
