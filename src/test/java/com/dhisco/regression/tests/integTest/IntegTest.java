@@ -35,7 +35,7 @@ import static java.util.Arrays.asList;
 @Log4j2 public class IntegTest extends BaseTest {
 
 /*
-	String[] list = { "VS_Brand_2_test", "M4_Brand_topic_test", "RoyalArabians_test", "BookingDotCom2_test" };
+	private String[] list = { "VS_Brand_2_test", "M4_Brand_topic_test", "RoyalArabians_test", "BookingDotCom2_test" };
 */
 
 	private String[] list = null;
@@ -57,6 +57,8 @@ import static java.util.Arrays.asList;
 		}
 
 		log.info("debug");
+
+		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
 
 		kafkaConfig = loadBean(KafkaConfig.class);
 		asList(list).forEach(t -> kafkaConfig.deleteTopic(t));
@@ -80,7 +82,6 @@ import static java.util.Arrays.asList;
 			}
 		});
 
-		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
 		sleep(10, "Waiting for configuration service to load up");
 
 		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);

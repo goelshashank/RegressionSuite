@@ -120,7 +120,7 @@ import static java.util.Arrays.asList;
 		this.inputScriptsPath = getSuiteParam("outPath");
 		this.sendMail = Boolean.valueOf(getSuiteParam("sendMail"));
 		this.reportName = getSuiteParam("reportName");
-		this.reportName="a.html";
+		this.reportName="integTest.html";
 		this.reportPath= getSuiteParam("reportPath");
 		this.reportFilePath=this.reportPath+SLASH_FW+this.reportName;
 		log.info("Loaded all test parameters");

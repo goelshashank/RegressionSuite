@@ -33,6 +33,7 @@ public abstract class BaseDP {
 		File folder = new File(inputScriptsPath+SLASH_FW+testName);
 		File[] listOfFiles = folder.listFiles();
 
+		//todo: Search files recursively in sub folders
 		Object[][]o=new Object[listOfFiles.length][1];
 		int i=0;
 		for (File file : listOfFiles) {
