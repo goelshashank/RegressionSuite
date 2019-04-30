@@ -68,9 +68,9 @@ import static java.util.Arrays.asList;
 		outDataCleanUp();
 	}
 
-	@Test(dataProviderClass = IntegDP.class, dataProvider = "baseDP") public void integTest(IntegInput baseInput)
+	@Test(dataProviderClass = IntegDP.class, dataProvider = "integDP") public void integTest(IntegInput baseInput)
 			throws Exception {
-		test = extent.createTest("Integration Test1", "Integration Test1");
+		test = extent.createTest(getTestClassName(), getTestClassName());
 
 		log.info("%%%%%%%%%%% start test %%%%%%%%%%%");
 

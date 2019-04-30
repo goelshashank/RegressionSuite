@@ -21,7 +21,7 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
  */
 public class IntegDP extends BaseDP {
 
-	@DataProvider public static Object[][] baseDP(ITestContext iTestContext) {
+	@DataProvider public static Object[][] integDP(ITestContext iTestContext) {
 
 		Map<String, String> suiteParamsMap = iTestContext.getCurrentXmlTest().getAllParameters();
 		String inputScriptsPath=suiteParamsMap.get("inputScriptsPath");

@@ -42,9 +42,9 @@ public class ExcelUtils {
 			workbook = new XSSFWorkbook(inputStream);
 
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			log.error(e.getMessage(),e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.error(e.getMessage(),e);
 		}
 	}
 
@@ -60,7 +60,7 @@ public class ExcelUtils {
 			outputStream.close();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(e.getMessage(),e);
 		}
 	}
 
