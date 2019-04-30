@@ -120,17 +120,9 @@ import static java.util.Arrays.asList;
 		this.benchmarkPath = getSuiteParam("benchmarkPath");
 		this.inputScriptsPath = getSuiteParam("outPath");
 		this.sendMail = Boolean.valueOf(getSuiteParam("sendMail"));
-
-		Map<String,String> classParamsMap=((TestRunner) iTestContext).getTest().
-				getXmlClasses().get(0).getAllParameters();
-		String testName=classParamsMap.get("testName");
-		this.reportName = testName+".html";
-
 		this.reportPath= getSuiteParam("reportPath");
-		this.reportFilePath=this.reportPath+SLASH_FW+this.reportName;
 		log.info("Loaded all test parameters");
 
-		initReporting(getSuiteParam("OS"), getSuiteParam("browser"));
 	}
 
 	private void initReporting(String OS, String browser) {
@@ -160,6 +152,11 @@ import static java.util.Arrays.asList;
 
 	public void beforeClass(String testClassName) {
 		this.testClassName=testClassName;
+
+		this.reportName = testClassName+".html";
+		this.reportFilePath=this.reportPath+SLASH_FW+this.reportName;
+
+		initReporting(getSuiteParam("OS"), getSuiteParam("browser"));
 	}
 
 	public void beforeMethod() throws Exception {

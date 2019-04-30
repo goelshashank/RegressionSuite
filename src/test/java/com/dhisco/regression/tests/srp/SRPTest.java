@@ -51,11 +51,6 @@ public class SRPTest extends BaseTest {
 	private String[] topicsToRead = new String[]{"BookingDotCom2_test", "RoyalArabians_test"};;
 	public static final int KAFKA_READ_TIMEOUT = 30;
 
-	@BeforeClass
-	public void setupCl() {
-		log.info("setting up SRPTest");
-	}
-
 	@BeforeTest @Override public void beforeTest(ITestContext iTestContext) throws IOException {
 		super.beforeTest(iTestContext);
 	}
