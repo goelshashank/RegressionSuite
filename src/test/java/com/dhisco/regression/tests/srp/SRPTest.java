@@ -89,9 +89,6 @@ public class SRPTest extends BaseTest {
 
 	}
 
-	@AfterTest @Override public void afterTest() {
-		super.afterTest();
-	}
 
 	@AfterMethod @Override public void afterMethod(ITestResult result) {
 
@@ -103,6 +100,8 @@ public class SRPTest extends BaseTest {
 
 	@Test(dataProviderClass = SRPDP.class,dataProvider = "rowNumber")
 	public void test1(SRPInput srpInput ) throws Exception {
+		test = extent.createTest(getTestClassName(), getTestClassName());
+
 
 		log.info("%%%%%%%%%%% start test %%%%%%%%%%%");
 		int testCaseNumber = srpInput.getData();
@@ -159,5 +158,8 @@ public class SRPTest extends BaseTest {
 		log.info("%%%%%%%%%%% end test %%%%%%%%%%%");
 	}
 
+	@AfterTest @Override public void afterTest() {
+		super.afterTest();
+	}
 
 }

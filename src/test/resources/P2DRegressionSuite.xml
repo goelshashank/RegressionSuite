@@ -23,7 +23,7 @@
             </class>
         </classes>
     </test>
-    <test name="SRPTest">
+  <!--  <test name="SRPTest">
         <classes>
             <class name="com.dhisco.regression.tests.srp.SRPTest">
                 <parameter name="loadDB" value="false"/>
@@ -31,7 +31,7 @@
                 <parameter name="scriptFileName" value="scriptFile1.sql"/>
             </class>
         </classes>
-    </test>
+    </test>-->
 
 
 </suite>

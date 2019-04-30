@@ -124,7 +124,7 @@ import static java.util.Arrays.asList;
 		Map<String,String> classParamsMap=((TestRunner) iTestContext).getTest().
 				getXmlClasses().get(0).getAllParameters();
 		String testName=classParamsMap.get("testName");
-		this.reportName = "testName"+".html";
+		this.reportName = testName+".html";
 
 		this.reportPath= getSuiteParam("reportPath");
 		this.reportFilePath=this.reportPath+SLASH_FW+this.reportName;
