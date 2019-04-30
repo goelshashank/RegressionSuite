@@ -41,6 +41,7 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.web.ServletTestExecutionListener;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
+import org.testng.TestRunner;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
@@ -119,8 +120,12 @@ import static java.util.Arrays.asList;
 		this.benchmarkPath = getSuiteParam("benchmarkPath");
 		this.inputScriptsPath = getSuiteParam("outPath");
 		this.sendMail = Boolean.valueOf(getSuiteParam("sendMail"));
-		this.reportName = getSuiteParam("reportName");
-		this.reportName="integTest.html";
+
+		Map<String,String> classParamsMap=((TestRunner) iTestContext).getTest().
+				getXmlClasses().get(0).getAllParameters();
+		String testName=classParamsMap.get("testName");
+		this.reportName = "testName"+".html";
+
 		this.reportPath= getSuiteParam("reportPath");
 		this.reportFilePath=this.reportPath+SLASH_FW+this.reportName;
 		log.info("Loaded all test parameters");

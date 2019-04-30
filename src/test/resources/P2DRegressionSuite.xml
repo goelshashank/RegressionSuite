@@ -26,7 +26,6 @@
     <test name="SRPTest">
         <classes>
             <class name="com.dhisco.regression.tests.srp.SRPTest">
-                <parameter name="reportName" value="SRPTest1report.html"/>
                 <parameter name="loadDB" value="false"/>
                 <parameter name="testName" value="sRPTest"/>
                 <parameter name="scriptFileName" value="scriptFile1.sql"/>
