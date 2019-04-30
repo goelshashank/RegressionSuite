@@ -153,8 +153,13 @@ public class SRPTest extends BaseTest {
 		log.info("%%%%%%%%%%% end test %%%%%%%%%%%");
 	}
 
+	@AfterClass @Override public void afterClass() {
+		super.afterClass();
+	}
+
 	@AfterTest @Override public void afterTest() {
 		super.afterTest();
 	}
+
 
 }
