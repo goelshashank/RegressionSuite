@@ -55,13 +55,12 @@ public class SRPTest extends BaseTest {
 		super.beforeTest(iTestContext);
 	}
 
-	@BeforeClass @Parameters({"testName","loadDB", "scriptFileName"}) public void beforeClass(String testClassName,
-			Boolean loadDB, String scriptFileName ) throws Exception{
-		super.beforeClass(testClassName);
+	@BeforeClass  @Override public void beforeClass(ITestContext iTestContext) throws Exception{
+		super.beforeClass(iTestContext);
 
-		String fullScriptPath=getInputScriptsPath()+SLASH_FW+testClassName+SLASH_FW+scriptFileName;
+		String fullScriptPath=getInputScriptsPath()+SLASH_FW+testClassName+SLASH_FW+getClassParam("scriptFileName");
 
-		if (loadDB) {
+		if (Boolean.valueOf(getClassParam("loadDB"))) {
 			loadMariaDB(fullScriptPath);
 		}
 

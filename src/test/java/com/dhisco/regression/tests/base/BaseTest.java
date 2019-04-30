@@ -109,6 +109,11 @@ import static java.util.Arrays.asList;
 		return map.get(str);
 	}
 
+	public String getClassParam(String str){
+		Map<String,String> classParamsMap=((TestRunner) iTestContext).getTest().getXmlClasses().get(0).getAllParameters();
+		return classParamsMap.get(str);
+	}
+
 	public void beforeTest(ITestContext iTestContext) throws IOException {
 		this.iTestContext=iTestContext;
 
@@ -150,8 +155,10 @@ import static java.util.Arrays.asList;
 		log.info("Reporting initialized");
 	}
 
-	public void beforeClass(String testClassName) {
-		this.testClassName=testClassName;
+	public void beforeClass(ITestContext iTestContext) throws Exception{
+
+		Map<String,String> classParamsMap=((TestRunner) iTestContext).getTest().getXmlClasses().get(0).getAllParameters();
+		this.testClassName=classParamsMap.get("testName");;
 
 		this.reportName = testClassName+".html";
 		this.reportFilePath=this.reportPath+SLASH_FW+this.reportName;

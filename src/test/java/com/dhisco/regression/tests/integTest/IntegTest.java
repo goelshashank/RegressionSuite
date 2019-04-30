@@ -44,8 +44,8 @@ import static java.util.Arrays.asList;
 		super.beforeTest(iTestContext);
 	}
 
-	@BeforeClass @Override @Parameters("testName") public void beforeClass(String testClassName) {
-		super.beforeClass(testClassName);
+	@BeforeClass  public void beforeClass(ITestContext iTestContext) {
+		super.beforeClass(iTestContext);
 	}
 
 	@BeforeMethod public void beforeMethod(Object[] o) throws Exception {
