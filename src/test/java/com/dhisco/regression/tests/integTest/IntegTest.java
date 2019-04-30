@@ -10,17 +10,13 @@ import com.dhisco.regression.tests.base.BaseTest;
 import lombok.extern.log4j.Log4j2;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.testng.Assert;
-import org.testng.ITest;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.testng.xml.XmlTest;
 
 import java.io.IOException;
 
@@ -34,7 +30,6 @@ import static java.util.Arrays.asList;
  */
 @Log4j2 public class IntegTest extends BaseTest {
 
-
 	private String str;
 
 	String[] list = { "VS_Brand_2_test", "M4_Brand_topic_test", "RoyalArabians_test", "BookingDotCom2_test" };
@@ -43,28 +38,30 @@ import static java.util.Arrays.asList;
 		super.beforeTest(iTestContext);
 	}
 
-	@BeforeMethod  public void beforeMethod(Object[] baseInput) throws Exception {
+	@BeforeMethod public void beforeMethod(Object[] baseInput) throws Exception {
 		super.beforeMethod();
-		log.info("beforeMethod");
 
-		log.info("check");
-	/*	kafkaConfig = loadBean(KafkaConfig.class);
+		kafkaConfig = loadBean(KafkaConfig.class);
 		asList(list).forEach(t -> kafkaConfig.deleteTopic(t));
 		sleep(5, "Waiting for cleanup of Kafka topics");
 		asList(list).forEach(t -> kafkaConfig.createTopic(t));
 
-		outDataCleanUp();*/
+		outDataCleanUp();
 	}
 
-
-	@Test(dataProviderClass = IntegDP.class, dataProvider = "baseDP") public void integTest(
-			BaseInput baseInput) throws Exception {
+	@Test(dataProviderClass = IntegDP.class, dataProvider = "baseDP") public void integTest(BaseInput baseInput)
+			throws Exception {
 		test = extent.createTest("Integration Test1", "Integration Test1");
 
-		/*log.info("%%%%%%%%%%% start test %%%%%%%%%%%");
+		log.info("%%%%%%%%%%% start test %%%%%%%%%%%");
 
-		kafkaConfig.publishData("VS_Brand_2_test",
-				asList(CommonUtils.getResourceStreamFromAbsPath(baseInput.getDataFile())));
+		baseInput.getDataFiles().forEach(t -> {
+			try {
+				kafkaConfig.publishData("VS_Brand_2_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
+			} catch (Exception e) {
+				log.error(e.getMessage(), e);
+			}
+		});
 
 		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
 		sleep(10, "Waiting for configuration service to load up");
@@ -74,25 +71,28 @@ import static java.util.Arrays.asList;
 
 		sleep(sleepTime, "Waiting for the pipeline to process the messages");
 
-		String compareFileName=getCompareFileName(baseInput.getDataFile());
+		baseInput.getDataFiles().forEach(t -> {
 
-		assertJson(getBenchmarkPath() + SLASH_FW + compareFileName,
-				getOutPath() + SLASH_FW + compareFileName, JSONCompareMode.STRICT);*/
-
-		Assert.assertEquals(1,1);
+			try {
+				String compareFileName = getCompareFileName(t);
+				assertJson(getBenchmarkPath() + SLASH_FW + compareFileName, getOutPath() + SLASH_FW + compareFileName,
+						JSONCompareMode.STRICT);
+			} catch (Exception e) {
+				log.error(e.getMessage(), e);
+			}
+		});
 
 		log.info("%%%%%%%%%%% end test %%%%%%%%%%%");
 	}
 
 	@AfterMethod @Override public void afterMethod(ITestResult result) {
 
-		/*asList(list).forEach(t -> kafkaConfig.deleteTopic(t));*/
+		asList(list).forEach(t -> kafkaConfig.deleteTopic(t));
 		super.afterMethod(result);
 	}
 
 	@AfterTest @Override public void afterTest() {
 		super.afterTest();
 	}
-
 
 }

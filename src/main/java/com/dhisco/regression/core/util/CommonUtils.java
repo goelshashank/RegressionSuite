@@ -8,6 +8,11 @@ import org.apache.commons.collections.MapUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
@@ -98,6 +103,21 @@ import java.util.Scanner;
 
 	public static InputStream getResourceStreamFromAbsPath(String absPath) throws IOException {
 		return new FileInputStream(absPath);
+	}
+
+	public String getRestCall(String uri){
+		RestTemplate restTemplate = new RestTemplate();
+		return restTemplate.getForObject(uri, String.class);
+	}
+
+	public  String postRestCall(String uri,String requestJson){
+		RestTemplate restTemplate = new RestTemplate();
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		HttpEntity<String> entity = new HttpEntity(requestJson, headers);
+		String response = restTemplate.postForObject(uri, entity,String.class);
+		return response;
 	}
 
 }

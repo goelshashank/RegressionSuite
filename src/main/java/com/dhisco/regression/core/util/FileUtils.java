@@ -54,9 +54,9 @@ public class FileUtils {
 			return new XSSFWorkbook(excelFile);
 
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			log.error(e.getMessage(),e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.error(e.getMessage(),e);
 		}
 		
 		return null;
