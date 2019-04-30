@@ -63,7 +63,7 @@ import static java.util.Arrays.asList;
 			loadMariaDB(baseInput.getScriptFile());
 		}
 
-		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
+	//	configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
 	/*	List<String> brands=CommonUtils.getRestCall("http://valstpdevcfs01a.asp.dhisco.com:8081/p2d/brands");
 		List<String> channels=CommonUtils.getRestCall("http://valstpdevcfs01a.asp.dhisco.com:8081/p2d/channels");
 
@@ -93,7 +93,7 @@ import static java.util.Arrays.asList;
 			}
 		});
 
-		sleep(10, "Waiting for configuration service to load up");
+	/*	sleep(10, "Waiting for configuration service to load up");
 
 		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
 		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
@@ -106,12 +106,12 @@ import static java.util.Arrays.asList;
 			assertJson(getBenchmarkPath() + SLASH_FW + compareFileName, getOutPath() + SLASH_FW + compareFileName,
 					JSONCompareMode.STRICT);
 		}
-
+*/
 		log.info("%%%%%%%%%%% end test: {} %%%%%%%%%%%", getTestClassName());
 	}
 
 	@AfterMethod @Override public void afterMethod(ITestResult result) throws Exception {
-
+		log.info("in after method ");
 		asList(topics).forEach(t -> kafkaConfig.deleteTopic(t));
 
 		Arrays.asList(kafkaConfig, configurationServiceConfig, supplyRuleProcessorConfig, channelMessageProcessorConfig)

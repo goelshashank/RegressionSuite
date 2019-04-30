@@ -143,7 +143,7 @@ public class ExcelUtils {
 		while (cellIterator.hasNext()) {
 			Cell currentCell = cellIterator.next();
 			str = currentCell.getStringCellValue();
-			System.out.print( str + "|" );
+			log.info( str + "|" );
 		}
 	}
 }
