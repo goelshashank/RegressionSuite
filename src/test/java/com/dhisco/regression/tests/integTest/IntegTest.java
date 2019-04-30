@@ -9,18 +9,22 @@ import com.dhisco.regression.services.config.db.KafkaConfig;
 import com.dhisco.regression.tests.base.BaseTest;
 import lombok.extern.log4j.Log4j2;
 import org.skyscreamer.jsonassert.JSONCompareMode;
-import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
+import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 import static java.util.Arrays.asList;
 
 /**
@@ -30,16 +34,29 @@ import static java.util.Arrays.asList;
  */
 @Log4j2 public class IntegTest extends BaseTest {
 
-	private String str;
-
+/*
 	String[] list = { "VS_Brand_2_test", "M4_Brand_topic_test", "RoyalArabians_test", "BookingDotCom2_test" };
+*/
+
+	private String[] list = null;
 
 	@BeforeTest @Override public void beforeTest(ITestContext iTestContext) throws IOException {
 		super.beforeTest(iTestContext);
 	}
 
-	@BeforeMethod public void beforeMethod(Object[] baseInput) throws Exception {
+	@BeforeClass @Override @Parameters("testName") public void beforeClass(String testClassName) {
+		super.beforeClass(testClassName);
+	}
+
+	@BeforeMethod public void beforeMethod(Object[] o) throws Exception {
 		super.beforeMethod();
+		BaseInput baseInput = (BaseInput) o[0];
+
+		if (baseInput.getLoadDB()) {
+			loadMariaDB(baseInput.getScriptFile());
+		}
+
+		log.info("debug");
 
 		kafkaConfig = loadBean(KafkaConfig.class);
 		asList(list).forEach(t -> kafkaConfig.deleteTopic(t));
@@ -88,7 +105,18 @@ import static java.util.Arrays.asList;
 	@AfterMethod @Override public void afterMethod(ITestResult result) {
 
 		asList(list).forEach(t -> kafkaConfig.deleteTopic(t));
+
+		Arrays.asList(configurationServiceConfig, supplyRuleProcessorConfig, channelMessageProcessorConfig).
+				forEach(t -> {
+					if (isNotEmpty(t)) {
+						destroyConfig(t);
+					}
+				});
 		super.afterMethod(result);
+	}
+
+	@AfterClass @Override public void afterClass() {
+		super.afterClass();
 	}
 
 	@AfterTest @Override public void afterTest() {

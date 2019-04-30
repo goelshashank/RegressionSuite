@@ -99,7 +99,7 @@ import static java.util.Arrays.asList;
 	public ExtentReports extent;
 	public ExtentTest test;
 	public String suiteName;
-	public String testName;
+	public String testClassName;
 
 	public ITestContext iTestContext;
 
@@ -124,10 +124,6 @@ import static java.util.Arrays.asList;
 		this.reportPath= getSuiteParam("reportPath");
 		this.reportFilePath=this.reportPath+SLASH_FW+this.reportName;
 		log.info("Loaded all test parameters");
-
-		if (Boolean.valueOf(getSuiteParam("loadDB"))) {
-			loadMariaDB(getSuiteParam("scriptFileName"));
-		}
 
 		initReporting(getSuiteParam("OS"), getSuiteParam("browser"));
 	}
@@ -157,12 +153,12 @@ import static java.util.Arrays.asList;
 		log.info("Reporting initialized");
 	}
 
+	public void beforeClass(String testClassName) {
+		this.testClassName=testClassName;
+	}
+
 	public void beforeMethod() throws Exception {
 		log.debug("Before method");
-
-	/*	this.testName=baseInput.getTestName();
-		this.baseInput.getLoadDB();*/
-
 	}
 
 
@@ -263,13 +259,13 @@ import static java.util.Arrays.asList;
 		}
 	}
 
-	@LogTime public void loadMariaDB(String fileName) throws IOException {
+	@LogTime public void loadMariaDB(String filePath) throws IOException {
 		log.info("--------------- Loading Maria DB ------------------");
-		log.info("Input script file - {}", fileName);
+		log.info("Input script file - {}", filePath);
 		dbConfig = loadBean(DBConfig.class);
 		/*dbConfig.executeCommand("drop database if exists " + dbConfig.getMariaTestDb());
 		dbConfig.executeCommand("create database if not exists " + dbConfig.getMariaTestDb());*/
-		dbConfig.executeScript(CommonUtils.getResourceStreamFromAbsPath(inputScriptsPath + SLASH_FW + fileName));
+		dbConfig.executeScript(CommonUtils.getResourceStreamFromAbsPath(filePath));
 		//todo: execute command to explicity update url test db
 		log.info("--------------- Loaded Maria DB ------------------ ");
 	}
@@ -292,6 +288,7 @@ import static java.util.Arrays.asList;
 
 	public void destroyConfig(BaseConfig baseConfig){
 		manageConfigurations.destroyConfig(baseConfig);
+		baseConfig=null;
 	}
 
 	public void afterMethod(ITestResult result) {
@@ -306,6 +303,10 @@ import static java.util.Arrays.asList;
 			test.skip(result.getThrowable());
 		}
 		log.info("tearing down test");
+	}
+
+	public void afterClass() {
+
 	}
 
 	public void afterTest() {
