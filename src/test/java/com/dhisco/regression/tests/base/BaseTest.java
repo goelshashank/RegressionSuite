@@ -88,6 +88,7 @@ import static java.util.Arrays.asList;
 	private String reportName;
 	private  String reportPath;
 	private String reportFilePath;
+	private Boolean clearOut;
 
 	public DBConfig dbConfig;
 	public KafkaConfig kafkaConfig;
@@ -126,6 +127,7 @@ import static java.util.Arrays.asList;
 		this.inputScriptsPath = getSuiteParam("inputScriptsPath");
 		this.sendMail = Boolean.valueOf(getSuiteParam("sendMail"));
 		this.reportPath= getSuiteParam("reportPath");
+		this.clearOut=Boolean.valueOf(getSuiteParam("clearOut"));
 		log.info("Loaded all test parameters");
 
 	}
@@ -286,6 +288,7 @@ import static java.util.Arrays.asList;
 	}
 
 	public void outDataCleanUp() {
+		log.info("clearing out dir- {}",getOutPath());
 		serverConfig=loadBean(ServerConfig.class);
 		serverConfig.executeSSHCommands(asList("rm -r "+getOutPath()+"/*"));
 	}
