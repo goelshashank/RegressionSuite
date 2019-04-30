@@ -28,6 +28,7 @@ import javax.annotation.PreDestroy;
 	private String debeziumHost;
 	private String startServCommand;
 	private String host;
+	private String applicationId;
 
 	@PostConstruct public void init() {
 		super.init();

@@ -123,7 +123,7 @@ import static java.util.Arrays.asList;
 		System.setProperty("test.out.path",outPath);
 
 		this.benchmarkPath = getSuiteParam("benchmarkPath");
-		this.inputScriptsPath = getSuiteParam("outPath");
+		this.inputScriptsPath = getSuiteParam("inputScriptsPath");
 		this.sendMail = Boolean.valueOf(getSuiteParam("sendMail"));
 		this.reportPath= getSuiteParam("reportPath");
 		log.info("Loaded all test parameters");
@@ -270,8 +270,6 @@ import static java.util.Arrays.asList;
 		log.info("--------------- Loading Maria DB ------------------");
 		log.info("Input script file - {}", filePath);
 		dbConfig = loadBean(DBConfig.class);
-		/*dbConfig.executeCommand("drop database if exists " + dbConfig.getMariaTestDb());
-		dbConfig.executeCommand("create database if not exists " + dbConfig.getMariaTestDb());*/
 		dbConfig.executeScript(CommonUtils.getResourceStreamFromAbsPath(filePath));
 		//todo: execute command to explicity update url test db
 		log.info("--------------- Loaded Maria DB ------------------ ");
@@ -298,7 +296,7 @@ import static java.util.Arrays.asList;
 		baseConfig=null;
 	}
 
-	public void afterMethod(ITestResult result) {
+	public void afterMethod(ITestResult result) throws  Exception{
 
 		if (result.getStatus() == ITestResult.FAILURE) {
 			test.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " FAILED ", ExtentColor.RED));

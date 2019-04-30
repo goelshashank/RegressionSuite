@@ -105,12 +105,12 @@ import java.util.Scanner;
 		return new FileInputStream(absPath);
 	}
 
-	public String getRestCall(String uri){
+	public static String getRestCall(String uri){
 		RestTemplate restTemplate = new RestTemplate();
 		return restTemplate.getForObject(uri, String.class);
 	}
 
-	public  String postRestCall(String uri,String requestJson){
+	public  static String postRestCall(String uri,String requestJson){
 		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);

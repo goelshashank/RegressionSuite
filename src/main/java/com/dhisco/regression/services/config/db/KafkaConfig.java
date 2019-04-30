@@ -42,6 +42,7 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
+import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 import static java.util.Arrays.asList;
 
 /**
@@ -130,11 +131,9 @@ import static java.util.Arrays.asList;
 	}
 
 	@PreDestroy @Override public void cleanup() {
-	/*	topics.stream().forEach(t -> {
-			deleteTopic(t);
-		});*/
-
+		if(isNotEmpty(producer))
 		producer.close();
+
 		super.cleanup();
 	}
 

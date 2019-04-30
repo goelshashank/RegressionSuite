@@ -147,7 +147,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 
 		int res = channel.getExitStatus();
 		if (res != 0) {
-			log.error("Error: Channel is not closed yet for command- {} and exit status- {}", command, res);
+			log.debug("Error: Channel is not closed yet for command- {} and exit status- {}", command, res);
 			throw new IOException("error in executing command " + res);
 		}
 		channel.disconnect();
