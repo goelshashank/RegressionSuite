@@ -297,7 +297,7 @@ public abstract class BaseTest
 	}
 
 
-	public void destroyConfig(BaseConfig baseConfig){
+	private void destroyConfig(BaseConfig baseConfig){
 		manageConfigurations.destroyConfig(baseConfig);
 	}
 
