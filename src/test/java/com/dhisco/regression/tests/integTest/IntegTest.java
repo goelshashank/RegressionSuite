@@ -111,13 +111,6 @@ import static java.util.Arrays.asList;
 		log.info("in after method ");
 		asList(topics).forEach(t -> kafkaConfig.deleteTopic(t));
 
-	/*	Arrays.asList(kafkaConfig, configurationServiceConfig, supplyRuleProcessorConfig, channelMessageProcessorConfig)
-				.forEach(t -> {
-					if (isNotEmpty(t)) {
-						destroyConfig(t);
-					}
-				});
-		sleep(10, "Sleeping after destroying configs");*/
 		super.afterMethod(result);
 	}
 
