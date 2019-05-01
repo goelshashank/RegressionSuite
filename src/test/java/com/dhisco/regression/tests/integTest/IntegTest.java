@@ -41,8 +41,6 @@ import static java.util.Arrays.asList;
 		String s="[{\"id\":1,\"createdAt\":1547510400000,\"updatedAt\":1547510400000,\"code\":\"VS\","
 				+ "\"topic\":\"VS_Brand_2\",\"shadowed\":false},{\"id\":2,\"createdAt\":1547510400000,\"updatedAt\":1547510400000,\"code\":\"M4\",\"topic\":\"M4_Brand_topic_test\",\"shadowed\":false},{\"id\":5,\"createdAt\":1554201862000,\"updatedAt\":1554201862000,\"code\":\"VS_DR\",\"topic\":\"VS_Brand_2_test\",\"shadowed\":false},{\"id\":6,\"createdAt\":1554201862000,\"updatedAt\":1554201862000,\"code\":\"VS_LBR\",\"topic\":\"VS_Brand_2_test\",\"shadowed\":false},{\"id\":7,\"createdAt\":1554201862000,\"updatedAt\":1554201862000,\"code\":\"ZZ_DR\",\"topic\":\"ZZ_Brand_2\",\"shadowed\":false},{\"id\":8,\"createdAt\":1554201862000,\"updatedAt\":1554201862000,\"code\":\"ZZ_LBR\",\"topic\":\"ZZ_Brand_2\",\"shadowed\":false},{\"id\":3,\"createdAt\":1554249600000,\"updatedAt\":1554249600000,\"code\":\"ZZ\",\"topic\":\"ZZ_Brand_2\",\"shadowed\":false}]";
 
-
-
 		String s1="[{\"id\":1,\"createdAt\":1547510400000,\"updatedAt\":1547510400000,\"name\":\"RoyalArabians\","
 				+ "\"topic\":\"RoyalArabians_test\",\"sgaCode\":\"9z\",\"consumerCount\":4,\"channelConcurrency\":100,\"channelHotelConcurrency\":15,\"appInstances\":1,\"publicRatesAllowed\":false,\"shadowed\":true},{\"id\":2,\"createdAt\":1547510400000,\"updatedAt\":1547510400000,\"name\":\"Booking.com\",\"topic\":\"BookingDotCom2_test\",\"sgaCode\":\"01\",\"consumerCount\":1,\"channelConcurrency\":100,\"channelHotelConcurrency\":20,\"appInstances\":1,\"publicRatesAllowed\":true,\"shadowed\":false}]";
 
@@ -114,13 +112,13 @@ import static java.util.Arrays.asList;
 		log.info("in after method ");
 		asList(topics).forEach(t -> kafkaConfig.deleteTopic(t));
 
-		Arrays.asList(kafkaConfig, configurationServiceConfig, supplyRuleProcessorConfig, channelMessageProcessorConfig)
+	/*	Arrays.asList(kafkaConfig, configurationServiceConfig, supplyRuleProcessorConfig, channelMessageProcessorConfig)
 				.forEach(t -> {
 					if (isNotEmpty(t)) {
 						destroyConfig(t);
 					}
 				});
-		sleep(10, "Sleeping after destroying configs");
+		sleep(10, "Sleeping after destroying configs");*/
 		super.afterMethod(result);
 	}
 

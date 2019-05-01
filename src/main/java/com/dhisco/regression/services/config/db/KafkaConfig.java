@@ -71,14 +71,6 @@ import static java.util.Arrays.asList;
 	private AdminClient admin;
 	private Set<String> topics;
 
-	@Override public void afterPropertiesSet() throws Exception {
-		super.afterPropertiesSet();
-		producer = new KafkaProducer(props);
-		consumer = new KafkaConsumer(consumerProps);
-		admin = AdminClient.create(props);
-		topics = Sets.newConcurrentHashSet();
-	}
-
 	@PostConstruct @Override public void init() {
 		super.init();
 		props = new Properties();
@@ -101,6 +93,15 @@ import static java.util.Arrays.asList;
 		consumerProps.put( ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
 				StringDeserializer.class.getName());
 
+	}
+
+
+	@Override public void afterPropertiesSet() throws Exception {
+		super.afterPropertiesSet();
+		producer = new KafkaProducer(props);
+		consumer = new KafkaConsumer(consumerProps);
+		admin = AdminClient.create(props);
+		topics = Sets.newConcurrentHashSet();
 	}
 
 	public void createTopic(String topicName) {
@@ -130,12 +131,6 @@ import static java.util.Arrays.asList;
 
 	}
 
-	@PreDestroy @Override public void cleanup() {
-		if(isNotEmpty(producer))
-		producer.close();
-
-		super.cleanup();
-	}
 
 	public void publishData(String topicName, List<InputStream> inputStreamList) {
 		kafkaProducerMain.publishData(topicName, producer, inputStreamList);
@@ -174,6 +169,14 @@ import static java.util.Arrays.asList;
 				}
 			}
 		}
+	}
+
+
+	@PreDestroy @Override public void cleanup() {
+		if(isNotEmpty(producer))
+			producer.close();
+
+		super.cleanup();
 	}
 
 }

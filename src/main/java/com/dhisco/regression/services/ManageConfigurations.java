@@ -59,9 +59,9 @@ import java.util.Properties;
 	}
 
 	public void destroyConfig(BaseConfig baseConfig){
+
 		((DefaultListableBeanFactory) applicationContext.getAutowireCapableBeanFactory()).
-				destroySingleton(baseConfig.getClass().getName());
-		baseConfig=null;
+				destroyBean(baseConfig);
 	}
 
 

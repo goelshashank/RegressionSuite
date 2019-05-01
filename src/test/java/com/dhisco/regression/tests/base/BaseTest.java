@@ -34,6 +34,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
@@ -73,7 +74,9 @@ import static java.util.Arrays.asList;
  */
 @TestExecutionListeners(inheritListeners = false, listeners = { DependencyInjectionTestExecutionListener.class,
 		DirtiesContextTestExecutionListener.class,
-		ServletTestExecutionListener.class }) @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, classes = ManageConfigurations.class) @Log4j2 @Getter public abstract class BaseTest
+		ServletTestExecutionListener.class }) @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, classes = ManageConfigurations.class) @Log4j2 @Getter
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
+public abstract class BaseTest
 		extends AbstractTestNGSpringContextTests {
 
 	@Autowired public ManageConfigurations manageConfigurations;
@@ -296,7 +299,6 @@ import static java.util.Arrays.asList;
 
 	public void destroyConfig(BaseConfig baseConfig){
 		manageConfigurations.destroyConfig(baseConfig);
-		baseConfig=null;
 	}
 
 	public void afterMethod(ITestResult result) throws  Exception{
