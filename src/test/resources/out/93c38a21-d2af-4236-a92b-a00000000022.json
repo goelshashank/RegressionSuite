@@ -1,0 +1,34 @@
+{
+  "SessionID": "93c38a21-d2af-4236-a92b-a00000000022",
+  "Framework": 2,
+  "HotelID": 3,
+  "ChannelID": 221,
+  "ChannelProductID": 48,
+  "ChannelName": "Booking.com",
+  "RoomName": "Double Room(332609003)",
+  "RoomCode": "332609503",
+  "RateName": "Test rateplan",
+  "RateCode": "11300247",
+  "RatePlanCategory": "DLU",
+  "UserID": "RateGain-Test",
+  "Password": ")6^i?32(wSjw/lLs-.ghY.!)::euB)4itzX4:s^Y",
+  "ChannelHotelCode": "3326095",
+  "AdditionalParam": "3326095",
+  "SessionRequired": false,
+  "CurrencyCode": "USD",
+  "DateUpdates": [
+    {
+      "Date": "2019-04-03",
+      "Group": 0,
+      "RequestID": "1",
+      "UpdateAttributes": [],
+      "LOS_Availability": {
+        "ID": 49,
+        "Name": "7",
+        "Value": "NNNNNNY",
+        "Type": 1
+      },
+      "LOS_Pricing": []
+    }
+  ]
+}

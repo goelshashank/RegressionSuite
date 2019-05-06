@@ -1,0 +1,36 @@
+{
+  "OTA_HotelAvailNotifRQ": {
+    "EchoToken": "93c38a21-d2af-4236-a92b-a00000000023",
+    "MessageContentCode": "3",
+    "TimeStamp": "2019-04-03T14:30:27",
+    "Version": 7.001,
+    "AvailStatusMessages": {
+      "BrandCode": "VS_DR",
+      "HotelCode": "3646",
+      "AvailStatusMessage": [
+        {
+          "LengthsOfStay": {
+            "LengthOfStay": [{
+              "MinMaxMessageType": "SetMaxLOS",
+              "Time": 5,
+              "TimeUnit": "Day"
+            }
+            ],
+            "arrivalDateBased": false
+          },
+          "StatusApplicationControl": {
+            "Start": "2019-04-03",
+            "End": "2019-04-03",
+            "RatePlanCode": "BVW",
+            "RatePlanCategory": "DLU",
+            "InvTypeCode": "A1K"
+          },
+          "UniqueID": {
+            "ID": "1",
+            "Type": "18"
+          }
+        }
+      ]
+    }
+  }
+}
