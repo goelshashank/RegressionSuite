@@ -64,7 +64,7 @@ import static java.util.Arrays.asList;
 		}
 
 		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
-		sleep(10, "Waiting for configuration service to load up");
+		sleep(15, "Waiting for configuration service to load up");
 		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
 		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 
@@ -91,6 +91,7 @@ import static java.util.Arrays.asList;
 		log.info("----......------- Start test: {} -----.......-------", getTestClassName());
 
 		for (String t : baseInput.getDataFiles()) {
+			log.info("#### Publishing file - {} ####",t);
 				PushCoreJson pushCoreJson=
 						CommonUtils.getObjFromResourceJsonAbsPath(t,PushCoreJson.class);
 				Assert.assertTrue(isNotEmpty(pushCoreJson));

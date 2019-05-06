@@ -131,7 +131,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 	}
 
 	private void executeCommand(String host, String command) throws JSchException, IOException {
-		log.debug("Running command- {}",command);
+		log.info("Running command- {}",command);
 		ChannelExec channel = (ChannelExec) sessionMap.get(host).openChannel("exec");
 		channel.setCommand(command);
 		channel.connect();

@@ -11,16 +11,18 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -105,19 +107,37 @@ import java.util.Scanner;
 		return new FileInputStream(absPath);
 	}
 
-	public static String getRestCall(String uri){
+	public static String getRestCall(String uri) {
 		RestTemplate restTemplate = new RestTemplate();
 		return restTemplate.getForObject(uri, String.class);
 	}
 
-	public  static String postRestCall(String uri,String requestJson){
+	public static String postRestCall(String uri, String requestJson) {
 		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 
 		HttpEntity<String> entity = new HttpEntity(requestJson, headers);
-		String response = restTemplate.postForObject(uri, entity,String.class);
+		String response = restTemplate.postForObject(uri, entity, String.class);
 		return response;
+	}
+
+	public static List<File> getAllFiles(String pathName) {
+		List<File> out = new ArrayList();
+		File folder2 = new File(pathName);
+		File[] files = folder2.listFiles();
+
+		for (File file : files) {
+			List<File> dirFiles = new ArrayList<>();
+			if (file.isDirectory()) {
+				dirFiles = getAllFiles(file.getAbsolutePath());
+				if (isNotEmpty(dirFiles))
+					out.addAll(dirFiles);
+			} else
+				out.add(file);
+		}
+
+		return out;
 	}
 
 }

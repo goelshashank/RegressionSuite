@@ -1,18 +1,19 @@
 package com.dhisco.regression.tests.integTest;
 
-import com.dhisco.regression.core.util.CommonUtils;
 import com.dhisco.regression.dataproviders.BaseDP;
-import com.dhisco.regression.dataproviders.BaseInput;
 import org.testng.ITestContext;
 import org.testng.TestRunner;
 import org.testng.annotations.DataProvider;
 
 import java.io.File;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
+import static com.dhisco.regression.core.util.CommonUtils.getAllFiles;
+import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
 
 /**
  * @author Shashank Goel
@@ -43,12 +44,12 @@ public class IntegDP extends BaseDP {
 
 			baseInput.setScriptFile(inputScriptsPath+SLASH_FW+testName+SLASH_FW+scriptName);
 
-			File folder2 = new File(dataPath+SLASH_FW+testName+SLASH_FW+scriptName.split("\\.")[0]);
-			File[] listOfFiles2 = folder2.listFiles();
+			List<File> folder2=getAllFiles(dataPath+SLASH_FW+testName+SLASH_FW+scriptName.split("\\.")[0]);
+			File[] listOfFiles2= folder2.toArray(new File[folder2.size()]);
 
-			if(CommonUtils.isEmpty(listOfFiles2))continue;
+			if(isEmpty(listOfFiles2))continue;
 			baseInput.setDataFiles(
-					Arrays.stream(listOfFiles2).map(t-> dataPath+SLASH_FW+testName+SLASH_FW+scriptName.split("\\.")[0]+SLASH_FW+t.getName()).collect(
+					Arrays.stream(listOfFiles2).map(t-> t.getAbsolutePath()).collect(
 							Collectors.toList()));
 
 			baseInput.setLoadDB(loadDB);
@@ -58,4 +59,5 @@ public class IntegDP extends BaseDP {
 		}
 		return o;
 	}
+
 }

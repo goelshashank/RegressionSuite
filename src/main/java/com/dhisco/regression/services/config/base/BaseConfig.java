@@ -86,7 +86,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
 		while (i < 1) {
 			executeSSHCommands(
 					Arrays.asList("kill -9  $(pgrep -f " + getPort() + ") || kill -9  $(pgrep -f " + getPort() + ")"));
-			sleep(1);
+			sleep(2);
 			i++;
 		}
 
