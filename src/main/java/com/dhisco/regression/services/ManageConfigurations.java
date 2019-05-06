@@ -44,13 +44,13 @@ import java.util.Properties;
 	@Override
 	public void contextInitialized(
 			ServletContextEvent sce) {
-		log.info("context initialised");
+		log.info("++++++++++ Context Initialised +++++++++");
 	}
 
 	@Override
 	public void contextDestroyed(
 			ServletContextEvent sce) {
-		log.info("context shutdown");
+		log.info("++++++++++++ Context Shutdown ++++++++++++");
 	}
 
 	@LogTime

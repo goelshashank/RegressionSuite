@@ -41,10 +41,8 @@ public class ExcelUtils {
 			inputStream = new FileInputStream( file );
 			workbook = new XSSFWorkbook(inputStream);
 
-		} catch (FileNotFoundException e) {
-			log.error(e.getMessage(),e);
-		} catch (IOException e) {
-			log.error(e.getMessage(),e);
+		} catch (Exception e){
+			//log.error(e.getMessage(),e);
 		}
 	}
 
@@ -60,7 +58,7 @@ public class ExcelUtils {
 			outputStream.close();
 
 		} catch (Exception e) {
-			log.error(e.getMessage(),e);
+		//	log.error(e.getMessage(),e);
 		}
 	}
 

@@ -1,5 +1,6 @@
 package com.dhisco.regression.tests.integTest;
 
+import com.dhisco.ptd.dj.PushCoreJson;
 import com.dhisco.regression.core.util.CommonUtils;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
@@ -7,6 +8,7 @@ import com.dhisco.regression.services.config.app.SupplyRuleProcessorConfig;
 import com.dhisco.regression.services.config.db.KafkaConfig;
 import com.dhisco.regression.tests.base.BaseTest;
 import lombok.extern.log4j.Log4j2;
+import org.junit.Assert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
@@ -62,6 +64,10 @@ import static java.util.Arrays.asList;
 		}
 
 		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
+		sleep(10, "Waiting for configuration service to load up");
+		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
+		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
+
 	/*	List<String> brands=CommonUtils.getRestCall("http://valstpdevcfs01a.asp.dhisco.com:8081/p2d/brands");
 		List<String> channels=CommonUtils.getRestCall("http://valstpdevcfs01a.asp.dhisco.com:8081/p2d/channels");
 
@@ -75,26 +81,22 @@ import static java.util.Arrays.asList;
 		if (getClearOut()) {
 			outDataCleanUp();
 		}
+
 	}
 
 	@Test(dataProviderClass = IntegDP.class, dataProvider = "integDP") public void integTest(IntegInput baseInput)
 			throws Exception {
 		test = extent.createTest(getTestClassName(), getTestClassName());
 
-		log.info("%%%%%%%%%%% start test: {} %%%%%%%%%%%", getTestClassName());
+		log.info("----......------- Start test: {} -----.......-------", getTestClassName());
 
-		baseInput.getDataFiles().forEach(t -> {
-			try {
+		for (String t : baseInput.getDataFiles()) {
+				PushCoreJson pushCoreJson=
+						CommonUtils.getObjFromResourceJsonAbsPath(t,PushCoreJson.class);
+				Assert.assertTrue(isNotEmpty(pushCoreJson));
 				kafkaConfig.publishData("VS_Brand_2_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
-			} catch (Exception e) {
-				log.error(e.getMessage(), e);
-			}
-		});
 
-		sleep(10, "Waiting for configuration service to load up");
-
-		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
-		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
+		}
 
 		sleep(sleepTime, "Waiting for the pipeline to process the messages");
 
@@ -104,13 +106,11 @@ import static java.util.Arrays.asList;
 			assertJson(getBenchmarkPath() + SLASH_FW + compareFileName, getOutPath() + SLASH_FW + compareFileName,
 					JSONCompareMode.STRICT);
 		}
-		log.info("%%%%%%%%%%% end test: {} %%%%%%%%%%%", getTestClassName());
+		log.info("---------........--------- End test: {} ----------..........----------", getTestClassName());
 	}
 
 	@AfterMethod @Override public void afterMethod(ITestResult result) throws Exception {
 		log.info("in after method ");
-		asList(topics).forEach(t -> kafkaConfig.deleteTopic(t));
-
 		super.afterMethod(result);
 	}
 

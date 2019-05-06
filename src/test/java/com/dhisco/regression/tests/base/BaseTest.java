@@ -291,10 +291,21 @@ public abstract class BaseTest
 	}
 
 	public void outDataCleanUp() {
-		log.info("clearing out dir- {}",getOutPath());
 		serverConfig=loadBean(ServerConfig.class);
-		serverConfig.executeSSHCommands(asList("rm -r "+getOutPath()+"/*"));
+		clearRemoteDir(serverConfig,getOutPath());
 	}
+
+
+	public void clearRemoteDir(BaseConfig config,String path){
+		log.info("clearing dir- {} , in {}",path,config);
+		config.executeSSHCommands(asList("rm -r "+path+"/*"));
+	}
+
+	public void removeRemoteFile(BaseConfig config,String filePath){
+		log.info("removing file - {} , in {}",filePath,config);
+		config.executeSSHCommands(asList("rm "+filePath));
+	}
+
 
 
 	private void destroyConfig(BaseConfig baseConfig){

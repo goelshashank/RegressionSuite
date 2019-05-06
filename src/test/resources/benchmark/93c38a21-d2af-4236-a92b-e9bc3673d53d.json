@@ -1,0 +1,287 @@
+{
+  "SessionID": "93c38a21-d2af-4236-a92b-e9bc3673d53d",
+  "Framework": 2,
+  "HotelID": 3,
+  "ChannelID": 221,
+  "ChannelProductID": 48,
+  "ChannelName": "Booking.com",
+  "RoomName": "Double Room(332609003)",
+  "RoomCode": "332609503",
+  "RateName": "Test rateplan",
+  "RateCode": "11300247",
+  "RatePlanCategory": "DLU",
+  "UserID": "RateGain-Test",
+  "Password": ")6^i?32(wSjw/lLs-.ghY.!)::euB)4itzX4:s^Y",
+  "ChannelHotelCode": "3326095",
+  "AdditionalParam": "3326095",
+  "SessionRequired": false,
+  "CurrencyCode": "USD",
+  "DateUpdates": [
+    {
+      "Date": "2019-04-20",
+      "Group": 0,
+      "RequestID": "186",
+      "UpdateAttributes": [
+        {
+          "ID": 7,
+          "Name": "CTA",
+          "Value": "1",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-21",
+      "Group": 0,
+      "RequestID": "201_202",
+      "UpdateAttributes": [
+        {
+          "ID": 49,
+          "Name": "Available",
+          "Value": "1",
+          "Type": 1
+        },
+        {
+          "ID": 8,
+          "Name": "CTD",
+          "Value": "1",
+          "Type": 2
+        },
+        {
+          "ID": 11,
+          "Name": "MaxLOS",
+          "Value": "2",
+          "Type": 2
+        },
+        {
+          "ID": 13,
+          "Name": "MinLOSThrough",
+          "Value": "2",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-11",
+      "Group": 0,
+      "RequestID": "102",
+      "UpdateAttributes": [
+        {
+          "ID": 7,
+          "Name": "CTA",
+          "Value": "1",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-12",
+      "Group": 0,
+      "RequestID": "116",
+      "UpdateAttributes": [
+        {
+          "ID": 8,
+          "Name": "CTD",
+          "Value": "1",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-13",
+      "Group": 0,
+      "RequestID": "129",
+      "UpdateAttributes": [
+        {
+          "ID": 7,
+          "Name": "CTA",
+          "Value": "1",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-03",
+      "Group": 0,
+      "RequestID": "6",
+      "UpdateAttributes": [
+        {
+          "ID": 49,
+          "Name": "Available",
+          "Value": "1",
+          "Type": 1
+        },
+        {
+          "ID": 13,
+          "Name": "MinLOSThrough",
+          "Value": "3",
+          "Type": 2
+        },
+        {
+          "ID": 61,
+          "Name": "MaxLOSThrough",
+          "Value": "6",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-14",
+      "Group": 0,
+      "RequestID": "129",
+      "UpdateAttributes": [
+        {
+          "ID": 7,
+          "Name": "CTA",
+          "Value": "1",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-04",
+      "Group": 0,
+      "RequestID": "16",
+      "UpdateAttributes": [
+        {
+          "ID": 7,
+          "Name": "CTA",
+          "Value": "1",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-05",
+      "Group": 0,
+      "RequestID": "30",
+      "UpdateAttributes": [
+        {
+          "ID": 8,
+          "Name": "CTD",
+          "Value": "1",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-16",
+      "Group": 0,
+      "RequestID": "153",
+      "UpdateAttributes": [
+        {
+          "ID": 7,
+          "Name": "CTA",
+          "Value": "1",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-06",
+      "Group": 0,
+      "RequestID": "40",
+      "UpdateAttributes": [
+        {
+          "ID": 7,
+          "Name": "CTA",
+          "Value": "1",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-17",
+      "Group": 0,
+      "RequestID": "153",
+      "UpdateAttributes": [
+        {
+          "ID": 7,
+          "Name": "CTA",
+          "Value": "1",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-07",
+      "Group": 0,
+      "RequestID": "40",
+      "UpdateAttributes": [
+        {
+          "ID": 7,
+          "Name": "CTA",
+          "Value": "1",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-18",
+      "Group": 0,
+      "RequestID": "153",
+      "UpdateAttributes": [
+        {
+          "ID": 7,
+          "Name": "CTA",
+          "Value": "1",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-08",
+      "Group": 0,
+      "RequestID": "51_66",
+      "UpdateAttributes": [
+        {
+          "ID": 8,
+          "Name": "CTD",
+          "Value": "1",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    },
+    {
+      "Date": "2019-04-19",
+      "Group": 0,
+      "RequestID": "168_169",
+      "UpdateAttributes": [
+        {
+          "ID": 49,
+          "Name": "Available",
+          "Value": "1",
+          "Type": 1
+        },
+        {
+          "ID": 11,
+          "Name": "MaxLOS",
+          "Value": "2",
+          "Type": 2
+        },
+        {
+          "ID": 13,
+          "Name": "MinLOSThrough",
+          "Value": "2",
+          "Type": 2
+        }
+      ],
+      "LOS_Pricing": []
+    }
+  ]
+}
