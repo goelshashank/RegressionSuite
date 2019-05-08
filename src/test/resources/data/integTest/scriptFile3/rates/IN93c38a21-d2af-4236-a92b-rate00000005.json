@@ -1,0 +1,44 @@
+{
+  "OTA_HotelRatePlanNotifRQ": {
+    "EchoToken": "93c38a21-d2af-4236-a92b-rate00000005",
+    "MessageContentCode": "8",
+    "TimeStamp": "2019-04-03T14:30:27",
+    "Version": 7.001,
+    "RatePlans": {
+      "BrandCode": "VS_DR",
+      "HotelCode": "3646",
+      "RatePlan": [{
+        "Start": "2019-04-03",
+        "End": "2019-04-03",
+        "RatePlanCategory": "DLU",
+        "RatePlanCode": "BVW",
+        "RatePlanNotifType": "New",
+        "Rates": {
+          "Rate": [{
+            "Start": "2019-04-03",
+            "End": "2019-04-03",
+            "InvTypeCode": "A1K",
+            "MaxLOS": "1",
+            "MinLOS": "1",
+            "RateTimeUnit": "FullDuration",
+            "BaseByGuestAmts": {
+              "BaseByGuestAmt": [{
+                "AgeQualifyingCode": "15",
+                "NumberOfGuests": 5,
+                "Type": "20"
+              }
+              ]
+            }
+          }
+          ]
+        },
+        "UniqueID": {
+          "ID": "1",
+          "Type": "18"
+        }
+      }
+      ]
+    }
+  }
+
+}

@@ -7,6 +7,7 @@ import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
 import com.dhisco.regression.services.config.app.SupplyRuleProcessorConfig;
 import com.dhisco.regression.services.config.db.KafkaConfig;
 import com.dhisco.regression.tests.base.BaseTest;
+import com.jayway.jsonpath.JsonPath;
 import lombok.extern.log4j.Log4j2;
 import org.junit.Assert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
@@ -21,7 +22,10 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
@@ -34,20 +38,9 @@ import static java.util.Arrays.asList;
  */
 @Log4j2 public class IntegTest extends BaseTest {
 
-	private String[] topics = { "VS_Brand_2_test", "M4_Brand_topic_test", "RoyalArabians_test", "BookingDotCom2_test" };
-
-	//	private String[] topics = null;
+	private Set<String> topics;
 
 	@BeforeTest @Override public void beforeTest(ITestContext iTestContext) throws IOException {
-/*
-		String s="[{\"id\":1,\"createdAt\":1547510400000,\"updatedAt\":1547510400000,\"code\":\"VS\","
-				+ "\"topic\":\"VS_Brand_2\",\"shadowed\":false},{\"id\":2,\"createdAt\":1547510400000,\"updatedAt\":1547510400000,\"code\":\"M4\",\"topic\":\"M4_Brand_topic_test\",\"shadowed\":false},{\"id\":5,\"createdAt\":1554201862000,\"updatedAt\":1554201862000,\"code\":\"VS_DR\",\"topic\":\"VS_Brand_2_test\",\"shadowed\":false},{\"id\":6,\"createdAt\":1554201862000,\"updatedAt\":1554201862000,\"code\":\"VS_LBR\",\"topic\":\"VS_Brand_2_test\",\"shadowed\":false},{\"id\":7,\"createdAt\":1554201862000,\"updatedAt\":1554201862000,\"code\":\"ZZ_DR\",\"topic\":\"ZZ_Brand_2\",\"shadowed\":false},{\"id\":8,\"createdAt\":1554201862000,\"updatedAt\":1554201862000,\"code\":\"ZZ_LBR\",\"topic\":\"ZZ_Brand_2\",\"shadowed\":false},{\"id\":3,\"createdAt\":1554249600000,\"updatedAt\":1554249600000,\"code\":\"ZZ\",\"topic\":\"ZZ_Brand_2\",\"shadowed\":false}]";
-
-		String s1="[{\"id\":1,\"createdAt\":1547510400000,\"updatedAt\":1547510400000,\"name\":\"RoyalArabians\","
-				+ "\"topic\":\"RoyalArabians_test\",\"sgaCode\":\"9z\",\"consumerCount\":4,\"channelConcurrency\":100,\"channelHotelConcurrency\":15,\"appInstances\":1,\"publicRatesAllowed\":false,\"shadowed\":true},{\"id\":2,\"createdAt\":1547510400000,\"updatedAt\":1547510400000,\"name\":\"Booking.com\",\"topic\":\"BookingDotCom2_test\",\"sgaCode\":\"01\",\"consumerCount\":1,\"channelConcurrency\":100,\"channelHotelConcurrency\":20,\"appInstances\":1,\"publicRatesAllowed\":true,\"shadowed\":false}]";
-
-*/
-
 		super.beforeTest(iTestContext);
 	}
 
@@ -68,21 +61,19 @@ import static java.util.Arrays.asList;
 		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
 		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 
-	/*	List<String> brands=CommonUtils.getRestCall("http://valstpdevcfs01a.asp.dhisco.com:8081/p2d/brands");
-		List<String> channels=CommonUtils.getRestCall("http://valstpdevcfs01a.asp.dhisco.com:8081/p2d/channels");
+		topics = getTopics(); //topics to be created in kafka
 
-		topics =Arrays.asList(brands,channels).stream().toArray(String[] ::new);
-*/
 		kafkaConfig = loadBean(KafkaConfig.class);
-		asList(topics).forEach(t -> kafkaConfig.deleteTopic(t));
+		topics.forEach(t -> kafkaConfig.deleteTopic(t));
 		sleep(5, "Waiting for cleanup of Kafka topics");
-		asList(topics).forEach(t -> kafkaConfig.createTopic(t));
+		topics.forEach(t -> kafkaConfig.createTopic(t));
 
 		if (getClearOut()) {
 			outDataCleanUp();
 		}
 
 	}
+
 
 	@Test(dataProviderClass = IntegDP.class, dataProvider = "integDP") public void integTest(IntegInput baseInput)
 			throws Exception {
@@ -91,11 +82,10 @@ import static java.util.Arrays.asList;
 		log.info("----......------- Start test: {} -----.......-------", getTestClassName());
 
 		for (String t : baseInput.getDataFiles()) {
-			log.info("#### Publishing file - {} ####",t);
-				PushCoreJson pushCoreJson=
-						CommonUtils.getObjFromResourceJsonAbsPath(t,PushCoreJson.class);
-				Assert.assertTrue(isNotEmpty(pushCoreJson));
-				kafkaConfig.publishData("VS_Brand_2_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
+			log.info("#### Publishing file - {} ####", t);
+			PushCoreJson pushCoreJson = CommonUtils.getObjFromResourceJsonAbsPath(t, PushCoreJson.class);
+			Assert.assertTrue(isNotEmpty(pushCoreJson));
+			kafkaConfig.publishData("VS_Brand_2_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
 
 		}
 
@@ -121,6 +111,28 @@ import static java.util.Arrays.asList;
 
 	@AfterTest @Override public void afterTest() {
 		super.afterTest();
+	}
+
+	private Set<String> getTopics() {
+		Set<String> topics1  =new HashSet<>();
+
+		String brandsOut = CommonUtils.getRestCall(
+				"http://" + configurationServiceConfig.getHost() + ":" + configurationServiceConfig.getPort() + "/p2d"
+						+ "/brands");
+		String channelsOut = CommonUtils.getRestCall(
+				"http://" + configurationServiceConfig.getHost() + ":" + configurationServiceConfig.getPort() + "/p2d"
+						+ "/channels");
+
+		Set<String> brands = ((List<String>) JsonPath.read(brandsOut, "$.*.topic")).stream().map(t -> t.toString())
+				.collect(Collectors.toList()).stream().filter(t-> t.contains("_test")).collect(Collectors.toSet());
+		Set<String> channels =
+				((List<String>) JsonPath.read(channelsOut, "$.*.topic")).stream().map(t -> t.toString())
+						.collect(Collectors.toList()).stream().filter(t-> t.contains("_test")).collect(Collectors.toSet());
+
+		topics1.addAll(brands);
+		topics1.addAll(channels);
+
+		return topics1;
 	}
 
 }

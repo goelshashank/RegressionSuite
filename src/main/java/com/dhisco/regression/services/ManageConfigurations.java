@@ -58,9 +58,7 @@ import java.util.Properties;
 		return applicationContext.getBean(type);
 	}
 
-	//todo: need to make it work
 	public void destroyConfig(BaseConfig baseConfig){
-
 		((DefaultListableBeanFactory) applicationContext.getAutowireCapableBeanFactory()).
 				destroyBean(baseConfig);
 	}
