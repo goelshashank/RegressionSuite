@@ -1,6 +1,6 @@
 {
   "OTA_HotelRatePlanNotifRQ": {
-    "EchoToken": "93c38a21-d2af-4236-a92b-rate00000001",
+    "EchoToken": "93c38a21-d2af-4236-a92b-rate00000008",
     "MessageContentCode": "8",
     "TimeStamp": "2019-04-03T14:30:27",
     "Version": 7.001,
@@ -10,25 +10,22 @@
       "RatePlan": [{
         "Start": "2019-04-03",
         "End": "2019-04-03",
-        "RatePlanCategory": "PEG",
-        "RatePlanCode": "3DM",
+        "RatePlanCategory": "DLU",
+        "RatePlanCode": "BVW",
         "RatePlanNotifType": "New",
         "Rates": {
           "Rate": [{
             "Start": "2019-04-03",
             "End": "2019-04-03",
-            "InvTypeCode": "N1K",
+            "InvTypeCode": "A1K",
             "MaxLOS": "1",
             "MinLOS": "1",
             "RateTimeUnit": "FullDuration",
-            "BaseByGuestAmts": {
-              "BaseByGuestAmt": [{
-                "AgeQualifyingCode": "10",
-                "NumberOfGuests": 2,
-                "Type": "25"
-              }
-              ]
-            }
+            "AdditionalGuestAmounts": [{
+                "AgeQualifyingCode": "15",
+                "Amount": 10,
+                "AgeBucket": "20"
+            }]
           }
           ]
         },

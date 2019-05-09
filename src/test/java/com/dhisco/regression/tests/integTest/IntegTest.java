@@ -58,8 +58,6 @@ import static java.util.Arrays.asList;
 
 		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
 		sleep(15, "Waiting for configuration service to load up");
-		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
-		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 
 		topics = getTopics(); //topics to be created in kafka
 
@@ -74,7 +72,6 @@ import static java.util.Arrays.asList;
 
 	}
 
-
 	@Test(dataProviderClass = IntegDP.class, dataProvider = "integDP") public void integTest(IntegInput baseInput)
 			throws Exception {
 		test = extent.createTest(getTestClassName(), getTestClassName());
@@ -85,9 +82,13 @@ import static java.util.Arrays.asList;
 			log.info("#### Publishing file - {} ####", t);
 			PushCoreJson pushCoreJson = CommonUtils.getObjFromResourceJsonAbsPath(t, PushCoreJson.class);
 			Assert.assertTrue(isNotEmpty(pushCoreJson));
-			kafkaConfig.publishData("VS_Brand_2_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
+			kafkaConfig.publishData("VS_Brand_3_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
 
 		}
+
+
+		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
+		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 
 		sleep(sleepTime, "Waiting for the pipeline to process the messages");
 
@@ -114,7 +115,7 @@ import static java.util.Arrays.asList;
 	}
 
 	private Set<String> getTopics() {
-		Set<String> topics1  =new HashSet<>();
+		Set<String> topics1 = new HashSet<>();
 
 		String brandsOut = CommonUtils.getRestCall(
 				"http://" + configurationServiceConfig.getHost() + ":" + configurationServiceConfig.getPort() + "/p2d"
@@ -124,10 +125,9 @@ import static java.util.Arrays.asList;
 						+ "/channels");
 
 		Set<String> brands = ((List<String>) JsonPath.read(brandsOut, "$.*.topic")).stream().map(t -> t.toString())
-				.collect(Collectors.toList()).stream().filter(t-> t.contains("_test")).collect(Collectors.toSet());
-		Set<String> channels =
-				((List<String>) JsonPath.read(channelsOut, "$.*.topic")).stream().map(t -> t.toString())
-						.collect(Collectors.toList()).stream().filter(t-> t.contains("_test")).collect(Collectors.toSet());
+				.collect(Collectors.toList()).stream().filter(t -> t.contains("_test")).collect(Collectors.toSet());
+		Set<String> channels = ((List<String>) JsonPath.read(channelsOut, "$.*.topic")).stream().map(t -> t.toString())
+				.collect(Collectors.toList()).stream().filter(t -> t.contains("_test")).collect(Collectors.toSet());
 
 		topics1.addAll(brands);
 		topics1.addAll(channels);

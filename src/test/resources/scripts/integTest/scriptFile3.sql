@@ -27,11 +27,44 @@ INSERT INTO `brand` VALUES
  (1,'2019-01-15 00:00:00','2019-01-15 00:00:00','VS',0,'VS_Brand_2'),(2,'2019-01-15
 00:00:00','2019-01-15 00:00:00','M4',0,'M4_Brand_topic_test'),
 (5,'2019-04-02 10:44:22','2019-04-02 10:44:22','VS_DR',0,'VS_Brand_2_test'),
-(6,'2019-04-02 10:44:22','2019-04-02 10:44:22','VS_LBR',0,'VS_Brand_2_test'),(7,'2019-04-02 10:44:22',
-'2019-04-02 10:44:22','ZZ_DR',0,'ZZ_Brand_2'),
-(8,'2019-04-02 10:44:22','2019-04-02 10:44:22','ZZ_LBR',0,'ZZ_Brand_2'),
-(3,'2019-04-03 00:00:00','2019-04-03 00:00:00','ZZ',0,'ZZ_Brand_2');
+(6,'2019-04-02 10:44:22','2019-04-02 10:44:22','VS_LBR',0,'VS_Brand_2_test');
 /*!40000 ALTER TABLE `brand` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `channel`
+--
+
+DROP TABLE IF EXISTS `channel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `channel` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `channel_concurrency` int(11) NOT NULL DEFAULT 0,
+  `channel_hotel_concurrency` int(11) NOT NULL DEFAULT 0,
+  `consumer_count` int(11) NOT NULL DEFAULT 1,
+  `name` varchar(255) NOT NULL,
+  `is_shadowed` int(11) DEFAULT 0,
+  `topic` varchar(255) DEFAULT NULL,
+  `sga_code` varchar(255) DEFAULT NULL,
+  `app_instances` int(11) NOT NULL DEFAULT 0,
+  `is_public_rates_allowed` tinyint(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `channel`
+--
+
+LOCK TABLES `channel` WRITE;
+/*!40000 ALTER TABLE `channel` DISABLE KEYS */;
+INSERT INTO `channel` VALUES
+(1,'2019-01-15 00:00:00','2019-01-15 00:00:00',100,15,4,'RoyalArabians',1,'RoyalArabians_test','9z',1,0),
+(2,'2019-01-15 00:00:00','2019-01-15 00:00:00',100,20,1,'Booking.com',0,'BookingDotCom2_test','01',1,1);
+/*!40000 ALTER TABLE `channel` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -85,42 +118,6 @@ CREATE TABLE `cassandra_config` (
 LOCK TABLES `cassandra_config` WRITE;
 /*!40000 ALTER TABLE `cassandra_config` DISABLE KEYS */;
 /*!40000 ALTER TABLE `cassandra_config` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `channel`
---
-
-DROP TABLE IF EXISTS `channel`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `channel` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `channel_concurrency` int(11) NOT NULL DEFAULT 0,
-  `channel_hotel_concurrency` int(11) NOT NULL DEFAULT 0,
-  `consumer_count` int(11) NOT NULL DEFAULT 1,
-  `name` varchar(255) NOT NULL,
-  `is_shadowed` int(11) DEFAULT 0,
-  `topic` varchar(255) DEFAULT NULL,
-  `sga_code` varchar(255) DEFAULT NULL,
-  `app_instances` int(11) NOT NULL DEFAULT 0,
-  `is_public_rates_allowed` tinyint(1) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `channel`
---
-
-LOCK TABLES `channel` WRITE;
-/*!40000 ALTER TABLE `channel` DISABLE KEYS */;
-INSERT INTO `channel` VALUES
-(1,'2019-01-15 00:00:00','2019-01-15 00:00:00',100,15,4,'RoyalArabians',1,'RoyalArabians_test','9z',1,0),
-(2,'2019-01-15 00:00:00','2019-01-15 00:00:00',100,20,1,'Booking.com',0,'BookingDotCom2_test','01',1,1);
-/*!40000 ALTER TABLE `channel` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

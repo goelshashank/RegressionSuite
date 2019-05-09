@@ -1,0 +1,71 @@
+{
+	"OTA_HotelAvailNotifRQ": {
+		"EchoToken": "19ac8c1c-f74a-410c-be16-835199baf481",
+		"MessageContentCode": "3",
+		"TimeStamp": "2019-05-03T06:51:12",
+		"Version": 7.001,
+		"AvailStatusMessages": {
+			"BrandCode": "VS_DR",
+			"HotelCode": "3646",
+			"AvailStatusMessage": [{
+					"RestrictionStatuses": {
+						"RestrictionStatus": [{
+								"Restriction": "Departure",
+								"Status": "Close"
+							}
+						]
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-03",
+						"End": "2019-05-03",
+						"RatePlanCode": "3DM",
+						"RatePlanCategory": "PEG",
+						"InvTypeCode": "N1K"
+					},
+					"UniqueID": {
+						"ID": "1",
+						"Type": "18"
+					}
+				}, {
+					"RestrictionStatuses": {
+						"RestrictionStatus": [{
+								"Restriction": "Departure",
+								"Status": "Close"
+							}
+						]
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-03",
+						"End": "2019-05-03",
+						"RatePlanCode": "3DM",
+						"RatePlanCategory": "PEG",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "2",
+						"Type": "18"
+					}
+				}, {
+					"RestrictionStatuses": {
+						"RestrictionStatus": [{
+								"Restriction": "Departure",
+								"Status": "Close"
+							}
+						]
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-03",
+						"End": "2019-05-03",
+						"RatePlanCode": "3DM",
+						"RatePlanCategory": "PEG",
+						"InvTypeCode": "S1K"
+					},
+					"UniqueID": {
+						"ID": "3",
+						"Type": "18"
+					}
+				}
+			]
+		}
+	}
+}
