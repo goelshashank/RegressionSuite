@@ -1,0 +1,127 @@
+{
+  "OTA_HotelAvailNotifRQ" : {
+    "EchoToken" : "33bd1859-bb32-4988-8573-ed37a675f550",
+    "MessageContentCode" : "3",
+    "TimeStamp" : "2019-05-03T14:50:46",
+    "Version" : 7.001,
+    "AvailStatusMessages" : {
+      "BrandCode" : "XNX",
+      "HotelCode" : "0533",
+      "AvailStatusMessage" : [ {
+        "LengthsOfStay" : {
+          "LengthOfStay" : [ {
+            "MinMaxMessageType" : "FullPatternLOS",
+            "LOS_Pattern" : {
+              "FullPatternLOS" : "YYNNYYN"
+            }
+          } ],
+          "FixedPatternLength" : 7
+        },
+        "StatusApplicationControl" : {
+          "Start" : "2018-11-20",
+          "End" : "2018-11-20",
+          "RatePlanCode" : "1BO",
+          "RatePlanCategory" : "DA5",
+          "InvTypeCode" : "A1D"
+        },
+        "UniqueID" : {
+          "ID" : "1",
+          "Type" : "18"
+        }
+      } ]
+    }
+  },
+  "OTA_HotelRatePlanNotifRQ" : {
+    "EchoToken" : "618f20db-0119-4852-834b-a9090980164b",
+    "MessageContentCode" : "8",
+    "TimeStamp" : "2019-05-03T14:50:46",
+    "Version" : 7.001,
+    "RatePlans" : {
+      "BrandCode" : "XNX",
+      "HotelCode" : "0533",
+      "RatePlan" : [ {
+        "Start" : "2018-11-20",
+        "End" : "2018-11-20",
+        "RatePlanCategory" : "DA5",
+        "RatePlanCode" : "1BO",
+        "RatePlanNotifType" : "New",
+        "Rates" : {
+          "Rate" : [ {
+            "CurrencyCode" : "USD",
+            "Start" : "2018-11-20",
+            "End" : "2018-11-20",
+            "InvTypeCode" : "A1D",
+            "MaxLOS" : "1",
+            "MinLOS" : "1",
+            "RateTimeUnit" : "FullDuration",
+            "BaseByGuestAmts" : {
+              "BaseByGuestAmt" : [ {
+                "AgeQualifyingCode" : "10",
+                "AmountBeforeTax" : 700000.00,
+                "AmountAfterTax" : 850000.00,
+                "NumberOfGuests" : 2,
+                "Type" : "25"
+              } ]
+            }
+          }, {
+            "CurrencyCode" : "USD",
+            "Start" : "2018-11-20",
+            "End" : "2018-11-20",
+            "InvTypeCode" : "A1D",
+            "MaxLOS" : "2",
+            "MinLOS" : "2",
+            "RateTimeUnit" : "FullDuration",
+            "BaseByGuestAmts" : {
+              "BaseByGuestAmt" : [ {
+                "AgeQualifyingCode" : "10",
+                "AmountBeforeTax" : 700000.00,
+                "AmountAfterTax" : 850000.00,
+                "NumberOfGuests" : 2,
+                "Type" : "25"
+              } ]
+            }
+          }, {
+            "CurrencyCode" : "USD",
+            "Start" : "2018-11-20",
+            "End" : "2018-11-20",
+            "InvTypeCode" : "A1D",
+            "MaxLOS" : "5",
+            "MinLOS" : "5",
+            "RateTimeUnit" : "FullDuration",
+            "BaseByGuestAmts" : {
+              "BaseByGuestAmt" : [ {
+                "AgeQualifyingCode" : "10",
+                "AmountBeforeTax" : 700000.00,
+                "AmountAfterTax" : 850000.00,
+                "NumberOfGuests" : 2,
+                "Type" : "25"
+              } ]
+            }
+          }, {
+            "CurrencyCode" : "USD",
+            "Start" : "2018-11-20",
+            "End" : "2018-11-20",
+            "InvTypeCode" : "A1D",
+            "MaxLOS" : "6",
+            "MinLOS" : "6",
+            "RateTimeUnit" : "FullDuration",
+            "BaseByGuestAmts" : {
+              "BaseByGuestAmt" : [ {
+                "AgeQualifyingCode" : "10",
+                "AmountBeforeTax" : 700000.00,
+                "AmountAfterTax" : 850000.00,
+                "NumberOfGuests" : 2,
+                "Type" : "25"
+              } ]
+            }
+          } ]
+        },
+        "UniqueID" : {
+          "ID" : "1",
+          "Type" : "18"
+        }
+      } ]
+    }
+  },
+  "DailyPricingBased" : false
+}

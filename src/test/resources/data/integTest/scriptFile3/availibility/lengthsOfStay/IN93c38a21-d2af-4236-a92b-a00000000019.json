@@ -21,9 +21,9 @@
           "StatusApplicationControl": {
             "Start": "2019-04-03",
             "End": "2019-04-03",
-            "RatePlanCode": "BVW",
-            "RatePlanCategory": "DLU",
-            "InvTypeCode": "A1K"
+            "RatePlanCode": "3DM",
+            "RatePlanCategory": "PEG",
+            "InvTypeCode": "N1K"
           },
           "UniqueID": {
             "ID": "1",

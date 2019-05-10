@@ -15,19 +15,18 @@
         "RatePlanNotifType": "New",
         "Rates": {
           "Rate": [{
+		  "CurrencyCode" : "USD",
             "Start": "2019-04-03",
             "End": "2019-04-03",
             "InvTypeCode": "N1K",
-            "MaxLOS": "1",
-            "MinLOS": "1",
-            "RateTimeUnit": "FullDuration",
-            "BaseByGuestAmts": {
-              "BaseByGuestAmt": [{
-                "AgeQualifyingCode": "10",
-                "NumberOfGuests": 2,
-                "Type": "25"
-              }
-              ]
+            "RateTimeUnit": "Day",
+             "BaseByGuestAmts" : {
+              "BaseByGuestAmt" : [ {
+                "AgeQualifyingCode" : "10",
+                "AmountBeforeTax" : 450000.00,
+                "NumberOfGuests" : 2,
+                "Type" : "25"
+              } ]
             }
           }
           ]
@@ -39,6 +38,7 @@
       }
       ]
     }
-  }
+  },
+  "DailyPricingBased" : true
 
 }

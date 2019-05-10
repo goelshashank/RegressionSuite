@@ -1,0 +1,3663 @@
+{
+ 
+  "OTA_HotelRatePlanNotifRQ": {
+    "EchoToken": "dd5ab3aa-b41a-46d4-b63a-3c45bb48b5dc",
+    "MessageContentCode": "8",
+    "TimeStamp": "2019-05-03T06:50:42",
+    "Version": 7.001,
+    "RatePlans": {
+      "BrandCode": "VS_LBR",
+      "HotelCode": "3646",
+      "RatePlan": [
+        {
+          "Start": "2019-05-02",
+          "End": "2019-07-01",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-07-01",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 219.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-07-01",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 328.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-07-01",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 222.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-07-01",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 333.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "1",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-05-02",
+          "End": "2019-07-01",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-07-01",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 228.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-07-01",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 342.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-07-01",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 231.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-07-01",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 346.50,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "2",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-05-02",
+          "End": "2019-07-01",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-07-01",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 510.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-07-01",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 765.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-07-01",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 507.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-07-01",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 760.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "3",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-05-02",
+          "End": "2019-08-03",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "Remove",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-08-03",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 222.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-08-03",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 333.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-08-03",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 219.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-08-03",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 328.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "4",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-05-02",
+          "End": "2019-08-03",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "Remove",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-08-03",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 231.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-08-03",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 346.50,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-08-03",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 228.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-08-03",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 342.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "5",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-05-02",
+          "End": "2019-08-03",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "Remove",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-08-03",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 510.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-08-03",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 765.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-08-03",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 507.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-05-02",
+                "End": "2019-08-03",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 760.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "6",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-07-02",
+          "End": "2019-07-03",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-02",
+                "End": "2019-07-03",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 219.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-07-02"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-02",
+                "End": "2019-07-03",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 328.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-07-02"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-02",
+                "End": "2019-07-03",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 222.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-07-02"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-02",
+                "End": "2019-07-03",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 333.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-07-02"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "7",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-07-02",
+          "End": "2019-07-03",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-02",
+                "End": "2019-07-03",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 231.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-07-02"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-02",
+                "End": "2019-07-03",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 346.50,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-07-02"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-02",
+                "End": "2019-07-03",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 228.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-07-02"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-02",
+                "End": "2019-07-03",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 342.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-07-02"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "8",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-07-02",
+          "End": "2019-07-03",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-02",
+                "End": "2019-07-03",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 507.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-07-02"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-02",
+                "End": "2019-07-03",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 760.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-07-02"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-02",
+                "End": "2019-07-03",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 510.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-07-02"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-02",
+                "End": "2019-07-03",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 765.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-07-02"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "9",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-07-04",
+          "End": "2019-08-03",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-04",
+                "End": "2019-08-03",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 222.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-04",
+                "End": "2019-08-03",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 333.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-04",
+                "End": "2019-08-03",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 219.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-04",
+                "End": "2019-08-03",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 328.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "10",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-07-04",
+          "End": "2019-08-03",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-04",
+                "End": "2019-08-03",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 228.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-04",
+                "End": "2019-08-03",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 342.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-04",
+                "End": "2019-08-03",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 231.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-04",
+                "End": "2019-08-03",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 346.50,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "11",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-07-04",
+          "End": "2019-08-03",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-04",
+                "End": "2019-08-03",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 510.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-04",
+                "End": "2019-08-03",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 765.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-04",
+                "End": "2019-08-03",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 507.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-07-04",
+                "End": "2019-08-03",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 760.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "12",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-08-04",
+          "End": "2019-08-04",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-04",
+                "End": "2019-08-04",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 219.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-08-04"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-04",
+                "End": "2019-08-04",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 328.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-08-04"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-04",
+                "End": "2019-08-04",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 222.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-08-04"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-04",
+                "End": "2019-08-04",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 333.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-08-04"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "13",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-08-04",
+          "End": "2019-08-04",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-04",
+                "End": "2019-08-04",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 231.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-08-04"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-04",
+                "End": "2019-08-04",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 346.50,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-08-04"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-04",
+                "End": "2019-08-04",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 228.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-08-04"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-04",
+                "End": "2019-08-04",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 342.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-08-04"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "14",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-08-04",
+          "End": "2019-08-04",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-04",
+                "End": "2019-08-04",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 510.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-08-04"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-04",
+                "End": "2019-08-04",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 765.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-08-04"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-04",
+                "End": "2019-08-04",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 507.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-08-04"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-04",
+                "End": "2019-08-04",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 760.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-08-04"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "15",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-08-05",
+          "End": "2019-09-22",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-05",
+                "End": "2019-09-22",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 222.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-05",
+                "End": "2019-09-22",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 333.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-05",
+                "End": "2019-09-22",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 219.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-05",
+                "End": "2019-09-22",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 328.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "16",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-08-05",
+          "End": "2019-09-22",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-05",
+                "End": "2019-09-22",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 231.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-05",
+                "End": "2019-09-22",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 346.50,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-05",
+                "End": "2019-09-22",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 228.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-05",
+                "End": "2019-09-22",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 342.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "17",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-08-05",
+          "End": "2019-09-22",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-05",
+                "End": "2019-09-22",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 510.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-05",
+                "End": "2019-09-22",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 765.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-05",
+                "End": "2019-09-22",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 507.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-08-05",
+                "End": "2019-09-22",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 760.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "18",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-09-23",
+          "End": "2019-09-23",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-23",
+                "End": "2019-09-23",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 222.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-09-23"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-23",
+                "End": "2019-09-23",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 333.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-09-23"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-23",
+                "End": "2019-09-23",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 219.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-09-23"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-23",
+                "End": "2019-09-23",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 328.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-09-23"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "19",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-09-23",
+          "End": "2019-09-23",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-23",
+                "End": "2019-09-23",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 231.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-09-23"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-23",
+                "End": "2019-09-23",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 346.50,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-09-23"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-23",
+                "End": "2019-09-23",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 228.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-09-23"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-23",
+                "End": "2019-09-23",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 342.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-09-23"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "20",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-09-23",
+          "End": "2019-09-23",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-23",
+                "End": "2019-09-23",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 510.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-09-23"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-23",
+                "End": "2019-09-23",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 765.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-09-23"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-23",
+                "End": "2019-09-23",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 507.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-09-23"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-23",
+                "End": "2019-09-23",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 760.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-09-23"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "21",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-09-24",
+          "End": "2019-10-02",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-24",
+                "End": "2019-10-02",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 219.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-24",
+                "End": "2019-10-02",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 328.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-24",
+                "End": "2019-10-02",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 222.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-24",
+                "End": "2019-10-02",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 333.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "22",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-09-24",
+          "End": "2019-10-02",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-24",
+                "End": "2019-10-02",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 231.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-24",
+                "End": "2019-10-02",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 346.50,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-24",
+                "End": "2019-10-02",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 228.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-24",
+                "End": "2019-10-02",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 342.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "23",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-09-24",
+          "End": "2019-10-02",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-24",
+                "End": "2019-10-02",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 507.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-24",
+                "End": "2019-10-02",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 760.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-24",
+                "End": "2019-10-02",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 510.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-09-24",
+                "End": "2019-10-02",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 765.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "24",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-10-03",
+          "End": "2019-10-06",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-03",
+                "End": "2019-10-06",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 222.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-03"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-03",
+                "End": "2019-10-06",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 333.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-03"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-03",
+                "End": "2019-10-06",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 219.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-03"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-03",
+                "End": "2019-10-06",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 324.00,
+                      "AmountAfterTax": 328.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-03"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "25",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-10-03",
+          "End": "2019-10-06",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-03",
+                "End": "2019-10-06",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 228.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-03"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-03",
+                "End": "2019-10-06",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 342.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-03"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-03",
+                "End": "2019-10-06",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 231.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-03"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-03",
+                "End": "2019-10-06",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 337.50,
+                      "AmountAfterTax": 346.50,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-03"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "26",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-10-03",
+          "End": "2019-10-06",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-03",
+                "End": "2019-10-06",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 507.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-03"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-03",
+                "End": "2019-10-06",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 760.50,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-03"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-03",
+                "End": "2019-10-06",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 510.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-03"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-03",
+                "End": "2019-10-06",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "3",
+                "MinLOS": "3",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 756.00,
+                      "AmountAfterTax": 765.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-03"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "27",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-10-07",
+          "End": "2019-10-07",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-07",
+                "End": "2019-10-07",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 219.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-07"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-07",
+                "End": "2019-10-07",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 216.00,
+                      "AmountAfterTax": 222.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-07"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "28",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-10-07",
+          "End": "2019-10-07",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-07",
+                "End": "2019-10-07",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 231.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-07"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-07",
+                "End": "2019-10-07",
+                "InvTypeCode": "A1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 225.00,
+                      "AmountAfterTax": 228.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-07"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "29",
+            "Type": "18"
+          }
+        },
+        {
+          "Start": "2019-10-07",
+          "End": "2019-10-07",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-07",
+                "End": "2019-10-07",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 510.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-07"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              },
+              {
+                "CurrencyCode": "CAD",
+                "Start": "2019-10-07",
+                "End": "2019-10-07",
+                "InvTypeCode": "S1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 504.00,
+                      "AmountAfterTax": 507.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {},
+                      "Deadline": {
+                        "offsetTimeUnit": "M",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2019-10-07"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "30",
+            "Type": "18"
+          }
+        }
+      ]
+    }
+  }
+}

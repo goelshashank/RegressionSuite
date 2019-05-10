@@ -10,14 +10,14 @@
       "RatePlan": [{
         "Start": "2019-04-03",
         "End": "2019-04-03",
-        "RatePlanCategory": "DLU",
-        "RatePlanCode": "BVW",
+        "RatePlanCategory": "PEG",
+        "RatePlanCode": "3DM",
         "RatePlanNotifType": "New",
         "Rates": {
           "Rate": [{
             "Start": "2019-04-03",
             "End": "2019-04-03",
-            "InvTypeCode": "A1K",
+            "InvTypeCode": "N1K",
             "MaxLOS": "1",
             "MinLOS": "1",
             "RateTimeUnit": "FullDuration",

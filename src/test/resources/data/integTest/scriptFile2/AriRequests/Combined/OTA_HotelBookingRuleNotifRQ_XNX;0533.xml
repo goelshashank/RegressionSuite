@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_HotelBookingRuleNotifRQ TimeStamp="2019-01-04T13:45:42.964+02:00" Version="5.000" xmlns="http://www.opentravel.org/OTA/2003/05">
+    <RuleMessages HotelCode="XNX;0533">
+        <RuleMessage>
+            <StatusApplicationControl Start="2018-08-10" End="2018-08-10" RatePlanCode="1BO" InvCode="A1D"/>
+            <BookingRules>
+                <BookingRule>
+                    <LengthsOfStay ArrivalDateBased="true">
+                        <LengthOfStay Time="2" MinMaxMessageType="SetMinLOS"/>
+                        <LengthOfStay Time="5" MinMaxMessageType="SetMaxLOS"/>
+                    </LengthsOfStay>
+                    <RestrictionStatus Status="Open"/>
+                </BookingRule>
+            </BookingRules>
+        </RuleMessage>
+        <RuleMessage>
+            <StatusApplicationControl Start="2018-08-11" End="2018-08-11" RatePlanCode="1BO" InvCode="A1D"/>
+            <BookingRules>
+                <BookingRule>
+                    <LengthsOfStay ArrivalDateBased="true">
+                        <LengthOfStay Time="2" MinMaxMessageType="SetMinLOS"/>
+                        <LengthOfStay Time="5" MinMaxMessageType="SetMaxLOS"/>
+                    </LengthsOfStay>
+                    <RestrictionStatus Status="Open"/>
+                </BookingRule>
+            </BookingRules>
+        </RuleMessage>
+        <RuleMessage>
+            <StatusApplicationControl Start="2018-08-12" End="2018-08-12" RatePlanCode="1BO" InvCode="A1D"/>
+            <BookingRules>
+                <BookingRule>
+                    <LengthsOfStay ArrivalDateBased="true">
+                        <LengthOfStay Time="2" MinMaxMessageType="SetMinLOS"/>
+                        <LengthOfStay Time="4" MinMaxMessageType="SetMaxLOS"/>
+                    </LengthsOfStay>
+                    <RestrictionStatus Status="Open"/>
+                </BookingRule>
+            </BookingRules>
+        </RuleMessage>
+        <RuleMessage>
+            <StatusApplicationControl Start="2018-08-13" End="2018-08-13" RatePlanCode="1BO" InvCode="A1D"/>
+            <BookingRules>
+                <BookingRule>
+                    <LengthsOfStay ArrivalDateBased="true">
+                        <LengthOfStay Time="2" MinMaxMessageType="SetMinLOS"/>
+                        <LengthOfStay Time="3" MinMaxMessageType="SetMaxLOS"/>
+                    </LengthsOfStay>
+                    <RestrictionStatus Status="Open"/>
+                </BookingRule>
+            </BookingRules>
+        </RuleMessage>
+        <RuleMessage>
+            <StatusApplicationControl Start="2018-08-14" End="2018-08-14" RatePlanCode="1BO" InvCode="A1D"/>
+            <BookingRules>
+                <BookingRule>
+                    <LengthsOfStay ArrivalDateBased="true">
+                        <LengthOfStay Time="2" MinMaxMessageType="SetMinLOS"/>
+                        <LengthOfStay Time="2" MinMaxMessageType="SetMaxLOS"/>
+                    </LengthsOfStay>
+                    <RestrictionStatus Status="Open"/>
+                </BookingRule>
+            </BookingRules>
+        </RuleMessage>
+        <RuleMessage>
+            <StatusApplicationControl Start="2018-08-15" End="2018-08-15" RatePlanCode="1BO" InvCode="A1D"/>
+            <BookingRules>
+                <BookingRule>
+                    <LengthsOfStay ArrivalDateBased="true">
+                        <LengthOfStay Time="3" MinMaxMessageType="SetMinLOS"/>
+                    </LengthsOfStay>
+                    <RestrictionStatus Status="Open"/>
+                </BookingRule>
+            </BookingRules>
+        </RuleMessage>
+        <RuleMessage>
+            <StatusApplicationControl Start="2018-08-16" End="2018-08-16" RatePlanCode="1BO" InvCode="A1D"/>
+            <BookingRules>
+                <BookingRule>
+                    <LengthsOfStay ArrivalDateBased="true">
+                        <LengthOfStay Time="2" MinMaxMessageType="SetMinLOS"/>
+                    </LengthsOfStay>
+                    <RestrictionStatus Status="Open"/>
+                </BookingRule>
+            </BookingRules>
+        </RuleMessage>
+        <RuleMessage>
+            <StatusApplicationControl Start="2018-08-17" End="2018-08-17" RatePlanCode="1BO" InvCode="A1D"/>
+            <BookingRules>
+                <BookingRule>
+                    <RestrictionStatus Status="Open"/>
+                </BookingRule>
+            </BookingRules>
+        </RuleMessage>
+    </RuleMessages>
+</OTA_HotelBookingRuleNotifRQ>
+

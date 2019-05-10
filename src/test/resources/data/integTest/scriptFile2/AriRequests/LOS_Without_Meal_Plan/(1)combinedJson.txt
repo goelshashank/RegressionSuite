@@ -1,0 +1,100 @@
+{
+  "OTA_HotelAvailNotifRQ" : {
+    "EchoToken" : "862b8663-8a72-49c7-863d-226c12978a8b",
+    "MessageContentCode" : "3",
+    "TimeStamp" : "2019-05-03T14:59:42",
+    "Version" : 7.001,
+    "AvailStatusMessages" : {
+      "BrandCode" : "XNX",
+      "HotelCode" : "0533",
+      "AvailStatusMessage" : [ {
+        "LengthsOfStay" : {
+          "LengthOfStay" : [ {
+            "MinMaxMessageType" : "SetMaxLOS",
+            "Time" : 4,
+            "TimeUnit" : "Day"
+          }, {
+            "MinMaxMessageType" : "SetMinLOS",
+            "Time" : 2,
+            "TimeUnit" : "Day"
+          } ],
+          "arrivalDateBased" : true
+        },
+        "StatusApplicationControl" : {
+          "Start" : "2018-08-10",
+          "End" : "2018-08-12",
+          "RatePlanCode" : "1BO",
+          "RatePlanCategory" : "DA5",
+          "InvTypeCode" : "A1D"
+        },
+        "UniqueID" : {
+          "ID" : "2",
+          "Type" : "18"
+        }
+      } ]
+    }
+  },
+  "OTA_HotelRatePlanNotifRQ" : {
+    "EchoToken" : "45be6f3d-c182-4ac1-a2d3-a7dcc07fc2a2",
+    "MessageContentCode" : "8",
+    "TimeStamp" : "2019-05-03T14:59:42",
+    "Version" : 7.001,
+    "RatePlans" : {
+      "BrandCode" : "XNX",
+      "HotelCode" : "0533",
+      "RatePlan" : [ {
+        "Start" : "2018-08-06",
+        "End" : "2018-08-13",
+        "RatePlanCategory" : "DA5",
+        "RatePlanCode" : "1BO",
+        "RatePlanNotifType" : "New",
+        "Rates" : {
+          "Rate" : [ {
+            "CurrencyCode" : "USD",
+            "Start" : "2018-08-06",
+            "End" : "2018-08-13",
+            "InvTypeCode" : "A1D",
+            "RateTimeUnit" : "Day",
+            "BaseByGuestAmts" : {
+              "BaseByGuestAmt" : [ {
+                "AgeQualifyingCode" : "10",
+                "AmountBeforeTax" : 450000.00,
+                "NumberOfGuests" : 2,
+                "Type" : "25"
+              } ]
+            },
+            "CancelPolicies" : {
+              "CancelPenalty" : [ {
+                "AmountPercent" : {
+                  "Amount" : 23423,
+                  "NmbrOfNights" : 3,
+                  "Percent" : 23,
+                  "basisType" : "FullStay",
+                  "taxInclusive" : true,
+                  "feesInclusive" : true
+                },
+                "Deadline" : {
+                  "absoluteDeadline" : "2020-05-05 01:01",
+                  "offsetDropTime" : "AfterBooking",
+                  "offsetTimeUnit" : "D",
+                  "offsetUnitMultiplier" : 12
+                },
+                "Start" : "2018-08-06"
+              } ]
+            },
+            "GuaranteePolicies" : {
+              "GuaranteePolicy" : {
+                "GuaranteeType" : "DepositRequired"
+              }
+            }
+          } ]
+        },
+        "UniqueID" : {
+          "ID" : "1",
+          "Type" : "18"
+        }
+      } ]
+    }
+  },
+  "DailyPricingBased" : true
+}

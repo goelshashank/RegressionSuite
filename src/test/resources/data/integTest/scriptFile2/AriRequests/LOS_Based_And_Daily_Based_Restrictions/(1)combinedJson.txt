@@ -1,0 +1,73 @@
+{
+  "OTA_HotelAvailNotifRQ" : {
+    "EchoToken" : "c8ca7f07-6f9d-4adc-8ef1-7ec02d6f1f06",
+    "MessageContentCode" : "3",
+    "TimeStamp" : "2019-05-03T14:50:46",
+    "Version" : 7.001,
+    "AvailStatusMessages" : {
+      "BrandCode" : "XNX",
+      "HotelCode" : "0533",
+      "AvailStatusMessage" : [ {
+        "LengthsOfStay" : {
+          "LengthOfStay" : [ {
+            "MinMaxMessageType" : "FullPatternLOS",
+            "LOS_Pattern" : {
+              "FullPatternLOS" : "YYNNYYN"
+            }
+          } ],
+          "FixedPatternLength" : 7
+        },
+        "StatusApplicationControl" : {
+          "Start" : "2018-11-20",
+          "End" : "2018-11-20",
+          "RatePlanCode" : "1BO",
+          "RatePlanCategory" : "DA5",
+          "InvTypeCode" : "A1D"
+        },
+        "UniqueID" : {
+          "ID" : "1",
+          "Type" : "18"
+        }
+      } ]
+    }
+  },
+  "OTA_HotelRatePlanNotifRQ" : {
+    "EchoToken" : "b955891f-a15b-4d8d-8150-854a97708b40",
+    "MessageContentCode" : "8",
+    "TimeStamp" : "2019-05-03T14:50:46",
+    "Version" : 7.001,
+    "RatePlans" : {
+      "BrandCode" : "XNX",
+      "HotelCode" : "0533",
+      "RatePlan" : [ {
+        "Start" : "2018-11-20",
+        "End" : "2018-11-20",
+        "RatePlanCategory" : "DA5",
+        "RatePlanCode" : "1BO",
+        "RatePlanNotifType" : "New",
+        "Rates" : {
+          "Rate" : [ {
+            "CurrencyCode" : "USD",
+            "Start" : "2018-11-20",
+            "End" : "2018-11-20",
+            "InvTypeCode" : "A1D",
+            "RateTimeUnit" : "Day",
+            "BaseByGuestAmts" : {
+              "BaseByGuestAmt" : [ {
+                "AgeQualifyingCode" : "10",
+                "AmountBeforeTax" : 450000.00,
+                "NumberOfGuests" : 2,
+                "Type" : "25"
+              } ]
+            }
+          } ]
+        },
+        "UniqueID" : {
+          "ID" : "1",
+          "Type" : "18"
+        }
+      } ]
+    }
+  },
+  "DailyPricingBased" : true
+}

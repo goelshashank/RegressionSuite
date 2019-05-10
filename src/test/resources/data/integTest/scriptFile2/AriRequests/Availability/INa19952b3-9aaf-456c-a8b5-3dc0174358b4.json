@@ -1,0 +1,31 @@
+{
+  "OTA_HotelAvailNotifRQ" : {
+    "EchoToken" : "a19952b3-9aaf-456c-a8b5-3dc0174358b4",
+    "MessageContentCode" : "3",
+    "TimeStamp" : "2019-05-03T14:59:42",
+    "Version" : 7.001,
+    "AvailStatusMessages" : {
+      "BrandCode" : "XNX",
+      "HotelCode" : "0533",
+      "AvailStatusMessage" : [ {
+        "RestrictionStatuses" : {
+          "RestrictionStatus" : [ {
+            "Restriction" : "Master",
+            "Status" : "Open"
+          } ]
+        },
+        "StatusApplicationControl" : {
+          "Start" : "2018-08-07",
+          "End" : "2018-08-14",
+          "RatePlanCode" : "1BO",
+          "RatePlanCategory" : "DA5",
+          "InvTypeCode" : "A1D"
+        },
+        "UniqueID" : {
+          "ID" : "1",
+          "Type" : "18"
+        }
+      } ]
+    }
+  }
+}

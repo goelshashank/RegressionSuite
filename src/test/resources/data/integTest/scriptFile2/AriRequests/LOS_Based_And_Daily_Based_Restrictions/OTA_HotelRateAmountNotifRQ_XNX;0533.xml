@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_HotelRateAmountNotifRQ TimeStamp="2019-05-03T15:04:33.802+03:00" Version="5.000" xmlns="http://www.opentravel.org/OTA/2003/05">
+    <RateAmountMessages HotelCode="XNX;0533">
+        <RateAmountMessage>
+            <StatusApplicationControl Start="2018-11-20" End="2018-11-20" RatePlanCode="1BO" InvCode="A1D"/>
+            <Rates>
+                <Rate>
+                    <BaseByGuestAmts>
+                        <BaseByGuestAmt NumberOfGuests="2" AmountAfterTax="45000000" DecimalPlaces="2"/>
+                    </BaseByGuestAmts>
+                </Rate>
+            </Rates>
+        </RateAmountMessage>
+    </RateAmountMessages>
+</OTA_HotelRateAmountNotifRQ>
+
