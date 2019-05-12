@@ -78,6 +78,7 @@ import static java.util.Arrays.asList;
 
 		log.info("----......------- Start test: {} -----.......-------", getTestClassName());
 
+		log.info(" %%%%%% Total Files - {}",baseInput.getDataFiles().size());
 		for (String t : baseInput.getDataFiles()) {
 			log.info("#### Publishing file - {} ####", t);
 			PushCoreJson pushCoreJson = CommonUtils.getObjFromResourceJsonAbsPath(t, PushCoreJson.class);
@@ -85,7 +86,7 @@ import static java.util.Arrays.asList;
 			kafkaConfig.publishData("VS_Brand_3_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
 
 		}
-
+		sleep(5,"waiting after publishing data");
 
 		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
 		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
