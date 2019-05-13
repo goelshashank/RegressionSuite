@@ -24,7 +24,7 @@
     </Appenders>
 
     <Loggers>
-        <Root level="info">
+        <Root level="warn">
             <AppenderRef ref="DAILY_LOG"/>
             <AppenderRef ref="STDOUT"/>
         </Root>
