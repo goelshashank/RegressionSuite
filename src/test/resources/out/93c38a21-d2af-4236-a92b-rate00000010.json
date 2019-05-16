@@ -21,21 +21,33 @@
       "Date": "2019-04-03",
       "Group": 0,
       "RequestID": "1_1",
-      "UpdateAttributes": [
-        {
-          "ID": 2,
-          "Name": "Breakfast",
-          "Value": "1",
-          "Type": 2
-        }
-      ],
+      "UpdateAttributes": [],
       "LOS_Availability": {
         "ID": 49,
         "Name": "7",
         "Value": "YYNNYYN",
         "Type": 1
       },
-      "LOS_Pricing": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 1,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            },
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "450000.0",
+              "Type": 3,
+              "IsTaxIncluded": 0
+            }
+          ]
+        }
+      ],
       "CancelPenalities": []
     }
   ]

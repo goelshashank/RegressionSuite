@@ -61,7 +61,7 @@
               "BaseByGuestAmt": [{
                 "AgeQualifyingCode": "10",
                 "AmountBeforeTax": 20.10,
-                "NumberOfGuests": 2,
+                "NumberOfGuests": 1,
                 "Type": "25"
               }
               ]

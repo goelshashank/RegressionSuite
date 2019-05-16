@@ -20,8 +20,16 @@
     {
       "Date": "2019-04-03",
       "Group": 0,
-      "RequestID": "1",
-      "UpdateAttributes": [],
+      "RequestID": "1_1",
+      "UpdateAttributes": [
+        {
+          "ID": 102,
+          "Name": "1Adult",
+          "Value": "450000.0",
+          "Type": 3,
+          "IsTaxIncluded": 0
+        }
+      ],
       "LOS_Availability": {
         "ID": 49,
         "Name": "7",

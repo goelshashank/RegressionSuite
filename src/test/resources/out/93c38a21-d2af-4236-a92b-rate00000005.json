@@ -1,5 +1,5 @@
 {
-  "SessionID": "IN93c38a21-d2af-4236-a92b-rate00000005",
+  "SessionID": "93c38a21-d2af-4236-a92b-rate00000005",
   "Framework": 2,
   "HotelID": 3,
   "ChannelID": 960,
@@ -17,6 +17,28 @@
   "SessionRequired": false,
   "CurrencyCode": "USD",
   "DateUpdates": [
+    {
+      "Date": "2018-08-20",
+      "Group": 0,
+      "RequestID": "1",
+      "UpdateAttributes": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 7,
+          "Attributes": [
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "850000.0",
+              "Type": 3,
+              "IsTaxIncluded": 1,
+              "TaxAmount": 150000.0
+            }
+          ]
+        }
+      ],
+      "CancelPenalities": []
+    },
     {
       "Date": "2019-04-03",
       "Group": 0,

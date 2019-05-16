@@ -15,12 +15,11 @@
   "ChannelHotelCode": "H005",
   "AdditionalParam": "H005",
   "SessionRequired": false,
-  "CurrencyCode": "USD",
   "DateUpdates": [
     {
       "Date": "2019-04-03",
       "Group": 0,
-      "RequestID": "1",
+      "RequestID": "1_1",
       "UpdateAttributes": [],
       "LOS_Availability": {
         "ID": 49,
@@ -28,7 +27,20 @@
         "Value": "YYNNYYN",
         "Type": 1
       },
-      "LOS_Pricing": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 1,
+          "Attributes": [
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "100.1",
+              "Type": 3,
+              "IsTaxIncluded": 1
+            }
+          ]
+        }
+      ],
       "CancelPenalities": []
     }
   ]

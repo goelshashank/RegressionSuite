@@ -35,7 +35,21 @@
         "Value": "YYNNYYN",
         "Type": 1
       },
-      "LOS_Pricing": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 1,
+          "Attributes": [
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "503.1",
+              "Type": 3,
+              "IsTaxIncluded": 1,
+              "TaxAmount": 9.0
+            }
+          ]
+        }
+      ],
       "CancelPenalities": []
     }
   ]
