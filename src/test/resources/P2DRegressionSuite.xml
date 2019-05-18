@@ -12,7 +12,7 @@
     <parameter name="outPath" value="/apps/test/regression/out"/>
 
     <parameter name="reportPath" value="/apps/test/regression/report"/>
-    <parameter name="sendMail" value="false"/>
+    <parameter name="sendMail" value="true"/>
     <parameter name="clearOut" value="true"/>
 
     <test name="P2DIntegrationTest" parallel="false">

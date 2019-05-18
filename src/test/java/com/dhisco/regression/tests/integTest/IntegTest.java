@@ -103,7 +103,7 @@ import static java.util.Arrays.asList;
 	}
 
 	@AfterMethod @Override public void afterMethod(ITestResult result) throws Exception {
-		log.info("in after method ");
+		log.info("in after method  ");
 		super.afterMethod(result);
 	}
 
