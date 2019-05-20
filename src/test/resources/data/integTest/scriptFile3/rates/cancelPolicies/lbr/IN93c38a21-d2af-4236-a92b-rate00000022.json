@@ -1,0 +1,106 @@
+{
+  "OTA_HotelAvailNotifRQ": {
+    "EchoToken": "33bd1859-bb32-4988-8573-ed37a675f550",
+    "MessageContentCode": "3",
+    "TimeStamp": "2019-04-03T14:50:46",
+    "Version": 7.001,
+    "AvailStatusMessages": {
+      "BrandCode": "VS_DR",
+      "HotelCode": "3646",
+      "AvailStatusMessage": [
+        {
+          "LengthsOfStay": {
+            "LengthOfStay": [
+              {
+                "MinMaxMessageType": "FullPatternLOS",
+                "LOS_Pattern": {
+                  "FullPatternLOS": "YYNNYYN"
+                }
+              }
+            ],
+            "FixedPatternLength": 7
+          },
+          "StatusApplicationControl": {
+            "Start": "2019-04-03",
+            "End": "2019-04-03",
+            "RatePlanCode": "3DM",
+            "RatePlanCategory": "PEG",
+            "InvTypeCode": "N1K"
+          },
+          "UniqueID": {
+            "ID": "1",
+            "Type": "18"
+          }
+        }
+      ]
+    }
+  },
+  "OTA_HotelRatePlanNotifRQ": {
+    "EchoToken": "93c38a21-d2af-4236-a92b-rate00000022",
+    "MessageContentCode": "8",
+    "TimeStamp": "2019-04-03T14:30:27",
+    "Version": 7.001,
+    "RatePlans": {
+      "BrandCode": "VS_DR",
+      "HotelCode": "3646",
+      "RatePlan": [
+        {
+          "Start": "2019-04-03",
+          "End": "2019-04-03",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "USD",
+                "Start": "2019-04-03",
+                "End": "2019-04-03",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "1",
+                "MinLOS": "1",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 494.10,
+                      "AmountAfterTax": 503.10,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {
+                        "Amount": 23423,
+                        "NmbrOfNights": 3,
+                        "Percent": 23,
+                        "basisType": "FullStay",
+                        "taxInclusive": true,
+                        "feesInclusive": true
+                      },
+                      "Deadline": {
+                        "offsetDropTime": "AfterBooking",
+                        "offsetTimeUnit": "D",
+                        "offsetUnitMultiplier": 12
+                      },
+                      "Start": "2018-08-06"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "1",
+            "Type": "18"
+          }
+        }
+      ]
+    }
+  },
+  "DailyPricingBased": false
+}

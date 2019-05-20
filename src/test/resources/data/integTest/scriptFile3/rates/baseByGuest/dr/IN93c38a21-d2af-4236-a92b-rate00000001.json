@@ -1,0 +1,83 @@
+{
+  "OTA_HotelAvailNotifRQ": {
+    "EchoToken": "33bd1859-bb32-4988-8573-ed37a675f550",
+    "MessageContentCode": "3",
+    "TimeStamp": "2019-04-03T14:50:46",
+    "Version": 7.001,
+    "AvailStatusMessages": {
+      "BrandCode": "VS_DR",
+      "HotelCode": "3646",
+      "AvailStatusMessage": [
+        {
+          "LengthsOfStay": {
+            "LengthOfStay": [
+              {
+                "MinMaxMessageType": "FullPatternLOS",
+                "LOS_Pattern": {
+                  "FullPatternLOS": "YYNNYYN"
+                }
+              }
+            ],
+            "FixedPatternLength": 7
+          },
+          "StatusApplicationControl": {
+            "Start": "2019-04-03",
+            "End": "2019-04-03",
+            "RatePlanCode": "3DM",
+            "RatePlanCategory": "PEG",
+            "InvTypeCode": "N1K"
+          },
+          "UniqueID": {
+            "ID": "1",
+            "Type": "18"
+          }
+        }
+      ]
+    }
+  },
+  "OTA_HotelRatePlanNotifRQ": {
+    "EchoToken": "93c38a21-d2af-4236-a92b-rate00000001",
+    "MessageContentCode": "8",
+    "TimeStamp": "2019-04-03T14:30:27",
+    "Version": 7.001,
+    "RatePlans": {
+      "BrandCode": "VS_DR",
+      "HotelCode": "3646",
+      "RatePlan": [
+        {
+          "Start": "2019-04-03",
+          "End": "2019-04-03",
+          "RatePlanCategory": "PEG",
+          "RatePlanCode": "3DM",
+          "RatePlanNotifType": "New",
+          "Rates": {
+            "Rate": [
+              {
+                "CurrencyCode": "USD",
+                "Start": "2019-04-03",
+                "End": "2019-04-03",
+                "InvTypeCode": "N1K",
+                "RateTimeUnit": "Day",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 450000.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "UniqueID": {
+            "ID": "1",
+            "Type": "18"
+          }
+        }
+      ]
+    }
+  },
+  "DailyPricingBased": true
+}
