@@ -36,7 +36,7 @@
     }
   },
   "OTA_HotelRatePlanNotifRQ": {
-    "EchoToken": "93c38a21-d2af-4236-a92b-rate00000015",
+    "EchoToken": "93c38a21-d2af-4236-a92b-rate00000020",
     "MessageContentCode": "8",
     "TimeStamp": "2019-04-03T14:30:27",
     "Version": 7.001,
@@ -84,6 +84,22 @@
                       },
                       "Deadline": {
                         "absoluteDeadline": "2020-05-05 01:01"
+                      },
+                      "Start": "2018-08-06"
+                    },{
+                      "AmountPercent": {
+                        "Amount": 22223,
+                        "NmbrOfNights": 4,
+                        "Percent": 25,
+                        "basisType": "FullStay",
+                        "taxInclusive": false,
+                        "feesInclusive": true
+                      },
+                      "Deadline": {
+
+                        "offsetDropTime": "AfterBooking",
+                        "offsetTimeUnit": "D",
+                        "offsetUnitMultiplier": 12
                       },
                       "Start": "2018-08-06"
                     }
