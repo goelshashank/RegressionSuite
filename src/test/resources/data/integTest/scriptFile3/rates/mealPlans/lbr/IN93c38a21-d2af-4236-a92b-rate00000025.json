@@ -36,7 +36,7 @@
     }
   },
   "OTA_HotelRatePlanNotifRQ": {
-    "EchoToken": "93c38a21-d2af-4236-a92b-rate00000001",
+    "EchoToken": "93c38a21-d2af-4236-a92b-rate00000025",
     "MessageContentCode": "8",
     "TimeStamp": "2019-04-03T14:30:27",
     "Version": 7.001,
@@ -57,7 +57,9 @@
                 "Start": "2019-04-03",
                 "End": "2019-04-03",
                 "InvTypeCode": "N1K",
-                "RateTimeUnit": "Day",
+                "MaxLOS": "1",
+                "MinLOS": "1",
+                "RateTimeUnit": "FullDuration",
                 "BaseByGuestAmts": {
                   "BaseByGuestAmt": [
                     {
@@ -67,6 +69,26 @@
                       "Type": "25"
                     }
                   ]
+                }
+              }, {
+                "CurrencyCode": "USD",
+                "Start": "2019-04-03",
+                "End": "2019-04-03",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "2",
+                "MinLOS": "2",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 450000.00,
+                      "NumberOfGuests": 1,
+                      "Type": "25"
+                    }
+                  ]
+                },"MealsIncluded" : {
+                  "MealPlanCodes" : [ "1" ]
                 }
               }
             ]
@@ -79,5 +101,5 @@
       ]
     }
   },
-  "DailyPricingBased": true
+  "DailyPricingBased": false
 }
