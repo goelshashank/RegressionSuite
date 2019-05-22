@@ -1,0 +1,35 @@
+{
+  "SessionID": "93c38a21-d2af-4236-a92b-a00000000029",
+  "Framework": 2,
+  "HotelID": 3,
+  "ChannelID": 960,
+  "ChannelProductID": 0,
+  "ChannelName": "Royal Arabian DMCC",
+  "RoomName": "RM967_5",
+  "RoomCode": "RM967",
+  "RateName": "RT1_29",
+  "RateCode": "RT1",
+  "RatePlanCategory": "PEG",
+  "UserID": "Abidos",
+  "Password": "PDkd47li",
+  "ChannelHotelCode": "H005",
+  "AdditionalParam": "H005",
+  "SessionRequired": false,
+  "DateUpdates": [
+    {
+      "Date": "2019-04-03",
+      "Group": 0,
+      "RequestID": "1",
+      "UpdateAttributes": [
+        {
+          "ID": 1,
+          "Name": "Allocation",
+          "Value": "2",
+          "Type": 1
+        }
+      ],
+      "LOS_Pricing": [],
+      "CancelPenalities": []
+    }
+  ]
+}
