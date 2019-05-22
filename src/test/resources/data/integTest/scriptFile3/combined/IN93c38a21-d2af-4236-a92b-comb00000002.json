@@ -36,7 +36,7 @@
     }
   },
   "OTA_HotelRatePlanNotifRQ": {
-    "EchoToken": "IN93c38a21-d2af-4236-a92b-comb00000001",
+    "EchoToken": "IN93c38a21-d2af-4236-a92b-comb00000002",
     "MessageContentCode": "8",
     "TimeStamp": "2019-04-03T14:30:27",
     "Version": 7.001,
@@ -57,7 +57,9 @@
                 "Start": "2019-04-05",
                 "End": "2019-04-15",
                 "InvTypeCode": "N1K",
-                "RateTimeUnit": "Day",
+                "MaxLOS": "1",
+                "MinLOS": "1",
+                "RateTimeUnit": "FullDuration",
                 "BaseByGuestAmts": {
                   "BaseByGuestAmt": [
                     {
@@ -93,6 +95,49 @@
                 },"MealsIncluded" : {
                 "MealPlanCodes" : [ "1" ]
               }
+              }, {
+                "CurrencyCode": "USD",
+                "Start": "2019-04-09",
+                "End": "2019-04-15",
+                "InvTypeCode": "N1K",
+                "MaxLOS": "5",
+                "MinLOS": "5",
+                "RateTimeUnit": "FullDuration",
+                "BaseByGuestAmts": {
+                  "BaseByGuestAmt": [
+                    {
+                      "AgeQualifyingCode": "10",
+                      "AmountBeforeTax": 4500.00,
+                      "NumberOfGuests": 2,
+                      "Type": "25"
+                    }
+                  ]
+                },
+                "GuaranteePolicies": {
+                  "GuaranteePolicy": {
+                    "GuaranteeType": "DepositRequired"
+                  }
+                },
+                "CancelPolicies": {
+                  "CancelPenalty": [
+                    {
+                      "AmountPercent": {
+                        "Amount": 23423,
+                        "NmbrOfNights": 3,
+                        "Percent": 23,
+                        "basisType": "FullStay",
+                        "taxInclusive": true,
+                        "feesInclusive": false
+                      },
+                      "Deadline": {
+                        "absoluteDeadline": "2020-05-05 01:01"
+                      },
+                      "Start": "2018-08-06"
+                    }
+                  ]
+                },"MealsIncluded" : {
+                  "MealPlanCodes" : [ "1" ]
+                }
               }
             ]
           },
@@ -104,5 +149,5 @@
       ]
     }
   },
-  "DailyPricingBased": true
+  "DailyPricingBased": false
 }
