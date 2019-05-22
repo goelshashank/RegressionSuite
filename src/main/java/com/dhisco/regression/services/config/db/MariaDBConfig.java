@@ -32,15 +32,13 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
  * @version 1.0
  * @since 28-03-2019
  */
-@Lazy @Log4j2 @Getter @Setter @ToString(includeFieldNames = true) @Configuration @PropertySource("db.properties") @ConfigurationProperties(prefix = "db") public class DBConfig
+@Lazy @Log4j2 @Getter @Setter @ToString(includeFieldNames = true) @Configuration @PropertySource("mariaDB.properties") @ConfigurationProperties(prefix = "db") public class MariaDBConfig
 		extends BaseConfig {
 
 	@Autowired RemoteConnector remoteConnector;
 	private String mariadbUsername;
 	private String mariadbPassword;
 	private String mariadbPort;
-	private String cassandraHost;
-	private String cassandraPort;
 	private String mariadbHost;
 	private String mariadbUrl;
 	private String mariadbDriverName;
@@ -51,7 +49,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 
 	@PostConstruct @Override public void init() {
 		super.init();
-		Arrays.asList(mariadbHost, cassandraHost).forEach(t -> remoteConnector.addSession(t));
+		Arrays.asList(mariadbHost).forEach(t -> remoteConnector.addSession(t));
 	}
 
 	@Override public void afterPropertiesSet() {
@@ -70,7 +68,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 			log.error(e.getMessage(), e);
 			shutdownApp();
 		}
-		Arrays.asList(mariadbHost, cassandraHost).forEach(t -> remoteConnector.destroySession(t));
+		Arrays.asList(mariadbHost).forEach(t -> remoteConnector.destroySession(t));
 		super.cleanup();
 	}
 
