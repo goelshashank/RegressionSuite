@@ -60,7 +60,7 @@ public class SRPTest extends BaseTest {
 
 		String fullScriptPath=getInputScriptsPath()+SLASH_FW+testClassName+SLASH_FW+getClassParam("scriptFileName");
 
-		if (Boolean.valueOf(getClassParam("loadDB"))) {
+		if (Boolean.valueOf(getClassParam("loadMariaDB"))) {
 			loadMariaDB(fullScriptPath);
 		}
 
