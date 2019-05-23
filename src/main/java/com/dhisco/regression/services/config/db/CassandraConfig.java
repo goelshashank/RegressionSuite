@@ -20,6 +20,5 @@ import org.springframework.context.annotation.Lazy;
 @Lazy @Log4j2 @Getter @Setter @ToString(includeFieldNames = true)
 @Configuration
 public class CassandraConfig {
-
 	@Autowired private ProductPushCoreDAO productPushCoreDAO;
 }

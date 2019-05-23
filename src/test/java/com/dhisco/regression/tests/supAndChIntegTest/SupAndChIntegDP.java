@@ -1,4 +1,4 @@
-package com.dhisco.regression.tests.integTest;
+package com.dhisco.regression.tests.supAndChIntegTest;
 
 import com.dhisco.regression.dataproviders.BaseDP;
 import org.testng.ITestContext;
@@ -20,9 +20,9 @@ import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
  * @version 1.0
  * @since 28-03-2019
  */
-public class IntegDP extends BaseDP {
+public class SupAndChIntegDP extends BaseDP {
 
-	@DataProvider public static Object[][] integDP(ITestContext iTestContext) {
+	@DataProvider public static Object[][] supAndChIntegDP(ITestContext iTestContext) {
 
 		Map<String, String> suiteParamsMap = iTestContext.getCurrentXmlTest().getAllParameters();
 		String inputScriptsPath=suiteParamsMap.get("inputScriptsPath");
@@ -30,7 +30,7 @@ public class IntegDP extends BaseDP {
 
 		Map<String,String> classParamsMap=((TestRunner) iTestContext).getTest().getXmlClasses().get(0).getAllParameters();
 		String testName=classParamsMap.get("testName");
-		Boolean loadDB=Boolean.valueOf(classParamsMap.get("loadDB"));
+		Boolean loadMariaDB=Boolean.valueOf(classParamsMap.get("loadMariaDB"));
 
 		File folder = new File(inputScriptsPath+SLASH_FW+testName);
 		File[] listOfFiles = folder.listFiles();
@@ -39,7 +39,7 @@ public class IntegDP extends BaseDP {
 		Object[][]o=new Object[listOfFiles.length][1];
 		int i=0;
 		for (File file : listOfFiles) {
-			IntegInput baseInput=new IntegInput();
+			SupAndChIntegInput baseInput=new SupAndChIntegInput();
 			String scriptName=file.getName();
 
 			baseInput.setScriptFile(inputScriptsPath+SLASH_FW+testName+SLASH_FW+scriptName);
@@ -52,7 +52,7 @@ public class IntegDP extends BaseDP {
 					Arrays.stream(listOfFiles2).map(t-> t.getAbsolutePath()).collect(
 							Collectors.toList()));
 
-			baseInput.setLoadDB(loadDB);
+			baseInput.setLoadMariaDB(loadMariaDB);
 			baseInput.setTestName(testName);
 			o[i][0]=baseInput;
 			i++;

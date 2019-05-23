@@ -16,7 +16,7 @@ import java.util.Properties;
 @Getter @Setter
 public class BaseInput extends BasePojo {
 
-	private Boolean loadDB;
+	private Boolean loadMariaDB;
 	private String testName;
 
 }

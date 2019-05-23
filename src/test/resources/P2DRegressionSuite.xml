@@ -17,16 +17,16 @@
 
     <test name="P2DIntegrationTest" parallel="false">
         <classes>
-            <class name="com.dhisco.regression.tests.integTest.IntegTest">
-                <parameter name="loadDB" value="false"/>
-                <parameter name="testName" value="integTest"/>
+            <class name="com.dhisco.regression.tests.supAndChIntegTest.SupAndChIntegTest">
+                <parameter name="loadMariaDB" value="false"/>
+                <parameter name="testName" value="supAndChIntegTest"/>
             </class>
         </classes>
     </test>
   <!--  <test name="SRPTest">
         <classes>
             <class name="com.dhisco.regression.tests.srp.SRPTest">
-                <parameter name="loadDB" value="false"/>
+                <parameter name="loadMariaDB" value="false"/>
                 <parameter name="testName" value="sRPTest"/>
                 <parameter name="scriptFileName" value="scriptFile1.sql"/>
             </class>

@@ -1,4 +1,4 @@
-package com.dhisco.regression.tests.integTest;
+package com.dhisco.regression.tests.supAndChIntegTest;
 
 import com.dhisco.persistence.model.ProductPushCoreDO;
 import com.dhisco.ptd.dj.PushCoreJson;
@@ -30,6 +30,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static com.dhisco.regression.core.BaseConstants.DEV_TEST;
 import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 import static java.util.Arrays.asList;
@@ -39,8 +40,8 @@ import static java.util.Arrays.asList;
  * @version 1.0
  * @since 27-03-2019
  */
-@ActiveProfiles("devTest")
-@Log4j2 public class IntegTest extends BaseTest {
+@ActiveProfiles(DEV_TEST)
+@Log4j2 public class SupAndChIntegTest extends BaseTest {
 
 	private Set<String> topics;
 
@@ -56,13 +57,13 @@ import static java.util.Arrays.asList;
 		super.beforeMethod();
 
 		cassandraConfig=loadBean(CassandraConfig.class);
-		IntegInput baseInput = (IntegInput) o[0];
+		SupAndChIntegInput baseInput = (SupAndChIntegInput) o[0];
 
-		if (baseInput.getLoadDB()) {
+		if (baseInput.getLoadMariaDB()) {
 			loadMariaDB(baseInput.getScriptFile());
 		}
 
-		//CAUTION: Load DB beans only before apps .
+		//CAUTION: Always load DB beans before apps only.
 
 		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
 		sleep(15, "Waiting for configuration service to load up");
@@ -80,19 +81,19 @@ import static java.util.Arrays.asList;
 
 	}
 
-	@Test(dataProviderClass = IntegDP.class, dataProvider = "integDP") public void integTest(IntegInput baseInput)
+	@Test(dataProviderClass = SupAndChIntegDP.class, dataProvider = "supAndChIntegDP") public void supAndChIntegTest(
+			SupAndChIntegInput supAndChIntegInput)
 			throws Exception {
 		test = extent.createTest(getTestClassName(), getTestClassName());
 
 		log.info("----......------- Start test: {} -----.......-------", getTestClassName());
 
-		log.info(" %%%%%% Total Files - {}",baseInput.getDataFiles().size());
-		for (String t : baseInput.getDataFiles()) {
+		log.info(" %%%%%% Total Files - {}",supAndChIntegInput.getDataFiles().size());
+		for (String t : supAndChIntegInput.getDataFiles()) {
 			log.info("#### Publishing file - {} ####", t);
 			PushCoreJson pushCoreJson = CommonUtils.getObjFromResourceJsonAbsPath(t, PushCoreJson.class);
 			Assert.assertTrue(isNotEmpty(pushCoreJson));
 			kafkaConfig.publishData("VS_Brand_3_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
-
 		}
 		sleep(2,"waiting after publishing data");
 
@@ -104,7 +105,7 @@ import static java.util.Arrays.asList;
 
 		sleep(sleepTime, "Waiting for the pipeline to process the messages");
 
-		for (String t : baseInput.getDataFiles()) {
+		for (String t : supAndChIntegInput.getDataFiles()) {
 
 			String compareFileName = getCompareFileName(t);
 			assertJson(getBenchmarkPath() + SLASH_FW + compareFileName, getOutPath() + SLASH_FW + compareFileName,
