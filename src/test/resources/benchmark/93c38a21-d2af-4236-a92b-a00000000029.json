@@ -1,5 +1,5 @@
 {
-  "SessionID": "93c38a21-d2af-4236-a92b-a00000000016",
+  "SessionID": "93c38a21-d2af-4236-a92b-a00000000029",
   "Framework": 2,
   "HotelID": 3,
   "ChannelID": 960,
@@ -15,7 +15,6 @@
   "ChannelHotelCode": "H005",
   "AdditionalParam": "H005",
   "SessionRequired": false,
-  "CurrencyCode": "USD",
   "DateUpdates": [
     {
       "Date": "2019-04-03",
@@ -23,9 +22,9 @@
       "RequestID": "1",
       "UpdateAttributes": [
         {
-          "ID": 49,
-          "Name": "Available",
-          "Value": "0",
+          "ID": 1,
+          "Name": "Allocation",
+          "Value": "2",
           "Type": 1
         }
       ],

@@ -1,5 +1,5 @@
 {
-  "SessionID": "93c38a21-d2af-4236-a92b-rate00000018",
+  "SessionID": "93c38a21-d2af-4236-a92b-rate00000024",
   "Framework": 2,
   "HotelID": 3,
   "ChannelID": 960,
@@ -15,12 +15,20 @@
   "ChannelHotelCode": "H005",
   "AdditionalParam": "H005",
   "SessionRequired": false,
+  "CurrencyCode": "USD",
   "DateUpdates": [
     {
       "Date": "2019-04-03",
       "Group": 0,
       "RequestID": "1_1_1",
-      "UpdateAttributes": [],
+      "UpdateAttributes": [
+        {
+          "ID": 97,
+          "Name": "GuaranteePolicy",
+          "Value": "DepositRequired",
+          "Type": 2
+        }
+      ],
       "LOS_Availability": {
         "ID": 49,
         "Name": "7",
@@ -34,9 +42,10 @@
             {
               "ID": 102,
               "Name": "1Adult",
-              "Value": "20.1",
+              "Value": "503.1",
               "Type": 3,
-              "IsTaxIncluded": 0
+              "IsTaxIncluded": 1,
+              "TaxAmount": 9.0
             }
           ]
         },
@@ -46,9 +55,10 @@
             {
               "ID": 102,
               "Name": "1Adult",
-              "Value": "20.1",
+              "Value": "503.1",
               "Type": 3,
-              "IsTaxIncluded": 0
+              "IsTaxIncluded": 1,
+              "TaxAmount": 9.0
             }
           ]
         }

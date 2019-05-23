@@ -64,7 +64,7 @@ import static java.util.Arrays.asList;
 			loadMariaDB(baseInput.getScriptFile());
 		}
 
-		//CAUTION: Always load DB beans before apps only.
+		//CAUTION: Always, load DB beans before apps.
 
 		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
 		sleep(15, "Waiting for configuration service to load up");
