@@ -1,0 +1,734 @@
+{
+  "SessionID": "IN93c38a21-d2af-4236-a92b-comb00000001",
+  "Framework": 2,
+  "HotelID": 3,
+  "ChannelID": 960,
+  "ChannelProductID": 0,
+  "ChannelName": "Royal Arabian DMCC",
+  "RoomName": "RM967_5",
+  "RoomCode": "RM967",
+  "RateName": "RT1_29",
+  "RateCode": "RT1",
+  "RatePlanCategory": "PEG",
+  "UserID": "Abidos",
+  "Password": "PDkd47li",
+  "ChannelHotelCode": "H005",
+  "AdditionalParam": "H005",
+  "SessionRequired": false,
+  "CurrencyCode": "USD",
+  "DateUpdates": [
+    {
+      "Date": "2019-04-03",
+      "Group": 0,
+      "RequestID": "1",
+      "UpdateAttributes": [],
+      "LOS_Availability": {
+        "ID": 49,
+        "Name": "7",
+        "Value": "YYNNYYN",
+        "Type": 1
+      },
+      "LOS_Pricing": [],
+      "CancelPenalities": []
+    },
+    {
+      "Date": "2019-04-04",
+      "Group": 0,
+      "RequestID": "1",
+      "UpdateAttributes": [],
+      "LOS_Availability": {
+        "ID": 49,
+        "Name": "7",
+        "Value": "YYNNYYN",
+        "Type": 1
+      },
+      "LOS_Pricing": [],
+      "CancelPenalities": []
+    },
+    {
+      "Date": "2019-04-05",
+      "Group": 0,
+      "RequestID": "1_1",
+      "UpdateAttributes": [
+        {
+          "ID": 97,
+          "Name": "GuaranteePolicy",
+          "Value": "DepositRequired",
+          "Type": 2
+        },
+        {
+          "ID": 2,
+          "Name": "Breakfast",
+          "Value": "1",
+          "Type": 2
+        },
+        {
+          "ID": 102,
+          "Name": "1Adult",
+          "Value": "450000.0",
+          "Type": 3,
+          "IsTaxIncluded": 0
+        }
+      ],
+      "LOS_Availability": {
+        "ID": 49,
+        "Name": "7",
+        "Value": "YYNNYYN",
+        "Type": 1
+      },
+      "LOS_Pricing": [],
+      "CancelPenalities": [
+        {
+          "ID": 4,
+          "Type": 2,
+          "Items": [
+            {
+              "Key": "AbsoluteDeadline",
+              "Value": "2020-05-05 01:01"
+            },
+            {
+              "Key": "NumberOfNights",
+              "Value": "3"
+            },
+            {
+              "taxIncluded": true,
+              "feesIncluded": true,
+              "Key": "Amount",
+              "Value": "23423",
+              "IsTaxIncluded": true,
+              "IsFeesIncluded": true
+            },
+            {
+              "Key": "Percent",
+              "Value": "23"
+            },
+            {
+              "Key": "BasisType",
+              "Value": "FullStay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Date": "2019-04-06",
+      "Group": 0,
+      "RequestID": "1_1",
+      "UpdateAttributes": [
+        {
+          "ID": 97,
+          "Name": "GuaranteePolicy",
+          "Value": "DepositRequired",
+          "Type": 2
+        },
+        {
+          "ID": 2,
+          "Name": "Breakfast",
+          "Value": "1",
+          "Type": 2
+        },
+        {
+          "ID": 102,
+          "Name": "1Adult",
+          "Value": "450000.0",
+          "Type": 3,
+          "IsTaxIncluded": 0
+        }
+      ],
+      "LOS_Availability": {
+        "ID": 49,
+        "Name": "7",
+        "Value": "YYNNYYN",
+        "Type": 1
+      },
+      "LOS_Pricing": [],
+      "CancelPenalities": [
+        {
+          "ID": 4,
+          "Type": 2,
+          "Items": [
+            {
+              "Key": "AbsoluteDeadline",
+              "Value": "2020-05-05 01:01"
+            },
+            {
+              "Key": "NumberOfNights",
+              "Value": "3"
+            },
+            {
+              "taxIncluded": true,
+              "feesIncluded": true,
+              "Key": "Amount",
+              "Value": "23423",
+              "IsTaxIncluded": true,
+              "IsFeesIncluded": true
+            },
+            {
+              "Key": "Percent",
+              "Value": "23"
+            },
+            {
+              "Key": "BasisType",
+              "Value": "FullStay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Date": "2019-04-07",
+      "Group": 0,
+      "RequestID": "1_1",
+      "UpdateAttributes": [
+        {
+          "ID": 97,
+          "Name": "GuaranteePolicy",
+          "Value": "DepositRequired",
+          "Type": 2
+        },
+        {
+          "ID": 2,
+          "Name": "Breakfast",
+          "Value": "1",
+          "Type": 2
+        },
+        {
+          "ID": 102,
+          "Name": "1Adult",
+          "Value": "450000.0",
+          "Type": 3,
+          "IsTaxIncluded": 0
+        }
+      ],
+      "LOS_Availability": {
+        "ID": 49,
+        "Name": "7",
+        "Value": "YYNNYYN",
+        "Type": 1
+      },
+      "LOS_Pricing": [],
+      "CancelPenalities": [
+        {
+          "ID": 4,
+          "Type": 2,
+          "Items": [
+            {
+              "Key": "AbsoluteDeadline",
+              "Value": "2020-05-05 01:01"
+            },
+            {
+              "Key": "NumberOfNights",
+              "Value": "3"
+            },
+            {
+              "taxIncluded": true,
+              "feesIncluded": true,
+              "Key": "Amount",
+              "Value": "23423",
+              "IsTaxIncluded": true,
+              "IsFeesIncluded": true
+            },
+            {
+              "Key": "Percent",
+              "Value": "23"
+            },
+            {
+              "Key": "BasisType",
+              "Value": "FullStay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Date": "2019-04-08",
+      "Group": 0,
+      "RequestID": "1_1",
+      "UpdateAttributes": [
+        {
+          "ID": 97,
+          "Name": "GuaranteePolicy",
+          "Value": "DepositRequired",
+          "Type": 2
+        },
+        {
+          "ID": 2,
+          "Name": "Breakfast",
+          "Value": "1",
+          "Type": 2
+        },
+        {
+          "ID": 102,
+          "Name": "1Adult",
+          "Value": "450000.0",
+          "Type": 3,
+          "IsTaxIncluded": 0
+        }
+      ],
+      "LOS_Availability": {
+        "ID": 49,
+        "Name": "7",
+        "Value": "YYNNYYN",
+        "Type": 1
+      },
+      "LOS_Pricing": [],
+      "CancelPenalities": [
+        {
+          "ID": 4,
+          "Type": 2,
+          "Items": [
+            {
+              "Key": "AbsoluteDeadline",
+              "Value": "2020-05-05 01:01"
+            },
+            {
+              "Key": "NumberOfNights",
+              "Value": "3"
+            },
+            {
+              "taxIncluded": true,
+              "feesIncluded": true,
+              "Key": "Amount",
+              "Value": "23423",
+              "IsTaxIncluded": true,
+              "IsFeesIncluded": true
+            },
+            {
+              "Key": "Percent",
+              "Value": "23"
+            },
+            {
+              "Key": "BasisType",
+              "Value": "FullStay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Date": "2019-04-09",
+      "Group": 0,
+      "RequestID": "1_1",
+      "UpdateAttributes": [
+        {
+          "ID": 97,
+          "Name": "GuaranteePolicy",
+          "Value": "DepositRequired",
+          "Type": 2
+        },
+        {
+          "ID": 2,
+          "Name": "Breakfast",
+          "Value": "1",
+          "Type": 2
+        },
+        {
+          "ID": 102,
+          "Name": "1Adult",
+          "Value": "450000.0",
+          "Type": 3,
+          "IsTaxIncluded": 0
+        }
+      ],
+      "LOS_Availability": {
+        "ID": 49,
+        "Name": "7",
+        "Value": "YYNNYYN",
+        "Type": 1
+      },
+      "LOS_Pricing": [],
+      "CancelPenalities": [
+        {
+          "ID": 4,
+          "Type": 2,
+          "Items": [
+            {
+              "Key": "AbsoluteDeadline",
+              "Value": "2020-05-05 01:01"
+            },
+            {
+              "Key": "NumberOfNights",
+              "Value": "3"
+            },
+            {
+              "taxIncluded": true,
+              "feesIncluded": true,
+              "Key": "Amount",
+              "Value": "23423",
+              "IsTaxIncluded": true,
+              "IsFeesIncluded": true
+            },
+            {
+              "Key": "Percent",
+              "Value": "23"
+            },
+            {
+              "Key": "BasisType",
+              "Value": "FullStay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Date": "2019-04-10",
+      "Group": 0,
+      "RequestID": "1_1",
+      "UpdateAttributes": [
+        {
+          "ID": 97,
+          "Name": "GuaranteePolicy",
+          "Value": "DepositRequired",
+          "Type": 2
+        },
+        {
+          "ID": 2,
+          "Name": "Breakfast",
+          "Value": "1",
+          "Type": 2
+        },
+        {
+          "ID": 102,
+          "Name": "1Adult",
+          "Value": "450000.0",
+          "Type": 3,
+          "IsTaxIncluded": 0
+        }
+      ],
+      "LOS_Availability": {
+        "ID": 49,
+        "Name": "7",
+        "Value": "YYNNYYN",
+        "Type": 1
+      },
+      "LOS_Pricing": [],
+      "CancelPenalities": [
+        {
+          "ID": 4,
+          "Type": 2,
+          "Items": [
+            {
+              "Key": "AbsoluteDeadline",
+              "Value": "2020-05-05 01:01"
+            },
+            {
+              "Key": "NumberOfNights",
+              "Value": "3"
+            },
+            {
+              "taxIncluded": true,
+              "feesIncluded": true,
+              "Key": "Amount",
+              "Value": "23423",
+              "IsTaxIncluded": true,
+              "IsFeesIncluded": true
+            },
+            {
+              "Key": "Percent",
+              "Value": "23"
+            },
+            {
+              "Key": "BasisType",
+              "Value": "FullStay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Date": "2019-04-11",
+      "Group": 0,
+      "RequestID": "1",
+      "UpdateAttributes": [
+        {
+          "ID": 97,
+          "Name": "GuaranteePolicy",
+          "Value": "DepositRequired",
+          "Type": 2
+        },
+        {
+          "ID": 2,
+          "Name": "Breakfast",
+          "Value": "1",
+          "Type": 2
+        },
+        {
+          "ID": 102,
+          "Name": "1Adult",
+          "Value": "450000.0",
+          "Type": 3,
+          "IsTaxIncluded": 0
+        }
+      ],
+      "LOS_Pricing": [],
+      "CancelPenalities": [
+        {
+          "ID": 4,
+          "Type": 2,
+          "Items": [
+            {
+              "Key": "AbsoluteDeadline",
+              "Value": "2020-05-05 01:01"
+            },
+            {
+              "Key": "NumberOfNights",
+              "Value": "3"
+            },
+            {
+              "taxIncluded": true,
+              "feesIncluded": true,
+              "Key": "Amount",
+              "Value": "23423",
+              "IsTaxIncluded": true,
+              "IsFeesIncluded": true
+            },
+            {
+              "Key": "Percent",
+              "Value": "23"
+            },
+            {
+              "Key": "BasisType",
+              "Value": "FullStay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Date": "2019-04-12",
+      "Group": 0,
+      "RequestID": "1",
+      "UpdateAttributes": [
+        {
+          "ID": 97,
+          "Name": "GuaranteePolicy",
+          "Value": "DepositRequired",
+          "Type": 2
+        },
+        {
+          "ID": 2,
+          "Name": "Breakfast",
+          "Value": "1",
+          "Type": 2
+        },
+        {
+          "ID": 102,
+          "Name": "1Adult",
+          "Value": "450000.0",
+          "Type": 3,
+          "IsTaxIncluded": 0
+        }
+      ],
+      "LOS_Pricing": [],
+      "CancelPenalities": [
+        {
+          "ID": 4,
+          "Type": 2,
+          "Items": [
+            {
+              "Key": "AbsoluteDeadline",
+              "Value": "2020-05-05 01:01"
+            },
+            {
+              "Key": "NumberOfNights",
+              "Value": "3"
+            },
+            {
+              "taxIncluded": true,
+              "feesIncluded": true,
+              "Key": "Amount",
+              "Value": "23423",
+              "IsTaxIncluded": true,
+              "IsFeesIncluded": true
+            },
+            {
+              "Key": "Percent",
+              "Value": "23"
+            },
+            {
+              "Key": "BasisType",
+              "Value": "FullStay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Date": "2019-04-13",
+      "Group": 0,
+      "RequestID": "1",
+      "UpdateAttributes": [
+        {
+          "ID": 97,
+          "Name": "GuaranteePolicy",
+          "Value": "DepositRequired",
+          "Type": 2
+        },
+        {
+          "ID": 2,
+          "Name": "Breakfast",
+          "Value": "1",
+          "Type": 2
+        },
+        {
+          "ID": 102,
+          "Name": "1Adult",
+          "Value": "450000.0",
+          "Type": 3,
+          "IsTaxIncluded": 0
+        }
+      ],
+      "LOS_Pricing": [],
+      "CancelPenalities": [
+        {
+          "ID": 4,
+          "Type": 2,
+          "Items": [
+            {
+              "Key": "AbsoluteDeadline",
+              "Value": "2020-05-05 01:01"
+            },
+            {
+              "Key": "NumberOfNights",
+              "Value": "3"
+            },
+            {
+              "taxIncluded": true,
+              "feesIncluded": true,
+              "Key": "Amount",
+              "Value": "23423",
+              "IsTaxIncluded": true,
+              "IsFeesIncluded": true
+            },
+            {
+              "Key": "Percent",
+              "Value": "23"
+            },
+            {
+              "Key": "BasisType",
+              "Value": "FullStay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Date": "2019-04-14",
+      "Group": 0,
+      "RequestID": "1",
+      "UpdateAttributes": [
+        {
+          "ID": 97,
+          "Name": "GuaranteePolicy",
+          "Value": "DepositRequired",
+          "Type": 2
+        },
+        {
+          "ID": 2,
+          "Name": "Breakfast",
+          "Value": "1",
+          "Type": 2
+        },
+        {
+          "ID": 102,
+          "Name": "1Adult",
+          "Value": "450000.0",
+          "Type": 3,
+          "IsTaxIncluded": 0
+        }
+      ],
+      "LOS_Pricing": [],
+      "CancelPenalities": [
+        {
+          "ID": 4,
+          "Type": 2,
+          "Items": [
+            {
+              "Key": "AbsoluteDeadline",
+              "Value": "2020-05-05 01:01"
+            },
+            {
+              "Key": "NumberOfNights",
+              "Value": "3"
+            },
+            {
+              "taxIncluded": true,
+              "feesIncluded": true,
+              "Key": "Amount",
+              "Value": "23423",
+              "IsTaxIncluded": true,
+              "IsFeesIncluded": true
+            },
+            {
+              "Key": "Percent",
+              "Value": "23"
+            },
+            {
+              "Key": "BasisType",
+              "Value": "FullStay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Date": "2019-04-15",
+      "Group": 0,
+      "RequestID": "1",
+      "UpdateAttributes": [
+        {
+          "ID": 97,
+          "Name": "GuaranteePolicy",
+          "Value": "DepositRequired",
+          "Type": 2
+        },
+        {
+          "ID": 2,
+          "Name": "Breakfast",
+          "Value": "1",
+          "Type": 2
+        },
+        {
+          "ID": 102,
+          "Name": "1Adult",
+          "Value": "450000.0",
+          "Type": 3,
+          "IsTaxIncluded": 0
+        }
+      ],
+      "LOS_Pricing": [],
+      "CancelPenalities": [
+        {
+          "ID": 4,
+          "Type": 2,
+          "Items": [
+            {
+              "Key": "AbsoluteDeadline",
+              "Value": "2020-05-05 01:01"
+            },
+            {
+              "Key": "NumberOfNights",
+              "Value": "3"
+            },
+            {
+              "taxIncluded": true,
+              "feesIncluded": true,
+              "Key": "Amount",
+              "Value": "23423",
+              "IsTaxIncluded": true,
+              "IsFeesIncluded": true
+            },
+            {
+              "Key": "Percent",
+              "Value": "23"
+            },
+            {
+              "Key": "BasisType",
+              "Value": "FullStay"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

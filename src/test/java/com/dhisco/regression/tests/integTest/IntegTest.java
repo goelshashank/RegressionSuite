@@ -1,16 +1,19 @@
 package com.dhisco.regression.tests.integTest;
 
+import com.dhisco.persistence.model.ProductPushCoreDO;
 import com.dhisco.ptd.dj.PushCoreJson;
 import com.dhisco.regression.core.util.CommonUtils;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
 import com.dhisco.regression.services.config.app.SupplyRuleProcessorConfig;
+import com.dhisco.regression.services.config.db.CassandraConfig;
 import com.dhisco.regression.services.config.db.KafkaConfig;
 import com.dhisco.regression.tests.base.BaseTest;
 import com.jayway.jsonpath.JsonPath;
 import lombok.extern.log4j.Log4j2;
 import org.junit.Assert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
+import org.springframework.test.context.ActiveProfiles;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -36,6 +39,7 @@ import static java.util.Arrays.asList;
  * @version 1.0
  * @since 27-03-2019
  */
+@ActiveProfiles("devTest")
 @Log4j2 public class IntegTest extends BaseTest {
 
 	private Set<String> topics;
@@ -50,11 +54,15 @@ import static java.util.Arrays.asList;
 
 	@BeforeMethod public void beforeMethod(Object[] o) throws Exception {
 		super.beforeMethod();
+
+		cassandraConfig=loadBean(CassandraConfig.class);
 		IntegInput baseInput = (IntegInput) o[0];
 
 		if (baseInput.getLoadDB()) {
 			loadMariaDB(baseInput.getScriptFile());
 		}
+
+		//CAUTION: Load DB beans only before apps .
 
 		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
 		sleep(15, "Waiting for configuration service to load up");
@@ -86,9 +94,12 @@ import static java.util.Arrays.asList;
 			kafkaConfig.publishData("VS_Brand_3_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
 
 		}
-		sleep(5,"waiting after publishing data");
+		sleep(2,"waiting after publishing data");
 
 		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
+		sleep(15,"loading supply rule processor");
+		List<ProductPushCoreDO> productPushCoreDOList=
+				cassandraConfig.getProductPushCoreDAO().getBaseProductPushCoreDAO().findAll();
 		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 
 		sleep(sleepTime, "Waiting for the pipeline to process the messages");

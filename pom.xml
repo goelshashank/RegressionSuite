@@ -133,7 +133,11 @@
             <artifactId>mail</artifactId>
             <version>1.4.7</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.dhisco.pushcore.dal</groupId>
+            <artifactId>pushcore-persistence-service</artifactId>
+            <version>3.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -230,6 +234,15 @@
             </plugin>
         </plugins>
     </build>
+    <scm>
+        <connection>scm:git:ssh://git@bitbucket.ad.dhisco.com:7999/s2p/pushcore.git</connection>
+        <developerConnection>scm:git:ssh://git@bitbucket.ad.dhisco.com:7999/s2p/pushcore.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    <issueManagement>
+        <system>JIRA</system>
+        <url>https://jira.dhisco.com/browse/DD</url>
+    </issueManagement>
     <distributionManagement>
         <repository>
             <id>nexus-pegs-releases</id>
@@ -242,5 +255,6 @@
             <url>http://nexus.dhisco.com:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
+
 
 </project>

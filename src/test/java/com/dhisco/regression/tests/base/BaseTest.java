@@ -12,7 +12,6 @@ import com.dhisco.ptd.dj.PushCoreJson;
 import com.dhisco.regression.core.LogTime;
 import com.dhisco.regression.core.exceptions.P2DRSException;
 import com.dhisco.regression.core.util.CommonUtils;
-import com.dhisco.regression.dataproviders.BaseInput;
 import com.dhisco.regression.services.ManageConfigurations;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
@@ -20,7 +19,8 @@ import com.dhisco.regression.services.config.app.ServerConfig;
 import com.dhisco.regression.services.config.app.SupplyRuleProcessorConfig;
 import com.dhisco.regression.services.config.base.BaseConfig;
 import com.dhisco.regression.services.config.base.RemoteConnector;
-import com.dhisco.regression.services.config.db.DBConfig;
+import com.dhisco.regression.services.config.db.CassandraConfig;
+import com.dhisco.regression.services.config.db.MariaDBConfig;
 import com.dhisco.regression.services.config.db.KafkaConfig;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
@@ -93,7 +93,8 @@ public abstract class BaseTest
 	private String reportFilePath;
 	private Boolean clearOut;
 
-	public DBConfig dbConfig;
+	public CassandraConfig cassandraConfig;
+	public MariaDBConfig mariaDbConfig;
 	public KafkaConfig kafkaConfig;
 	public ChannelMessageProcessorConfig channelMessageProcessorConfig;
 	public SupplyRuleProcessorConfig supplyRuleProcessorConfig;
@@ -274,8 +275,8 @@ public abstract class BaseTest
 	@LogTime public void loadMariaDB(String filePath) throws IOException {
 		log.info("--------------- Loading Maria DB ------------------");
 		log.info("Input script file - {}", filePath);
-		dbConfig = loadBean(DBConfig.class);
-		dbConfig.executeScript(CommonUtils.getResourceStreamFromAbsPath(filePath));
+		mariaDbConfig = loadBean(MariaDBConfig.class);
+		mariaDbConfig.executeScript(CommonUtils.getResourceStreamFromAbsPath(filePath));
 		//todo: execute command to explicity update url test db
 		log.info("--------------- Loaded Maria DB ------------------ ");
 	}
