@@ -57,6 +57,7 @@ import static java.util.Arrays.asList;
 		super.beforeMethod();
 
 		cassandraConfig=loadBean(CassandraConfig.class);
+		cassandraConfig.clearDB();
 		SupAndChIntegInput baseInput = (SupAndChIntegInput) o[0];
 
 		if (baseInput.getLoadMariaDB()) {
@@ -98,9 +99,10 @@ import static java.util.Arrays.asList;
 		sleep(2,"waiting after publishing data");
 
 		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
-		sleep(15,"loading supply rule processor");
+		sleep(20,"loading supply rule processor");
 		List<ProductPushCoreDO> productPushCoreDOList=
 				cassandraConfig.getProductPushCoreDAO().getBaseProductPushCoreDAO().findAll();
+		Assert.assertTrue(isNotEmpty(productPushCoreDOList));
 		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 
 		sleep(sleepTime, "Waiting for the pipeline to process the messages");
