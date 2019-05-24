@@ -11,7 +11,6 @@ import com.dhisco.regression.services.config.db.KafkaConfig;
 import com.dhisco.regression.tests.base.BaseTest;
 import com.jayway.jsonpath.JsonPath;
 import lombok.extern.log4j.Log4j2;
-import org.junit.Assert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.springframework.test.context.ActiveProfiles;
 import org.testng.ITestContext;
@@ -34,6 +33,7 @@ import static com.dhisco.regression.core.BaseConstants.DEV_TEST;
 import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
 import static java.util.Arrays.asList;
+import static org.testng.Assert.assertTrue;
 
 /**
  * @author Shashank Goel
@@ -93,7 +93,7 @@ import static java.util.Arrays.asList;
 		for (String t : supAndChIntegInput.getDataFiles()) {
 			log.info("#### Publishing file - {} ####", t);
 			PushCoreJson pushCoreJson = CommonUtils.getObjFromResourceJsonAbsPath(t, PushCoreJson.class);
-			Assert.assertTrue(isNotEmpty(pushCoreJson));
+			assertTrue(isNotEmpty(pushCoreJson));
 			kafkaConfig.publishData("VS_Brand_3_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
 		}
 		sleep(2,"waiting after publishing data");
@@ -102,7 +102,7 @@ import static java.util.Arrays.asList;
 		sleep(20,"loading supply rule processor");
 		List<ProductPushCoreDO> productPushCoreDOList=
 				cassandraConfig.getProductPushCoreDAO().getBaseProductPushCoreDAO().findAll();
-		Assert.assertTrue(isNotEmpty(productPushCoreDOList));
+		assertTrue(isNotEmpty(productPushCoreDOList));
 		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 
 		sleep(sleepTime, "Waiting for the pipeline to process the messages");
