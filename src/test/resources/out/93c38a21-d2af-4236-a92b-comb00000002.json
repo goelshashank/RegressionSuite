@@ -1,5 +1,5 @@
 {
-  "SessionID": "IN93c38a21-d2af-4236-a92b-comb00000001",
+  "SessionID": "93c38a21-d2af-4236-a92b-comb00000002",
   "Framework": 2,
   "HotelID": 3,
   "ChannelID": 960,
@@ -55,19 +55,6 @@
           "Name": "GuaranteePolicy",
           "Value": "DepositRequired",
           "Type": 2
-        },
-        {
-          "ID": 2,
-          "Name": "Breakfast",
-          "Value": "1",
-          "Type": 2
-        },
-        {
-          "ID": 102,
-          "Name": "1Adult",
-          "Value": "450000.0",
-          "Type": 3,
-          "IsTaxIncluded": 0
         }
       ],
       "LOS_Availability": {
@@ -76,7 +63,26 @@
         "Value": "YYNNYYN",
         "Type": 1
       },
-      "LOS_Pricing": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 1,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            },
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "450000.0",
+              "Type": 3,
+              "IsTaxIncluded": 0
+            }
+          ]
+        }
+      ],
       "CancelPenalities": [
         {
           "ID": 4,
@@ -120,19 +126,6 @@
           "Name": "GuaranteePolicy",
           "Value": "DepositRequired",
           "Type": 2
-        },
-        {
-          "ID": 2,
-          "Name": "Breakfast",
-          "Value": "1",
-          "Type": 2
-        },
-        {
-          "ID": 102,
-          "Name": "1Adult",
-          "Value": "450000.0",
-          "Type": 3,
-          "IsTaxIncluded": 0
         }
       ],
       "LOS_Availability": {
@@ -141,7 +134,26 @@
         "Value": "YYNNYYN",
         "Type": 1
       },
-      "LOS_Pricing": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 1,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            },
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "450000.0",
+              "Type": 3,
+              "IsTaxIncluded": 0
+            }
+          ]
+        }
+      ],
       "CancelPenalities": [
         {
           "ID": 4,
@@ -185,19 +197,6 @@
           "Name": "GuaranteePolicy",
           "Value": "DepositRequired",
           "Type": 2
-        },
-        {
-          "ID": 2,
-          "Name": "Breakfast",
-          "Value": "1",
-          "Type": 2
-        },
-        {
-          "ID": 102,
-          "Name": "1Adult",
-          "Value": "450000.0",
-          "Type": 3,
-          "IsTaxIncluded": 0
         }
       ],
       "LOS_Availability": {
@@ -206,7 +205,26 @@
         "Value": "YYNNYYN",
         "Type": 1
       },
-      "LOS_Pricing": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 1,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            },
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "450000.0",
+              "Type": 3,
+              "IsTaxIncluded": 0
+            }
+          ]
+        }
+      ],
       "CancelPenalities": [
         {
           "ID": 4,
@@ -250,19 +268,6 @@
           "Name": "GuaranteePolicy",
           "Value": "DepositRequired",
           "Type": 2
-        },
-        {
-          "ID": 2,
-          "Name": "Breakfast",
-          "Value": "1",
-          "Type": 2
-        },
-        {
-          "ID": 102,
-          "Name": "1Adult",
-          "Value": "450000.0",
-          "Type": 3,
-          "IsTaxIncluded": 0
         }
       ],
       "LOS_Availability": {
@@ -271,7 +276,26 @@
         "Value": "YYNNYYN",
         "Type": 1
       },
-      "LOS_Pricing": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 1,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            },
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "450000.0",
+              "Type": 3,
+              "IsTaxIncluded": 0
+            }
+          ]
+        }
+      ],
       "CancelPenalities": [
         {
           "ID": 4,
@@ -308,26 +332,13 @@
     {
       "Date": "2019-04-09",
       "Group": 0,
-      "RequestID": "1_1",
+      "RequestID": "1_1_1",
       "UpdateAttributes": [
         {
           "ID": 97,
           "Name": "GuaranteePolicy",
           "Value": "DepositRequired",
           "Type": 2
-        },
-        {
-          "ID": 2,
-          "Name": "Breakfast",
-          "Value": "1",
-          "Type": 2
-        },
-        {
-          "ID": 102,
-          "Name": "1Adult",
-          "Value": "450000.0",
-          "Type": 3,
-          "IsTaxIncluded": 0
         }
       ],
       "LOS_Availability": {
@@ -336,7 +347,37 @@
         "Value": "YYNNYYN",
         "Type": 1
       },
-      "LOS_Pricing": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 5,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            }
+          ]
+        },
+        {
+          "LOS": 1,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            },
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "450000.0",
+              "Type": 3,
+              "IsTaxIncluded": 0
+            }
+          ]
+        }
+      ],
       "CancelPenalities": [
         {
           "ID": 4,
@@ -373,26 +414,13 @@
     {
       "Date": "2019-04-10",
       "Group": 0,
-      "RequestID": "1_1",
+      "RequestID": "1_1_1",
       "UpdateAttributes": [
         {
           "ID": 97,
           "Name": "GuaranteePolicy",
           "Value": "DepositRequired",
           "Type": 2
-        },
-        {
-          "ID": 2,
-          "Name": "Breakfast",
-          "Value": "1",
-          "Type": 2
-        },
-        {
-          "ID": 102,
-          "Name": "1Adult",
-          "Value": "450000.0",
-          "Type": 3,
-          "IsTaxIncluded": 0
         }
       ],
       "LOS_Availability": {
@@ -401,7 +429,37 @@
         "Value": "YYNNYYN",
         "Type": 1
       },
-      "LOS_Pricing": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 5,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            }
+          ]
+        },
+        {
+          "LOS": 1,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            },
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "450000.0",
+              "Type": 3,
+              "IsTaxIncluded": 0
+            }
+          ]
+        }
+      ],
       "CancelPenalities": [
         {
           "ID": 4,
@@ -438,29 +496,46 @@
     {
       "Date": "2019-04-11",
       "Group": 0,
-      "RequestID": "1",
+      "RequestID": "1_1",
       "UpdateAttributes": [
         {
           "ID": 97,
           "Name": "GuaranteePolicy",
           "Value": "DepositRequired",
           "Type": 2
-        },
-        {
-          "ID": 2,
-          "Name": "Breakfast",
-          "Value": "1",
-          "Type": 2
-        },
-        {
-          "ID": 102,
-          "Name": "1Adult",
-          "Value": "450000.0",
-          "Type": 3,
-          "IsTaxIncluded": 0
         }
       ],
-      "LOS_Pricing": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 5,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            }
+          ]
+        },
+        {
+          "LOS": 1,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            },
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "450000.0",
+              "Type": 3,
+              "IsTaxIncluded": 0
+            }
+          ]
+        }
+      ],
       "CancelPenalities": [
         {
           "ID": 4,
@@ -497,29 +572,46 @@
     {
       "Date": "2019-04-12",
       "Group": 0,
-      "RequestID": "1",
+      "RequestID": "1_1",
       "UpdateAttributes": [
         {
           "ID": 97,
           "Name": "GuaranteePolicy",
           "Value": "DepositRequired",
           "Type": 2
-        },
-        {
-          "ID": 2,
-          "Name": "Breakfast",
-          "Value": "1",
-          "Type": 2
-        },
-        {
-          "ID": 102,
-          "Name": "1Adult",
-          "Value": "450000.0",
-          "Type": 3,
-          "IsTaxIncluded": 0
         }
       ],
-      "LOS_Pricing": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 5,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            }
+          ]
+        },
+        {
+          "LOS": 1,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            },
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "450000.0",
+              "Type": 3,
+              "IsTaxIncluded": 0
+            }
+          ]
+        }
+      ],
       "CancelPenalities": [
         {
           "ID": 4,
@@ -556,29 +648,46 @@
     {
       "Date": "2019-04-13",
       "Group": 0,
-      "RequestID": "1",
+      "RequestID": "1_1",
       "UpdateAttributes": [
         {
           "ID": 97,
           "Name": "GuaranteePolicy",
           "Value": "DepositRequired",
           "Type": 2
-        },
-        {
-          "ID": 2,
-          "Name": "Breakfast",
-          "Value": "1",
-          "Type": 2
-        },
-        {
-          "ID": 102,
-          "Name": "1Adult",
-          "Value": "450000.0",
-          "Type": 3,
-          "IsTaxIncluded": 0
         }
       ],
-      "LOS_Pricing": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 5,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            }
+          ]
+        },
+        {
+          "LOS": 1,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            },
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "450000.0",
+              "Type": 3,
+              "IsTaxIncluded": 0
+            }
+          ]
+        }
+      ],
       "CancelPenalities": [
         {
           "ID": 4,
@@ -615,29 +724,46 @@
     {
       "Date": "2019-04-14",
       "Group": 0,
-      "RequestID": "1",
+      "RequestID": "1_1",
       "UpdateAttributes": [
         {
           "ID": 97,
           "Name": "GuaranteePolicy",
           "Value": "DepositRequired",
           "Type": 2
-        },
-        {
-          "ID": 2,
-          "Name": "Breakfast",
-          "Value": "1",
-          "Type": 2
-        },
-        {
-          "ID": 102,
-          "Name": "1Adult",
-          "Value": "450000.0",
-          "Type": 3,
-          "IsTaxIncluded": 0
         }
       ],
-      "LOS_Pricing": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 5,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            }
+          ]
+        },
+        {
+          "LOS": 1,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            },
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "450000.0",
+              "Type": 3,
+              "IsTaxIncluded": 0
+            }
+          ]
+        }
+      ],
       "CancelPenalities": [
         {
           "ID": 4,
@@ -674,29 +800,46 @@
     {
       "Date": "2019-04-15",
       "Group": 0,
-      "RequestID": "1",
+      "RequestID": "1_1",
       "UpdateAttributes": [
         {
           "ID": 97,
           "Name": "GuaranteePolicy",
           "Value": "DepositRequired",
           "Type": 2
-        },
-        {
-          "ID": 2,
-          "Name": "Breakfast",
-          "Value": "1",
-          "Type": 2
-        },
-        {
-          "ID": 102,
-          "Name": "1Adult",
-          "Value": "450000.0",
-          "Type": 3,
-          "IsTaxIncluded": 0
         }
       ],
-      "LOS_Pricing": [],
+      "LOS_Pricing": [
+        {
+          "LOS": 5,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            }
+          ]
+        },
+        {
+          "LOS": 1,
+          "Attributes": [
+            {
+              "ID": 2,
+              "Name": "Breakfast",
+              "Value": "1",
+              "Type": 2
+            },
+            {
+              "ID": 102,
+              "Name": "1Adult",
+              "Value": "450000.0",
+              "Type": 3,
+              "IsTaxIncluded": 0
+            }
+          ]
+        }
+      ],
       "CancelPenalities": [
         {
           "ID": 4,
