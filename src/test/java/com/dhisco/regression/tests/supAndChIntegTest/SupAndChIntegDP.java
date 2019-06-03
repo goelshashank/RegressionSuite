@@ -27,6 +27,7 @@ public class SupAndChIntegDP extends BaseDP {
 		Map<String, String> suiteParamsMap = iTestContext.getCurrentXmlTest().getAllParameters();
 		String inputScriptsPath=suiteParamsMap.get("inputScriptsPath");
 		String dataPath= suiteParamsMap.get("dataPath");
+		String seedDataPath= suiteParamsMap.get("seedDataPath");
 
 		Map<String,String> classParamsMap=((TestRunner) iTestContext).getTest().getXmlClasses().get(0).getAllParameters();
 		String testName=classParamsMap.get("testName");

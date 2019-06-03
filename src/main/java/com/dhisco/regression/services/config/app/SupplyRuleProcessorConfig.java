@@ -13,6 +13,9 @@ import org.springframework.context.annotation.PropertySource;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Shashank Goel
@@ -27,6 +30,7 @@ import javax.annotation.PreDestroy;
 	private String host;
 	private String port;
 	private String startServCommand;
+	private String brandCode;
 
 	@PostConstruct public void init() {
 		super.init();
@@ -49,4 +53,17 @@ import javax.annotation.PreDestroy;
 		super.cleanup();
 	}
 
+	public List<String> getStartServCommand() {
+		String[] brandCodes = brandCode.split(",");
+		String[] ports = port.split(",");
+
+		List<String> commands = new ArrayList<>();
+		int i = 0;
+		for (String s : ports) {
+			commands.add(startServCommand.replace("srp_brand_code", brandCodes[i]));
+			commands.add(startServCommand.replace("srp_port", s));
+			i++;
+		}
+		return commands;
+	}
 }

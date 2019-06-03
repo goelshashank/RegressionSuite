@@ -77,25 +77,30 @@ import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
 		return null;
 	}
 
-	public String getStartServCommand() {
+	public List<String> getStartServCommand() {
 		return null;
 	}
 
 	public void stopProcess() throws P2DRSException {
 		int i = 0;
 		while (i < 1) {
-			executeSSHCommands(
-					Arrays.asList("kill -9  $(pgrep -f " + getPort() + ") || kill -9  $(pgrep -f " + getPort() + ")"));
-			sleep(2);
+
+			String[] ports = getPort().split(",");
+
+			for (String port : ports) {
+				executeSSHCommands(Arrays.asList(
+						"kill -9  $(pgrep -f " + port + ") || kill -9  $(pgrep -f " + port + ")"));
+				sleep(2);
+			}
 			i++;
 		}
 
 	}
 
-	public void startProcess() throws P2DRSException{
+	public void startProcess() throws P2DRSException {
 		log.info("Starting Process: {}", className);
 		stopProcess();  //to stop old stale processes
-		executeSSHCommands(Arrays.asList(getStartServCommand()));
+		executeSSHCommands(getStartServCommand());
 	}
 
 	private void sleep(int seconds) {
@@ -107,7 +112,7 @@ import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
 		}
 	}
 
-	public boolean isProcessDown() {
+	/*public boolean isProcessDown() {
 		String methodName = className + "." + "isProcessDown ";
 		String processID = getProcessID();
 		if (isEmpty(processID)) {
@@ -116,9 +121,9 @@ import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
 		}
 		log.info(methodName + " process is not down with pid {}", processID);
 		return false;
-	}
+	}*/
 
-	private String getProcessID() {
+	/*private String getProcessID() {
 		String methodName = className + "." + "getProcessID ";
 		Map outBuffer = executeSSHCommands(Arrays.asList("pgrep -f " + getPort()));
 		if (isEmpty(outBuffer))
@@ -126,6 +131,6 @@ import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
 
 		log.info(methodName + "process id  {}", outBuffer.values().toArray()[0].toString());
 		return outBuffer.values().toArray()[0].toString();
-	}
+	}*/
 
 }

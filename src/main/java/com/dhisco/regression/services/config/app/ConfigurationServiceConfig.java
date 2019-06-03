@@ -13,6 +13,9 @@ import org.springframework.context.annotation.PropertySource;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Shashank Goel
@@ -48,6 +51,15 @@ import javax.annotation.PreDestroy;
 			log.error(e.getMessage(),e);
 		}
 		super.cleanup();
+	}
+
+	public List<String> getStartServCommand() {
+		String[] ports=port.split(",");
+		List<String> commands=new ArrayList<>();
+		for (String s : ports) {
+			commands.add(startServCommand.replace("cfs_port",s));
+		}
+		return	commands;
 	}
 
 }
