@@ -57,8 +57,7 @@ import java.util.List;
 		List<String> commands = new ArrayList<>();
 		int i = 0;
 		for (String s : ports) {
-			commands.add(startServCommand.replace("cmp_channel_Name", channelNames[i]));
-			commands.add(startServCommand.replace("cmp_port", s));
+			commands.add(startServCommand.replace("cmp_channel_Name", channelNames[i]).replace("cmp_port", s));
 			i++;
 		}
 		return commands;

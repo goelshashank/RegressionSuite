@@ -1,23 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
---
--- Host: valstpqaldmr01a.asp.dhisco.com    Database: pushcore
--- ------------------------------------------------------
--- Server version	5.5.5-10.3.12-MariaDB-log
+drop database if exists pushcoretest;
+create database if not exists pushcoretest;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+use pushcoretest;
 
---
--- Table structure for table `ari_rule_definition`
---
 
 DROP TABLE IF EXISTS `ari_rule_definition`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

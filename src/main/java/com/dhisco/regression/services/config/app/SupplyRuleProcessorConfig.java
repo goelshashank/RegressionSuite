@@ -60,8 +60,7 @@ import java.util.List;
 		List<String> commands = new ArrayList<>();
 		int i = 0;
 		for (String s : ports) {
-			commands.add(startServCommand.replace("srp_brand_code", brandCodes[i]));
-			commands.add(startServCommand.replace("srp_port", s));
+			commands.add(startServCommand.replace("srp_brand_code", brandCodes[i]).replace("srp_port", s));
 			i++;
 		}
 		return commands;
