@@ -27,7 +27,6 @@ import javax.annotation.PreDestroy;
 	private String host;
 	private String port;
 	private String startServCommand;
-	private String applicationId;
 
 	@PostConstruct public void init() {
 		super.init();

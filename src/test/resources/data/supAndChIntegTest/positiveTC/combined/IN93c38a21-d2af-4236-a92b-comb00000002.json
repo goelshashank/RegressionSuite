@@ -36,7 +36,7 @@
     }
   },
   "OTA_HotelRatePlanNotifRQ": {
-    "EchoToken": "IN93c38a21-d2af-4236-a92b-comb00000002",
+    "EchoToken": "93c38a21-d2af-4236-a92b-comb00000002",
     "MessageContentCode": "8",
     "TimeStamp": "2019-04-03T14:30:27",
     "Version": 7.001,
