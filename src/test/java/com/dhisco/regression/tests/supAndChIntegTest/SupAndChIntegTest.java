@@ -100,12 +100,13 @@ import static org.testng.Assert.assertTrue;
 
 		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
 		sleep(20,"loading supply rule processor");
-		List<ProductPushCoreDO> productPushCoreDOList=
-				cassandraConfig.getProductPushCoreDAO().getBaseProductPushCoreDAO().findAll();
-		assertTrue(isNotEmpty(productPushCoreDOList));
 		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 
 		sleep(sleepTime, "Waiting for the pipeline to process the messages");
+
+			/*List<ProductPushCoreDO> productPushCoreDOList=
+				cassandraConfig.getProductPushCoreDAO().getBaseProductPushCoreDAO().findAll();
+		assertTrue(isNotEmpty(productPushCoreDOList));*/
 
 		for (String t : supAndChIntegInput.getDataFiles()) {
 
