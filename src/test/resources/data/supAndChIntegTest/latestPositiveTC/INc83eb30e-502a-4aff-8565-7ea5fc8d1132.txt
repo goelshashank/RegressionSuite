@@ -1,0 +1,3354 @@
+{
+	"OTA_HotelAvailNotifRQ": {
+		"EchoToken": "f87f50e3-e68f-4249-83fa-ca62d7c80d90",
+		"MessageContentCode": "3",
+		"TimeStamp": "2019-05-28T10:21:38",
+		"Version": 7.001,
+		"AvailStatusMessages": {
+			"BrandCode": "VS",
+			"HotelCode": "3777",
+			"AvailStatusMessage": [
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "FullPatternLOS",
+								"LOS_Pattern": {
+									"FullPatternLOS": "YYYYYYY"
+								}
+							}
+						],
+						"FixedPatternLength": 7
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-28",
+						"End": "2019-05-28",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "1",
+						"Type": "16"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "FullPatternLOS",
+								"LOS_Pattern": {
+									"FullPatternLOS": "YYYYNNY"
+								}
+							}
+						],
+						"FixedPatternLength": 7
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-29",
+						"End": "2019-05-29",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "2",
+						"Type": "16"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "FullPatternLOS",
+								"LOS_Pattern": {
+									"FullPatternLOS": "YYYYYYY"
+								}
+							}
+						],
+						"FixedPatternLength": 7
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-30",
+						"End": "2019-06-04",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "4",
+						"Type": "16"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "FullPatternLOS",
+								"LOS_Pattern": {
+									"FullPatternLOS": "YYYYYYN"
+								}
+							}
+						],
+						"FixedPatternLength": 7
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-05",
+						"End": "2019-06-05",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "10",
+						"Type": "16"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "FullPatternLOS",
+								"LOS_Pattern": {
+									"FullPatternLOS": "YYYYYNN"
+								}
+							}
+						],
+						"FixedPatternLength": 7
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-06",
+						"End": "2019-06-06",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "11",
+						"Type": "16"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "FullPatternLOS",
+								"LOS_Pattern": {
+									"FullPatternLOS": "YYYYNNN"
+								}
+							}
+						],
+						"FixedPatternLength": 7
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-07",
+						"End": "2019-06-07",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "12",
+						"Type": "16"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "FullPatternLOS",
+								"LOS_Pattern": {
+									"FullPatternLOS": "YYYNNNN"
+								}
+							}
+						],
+						"FixedPatternLength": 7
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-08",
+						"End": "2019-06-08",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "13",
+						"Type": "16"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "FullPatternLOS",
+								"LOS_Pattern": {
+									"FullPatternLOS": "YYNNNNN"
+								}
+							}
+						],
+						"FixedPatternLength": 7
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-09",
+						"End": "2019-06-09",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "14",
+						"Type": "16"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "FullPatternLOS",
+								"LOS_Pattern": {
+									"FullPatternLOS": "YNNNNNN"
+								}
+							}
+						],
+						"FixedPatternLength": 7
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-10",
+						"End": "2019-06-10",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "15",
+						"Type": "16"
+					}
+				}
+			]
+		}
+	},
+	"OTA_HotelRatePlanNotifRQ": {
+		"EchoToken": "c83eb30e-502a-4aff-8565-7ea5fc8d1132",
+		"MessageContentCode": "8",
+		"TimeStamp": "2019-05-28T10:21:38",
+		"Version": 7.001,
+		"RatePlans": {
+			"BrandCode": "VS",
+			"HotelCode": "3777",
+			"RatePlan": [
+				{
+					"RatePlanCategory": "DLU",
+					"RatePlanCode": "BVW",
+					"Rates": {
+						"Rate": [
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-28",
+								"End": "2019-05-28",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "1",
+								"MinLOS": "1",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 100.0,
+											"AmountAfterTax": 120.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-28",
+								"End": "2019-05-28",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "2",
+								"MinLOS": "2",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 200.0,
+											"AmountAfterTax": 220.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-28",
+								"End": "2019-05-28",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "3",
+								"MinLOS": "3",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 320.0,
+											"AmountAfterTax": 340.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-28",
+								"End": "2019-05-28",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "4",
+								"MinLOS": "4",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 440.0,
+											"AmountAfterTax": 460.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-28",
+								"End": "2019-05-28",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "5",
+								"MinLOS": "5",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 530.0,
+											"AmountAfterTax": 550.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-28",
+								"End": "2019-05-28",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "6",
+								"MinLOS": "6",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 620.0,
+											"AmountAfterTax": 640.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-28",
+								"End": "2019-05-28",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "7",
+								"MinLOS": "7",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 710.0,
+											"AmountAfterTax": 730.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							}
+						]
+					},
+					"UniqueID": {
+						"ID": "1",
+						"Type": "16"
+					}
+				},
+				{
+					"RatePlanCategory": "DLU",
+					"RatePlanCode": "BVW",
+					"Rates": {
+						"Rate": [
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-29",
+								"End": "2019-05-29",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "1",
+								"MinLOS": "1",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 100.0,
+											"AmountAfterTax": 120.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-29",
+								"End": "2019-05-29",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "2",
+								"MinLOS": "2",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 220.0,
+											"AmountAfterTax": 240.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-29",
+								"End": "2019-05-29",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "3",
+								"MinLOS": "3",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 340.0,
+											"AmountAfterTax": 360.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-29",
+								"End": "2019-05-29",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "4",
+								"MinLOS": "4",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 430.0,
+											"AmountAfterTax": 450.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-29",
+								"End": "2019-05-29",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "7",
+								"MinLOS": "7",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 710.0,
+											"AmountAfterTax": 730.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							}
+						]
+					},
+					"UniqueID": {
+						"ID": "2",
+						"Type": "16"
+					}
+				},
+				{
+					"RatePlanCategory": "DLU",
+					"RatePlanCode": "BVW",
+					"Rates": {
+						"Rate": [
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-30",
+								"End": "2019-05-30",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "1",
+								"MinLOS": "1",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 120.0,
+											"AmountAfterTax": 140.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-30",
+								"End": "2019-05-30",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "2",
+								"MinLOS": "2",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 240.0,
+											"AmountAfterTax": 260.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-30",
+								"End": "2019-05-30",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "3",
+								"MinLOS": "3",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 330.0,
+											"AmountAfterTax": 350.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-30",
+								"End": "2019-05-30",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "4",
+								"MinLOS": "4",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 420.0,
+											"AmountAfterTax": 440.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-30",
+								"End": "2019-05-30",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "5",
+								"MinLOS": "5",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 510.0,
+											"AmountAfterTax": 530.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-30",
+								"End": "2019-05-30",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "6",
+								"MinLOS": "6",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 610.0,
+											"AmountAfterTax": 630.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-30",
+								"End": "2019-05-30",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "7",
+								"MinLOS": "7",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 710.0,
+											"AmountAfterTax": 730.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							}
+						]
+					},
+					"UniqueID": {
+						"ID": "3",
+						"Type": "16"
+					}
+				},
+				{
+					"RatePlanCategory": "DLU",
+					"RatePlanCode": "BVW",
+					"Rates": {
+						"Rate": [
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-31",
+								"End": "2019-05-31",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "1",
+								"MinLOS": "1",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 120.0,
+											"AmountAfterTax": 140.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-31",
+								"End": "2019-05-31",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "2",
+								"MinLOS": "2",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 210.0,
+											"AmountAfterTax": 230.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-31",
+								"End": "2019-05-31",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "3",
+								"MinLOS": "3",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 300.0,
+											"AmountAfterTax": 320.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-31",
+								"End": "2019-05-31",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "4",
+								"MinLOS": "4",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 390.0,
+											"AmountAfterTax": 410.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-31",
+								"End": "2019-05-31",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "5",
+								"MinLOS": "5",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 490.0,
+											"AmountAfterTax": 510.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-31",
+								"End": "2019-05-31",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "6",
+								"MinLOS": "6",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 590.0,
+											"AmountAfterTax": 610.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-05-31",
+								"End": "2019-05-31",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "7",
+								"MinLOS": "7",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 710.0,
+											"AmountAfterTax": 730.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							}
+						]
+					},
+					"UniqueID": {
+						"ID": "5",
+						"Type": "16"
+					}
+				},
+				{
+					"RatePlanCategory": "DLU",
+					"RatePlanCode": "BVW",
+					"Rates": {
+						"Rate": [
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-01",
+								"End": "2019-06-01",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "1",
+								"MinLOS": "1",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 90.0,
+											"AmountAfterTax": 110.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-01",
+								"End": "2019-06-01",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "2",
+								"MinLOS": "2",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 180.0,
+											"AmountAfterTax": 200.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-01",
+								"End": "2019-06-01",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "3",
+								"MinLOS": "3",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 270.0,
+											"AmountAfterTax": 290.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-01",
+								"End": "2019-06-01",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "4",
+								"MinLOS": "4",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 370.0,
+											"AmountAfterTax": 390.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-01",
+								"End": "2019-06-01",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "5",
+								"MinLOS": "5",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 470.0,
+											"AmountAfterTax": 490.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-01",
+								"End": "2019-06-01",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "6",
+								"MinLOS": "6",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 590.0,
+											"AmountAfterTax": 610.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-01",
+								"End": "2019-06-01",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "7",
+								"MinLOS": "7",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 710.0,
+											"AmountAfterTax": 730.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							}
+						]
+					},
+					"UniqueID": {
+						"ID": "6",
+						"Type": "16"
+					}
+				},
+				{
+					"RatePlanCategory": "DLU",
+					"RatePlanCode": "BVW",
+					"Rates": {
+						"Rate": [
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-02",
+								"End": "2019-06-02",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "1",
+								"MinLOS": "1",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 90.0,
+											"AmountAfterTax": 110.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-02",
+								"End": "2019-06-02",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "2",
+								"MinLOS": "2",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 180.0,
+											"AmountAfterTax": 200.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-02",
+								"End": "2019-06-02",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "3",
+								"MinLOS": "3",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 280.0,
+											"AmountAfterTax": 300.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-02",
+								"End": "2019-06-02",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "4",
+								"MinLOS": "4",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 380.0,
+											"AmountAfterTax": 400.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-02",
+								"End": "2019-06-02",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "5",
+								"MinLOS": "5",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 500.0,
+											"AmountAfterTax": 520.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-02",
+								"End": "2019-06-02",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "6",
+								"MinLOS": "6",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 620.0,
+											"AmountAfterTax": 640.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-02",
+								"End": "2019-06-02",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "7",
+								"MinLOS": "7",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 710.0,
+											"AmountAfterTax": 730.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							}
+						]
+					},
+					"UniqueID": {
+						"ID": "7",
+						"Type": "16"
+					}
+				},
+				{
+					"RatePlanCategory": "DLU",
+					"RatePlanCode": "BVW",
+					"Rates": {
+						"Rate": [
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-03",
+								"End": "2019-06-03",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "1",
+								"MinLOS": "1",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 90.0,
+											"AmountAfterTax": 110.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-03",
+								"End": "2019-06-03",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "2",
+								"MinLOS": "2",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 190.0,
+											"AmountAfterTax": 210.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-03",
+								"End": "2019-06-03",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "3",
+								"MinLOS": "3",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 290.0,
+											"AmountAfterTax": 310.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-03",
+								"End": "2019-06-03",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "4",
+								"MinLOS": "4",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 410.0,
+											"AmountAfterTax": 430.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-03",
+								"End": "2019-06-03",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "5",
+								"MinLOS": "5",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 530.0,
+											"AmountAfterTax": 550.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-03",
+								"End": "2019-06-03",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "6",
+								"MinLOS": "6",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 620.0,
+											"AmountAfterTax": 640.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-03",
+								"End": "2019-06-03",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "7",
+								"MinLOS": "7",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 710.0,
+											"AmountAfterTax": 730.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							}
+						]
+					},
+					"UniqueID": {
+						"ID": "8",
+						"Type": "16"
+					}
+				},
+				{
+					"RatePlanCategory": "DLU",
+					"RatePlanCode": "BVW",
+					"Rates": {
+						"Rate": [
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-04",
+								"End": "2019-06-04",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "1",
+								"MinLOS": "1",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 100.0,
+											"AmountAfterTax": 120.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-04",
+								"End": "2019-06-04",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "2",
+								"MinLOS": "2",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 200.0,
+											"AmountAfterTax": 220.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-04",
+								"End": "2019-06-04",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "3",
+								"MinLOS": "3",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 320.0,
+											"AmountAfterTax": 340.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-04",
+								"End": "2019-06-04",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "4",
+								"MinLOS": "4",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 440.0,
+											"AmountAfterTax": 460.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-04",
+								"End": "2019-06-04",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "5",
+								"MinLOS": "5",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 530.0,
+											"AmountAfterTax": 550.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-04",
+								"End": "2019-06-04",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "6",
+								"MinLOS": "6",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 620.0,
+											"AmountAfterTax": 640.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-04",
+								"End": "2019-06-04",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "7",
+								"MinLOS": "7",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 710.0,
+											"AmountAfterTax": 730.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							}
+						]
+					},
+					"UniqueID": {
+						"ID": "9",
+						"Type": "16"
+					}
+				},
+				{
+					"RatePlanCategory": "DLU",
+					"RatePlanCode": "BVW",
+					"Rates": {
+						"Rate": [
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-05",
+								"End": "2019-06-05",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "1",
+								"MinLOS": "1",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 100.0,
+											"AmountAfterTax": 120.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-05",
+								"End": "2019-06-05",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "2",
+								"MinLOS": "2",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 220.0,
+											"AmountAfterTax": 240.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-05",
+								"End": "2019-06-05",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "3",
+								"MinLOS": "3",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 340.0,
+											"AmountAfterTax": 360.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-05",
+								"End": "2019-06-05",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "4",
+								"MinLOS": "4",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 430.0,
+											"AmountAfterTax": 450.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-05",
+								"End": "2019-06-05",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "5",
+								"MinLOS": "5",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 520.0,
+											"AmountAfterTax": 540.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-05",
+								"End": "2019-06-05",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "6",
+								"MinLOS": "6",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 610.0,
+											"AmountAfterTax": 630.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							}
+						]
+					},
+					"UniqueID": {
+						"ID": "10",
+						"Type": "16"
+					}
+				},
+				{
+					"RatePlanCategory": "DLU",
+					"RatePlanCode": "BVW",
+					"Rates": {
+						"Rate": [
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-06",
+								"End": "2019-06-06",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "1",
+								"MinLOS": "1",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 120.0,
+											"AmountAfterTax": 140.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-06",
+								"End": "2019-06-06",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "2",
+								"MinLOS": "2",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 240.0,
+											"AmountAfterTax": 260.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-06",
+								"End": "2019-06-06",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "3",
+								"MinLOS": "3",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 330.0,
+											"AmountAfterTax": 350.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-06",
+								"End": "2019-06-06",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "4",
+								"MinLOS": "4",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 420.0,
+											"AmountAfterTax": 440.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-06",
+								"End": "2019-06-06",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "5",
+								"MinLOS": "5",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 510.0,
+											"AmountAfterTax": 530.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							}
+						]
+					},
+					"UniqueID": {
+						"ID": "11",
+						"Type": "16"
+					}
+				},
+				{
+					"RatePlanCategory": "DLU",
+					"RatePlanCode": "BVW",
+					"Rates": {
+						"Rate": [
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-07",
+								"End": "2019-06-07",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "1",
+								"MinLOS": "1",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 120.0,
+											"AmountAfterTax": 140.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-07",
+								"End": "2019-06-07",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "2",
+								"MinLOS": "2",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 210.0,
+											"AmountAfterTax": 230.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-07",
+								"End": "2019-06-07",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "3",
+								"MinLOS": "3",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 300.0,
+											"AmountAfterTax": 320.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-07",
+								"End": "2019-06-07",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "4",
+								"MinLOS": "4",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 390.0,
+											"AmountAfterTax": 410.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							}
+						]
+					},
+					"UniqueID": {
+						"ID": "12",
+						"Type": "16"
+					}
+				},
+				{
+					"RatePlanCategory": "DLU",
+					"RatePlanCode": "BVW",
+					"Rates": {
+						"Rate": [
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-08",
+								"End": "2019-06-08",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "1",
+								"MinLOS": "1",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 90.0,
+											"AmountAfterTax": 110.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-08",
+								"End": "2019-06-08",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "2",
+								"MinLOS": "2",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 180.0,
+											"AmountAfterTax": 200.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-08",
+								"End": "2019-06-08",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "3",
+								"MinLOS": "3",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 270.0,
+											"AmountAfterTax": 290.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							}
+						]
+					},
+					"UniqueID": {
+						"ID": "13",
+						"Type": "16"
+					}
+				},
+				{
+					"RatePlanCategory": "DLU",
+					"RatePlanCode": "BVW",
+					"Rates": {
+						"Rate": [
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-09",
+								"End": "2019-06-09",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "1",
+								"MinLOS": "1",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 90.0,
+											"AmountAfterTax": 110.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							},
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-09",
+								"End": "2019-06-09",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "2",
+								"MinLOS": "2",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 180.0,
+											"AmountAfterTax": 200.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							}
+						]
+					},
+					"UniqueID": {
+						"ID": "14",
+						"Type": "16"
+					}
+				},
+				{
+					"RatePlanCategory": "DLU",
+					"RatePlanCode": "BVW",
+					"Rates": {
+						"Rate": [
+							{
+								"CurrencyCode": "ZAR",
+								"Start": "2019-06-10",
+								"End": "2019-06-10",
+								"InvTypeCode": "A1K",
+								"MaxLOS": "1",
+								"MinLOS": "1",
+								"RateTimeUnit": "FullDuration",
+								"BaseByGuestAmts": {
+									"BaseByGuestAmt": [
+										{
+											"AgeQualifyingCode": "10",
+											"AmountBeforeTax": 90.0,
+											"AmountAfterTax": 110.0,
+											"NumberOfGuests": 2
+										}
+									]
+								},
+								"MealsIncluded": {
+									"MealPlanCodes": [
+										"19"
+									]
+								},
+								"CancelPolicies": {
+									"CancelPenalty": [
+										{
+											"AmountPercent": {},
+											"Deadline": {
+												"absoluteDeadline": "18:00"
+											}
+										}
+									]
+								},
+								"GuaranteePolicies": {
+									"GuaranteePolicy": {
+										"GuaranteeType": "GuaranteeRequired"
+									}
+								}
+							}
+						]
+					},
+					"UniqueID": {
+						"ID": "15",
+						"Type": "16"
+					}
+				}
+			]
+		}
+	},
+	"DailyPricingBased": false
+}
