@@ -3,6 +3,9 @@ create database if not exists pushcoretest;
 
 use pushcoretest;
 
+--
+-- Table structure for table `ari_rule_definition`
+--
 
 DROP TABLE IF EXISTS `ari_rule_definition`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -44,6 +47,7 @@ CREATE TABLE `brand` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `code` varchar(255) NOT NULL,
   `topic` varchar(255) DEFAULT NULL,
+  `consumer_count` int(11) NOT NULL DEFAULT 2,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_g7ft8mes72rnsk746b7ibyln2` (`code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
@@ -56,14 +60,14 @@ CREATE TABLE `brand` (
 LOCK TABLES `brand` WRITE;
 /*!40000 ALTER TABLE `brand` DISABLE KEYS */;
 INSERT INTO `brand` VALUES
-(1,'2019-01-15 00:00:00','\0','2019-05-23 15:46:04','VS','VS_Brand_3_test'),
-(2,'2019-01-15 00:00:00','\0','2019-01-15 00:00:00','M4','VS_Brand_2_test'),
-(3,'2019-04-03 00:00:00','\0','2019-05-23 15:46:28','ZZ','ZZ_Brand_3_test'),
-(5,'2019-04-02 10:44:22','\0','2019-04-02 10:44:22','VS_DR','VS_Brand_3_test'),
-(6,'2019-04-02 10:44:22','\0','2019-04-02 10:44:22','VS_LBR','VS_Brand_3_test'),
-(7,'2019-04-02 10:44:22','\0','2019-04-02 10:44:22','ZZ_DR','ZZ_Brand_2_test'),
-(8,'2019-04-02 10:44:22','\0','2019-04-02 10:44:22','ZZ_LBR','ZZ_Brand_2_test'),
-(9,'2019-04-30 05:23:36','\0','2019-04-30 05:23:36','M4_LBR','M4_Brand_topic_test');
+(1,'2019-01-15 00:00:00','\0','2019-05-23 15:46:04','VS','VS_Brand_3_test',2),
+(2,'2019-01-15 00:00:00','\0','2019-01-15 00:00:00','M4','VS_Brand_2_test',2),
+(3,'2019-04-03 00:00:00','\0','2019-05-23 15:46:28','ZZ','ZZ_Brand_3_test',2),
+(5,'2019-04-02 10:44:22','\0','2019-04-02 10:44:22','VS_DR','VS_Brand_3_test',2),
+(6,'2019-04-02 10:44:22','\0','2019-04-02 10:44:22','VS_LBR','VS_Brand_3_test',2),
+(7,'2019-04-02 10:44:22','\0','2019-04-02 10:44:22','ZZ_DR','ZZ_Brand_2_test',2),
+(8,'2019-04-02 10:44:22','\0','2019-04-02 10:44:22','ZZ_LBR','ZZ_Brand_2_test',2),
+(9,'2019-04-30 05:23:36','\0','2019-04-30 05:23:36','M4_LBR','M4_Brand_topic_test',2);
 /*!40000 ALTER TABLE `brand` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1025,4 +1029,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-31 13:40:33
+-- Dump completed on 2019-06-03 13:16:31

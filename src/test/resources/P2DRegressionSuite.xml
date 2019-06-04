@@ -19,7 +19,7 @@
     <test name="P2DIntegrationTest" parallel="false">
         <classes>
             <class name="com.dhisco.regression.tests.supAndChIntegTest.SupAndChIntegTest">
-                <parameter name="loadMariaDB" value="true"/>
+                <parameter name="loadMariaDB" value="false"/>
                 <parameter name="testName" value="supAndChIntegTest"/>
             </class>
         </classes>

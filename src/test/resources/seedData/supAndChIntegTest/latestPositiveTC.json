@@ -1,5 +1,13 @@
 {
-  "brands": ["VS"],
-  "channels": ["RoyalArabians","Paytm"],
-  "ports": [8181,8182]
+  "brands": [
+    "VS"
+  ],
+  "channels": [
+    "RoyalArabians",
+    "Paytm"
+  ],
+  "ports": [
+    8181,
+    8182
+  ]
 }
