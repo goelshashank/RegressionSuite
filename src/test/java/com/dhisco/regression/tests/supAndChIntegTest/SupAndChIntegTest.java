@@ -69,12 +69,12 @@ import static org.testng.Assert.assertTrue;
 		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
 		sleep(15, "Waiting for configuration service to load up");
 
-		topics = getTopics(); //topics to be created in kafka
+	/*	topics = getTopics(); //topics to be created in kafka
 
 		kafkaConfig = loadBean(KafkaConfig.class);
 		topics.forEach(t -> kafkaConfig.deleteTopic(t));
 		sleep(5, "Waiting for cleanup of Kafka topics");
-		topics.forEach(t -> kafkaConfig.createTopic(t));
+		topics.forEach(t -> kafkaConfig.createTopic(t));*/
 
 		if (getClearOut()) {
 			outDataCleanUp();
@@ -89,13 +89,13 @@ import static org.testng.Assert.assertTrue;
 
 		log.info("----......------- Start test: {} -----.......-------", getTestClassName());
 
-		log.info(" %%%%%% Total Files - {}",supAndChIntegInput.getDataFiles().size());
+	/*	log.info(" %%%%%% Total Files - {}",supAndChIntegInput.getDataFiles().size());
 		for (String t : supAndChIntegInput.getDataFiles()) {
 			log.info("#### Publishing file - {} ####", t);
 			PushCoreJson pushCoreJson = CommonUtils.getObjFromResourceJsonAbsPath(t, PushCoreJson.class);
 			assertTrue(isNotEmpty(pushCoreJson));
 			kafkaConfig.publishData("VS_Brand_3_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
-		}
+		}*/
 		sleep(2,"waiting after publishing data");
 
 		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);

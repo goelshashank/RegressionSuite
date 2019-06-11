@@ -136,7 +136,7 @@
         <dependency>
             <groupId>com.dhisco.pushcore.dal</groupId>
             <artifactId>pushcore-persistence-service</artifactId>
-            <version>3.0.1-SNAPSHOT</version>
+            <version>1.0.11</version>
         </dependency>
     </dependencies>
 
