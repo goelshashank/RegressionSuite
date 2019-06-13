@@ -1,6 +1,5 @@
 package com.dhisco.regression.tests.supAndChIntegTest;
 
-import com.dhisco.persistence.model.ProductPushCoreDO;
 import com.dhisco.ptd.dj.PushCoreJson;
 import com.dhisco.regression.core.util.CommonUtils;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
@@ -94,7 +93,13 @@ import static org.testng.Assert.assertTrue;
 			log.info("#### Publishing file - {} ####", t);
 			PushCoreJson pushCoreJson = CommonUtils.getObjFromResourceJsonAbsPath(t, PushCoreJson.class);
 			assertTrue(isNotEmpty(pushCoreJson));
-			kafkaConfig.publishData("VS_Brand_3_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
+			String brandcode = pushCoreJson.getOtaHotelAvailNotifRQ().getAvailStatusMessages().getBrandCode();
+			if (brandcode.equalsIgnoreCase("vs")) {
+				kafkaConfig.publishData("VS_Brand_3_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
+			}else {
+				kafkaConfig.publishData("ZZ_Brand_3_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
+			}
+			
 		}
 		sleep(2,"waiting after publishing data");
 
