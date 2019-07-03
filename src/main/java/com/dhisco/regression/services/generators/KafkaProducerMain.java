@@ -1,6 +1,6 @@
 package com.dhisco.regression.services.generators;
 
-import com.dhisco.regression.core.util.CommonUtils;
+import com.dhisco.regression.core.util.RegressionUtils;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.IOUtils;
 import org.apache.kafka.clients.producer.Callback;
@@ -40,7 +40,7 @@ import java.util.List;
 				log.error(e.getMessage(), e);
 			} finally {
 				try {
-					if(CommonUtils.isNotEmpty(inputStream))
+					if(RegressionUtils.isNotEmpty(inputStream))
 					inputStream.close();
 				} catch (IOException ex) {
 					log.error(ex.getMessage(), ex);

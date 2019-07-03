@@ -1,6 +1,5 @@
 package com.dhisco.regression.services.config.db;
 
-import com.dhisco.ptd.dj.PushCoreJson;
 import com.dhisco.ptd.dj.util.PushCoreJsonWithChannel;
 import com.dhisco.regression.services.config.base.BaseConfig;
 import com.dhisco.regression.services.generators.CustomKafkaConsumer;
@@ -42,7 +41,7 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
-import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
+import static com.dhisco.regression.core.util.RegressionUtils.isNotEmpty;
 import static java.util.Arrays.asList;
 
 /**

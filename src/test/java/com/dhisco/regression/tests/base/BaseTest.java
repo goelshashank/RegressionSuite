@@ -11,7 +11,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.dhisco.ptd.dj.PushCoreJson;
 import com.dhisco.regression.core.LogTime;
 import com.dhisco.regression.core.exceptions.P2DRSException;
-import com.dhisco.regression.core.util.CommonUtils;
+import com.dhisco.regression.core.util.RegressionUtils;
 import com.dhisco.regression.services.ManageConfigurations;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
@@ -215,14 +215,14 @@ public abstract class BaseTest
 
 	public void assertJson(String in, String out, JSONCompareMode jsonCompareMode) throws IOException, JSONException {
 		JSONAssert
-				.assertEquals(CommonUtils.getResourceAsStrFromAbsPath(in), CommonUtils.getResourceAsStrFromAbsPath(out),
+				.assertEquals(RegressionUtils.getResourceAsStrFromAbsPath(in), RegressionUtils.getResourceAsStrFromAbsPath(out),
 						jsonCompareMode);
 	}
 
 	public JSONCompareResult compareJSON(String in, String out, JSONCompareMode jsonCompareMode)
 			throws IOException, JSONException {
 		return JSONCompare
-				.compareJSON(CommonUtils.getResourceAsStrFromAbsPath(in), CommonUtils.getResourceAsStrFromAbsPath(out),
+				.compareJSON(RegressionUtils.getResourceAsStrFromAbsPath(in), RegressionUtils.getResourceAsStrFromAbsPath(out),
 						jsonCompareMode);
 	}
 
@@ -276,15 +276,15 @@ public abstract class BaseTest
 		log.info("--------------- Loading Maria DB ------------------");
 		log.info("Input script file - {}", filePath);
 		mariaDbConfig = loadBean(MariaDBConfig.class);
-		mariaDbConfig.executeScript(CommonUtils.getResourceStreamFromAbsPath(filePath));
+		mariaDbConfig.executeScript(RegressionUtils.getResourceStreamFromAbsPath(filePath));
 		//todo: execute command to explicity update url test db
 		log.info("--------------- Loaded Maria DB ------------------ ");
 	}
 
 
 	public String getCompareFileName(String dataFile) throws IOException {
-		PushCoreJson pushCoreJson = CommonUtils.getObjFromResourceJsonAbsPath(dataFile, PushCoreJson.class);
-		String toCompareFileName = (CommonUtils.isNotEmpty(pushCoreJson.getOtaHotelRatePlanNotifRQ())?
+		PushCoreJson pushCoreJson = RegressionUtils.getObjFromResourceJsonAbsPath(dataFile, PushCoreJson.class);
+		String toCompareFileName = (RegressionUtils.isNotEmpty(pushCoreJson.getOtaHotelRatePlanNotifRQ())?
 				pushCoreJson.getOtaHotelRatePlanNotifRQ().getEchoToken():
 				pushCoreJson.getOtaHotelAvailNotifRQ().getEchoToken() ) +".json";
 

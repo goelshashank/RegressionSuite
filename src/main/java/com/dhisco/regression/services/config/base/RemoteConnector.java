@@ -25,8 +25,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
-import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
+import static com.dhisco.regression.core.util.RegressionUtils.isEmpty;
+import static com.dhisco.regression.core.util.RegressionUtils.isNotEmpty;
 
 /**
  * @author Shashank Goel

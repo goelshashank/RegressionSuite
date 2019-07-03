@@ -2,7 +2,7 @@ package com.dhisco.regression.tests.supAndChIntegTest;
 
 import com.dhisco.persistence.model.ProductPushCoreDO;
 import com.dhisco.ptd.dj.PushCoreJson;
-import com.dhisco.regression.core.util.CommonUtils;
+import com.dhisco.regression.core.util.RegressionUtils;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
 import com.dhisco.regression.services.config.app.SupplyRuleProcessorConfig;
@@ -32,7 +32,7 @@ import java.util.stream.Collectors;
 
 import static com.dhisco.regression.core.BaseConstants.DEV_TEST;
 import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
-import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
+import static com.dhisco.regression.core.util.RegressionUtils.isNotEmpty;
 import static java.util.Arrays.asList;
 
 /**
@@ -92,9 +92,9 @@ import static java.util.Arrays.asList;
 		log.info(" %%%%%% Total Files - {}",supAndChIntegInput.getDataFiles().size());
 		for (String t : supAndChIntegInput.getDataFiles()) {
 			log.info("#### Publishing file - {} ####", t);
-			PushCoreJson pushCoreJson = CommonUtils.getObjFromResourceJsonAbsPath(t, PushCoreJson.class);
+			PushCoreJson pushCoreJson = RegressionUtils.getObjFromResourceJsonAbsPath(t, PushCoreJson.class);
 			Assert.assertTrue(isNotEmpty(pushCoreJson));
-			kafkaConfig.publishData("VS_Brand_3_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
+			kafkaConfig.publishData("VS_Brand_3_test", asList(RegressionUtils.getResourceStreamFromAbsPath(t)));
 		}
 		sleep(2,"waiting after publishing data");
 
@@ -132,10 +132,10 @@ import static java.util.Arrays.asList;
 	private Set<String> getTopics() {
 		Set<String> topics1 = new HashSet<>();
 
-		String brandsOut = CommonUtils.getRestCall(
+		String brandsOut = RegressionUtils.getRestCall(
 				"http://" + configurationServiceConfig.getHost() + ":" + configurationServiceConfig.getPort() + "/p2d"
 						+ "/brands");
-		String channelsOut = CommonUtils.getRestCall(
+		String channelsOut = RegressionUtils.getRestCall(
 				"http://" + configurationServiceConfig.getHost() + ":" + configurationServiceConfig.getPort() + "/p2d"
 						+ "/channels");
 

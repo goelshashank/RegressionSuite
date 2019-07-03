@@ -1,6 +1,6 @@
 package com.dhisco.regression.services.controller;
 
-import com.dhisco.regression.core.util.CommonUtils;
+import com.dhisco.regression.core.util.RegressionUtils;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import lombok.extern.log4j.Log4j2;
@@ -45,7 +45,7 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 			log.error(e.getMessage(), e);
 		} finally {
 			try {
-				if (CommonUtils.isNotEmpty(writer)) {
+				if (RegressionUtils.isNotEmpty(writer)) {
 					writer.close();
 				}
 			} catch (Exception e) {

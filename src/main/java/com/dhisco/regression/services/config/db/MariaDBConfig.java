@@ -24,8 +24,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
 
-import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
-import static com.dhisco.regression.core.util.CommonUtils.isNotEmpty;
+import static com.dhisco.regression.core.util.RegressionUtils.isEmpty;
+import static com.dhisco.regression.core.util.RegressionUtils.isNotEmpty;
 
 /**
  * @author Shashank Goel

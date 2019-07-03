@@ -12,8 +12,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
-import static com.dhisco.regression.core.util.CommonUtils.getAllFiles;
-import static com.dhisco.regression.core.util.CommonUtils.isEmpty;
+import static com.dhisco.regression.core.util.RegressionUtils.getAllFiles;
+import static com.dhisco.regression.core.util.RegressionUtils.isEmpty;
 
 /**
  * @author Shashank Goel
