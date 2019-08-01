@@ -112,7 +112,8 @@ import static org.testng.Assert.assertTrue;
 			/*List<ProductPushCoreDO> productPushCoreDOList=
 				cassandraConfig.getProductPushCoreDAO().getBaseProductPushCoreDAO().findAll();
 		assertTrue(isNotEmpty(productPushCoreDOList));*/
-
+		
+		
 		for (String t : supAndChIntegInput.getDataFiles()) {
 
 			String compareFileName = getCompareFileName(t);

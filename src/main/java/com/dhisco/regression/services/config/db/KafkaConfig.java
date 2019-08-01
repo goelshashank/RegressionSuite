@@ -139,6 +139,10 @@ import static java.util.Arrays.asList;
 	public Map<String, List<PushCoreJsonWithChannel>> consumeData(Set<String> iTopics, int timeout ){
 		return customKafkaConsumer.fetchData( iTopics, consumer, timeout );
 	}
+	
+	public Map<String, List<String>> consumeData(List<String> iTopics, int timeout ){
+		return customKafkaConsumer.readDataFromTopic( iTopics, consumer, timeout );
+	}
 
 	public void deleteTopic(String topicName) {
 		DeleteTopicsResult delete = admin.deleteTopics(asList(topicName));

@@ -1,0 +1,1 @@
+schedule-initial-shop,{"dpc":"R2ARI","brand":"VS","sgaName":"XM","shoppingInterval":10, "affectInterval":false}

@@ -1,5 +1,7 @@
 package com.dhisco.regression.core.util;
 
+import com.dhisco.stp.commons.util.JsonUtils;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.log4j.Log4j2;
@@ -68,7 +70,8 @@ import java.util.Scanner;
 
 	public static <T> T getObjFromResourceJsonAbsPath(String absPath, Class<T> tClass) throws IOException {
 		String result = getResourceAsStrFromAbsPath(absPath);
-		ObjectMapper mapper = new ObjectMapper();
+		ObjectMapper mapper = JsonUtils.objectMapper();
+		mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 		JsonNode jsonnode = mapper.readTree(result);
 		return mapper.treeToValue(jsonnode, tClass);
 	}

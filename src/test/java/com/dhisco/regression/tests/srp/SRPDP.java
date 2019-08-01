@@ -1,12 +1,7 @@
 package com.dhisco.regression.tests.srp;
 
 import com.dhisco.regression.dataproviders.BaseDP;
-import com.dhisco.regression.dataproviders.BaseInput;
-import org.testng.ITestContext;
-import org.testng.TestRunner;
-import org.testng.annotations.DataProvider;
 
-import java.util.Map;
 
 /**
  * @author Shashank Goel

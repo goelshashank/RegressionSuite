@@ -1,31 +1,34 @@
 package com.dhisco.regression.services.config.app;
 
-import com.dhisco.regression.core.exceptions.P2DRSException;
-import com.dhisco.regression.services.config.base.BaseConfig;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import lombok.extern.log4j.Log4j2;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.PropertySource;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import java.util.ArrayList;
-import java.util.List;
+import com.dhisco.regression.core.exceptions.P2DRSException;
+import com.dhisco.regression.services.config.base.BaseConfig;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.extern.log4j.Log4j2;
 
 /**
- * @author Shashank Goel
+ * @author Abhishek.Chauhan
  * @version 1.0
- * @since 28-03-2019
+ * @since 22-07-2019
  */
 @Lazy
 @Getter @Setter @ToString(includeFieldNames=true)  @Log4j2
-@Configuration @PropertySource("configuration-service.properties") @ConfigurationProperties(prefix = "cfs")  public class ConfigurationServiceConfig
-		extends BaseConfig {
-
+@Configuration @PropertySource("scheduler.properties") @ConfigurationProperties(prefix = "sch")  
+public class SchedulerConfig extends BaseConfig {
+	
 	private String port;
 	private String debeziumHost;
 	private String startServCommand;
@@ -56,7 +59,7 @@ import java.util.List;
 		String[] ports=port.split(",");
 		List<String> commands=new ArrayList<>();
 		for (String s : ports) {
-			commands.add(startServCommand.replace("cfs_port",s));
+			commands.add(startServCommand.replace("sch_port",s));
 		}
 		return	commands;
 	}

@@ -1,9 +1,12 @@
 package com.dhisco.regression.services.controller;
 
-import com.dhisco.regression.core.util.CommonUtils;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
-import lombok.extern.log4j.Log4j2;
+import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,11 +15,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
+import com.dhisco.regression.core.util.CommonUtils;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
-import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
+import lombok.extern.log4j.Log4j2;
 
 /**
  * @author Shashank Goel
@@ -30,9 +33,19 @@ import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 	@PostMapping(value = "/capture-rez-gain-input") public void captureRezGainInput(@RequestBody String rezGainInput) {
 
 		log.info(" .......   Capturing Rez Gain Input  .........");
-
+		
+		HashMap<String,Integer> rezGainRequestFiles=new HashMap<String,Integer>();
 		JsonElement root = new JsonParser().parse(rezGainInput);
 		String fileName = root.getAsJsonObject().get("SessionID").getAsString()+".json";
+		
+		if(rezGainRequestFiles.containsKey(fileName)) {
+			rezGainRequestFiles.put(fileName, rezGainRequestFiles.get(fileName)+1);
+			fileName=fileName.concat("_"+Integer.toString(rezGainRequestFiles.get(fileName)));
+		}else {
+			rezGainRequestFiles.put(fileName, 1);
+			fileName=fileName.concat("_"+Integer.toString(rezGainRequestFiles.get(fileName)));
+		}
+		
 		File filePath = new File(env.getProperty("test.out.path") + SLASH_FW + fileName);
 		BufferedWriter writer = null;
 		try {
