@@ -1,0 +1,849 @@
+{
+	"OTA_HotelAvailNotifRQ": {
+		"EchoToken": "d76e6310-56d3-4575-8a41-2cae34ded928",
+		"MessageContentCode": "3",
+		"TimeStamp": "2019-05-27T07:31:32",
+		"Version": 7.001,
+		"AvailStatusMessages": {
+			"BrandCode": "ZZ",
+			"HotelCode": "7364",
+			"AvailStatusMessage": [
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 4,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": false
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-27",
+						"End": "2019-05-27",
+						"RatePlanCode": "DER",
+						"RatePlanCategory": "DER",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "1",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 4,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": false
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-27",
+						"End": "2019-05-27",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "2",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 4,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": false
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-27",
+						"End": "2019-05-27",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "3",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"RestrictionStatuses": {
+						"RestrictionStatus": [
+							{
+								"Restriction": "Master",
+								"Status": "Open"
+							}
+						]
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-27",
+						"End": "2019-06-09",
+						"RatePlanCode": "DER",
+						"RatePlanCategory": "DER",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "4",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"RestrictionStatuses": {
+						"RestrictionStatus": [
+							{
+								"Restriction": "Master",
+								"Status": "Open"
+							}
+						]
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-27",
+						"End": "2019-06-09",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "5",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"RestrictionStatuses": {
+						"RestrictionStatus": [
+							{
+								"Restriction": "Master",
+								"Status": "Open"
+							}
+						]
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-27",
+						"End": "2019-06-09",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "6",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 3,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-28",
+						"End": "2019-05-28",
+						"RatePlanCode": "DER",
+						"RatePlanCategory": "DER",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "7",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 3,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-28",
+						"End": "2019-05-28",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "8",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 3,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-28",
+						"End": "2019-05-28",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "9",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 2,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-29",
+						"End": "2019-05-29",
+						"RatePlanCode": "DER",
+						"RatePlanCategory": "DER",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "10",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 2,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-29",
+						"End": "2019-05-29",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "11",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 2,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-29",
+						"End": "2019-05-29",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "12",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 5,
+								"TimeUnit": "Day"
+							},
+							{
+								"MinMaxMessageType": "SetMinLOS",
+								"Time": 3,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-30",
+						"End": "2019-05-30",
+						"RatePlanCode": "DER",
+						"RatePlanCategory": "DER",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "13",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 5,
+								"TimeUnit": "Day"
+							},
+							{
+								"MinMaxMessageType": "SetMinLOS",
+								"Time": 3,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-30",
+						"End": "2019-05-30",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "14",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMinLOS",
+								"Time": 3,
+								"TimeUnit": "Day"
+							},
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 5,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-30",
+						"End": "2019-05-30",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "15",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMinLOS",
+								"Time": 2,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-31",
+						"End": "2019-05-31",
+						"RatePlanCode": "DER",
+						"RatePlanCategory": "DER",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "16",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMinLOS",
+								"Time": 2,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-31",
+						"End": "2019-05-31",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "17",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMinLOS",
+								"Time": 2,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-31",
+						"End": "2019-05-31",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "18",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 5,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": false
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-31",
+						"End": "2019-06-05",
+						"RatePlanCode": "DER",
+						"RatePlanCategory": "DER",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "19",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 5,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": false
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-31",
+						"End": "2019-06-05",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "20",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 5,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": false
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-05-31",
+						"End": "2019-06-05",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "21",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 4,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-06",
+						"End": "2019-06-06",
+						"RatePlanCode": "DER",
+						"RatePlanCategory": "DER",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "22",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 4,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-06",
+						"End": "2019-06-06",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "23",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 4,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-06",
+						"End": "2019-06-06",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "24",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 3,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-07",
+						"End": "2019-06-07",
+						"RatePlanCode": "DER",
+						"RatePlanCategory": "DER",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "25",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 3,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-07",
+						"End": "2019-06-07",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "26",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 3,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-07",
+						"End": "2019-06-07",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "27",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 2,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-08",
+						"End": "2019-06-08",
+						"RatePlanCode": "DER",
+						"RatePlanCategory": "DER",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "28",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 2,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-08",
+						"End": "2019-06-08",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "29",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 2,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-08",
+						"End": "2019-06-08",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "30",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 1,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-09",
+						"End": "2019-06-09",
+						"RatePlanCode": "DER",
+						"RatePlanCategory": "DER",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "31",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 1,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-09",
+						"End": "2019-06-09",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "A1K"
+					},
+					"UniqueID": {
+						"ID": "32",
+						"Type": "18"
+					}
+				},
+				{
+					"BookingLimit": 2,
+					"BookingLimitMessageType": "SetLimit",
+					"LengthsOfStay": {
+						"LengthOfStay": [
+							{
+								"MinMaxMessageType": "SetMaxLOS",
+								"Time": 1,
+								"TimeUnit": "Day"
+							}
+						],
+						"arrivalDateBased": true
+					},
+					"StatusApplicationControl": {
+						"Start": "2019-06-09",
+						"End": "2019-06-09",
+						"RatePlanCode": "BVW",
+						"RatePlanCategory": "DLU",
+						"InvTypeCode": "B1Q"
+					},
+					"UniqueID": {
+						"ID": "33",
+						"Type": "18"
+					}
+				}
+			]
+		}
+	},
+	"DailyPricingBased": true
+}

@@ -1,6 +1,5 @@
 package com.dhisco.regression.tests.supAndChIntegTest;
 
-import com.dhisco.persistence.model.ProductPushCoreDO;
 import com.dhisco.ptd.dj.PushCoreJson;
 import com.dhisco.regression.core.util.RegressionUtils;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
@@ -11,7 +10,6 @@ import com.dhisco.regression.services.config.db.KafkaConfig;
 import com.dhisco.regression.tests.base.BaseTest;
 import com.jayway.jsonpath.JsonPath;
 import lombok.extern.log4j.Log4j2;
-import org.junit.Assert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.springframework.test.context.ActiveProfiles;
 import org.testng.ITestContext;
@@ -34,6 +32,7 @@ import static com.dhisco.regression.core.BaseConstants.DEV_TEST;
 import static com.dhisco.regression.core.BaseConstants.SLASH_FW;
 import static com.dhisco.regression.core.util.RegressionUtils.isNotEmpty;
 import static java.util.Arrays.asList;
+import static org.testng.Assert.assertTrue;
 
 /**
  * @author Shashank Goel
@@ -64,7 +63,7 @@ import static java.util.Arrays.asList;
 			loadMariaDB(baseInput.getScriptFile());
 		}
 
-		//CAUTION: Always load DB beans before apps only.
+		//CAUTION: Always, load DB beans before apps.
 
 		configurationServiceConfig = loadBean(ConfigurationServiceConfig.class);
 		sleep(15, "Waiting for configuration service to load up");
@@ -92,21 +91,35 @@ import static java.util.Arrays.asList;
 		log.info(" %%%%%% Total Files - {}",supAndChIntegInput.getDataFiles().size());
 		for (String t : supAndChIntegInput.getDataFiles()) {
 			log.info("#### Publishing file - {} ####", t);
+<<<<<<< HEAD
 			PushCoreJson pushCoreJson = RegressionUtils.getObjFromResourceJsonAbsPath(t, PushCoreJson.class);
 			Assert.assertTrue(isNotEmpty(pushCoreJson));
 			kafkaConfig.publishData("VS_Brand_3_test", asList(RegressionUtils.getResourceStreamFromAbsPath(t)));
+=======
+			PushCoreJson pushCoreJson = CommonUtils.getObjFromResourceJsonAbsPath(t, PushCoreJson.class);
+			assertTrue(isNotEmpty(pushCoreJson));
+			String brandcode = pushCoreJson.getOtaHotelAvailNotifRQ().getAvailStatusMessages().getBrandCode();
+			if (brandcode.equalsIgnoreCase("vs")) {
+				kafkaConfig.publishData("VS_Brand_3_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
+			}else {
+				kafkaConfig.publishData("ZZ_Brand_3_test", asList(CommonUtils.getResourceStreamFromAbsPath(t)));
+			}
+			
+>>>>>>> 2773a909fa629fbad99fa2a9095fb0d3c28bbc36
 		}
 		sleep(2,"waiting after publishing data");
 
 		supplyRuleProcessorConfig = loadBean(SupplyRuleProcessorConfig.class);
 		sleep(20,"loading supply rule processor");
-		List<ProductPushCoreDO> productPushCoreDOList=
-				cassandraConfig.getProductPushCoreDAO().getBaseProductPushCoreDAO().findAll();
-		Assert.assertTrue(isNotEmpty(productPushCoreDOList));
 		channelMessageProcessorConfig = loadBean(ChannelMessageProcessorConfig.class);
 
 		sleep(sleepTime, "Waiting for the pipeline to process the messages");
 
+			/*List<ProductPushCoreDO> productPushCoreDOList=
+				cassandraConfig.getProductPushCoreDAO().getBaseProductPushCoreDAO().findAll();
+		assertTrue(isNotEmpty(productPushCoreDOList));*/
+		
+		
 		for (String t : supAndChIntegInput.getDataFiles()) {
 
 			String compareFileName = getCompareFileName(t);

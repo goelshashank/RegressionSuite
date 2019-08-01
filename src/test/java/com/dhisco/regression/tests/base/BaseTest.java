@@ -15,6 +15,7 @@ import com.dhisco.regression.core.util.RegressionUtils;
 import com.dhisco.regression.services.ManageConfigurations;
 import com.dhisco.regression.services.config.app.ChannelMessageProcessorConfig;
 import com.dhisco.regression.services.config.app.ConfigurationServiceConfig;
+import com.dhisco.regression.services.config.app.SchedulerConfig;
 import com.dhisco.regression.services.config.app.ServerConfig;
 import com.dhisco.regression.services.config.app.SupplyRuleProcessorConfig;
 import com.dhisco.regression.services.config.base.BaseConfig;
@@ -100,6 +101,7 @@ public abstract class BaseTest
 	public SupplyRuleProcessorConfig supplyRuleProcessorConfig;
 	public ConfigurationServiceConfig configurationServiceConfig;
 	public ServerConfig serverConfig;
+	public SchedulerConfig schedulerConfig;
 
 	public ExtentHtmlReporter htmlReporter;
 	public ExtentReports extent;
@@ -228,7 +230,7 @@ public abstract class BaseTest
 
 	public void sendMail(String filePath) {
 
-		final String username = "shashank.goel@rategain.com";
+		final String username = "Abhishek.Chauhan@rategain.com";
 		final String password = "####"; //provide password
 
 		Properties props = new Properties();
@@ -246,8 +248,8 @@ public abstract class BaseTest
 		try {
 
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("shashank.goel@rategain.com"));
-			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("shashank.goel@rategain.com"));
+			message.setFrom(new InternetAddress("Abhishek.Chauhan@rategain.com"));
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Abhishek.Chauhan@rategain.com"));
 			message.setSubject("P2DRegressionSuite Report");
 			message.setText("P2DRegressionSuite Test Report");
 

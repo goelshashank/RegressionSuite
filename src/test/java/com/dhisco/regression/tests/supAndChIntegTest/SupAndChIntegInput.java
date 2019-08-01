@@ -16,5 +16,7 @@ public class SupAndChIntegInput extends BaseInput {
 
 	private List<String> dataFiles;
 	private String scriptFile;
+	private List<String> brands;
+	private List<String> channels;
 
 }
